@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAMSEL PUBLICATIONS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+    <div class="nav-container">
+
+        <!-- LOGO (LEFT) -->
+        <div class="logo">
+            <a href="/">
+                <span class="logo-main">SAMSEL</span>
+                <span class="logo-sub">Publications</span>
+            </a>
+        </div>
+
+        <!-- MENU (RIGHT) -->
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+            <li class="dropdown">
+                <a href="#">Login <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                    <li><a href="{% url 'student_login' %}">Student Login</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+</header>
+<!-- HERO -->
+<section class="contact-hero">
+    <h1>Contact Us</h1>
+    <p>We’re here to help you with all your publishing needs</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+    <div class="contact-wrapper">
+<!-- LEFT INFO -->
+<div class="contact-info animate-left">
+    <h2>SAMSEL Publications</h2>
+
+    <div class="info-box">
+        <h4>📍 Address</h4>
+        <p>
+            Near, 44, Taylors Rd,<br>
+            Telecom Quarters, Kilpauk,<br>
+            Chennai, Tamil Nadu 600010
+        </p>
+
+        <!-- GOOGLE MAP -->
+        <div class="map-box">
+            <iframe
+                src="https://www.google.com/maps?q=44%20Taylors%20Road%20Kilpauk%20Chennai&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <h4>📞 Phone</h4>
+        <p>044 2647 4736</p>
+    </div>
+
+    <div class="info-box">
+        <h4>✉️ Email</h4>
+        <p>info@samselpublications.com</p>
+    </div>
+
+    <div class="info-box">
+        <h4>⏰ Working Hours</h4>
+        <p>Monday – Friday<br>9:00 AM – 6:00 PM</p>
+    </div>
+</div>
+
+
+        <!-- RIGHT FORM -->
+        <div class="contact-form">
+            <div class="contact-form animate-right">
+
+            <h3>Send us a Message</h3>
+
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Phone Number">
+                <textarea rows="5" placeholder="Your Message"></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 SAMSEL Publications | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

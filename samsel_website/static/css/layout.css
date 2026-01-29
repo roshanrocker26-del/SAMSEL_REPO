@@ -1,0 +1,227 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    background-attachment: fixed;
+    color: #3e2723;
+}
+
+.navbar,
+.books-section,
+.features,
+.promo,
+.services-hero,
+.promo2,
+.stats-section {
+     background: linear-gradient(
+        135deg,
+        #D6E9F5 30%,
+        #ffffff 50%,
+        #F8C7DA 100%
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 24px;
+    margin: 20px;
+}
+
+.books-section,
+.features,
+.promo,
+.services-hero,
+.stats-section {
+    background: linear-gradient(
+        135deg,
+        #D6E9F5 0%,
+        #ffffff 50%,
+        #F8C7DA 100%
+    );
+}
+
+/* ================================
+   GLOBAL FADE-IN ON SCROLL
+   ================================ */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variants */
+.fade-left {
+    transform: translateX(-60px);
+}
+
+.fade-right {
+    transform: translateX(60px);
+}
+
+.fade-left.show,
+.fade-right.show {
+    transform: translateX(0);
+}
+
+
+/* ================================
+   NAVBAR (CLEAN & PROFESSIONAL)
+   ================================ */
+.navbar {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(249, 249, 249, 0.6) 50%,
+        rgba(247, 247, 247, 0.5) 100%
+    );
+    padding: 12px 40px;
+    position: sticky;
+    top: 12px;
+    z-index: 1000;
+    margin: 12px 20px 0 20px;
+    border-radius: 20px;
+    box-shadow: 
+        0 12px 30px rgba(0,0,0,0.12),
+        0 0 25px rgba(233, 30, 99, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+}
+
+.logo-main {
+    font-family: 'Brush Script MT';
+    font-size: 28px;
+    color: #e91e63;
+}
+
+.logo-sub {
+    font-family: 'Times New Roman';
+    font-size: 16px;
+    color: #111;
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+.menu li {
+    position: relative;
+}
+
+
+.menu li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #111;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #e91e63;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.menu li a:hover {
+    background: linear-gradient(135deg, #fde6ef, #fff0f5);
+    color: #e91e63;
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.2);
+}
+
+.menu li a:hover::before {
+    width: 100%;
+}
+
+/* Dropdown */
+/* Dropdown */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;                 /* remove hover gap */
+    right: 0;
+
+    margin-top: 10px;          /* visual spacing */
+
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+    min-width: 180px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 16px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.15),
+        0 0 20px rgba(233, 30, 99, 0.2);
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: all 0.25s ease;
+
+    z-index: 9999;
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown-menu li a {
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: 0;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background: linear-gradient(90deg, #fde6ef, transparent);
+    color: #e91e63;
+    padding-left: 20px;
+}
+

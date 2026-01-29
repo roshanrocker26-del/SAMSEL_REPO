@@ -1,0 +1,529 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAMSEL PUBLICATIONS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layut.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+    <div class="nav-container">
+
+        <!-- LOGO (LEFT) -->
+        <div class="logo">
+            <a href="/">
+                <span class="logo-main">SAMSEL</span>
+                <span class="logo-sub">Publications</span>
+            </a>
+        </div>
+
+        <!-- MENU (RIGHT) -->
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+            <li class="dropdown">
+                <a href="#">Login <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                    <li><a href="{% url 'student_login' %}">Student Login</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+</header>
+
+<section class="hero-cover fade-in">
+  <div class="hero-glass">
+
+<!-- HERO TITLE -->
+<div class="hero-title">
+  <h1 class="hero-title-main">
+    <span>S</span><span>A</span><span>M</span><span>S</span><span>E</span><span>L</span>
+  </h1>
+</div>
+
+<!-- FLOATING DEMO BUTTON -->
+<a href="#demo" class="floating-demo-btn">
+  DEMO
+</a>
+
+
+
+    <!-- HANGER SYSTEM -->
+    <div class="hanger-system">
+
+      <div class="hanger-rod"></div>
+
+      <div class="hanger up h1" data-index="0">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon14.png' %}">
+        </div>
+      </div>
+
+      <div class="hanger down h2" data-index="1">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon12.png' %}">
+        </div>
+      </div>
+
+      <div class="hanger up h3" data-index="2">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon24.gif' %}">
+        </div>
+      </div>
+
+      <div class="hanger down h4" data-index="3">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon23.gif' %}">
+        </div>
+      </div>
+
+      <div class="hanger up h5" data-index="4">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon16.gif' %}">
+        </div>
+      </div>
+
+      <div class="hanger down h6" data-index="5">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon22.gif' %}">
+        </div>
+      </div>
+
+      <div class="hanger up h7" data-index="6">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon21.gif' %}">
+        </div>
+      </div>
+
+     <!--<div class="hanger down h8" data-index="7">
+        <span class="rope">
+            <span class="rope-light"></span>
+        </span>
+        <div class="hanger-card">
+          <img src="{% static 'images/icon20.gif' %}">
+        </div>
+      </div>-->
+
+    </div>
+
+    <!-- STICKMAN -->
+    <img src="{% static 'images/icon18.gif' %}" class="stickman">
+
+  </div>
+</section>
+
+<!-- FLOATING BOOKS SECTION -->
+<section class="books-section fade-in">
+    <div class="books-container">
+
+        <a href="#" class="book-btn float delay1 fade-in">
+            <img src="{% static 'images/low 5.png' %}" alt="ICT Book">
+        </a>
+
+        <a href="#" class="book-btn float delay1 fade-in">
+            <img src="{% static 'images/iwhizz1.jpg' %}" alt="ICT Junior">
+        </a>
+
+       <a href="#" class="book-btn float delay1 fade-in">
+            <img src="{% static 'images/ibot6.jpg' %}" alt="Robotics">
+        </a>
+
+        <a href="#" class="book-btn float delay4 fade-in">
+            <img src="{% static 'images/young3.jpg' %}" alt="Know Your Computer 1">
+        </a>
+
+        <a href="#" class="book-btn float delay5 fade-in">
+            <img src="{% static 'images/young4.jpg' %}" alt="Know Your Computer 2">
+        </a>
+
+    </div>
+</section>
+<!-- FEATURES -->
+<section class="features fade-in">
+    <div class="feature-card fade-in">
+        <h3>Academic Excellence</h3>
+        <p>Curriculum-based books for schools.</p>
+    </div>
+
+    <div class="feature-card fade-in">
+        <h3>Expert Authors</h3>
+        <p>Written by experienced educators and professionals.</p>
+    </div>
+
+    <div class="feature-card fade-in">
+        <h3>Trusted Publisher</h3>
+        <p>Serving institutions with quality content for years.</p>
+    </div>
+</section>
+
+<section class="promo fade-in">
+    <div class="promo-card">
+
+        <!-- LEFT IMAGE -->
+        <div class="promo-image fade-left">
+            <img src="{% static 'images/img11.png' %}" alt="Student Learning">
+        </div>
+
+        <!-- RIGHT CONTENT -->
+       <div class="promo-content fade-right">
+            <span class="badge">Board Exam</span>
+
+            <h2>Countdown is ON!</h2>
+
+            <p class="subtitle">
+                Start your Personalized Practice Today! <br>
+                <strong>SAMSEL</strong> – Your Trusted Learning Partner
+            </p>
+
+            <h4>Key Features</h4>
+            <ul class="features-list">
+                <li>✔ Curriculum-aligned questions</li>
+                <li>✔ Personalized practice tests</li>
+                <li>✔ Instant evaluation & feedback</li>
+                <li>✔ Teacher & student friendly</li>
+            </ul>
+
+            <a href="#" class="btn dark">KNOW MORE</a>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="services-hero">
+    <div class="services-wrapper">
+
+        <!-- LEFT CONTENT -->
+        <div class="services-left">
+            <h1>
+                 Our Series ➠<br>
+            </h1>
+        </div>
+
+        <!-- RIGHT CARDS -->
+        <div class="services-cards">
+            <div class="services-track">
+
+            <div class="service-card ">
+                <img src="{% static 'images/ibot6.jpg' %}"  alt="">
+                <div class="service-overlay">
+                    <h3>i-Bot Series</h3>
+                    <p>Academic books for class 1 to 9 </p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+
+            <div class="service-card ">
+                <img src="{% static 'images/iwhizz6.jpg' %}"alt="">
+                <div class="service-overlay">
+                    <h3>i-Whizz Series</h3>
+                    <p>Academic books for class 1 to 9</p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="{% static 'images/low 4.png' %}" alt="">
+                <div class="service-overlay">
+                    <h3>i-Smart Series</h3>
+                    <p>Academic books for class 1 to 9</p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+           
+            <div class="service-card">
+                <img src="{% static 'images/low 4.png' %}" alt="">
+                <div class="service-overlay">
+                    <h3>i-Smart Series</h3>
+                    <p>Academic books for class 1 to 9</p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <img src="{% static 'images/low 4.png' %}" alt="">
+                <div class="service-overlay">
+                    <h3>i-Smart Series</h3>
+                    <p>Academic books for class 1 to 9</p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+            <div class="service-card ">
+                <img src="{% static 'images/ibot6.jpg' %}"  alt="">
+                <div class="service-overlay">
+                    <h3>i-Bot Series</h3>
+                    <p>Academic books for class 1 to 9 </p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+            <div class="service-card ">
+                <img src="{% static 'images/ibot6.jpg' %}"  alt="">
+                <div class="service-overlay">
+                    <h3>i-Bot Series</h3>
+                    <p>Academic books for class 1 to 9 </p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="{% static 'images/ibot6.jpg' %}"  alt="">
+                <div class="service-overlay">
+                    <h3>i-Bot Series</h3>
+                    <p>Academic books for class 1 to 9 </p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="{% static 'images/ibot6.jpg' %}"  alt="">
+                <div class="service-overlay">
+                    <h3>i-Bot Series</h3>
+                    <p>Academic books for class 1 to 9 </p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="{% static 'images/ibot6.jpg' %}"  alt="">
+                <div class="service-overlay">
+                    <h3>i-Bot Series</h3>
+                    <p>Academic books for class 1 to 9 </p>
+                    <span class="explore-btn">Explore Now →</span>
+                </div>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="promo2 fade-in">
+    <div class="promo2-container">
+        <div class="promo2-content">
+            <p>
+                Discover Samsel Publications' premier computer science education resources, crafted to ignite curiosity and build foundational skills for the digital age.
+                Our comprehensive textbooks cover algorithms, data structures, programming fundamentals, and emerging technologies like AI and cybersecurity, aligned with global curricula standards.
+            </p>
+            </div>
+
+        <div class="promo2-image">
+            <img src="{% static 'images/img2.jpg' %}"alt="Promo Image">
+        </div>
+    </div>
+</div>
+
+<!-- REQUEST DEMO SECTION -->
+<section id = "demo" class="demo-request fade-in">
+  <div class="demo-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="demo-content fade-left">
+      <h2>Request a Free Demo</h2>
+      <p>
+        Experience how <strong>SAMSEL Publications</strong> transforms learning
+        with interactive, curriculum-aligned computer science resources.
+      </p>
+      <p>
+        Book a personalized demo for your school or institution
+        and explore our digital-first teaching approach.
+      </p>
+      <p class="demo-note">
+        📩 Our team will get back to you within 24 hours.
+      </p>
+    <form class="demo-form" method="post" action="{% url 'request_demo' %}">
+        {% csrf_token %}
+
+         <input type="email" name="email" placeholder="Your Email Address" required>
+
+         <textarea name="message" placeholder="Your Query / Requirement" rows="4" required></textarea>
+
+         <button type="submit">Request Demo →</button>
+    </form>
+
+    </div>
+
+    <!-- RIGHT ICON / IMAGE -->
+    <div class="demo-visual fade-right">
+      <div class="demo-icon float">
+        <img src="{% static 'images/icon22.gif' %}" alt="Demo Icon">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section fade-in">
+        <div class="stats-wrapper">
+
+            <!-- LEFT ICON -->
+            <div class="stats-icon slide-on-scroll fade-left">
+                <img src="{% static 'images/icon1.png' %}" alt="Icon">
+            </div>
+
+            <!-- RIGHT STATS -->
+            <div class="stats-container fade-right">
+                <div class="stat-box">
+                    <h2>2500+</h2>
+                    <p>Schools Associated</p>
+                </div>
+
+                <div class="stat-box">
+                    <h2>50+</h2>
+                    <p>Books Published</p>
+                </div>
+
+                <div class="stat-box">
+                    <h2>25+</h2>
+                    <p>Years of Experience</p>
+                </div>
+
+                <div class="stat-box">
+                    <h2>Need Help?</h2>
+                   <p><a href="{% url 'contact' %}" >Customer Support</a></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".slide-on-scroll");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                }
+            });
+        },
+        { threshold: 0.3 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+});
+</script>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
+</footer>
+
+<script>
+document.querySelector(".dropdown-toggle").addEventListener("click", function () {
+    document.querySelector(".dropdown-menu").classList.toggle("show");
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(
+        ".fade-in, .fade-left, .fade-right"
+    );
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    animatedElements.forEach(el => observer.observe(el));
+});
+</script>
+
+<script>
+    const track = document.querySelector('.services-track');
+    const cards = document.querySelectorAll('.service-card');
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            track.classList.toggle('paused');
+        });
+    });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const stickman = document.querySelector(".stickman");
+  const hangers = document.querySelectorAll(".hanger");
+  let triggered = new Set();
+
+  function checkDrop() {
+    const stickRect = stickman.getBoundingClientRect();
+
+    hangers.forEach((hanger, i) => {
+      if (triggered.has(i)) return;
+
+      const hangerRect = hanger.getBoundingClientRect();
+
+      // when stickman reaches hanger horizontally
+      if (stickRect.right > hangerRect.left + 30) {
+        hanger.classList.add("drop");
+        triggered.add(i);
+      }
+    });
+
+    requestAnimationFrame(checkDrop);
+  }
+
+  checkDrop();
+});
+</script>
+
+<script>
+  const rope = document.getElementById("pullRope");
+  const card = document.getElementById("demoCard");
+
+  rope.addEventListener("click", () => {
+    card.classList.toggle("show");
+
+    rope.style.transform = "translateY(10px)";
+    setTimeout(() => {
+      rope.style.transform = "translateY(0)";
+    }, 200);
+  });
+</script>
+
+
+</body>
+</html>

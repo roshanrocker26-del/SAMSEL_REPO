@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | SAMSEL PUBLICATIONS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <div class="logo reveal">
+                <div class="logo-main">SAMSEL</div>
+                <div class="logo-sub">Publications</div>
+            </div>
+
+            <ul class="menu reveal delay-1">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}" class="active">About Us</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Login ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                        <li><a href="#">Student Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+    <h1 class="reveal">ABOUT SAMSEL</h1>
+    <p class="reveal delay-1">
+        "Samsel – Crafting Tomorrow’s Coders with Unwavering Quality."
+    </p>
+</section>
+
+<!-- CONTENT -->
+<section class="about-content">
+    <div class="about-container">
+
+        <div class="about-image reveal slide-left">
+            <img src="{% static 'images/img5.jpg' %}" alt="Samsel Publications">
+        </div>
+
+        <div class="about-text reveal slide-right">
+            <h2 class="reveal">Who We Are</h2>
+            <p class="reveal delay-1">
+                <strong>SAMSEL PUBLICATIONS</strong> is a reputed educational publishing house
+                and a unit of <strong>USS Unique Software Solutions</strong>, Chennai.
+                For over two decades, we have delivered high-quality academic resources
+                to schools across India.
+            </p>
+
+            <h2 class="reveal">What We Offer</h2>
+            <p class="reveal delay-1">
+                Our catalogue includes more than <strong>50 titles across 9 specialized series</strong>,
+                covering Computer Fundamentals, Programming, AI, Robotics, Cyber Security,
+                and Office Applications.
+            </p>
+
+            <h2 class="reveal">Why Schools Trust Us</h2>
+            <ul>
+                <li class="reveal delay-1"> CBSE, ICSE & State Board aligned</li>
+                <li class="reveal delay-2"> Structured learning approach</li>
+                <li class="reveal delay-1"> Practical lab-based methodology</li>
+                <li class="reveal delay-2">Adopted by 1500+ schools</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<!-- TRUSTED SCHOOLS -->
+<section class="academic-boards reveal">
+    <h2 class="section-title reveal">
+        Our Trusted Schools
+    </h2>
+    <p class="section-subtitle reveal delay-1">
+        Schools across India that have proudly adopted SAMSEL publications
+    </p>
+
+    <div class="boards-grid">
+        <div class="board-card reveal delay-1">
+            <img src="{% static 'images/sch1.png' %}" alt="School 1">
+            <p>Kaligi Ranganathan Montford School</p>
+        </div>
+
+        <div class="board-card reveal delay-2">
+            <img src="{% static 'images/sch2.png' %}" alt="School 2">
+            <p>Bethel Public School</p>
+        </div>
+
+        <div class="board-card reveal delay-3">
+            <img src="{% static 'images/sch5.png' %}" alt="School 3">
+            <p>St. Joseph’s Matriculation</p>
+        </div>
+
+        <div class="board-card reveal delay-4">
+            <img src="{% static 'images/sch4.png' %}" alt="School 4">
+            <p>DAV School</p>
+        </div>
+
+        <div class="board-card reveal delay-1">
+            <img src="{% static 'images/sch3.png' %}" alt="School 5">
+            <p>GFC Global School</p>
+        </div>
+
+        <div class="board-card reveal delay-2">
+            <img src="{% static 'images/sch6.png' %}" alt="School 6">
+            <p>Oxford Model School</p>
+        </div>
+
+        <div class="board-card reveal delay-3">
+            <img src="{% static 'images/sch7.png' %}" alt="School 7">
+            <p>National Public School</p>
+        </div>
+
+        <div class="board-card reveal delay-4">
+            <img src="{% static 'images/sch8.png' %}" alt="School 8">
+            <p>Vidya Mandir Senior School</p>
+        </div>
+    </div>
+</section>
+
+<!-- PRACTICAL DEMO VIDEOS -->
+<section class="demo-video-section reveal">
+
+    <div class="demo-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="demo-content reveal delay-1">
+            <h2>Interactive Practical Demo Videos</h2>
+            <p>
+                SAMSEL eBooks are enriched with <strong>practical demo videos</strong> that
+                bring concepts to life. Each chapter includes QR-linked videos that help
+                students <strong>visualize experiments, coding logic, and real-world
+                applications</strong>.
+            </p>
+
+            <!-- COUNTER -->
+            <div class="demo-counter reveal delay-4">
+                <span class="counter" data-target="1000">0</span>
+                <span class="plus">+</span>
+                <p>Practical Demo Videos</p>
+            </div>
+
+            <ul>
+                <li>Step-by-step practical demonstrations</li>
+                <li>Curriculum-aligned explanations</li>
+                <li>Ideal for self-learning & lab sessions</li>
+                <li>Accessible directly from eBooks</li>
+            </ul>
+        </div>
+
+        <!-- RIGHT VIDEO -->
+        <div class="demo-video-wrapper reveal delay-2">
+            <video autoplay muted loop playsinline>
+                <source src="{% static 'images/video6.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- GOOGLE RATINGS -->
+<section class="ratings-section">
+    <h2 class="reveal">Rated Excellent by Educators</h2>
+
+    <div class="rating-cards">
+        <div class="rating-card reveal delay-1">
+            <div class="stars">★★★★★</div>
+            <p>Curriculum Quality</p>
+        </div>
+
+        <div class="rating-card reveal delay-2">
+            <div class="stars">★★★★★</div>
+            <p>Student Engagement</p>
+        </div>
+
+        <div class="rating-card reveal delay-3">
+            <div class="stars">★★★★☆</div>
+            <p>Teacher Support</p>
+        </div>
+
+        <div class="rating-card reveal delay-4">
+            <div class="stars">★★★★★</div>
+            <p>Overall Satisfaction</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
+</footer>
+
+<script src="{% static 'js/scroll.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAMSEL PUBLICATIONS</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar">
+    <div class="nav-container">
+
+        <div class="logo">
+            <a href="/">
+                <span class="logo-main">SAMSEL</span>
+                <span class="logo-sub">Publications</span>
+            </a>
+        </div>
+
+        <ul class="menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+            <li class="dropdown">
+                <a href="#">Login ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                    <li><a href="{% url 'student_login' %}">Student Login</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+  </nav>
+</header>
+
+<!-- PRODUCTS -->
+<section class="products">
+    <div class="products-container">
+
+        <!-- IBOT SHOWCASE -->
+        <section class="ibot-showcase">
+            <h2 class="ibot-title">i-Bot Series</h2>
+            <p class="ibot-subtitle">
+                Interactive robotics & automation fundamentals.
+            </p>
+
+            <div class="ibot-fan">
+                <img src="{% static 'images/ibot1.jpg' %}" class="book center">
+
+                <img src="{% static 'images/ibot2.jpg' %}" class="book b1">
+                <img src="{% static 'images/ibot3.jpg' %}" class="book b2">
+                <img src="{% static 'images/ibot4.jpg' %}" class="book b3">
+                <img src="{% static 'images/ibot5.jpg' %}" class="book b4">
+
+                <img src="{% static 'images/ibot6.jpg' %}" class="book b5">
+                <img src="{% static 'images/ibot7.jpg' %}" class="book b6">
+                <img src="{% static 'images/ibot8.jpg' %}" class="book b7">
+                <img src="{% static 'images/ibot9.jpg' %}" class="book b8">
+            </div>
+        </section>
+
+        <!-- OTHER PRODUCTS -->
+        <div class="other-products">
+            <h2 class="section-title">Our Other Series</h2>
+            <p class="section-subtitle">
+                Innovative learning solutions designed for young minds
+            </p>
+
+            <div class="products-grid">
+                <div class="product-card"><h3>i-Smart Series</h3><p>Smart learning books.</p></div>
+                <div class="product-card"><h3>i-Whiz Series</h3><p>Creative thinking.</p></div>
+                <div class="product-card"><h3>Application Series 2007</h3><p>Foundational learning.</p></div>
+                <div class="product-card"><h3>Young Wizards</h3><p>Early digital literacy.</p></div>
+                <div class="product-card"><h3>Application Series 2016</h3><p>Modern concepts.</p></div>
+                <div class="product-card"><h3>Right Click Series</h3><p>Hands-on usage.</p></div>
+                <div class="product-card"><h3>Programming Series</h3><p>Step-by-step coding.</p></div>
+                <div class="product-card"><h3>My Computer Series</h3><p>Basic awareness.</p></div>
+                <div class="product-card"><h3>Little Wizard</h3><p>Fun learning.</p></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
