@@ -362,14 +362,28 @@
         📩 Our team will get back to you within 24 hours.
       </p>
     <form class="demo-form" method="post" action="{% url 'request_demo' %}">
-        {% csrf_token %}
+    {% csrf_token %}
 
-         <input type="email" name="email" placeholder="Your Email Address" required>
+    <input type="text" name="contact_name"
+           placeholder="Name of the Contact Person" required>
 
-         <textarea name="message" placeholder="Your Query / Requirement" rows="4" required></textarea>
+    <input type="text" name="organization"
+           placeholder="Organization / School Name" required>
 
-         <button type="submit">Request Demo →</button>
-    </form>
+    <input type="tel" name="phone"
+           placeholder="Phone Number" pattern="[0-9]{10}"
+       placeholder="Phone Number (10 digits)" required>
+
+    <input type="email" name="email"
+           placeholder="Your Email Address" required>
+
+    <textarea name="message"
+              placeholder="Your Query / Requirement"
+              rows="4" required></textarea>
+
+    <button type="submit">Request Demo →</button>
+</form>
+
 
     </div>
 

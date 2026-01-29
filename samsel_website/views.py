@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
 
+from samsel_project.settings import EMAIL_HOST_USER
+
 def home(request):
     return render(request, 'home.html')
 
@@ -52,19 +54,24 @@ def admin_dashboard(request):
 def admin_logout(request):
     logout(request)
     return redirect("admin_login")
-
 def request_demo(request):
     if request.method == "POST":
+        contact_name = request.POST.get("contact_name")
+        organization = request.POST.get("organization")
+        phone = request.POST.get("phone")
         email = request.POST.get("email")
-        query = request.POST.get("message")
+        message_text = request.POST.get("message")
 
         message = f"""
-New Demo Request
+New Demo Request – SAMSEL
 
-Customer Email: {email}
+Contact Person: {contact_name}
+Organization   : {organization}
+Phone Number   : {phone}
+Email          : {email}
 
-Query:
-{query}
+Message / Requirement:
+{message_text}
 """
 
         send_mail(
@@ -72,6 +79,7 @@ Query:
             message=message,
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=["indhumurugan593@gmail.com"],
+            #reply_to=[EMAIL_HOST_USER],   # 👈 IMPORTANT
             fail_silently=False,
         )
 
