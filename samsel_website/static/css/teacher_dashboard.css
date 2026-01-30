@@ -1,0 +1,306 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #ffffff;
+    background-attachment: fixed;
+    color: #3e2723;
+}
+/* ================================
+   DASHBOARD LAYOUT
+================================ */
+
+.dashboard {
+    display: flex;
+    margin: 20px;
+    min-height: calc(100vh - 140px);
+    gap: 25px;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    width: 260px;
+    padding: 30px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #D6E9F5 0%,
+        #FFF1C1 55%,
+        #F8C7DA 85%
+    );
+
+    border-radius: 24px;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12),
+        0 0 35px rgba(233,30,99,0.25);
+}
+
+.sidebar h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #111827;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 18px;
+}
+
+.sidebar ul li button {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li button:hover,
+.sidebar ul li button.active {
+    background: linear-gradient(135deg, #fde6ef, #fff0f5);
+    color: #e91e63;
+    transform: translateX(6px);
+    box-shadow: 0 10px 25px rgba(233,30,99,0.35);
+}
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.dashboard-content {
+    flex: 1;
+    padding: 50px 60px;
+
+    background: linear-gradient(
+        135deg,
+        #D6E9F5 0%,
+        #ffffff 50%,
+        #F8C7DA 100%
+    );
+
+    border-radius: 24px;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12),
+        0 0 35px rgba(233,30,99,0.25);
+
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   CONTENT SECTIONS
+================================ */
+
+.content-section {
+    display: none;
+    animation: sectionFade 0.6s ease;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.content-section p {
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 30px;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.download-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 16px;
+
+    background: linear-gradient(135deg, #e91e63, #f5609b);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+
+    box-shadow: 0 10px 25px rgba(233,30,99,0.45);
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(233,30,99,0.6);
+}
+
+/* ================================
+   QUESTION PAPER FORM
+================================ */
+
+.qp-form {
+    max-width: 420px;
+    background: rgba(255,255,255,0.85);
+    padding: 30px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.qp-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.qp-form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.qp-form button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+
+    font-weight: 700;
+    background: linear-gradient(135deg, #e91e63, #f5609b);
+    color: white;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.qp-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(233,30,99,0.5);
+}
+/* ===== SIDEBAR TOGGLE ===== */
+.sidebar {
+    position: relative;
+    transition: width 0.4s ease;
+}
+
+.sidebar.collapsed {
+    width: 90px;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 18px;
+    right: -15px;
+
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+
+    background: #e91e63;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(233,30,99,0.45);
+}
+
+/* ===== PROFILE CARD ===== */
+.profile-card {
+    max-width: 520px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    background: rgba(255,255,255,0.85);
+    padding: 30px;
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.12),
+        0 0 35px rgba(233,30,99,0.25);
+
+    animation: fadeInUp 0.6s ease;
+}
+
+.profile-card img {
+    width: 110px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(233,30,99,0.4);
+}
+
+.profile-details p {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.profile-details ul {
+    margin-top: 6px;
+    padding-left: 18px;
+}
+
+.profile-details ul li {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+/* COLLAPSE EFFECT */
+.sidebar.collapsed .teacher-profile h4,
+.sidebar.collapsed .teacher-profile p,
+.sidebar.collapsed .teacher-profile span {
+    display: none;
+}
+
+/* ===== MENU ===== */
+.sidebar-menu span {
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-menu span {
+    display: none;
+}
