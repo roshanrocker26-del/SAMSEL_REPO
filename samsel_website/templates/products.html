@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>SAMSEL PUBLICATIONS</title>
-    <link rel="stylesheet" href="{% static 'css/styl.css' %}">
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 </head>
@@ -40,55 +39,83 @@
     </div>
   </nav>
 </header>
-
-<!-- PRODUCTS -->
 <section class="products">
-    <div class="products-container">
 
-        <!-- IBOT SHOWCASE -->
-        <section class="ibot-showcase">
-            <h2 class="ibot-title">i-Bot Series</h2>
-            <p class="ibot-subtitle">
-                Interactive robotics & automation fundamentals.
-            </p>
+  <!-- I-BOT SERIES -->
+  <section class="ibot-section">
+    <h2 class="ibot-title">i-Bot Series</h2>
+    <p class="ibot-subtitle">
+      Interactive Robotics & Automation for Young Innovators
+    </p>
 
-            <div class="ibot-fan">
-                <img src="{% static 'images/ibot1.jpg' %}" class="book center">
+    <div class="ibot-carousel-wrapper">
 
-                <img src="{% static 'images/ibot2.jpg' %}" class="book b1">
-                <img src="{% static 'images/ibot3.jpg' %}" class="book b2">
-                <img src="{% static 'images/ibot4.jpg' %}" class="book b3">
-                <img src="{% static 'images/ibot5.jpg' %}" class="book b4">
+      <button class="nav-btn left" onclick="scrollIbot(-1)">&#10094;</button>
 
-                <img src="{% static 'images/ibot6.jpg' %}" class="book b5">
-                <img src="{% static 'images/ibot7.jpg' %}" class="book b6">
-                <img src="{% static 'images/ibot8.jpg' %}" class="book b7">
-                <img src="{% static 'images/ibot9.jpg' %}" class="book b8">
-            </div>
-        </section>
+      <div class="ibot-carousel" id="ibotCarousel">
 
-        <!-- OTHER PRODUCTS -->
-        <div class="other-products">
-            <h2 class="section-title">Our Other Series</h2>
-            <p class="section-subtitle">
-                Innovative learning solutions designed for young minds
-            </p>
-
-            <div class="products-grid">
-                <div class="product-card"><h3>i-Smart Series</h3><p>Smart learning books.</p></div>
-                <div class="product-card"><h3>i-Whiz Series</h3><p>Creative thinking.</p></div>
-                <div class="product-card"><h3>Application Series 2007</h3><p>Foundational learning.</p></div>
-                <div class="product-card"><h3>Young Wizards</h3><p>Early digital literacy.</p></div>
-                <div class="product-card"><h3>Application Series 2016</h3><p>Modern concepts.</p></div>
-                <div class="product-card"><h3>Right Click Series</h3><p>Hands-on usage.</p></div>
-                <div class="product-card"><h3>Programming Series</h3><p>Step-by-step coding.</p></div>
-                <div class="product-card"><h3>My Computer Series</h3><p>Basic awareness.</p></div>
-                <div class="product-card"><h3>Little Wizard</h3><p>Fun learning.</p></div>
-            </div>
+        <!-- BOOK CARD -->
+        <div class="ibot-card">
+          <img src="{% static 'images/ibot1.jpg' %}">
+          <div class="ibot-info">
+            <h3>i-Bot Level 1</h3>
+            <p>Grades 3–4</p>
+            <span>Basics of Robotics & Logic</span>
+          </div>
         </div>
 
+        <div class="ibot-card">
+          <img src="{% static 'images/ibot2.jpg' %}">
+          <div class="ibot-info">
+            <h3>i-Bot Level 2</h3>
+            <p>Grades 4–5</p>
+            <span>Sensors & Simple Automation</span>
+          </div>
+        </div>
+
+        <div class="ibot-card">
+          <img src="{% static 'images/ibot3.jpg' %}">
+          <div class="ibot-info">
+            <h3>i-Bot Level 3</h3>
+            <p>Grades 5–6</p>
+            <span>Motors, Circuits & Control</span>
+          </div>
+        </div>
+
+        <div class="ibot-card">
+          <img src="{% static 'images/ibot4.jpg' %}">
+          <div class="ibot-info">
+            <h3>i-Bot Level 4</h3>
+            <p>Grades 6–7</p>
+            <span>Real-World Robotics Projects</span>
+          </div>
+        </div>
+
+        <div class="ibot-card">
+          <img src="{% static 'images/ibot5.jpg' %}">
+          <div class="ibot-info">
+            <h3>i-Bot Advanced</h3>
+            <p>Grades 7+</p>
+            <span>Automation & Problem Solving</span>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="nav-btn right" onclick="scrollIbot(1)">&#10095;</button>
+
     </div>
+  </section>
+
 </section>
 
-</body>
-</html>
+<script>
+  function scrollIbot(direction) {
+    const carousel = document.getElementById("ibotCarousel");
+    const scrollAmount = 320;
+    carousel.scrollBy({
+      left: direction * scrollAmount,
+      behavior: "smooth"
+    });
+  }
+</script>
