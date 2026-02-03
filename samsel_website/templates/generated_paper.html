@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Question Paper</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            margin: 30px;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        p {
+            margin: 6px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: left;
+        }
+
+        .download-btn {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .download-btn a {
+            padding: 8px 14px;
+            background: #1e40af;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- DOWNLOAD BUTTON -->
+<div class="download-btn">
+    <a href="{% url 'download_paper_pdf' %}">⬇ Download PDF</a>
+</div>
+
+<h2>SAMSEL PUBLICATIONS</h2>
+<h3>Question Paper – 20 Marks</h3>
+
+<hr>
+
+<h3>I. Fill in the blanks (3 × 1 = 3)</h3>
+{% for q in paper.fill %}
+<p>{{ forloop.counter }}. {{ q.q }}</p>
+{% empty %}
+<p>No fill-in-the-blanks questions available.</p>
+{% endfor %}
+
+<hr>
+
+<h3>II. MCQs (3 × 1 = 3)</h3>
+{% for q in paper.mcq %}
+<p>{{ forloop.counter }}. {{ q.q }}</p>
+<ol type="A">
+    {% for opt in q.options %}
+    <li>{{ opt }}</li>
+    {% endfor %}
+</ol>
+{% empty %}
+<p>No MCQ questions available.</p>
+{% endfor %}
+
+<hr>
+
+<h3>III. True / False (3 × 1 = 3)</h3>
+{% for q in paper.tf %}
+<p>{{ forloop.counter }}. {{ q.q }}</p>
+{% empty %}
+<p>No True/False questions available.</p>
+{% endfor %}
+
+<hr>
+
+<h3>IV. Match the following (5 × 1 = 5)</h3>
+<table>
+    <tr>
+        <th>Column A</th>
+        <th>Column B</th>
+    </tr>
+    {% for q in paper.match %}
+    <tr>
+        <td>{{ q.left }}</td>
+        <td>{{ q.right }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="2">No Match-the-following questions available.</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<hr>
+
+<h3>V. Full Form (2 × 1 = 2)</h3>
+{% for q in paper.full %}
+<p>{{ forloop.counter }}. {{ q.q }}</p>
+{% empty %}
+<p>No Full Form questions available.</p>
+{% endfor %}
+
+<hr>
+
+<h3>VI. Answer the following (2 × 2 = 4)</h3>
+{% for q in paper.short %}
+<p>{{ forloop.counter }}. {{ q.q }}</p>
+{% empty %}
+<p>No descriptive questions available.</p>
+{% endfor %}
+
+</body>
+</html>

@@ -99,63 +99,54 @@
 <section id="question" class="content-section">
     <h2>Question Paper Generator</h2>
 
-    <div class="qp-form">
+    <form method="POST" action="{% url 'generate_paper' %}" class="qp-form">
+        {% csrf_token %}
 
         <!-- Total Marks -->
         <label>Total Marks</label>
-        <select>
-            <option>20 Marks</option>
-            <option>40 Marks</option>
-            <option>60 Marks</option>
-            <option>80 Marks</option>
-            <option>100 Marks</option>
+        <select name="total_marks">
+            <option value="20">20 Marks</option>
         </select>
 
         <!-- Standard -->
         <label>Standard</label>
-        <select>
-            <option>Standard 1</option>
-            <option>Standard 2</option>
-            <option>Standard 3</option>
-            <option>Standard 4</option>
-            <option>Standard 5</option>
-            <option>Standard 6</option>
-            <option>Standard 7</option>
-            <option>Standard 8</option>
-            <option>Standard 9</option>
+        <select name="standard">
+            <option value="1">Standard 1</option>
+            <option value="2">Standard 2</option>
+            <option value="3">Standard 3</option>
+            <option value="4">Standard 4</option>
+            <option value="5">Standard 5</option>
+            <option value="6">Standard 6</option>
+            <option value="7">Standard 7</option>
+            <option value="8">Standard 8</option>
+            <option value="9">Standard 9</option>
         </select>
 
         <!-- Book Series -->
         <label>Book Series</label>
-        <select>
-            <option>Series Alpha</option>
-            <option>Series Beta</option>
-            <option>Series Gamma</option>
-            <option>Series Delta</option>
-            <option>Series Omega</option>
-            <option>Series Prime</option>
-            <option>Series Nova</option>
-            <option>Series Vertex</option>
-            <option>Series Zenith</option>
+        <select name="series">
+            <option value="alpha">Series Alpha</option>
+            <option value="beta">Series Beta</option>
+            <option value="gamma">Series Gamma</option>
         </select>
 
         <!-- Chapters -->
         <label>Select Chapters</label>
         <div class="chapter-box">
-            <label><input type="checkbox"> Chapter 1</label>
-            <label><input type="checkbox"> Chapter 2</label>
-            <label><input type="checkbox"> Chapter 3</label>
-            <label><input type="checkbox"> Chapter 4</label>
-            <label><input type="checkbox"> Chapter 5</label>
-            <label><input type="checkbox"> Chapter 6</label>
-            <label><input type="checkbox"> Chapter 7</label>
-            <label><input type="checkbox"> Chapter 8</label>
+            <label><input type="checkbox" name="chapters" value="1"> Chapter 1</label>
+            <label><input type="checkbox" name="chapters" value="2"> Chapter 2</label>
+            <label><input type="checkbox" name="chapters" value="3"> Chapter 3</label>
+            <label><input type="checkbox" name="chapters" value="4"> Chapter 4</label>
+            <label><input type="checkbox" name="chapters" value="5"> Chapter 5</label>
+            <label><input type="checkbox" name="chapters" value="6"> Chapter 6</label>
+            <label><input type="checkbox" name="chapters" value="7"> Chapter 7</label>
+            <label><input type="checkbox" name="chapters" value="8"> Chapter 8</label>
         </div>
 
-        <button>Generate & Download</button>
-
-    </div>
+        <button type="submit">Generate & Download</button>
+    </form>
 </section>
+
 
 
     </main>

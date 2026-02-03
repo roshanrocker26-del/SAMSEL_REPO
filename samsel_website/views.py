@@ -1,8 +1,17 @@
+import json
+import os
+from django.conf import settings
 from django.shortcuts import render , redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
+from .services.paper_generator import generate_question_paper
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from xhtml2pdf import pisa
+from django.template.loader import get_template
+
 
 from samsel_project.settings import EMAIL_HOST_USER
 
@@ -84,3 +93,56 @@ Message / Requirement:
         )
 
         return redirect("/#demo")
+
+def generate_paper(request):
+    if request.method == "POST":
+
+        selected_chapters = request.POST.getlist("chapters")
+
+        json_path = os.path.join(
+            settings.BASE_DIR,
+            "samsel_website",
+            "data",
+            "question_bank.json"
+        )
+
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        # 🔑 IMPORTANT FIX: access the chapters list
+        all_chapters = data["chapters"]
+
+        chosen_chapters = [
+            ch for ch in all_chapters
+            if str(ch["chapter_id"]) in selected_chapters
+        ]
+
+        paper = generate_question_paper(chosen_chapters)
+
+        return render(request, "generated_paper.html", {
+            "paper": paper
+})
+
+def download_paper_pdf(request):
+    json_path = os.path.join(
+        settings.BASE_DIR,
+        "samsel_website",
+        "data",
+        "question_bank.json"
+    )
+
+    with open(json_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    chapters = data["chapters"]
+    paper = generate_question_paper(chapters)
+
+    html = render_to_string("generated_paper.html", {"paper": paper})
+
+    response = HttpResponse(content_type="application/pdf")
+    response["Content-Disposition"] = (
+        'attachment; filename="question_paper_20_marks.pdf"'
+    )
+
+    pisa.CreatePDF(html, dest=response)
+    return response
