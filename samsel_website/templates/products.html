@@ -1,121 +1,229 @@
 {% load static %}
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SAMSEL PUBLICATIONS</title>
-    <link rel="stylesheet" href="{% static 'css/products.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <title>SAMSEL | Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+
+
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<header>
-  <nav class="navbar">
-    <div class="nav-container">
+<!-- ================= NAVBAR ================= -->
 
+<header>
+    <nav class="navbar">
+        <div class="nav-container">
         <div class="logo">
-            <a href="/">
-                <span class="logo-main">SAMSEL</span>
-                <span class="logo-sub">Publications</span>
-            </a>
+            <div class="logo-main">SAMSEL</div>
+            <div class="logo-sub">Publications</div>
         </div>
 
         <ul class="menu">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'products' %}" class="active">Products</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
             <li class="dropdown">
                 <a href="#">Login ▾</a>
                 <ul class="dropdown-menu">
                     <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
-                    <li><a href="{% url 'student_login' %}">Student Login</a></li>
+                    <li><a href="#">Student Login</a></li>
                 </ul>
             </li>
         </ul>
 
     </div>
-  </nav>
+</nav>
 </header>
-<section class="products">
 
-  <!-- I-BOT SERIES -->
-  <section class="ibot-section">
-    <h2 class="ibot-title">i-Bot Series</h2>
-    <p class="ibot-subtitle">
-      Interactive Robotics & Automation for Young Innovators
-    </p>
+<!-- ================= IBOT SERIES ================= -->
+ <div class="series-wrapper">
 
-    <div class="ibot-carousel-wrapper">
+<section class="series-section active-series" id="ibot-series">
 
-      <button class="nav-btn left" onclick="scrollIbot(-1)">&#10094;</button>
 
-      <div class="ibot-carousel" id="ibotCarousel">
+<div class="series-container">
 
-        <!-- BOOK CARD -->
-        <div class="ibot-card">
-          <img src="{% static 'images/ibot1.jpg' %}">
-          <div class="ibot-info">
-            <h3>i-Bot Level 1</h3>
-            <p>Grades 3–4</p>
-            <span>Basics of Robotics & Logic</span>
-          </div>
+    <h1 class="series-title">IBOT SERIES</h1>
+
+    <div class="series-layout">
+
+        <!-- LEFT : BOOK STACK -->
+        <div class="book-stack">
+            <img src="{% static 'images/ibot9.jpg' %}" class="book active">
+            <img src="{% static 'images/ibot8.jpg' %}" class="book">
+            <img src="{% static 'images/ibot7.jpg' %}" class="book">
+            <img src="{% static 'images/ibot6.jpg' %}" class="book">
+            <img src="{% static 'images/ibot5.jpg' %}" class="book">
+            <img src="{% static 'images/ibot4.jpg' %}" class="book">
+            <img src="{% static 'images/ibot3.jpg' %}" class="book">
+            <img src="{% static 'images/ibot2.jpg' %}" class="book">
+            <img src="{% static 'images/ibot1.jpg' %}" class="book">
         </div>
 
-        <div class="ibot-card">
-          <img src="{% static 'images/ibot2.jpg' %}">
-          <div class="ibot-info">
-            <h3>i-Bot Level 2</h3>
-            <p>Grades 4–5</p>
-            <span>Sensors & Simple Automation</span>
-          </div>
+        <!-- CENTER : INDEX PAGE -->
+        <div class="index-preview">
+            <img src="{% static 'images/ibot1.jpg' %}" class="index active">
+            <img src="{% static 'images/ibot2.jpg' %}" class="index">
+            <img src="{% static 'images/ibot3.jpg' %}" class="index">
+            <img src="{% static 'images/ibot4.jpg' %}" class="index">
+            <img src="{% static 'images/ibot5.jpg' %}" class="index">
+            <img src="{% static 'images/ibot6.jpg' %}" class="index">
+            <img src="{% static 'images/ibot7.jpg' %}" class="index">
+            <img src="{% static 'images/ibot8.jpg' %}" class="index">
+            <img src="{% static 'images/ibot9.jpg' %}" class="index">
         </div>
 
-        <div class="ibot-card">
-          <img src="{% static 'images/ibot3.jpg' %}">
-          <div class="ibot-info">
-            <h3>i-Bot Level 3</h3>
-            <p>Grades 5–6</p>
-            <span>Motors, Circuits & Control</span>
-          </div>
+        <!-- RIGHT : CONTENT -->
+        <div class="book-content">
+            <div class="content active"><p>IBOT Class 1 description...</p></div>
+            <div class="content"><p>IBOT Class 2 description...</p></div>
+            <div class="content"><p>IBOT Class 3 description...</p></div>
+            <div class="content"><p>IBOT Class 4 description...</p></div>
+            <div class="content"><p>IBOT Class 5 description...</p></div>
+            <div class="content"><p>IBOT Class 6 description...</p></div>
+            <div class="content"><p>IBOT Class 7 description...</p></div>
+            <div class="content"><p>IBOT Class 8 description...</p></div>
+            <div class="content"><p>IBOT Class 9 description...</p></div>
         </div>
-
-        <div class="ibot-card">
-          <img src="{% static 'images/ibot4.jpg' %}">
-          <div class="ibot-info">
-            <h3>i-Bot Level 4</h3>
-            <p>Grades 6–7</p>
-            <span>Real-World Robotics Projects</span>
-          </div>
-        </div>
-
-        <div class="ibot-card">
-          <img src="{% static 'images/ibot5.jpg' %}">
-          <div class="ibot-info">
-            <h3>i-Bot Advanced</h3>
-            <p>Grades 7+</p>
-            <span>Automation & Problem Solving</span>
-          </div>
-        </div>
-
-      </div>
-
-      <button class="nav-btn right" onclick="scrollIbot(1)">&#10095;</button>
 
     </div>
-  </section>
+
+    <div class="series-nav">
+        <button onclick="goSeries(-1)">←</button>
+        <button onclick="goSeries(1)">→</button>
+    </div>
+
+</div>
+
 
 </section>
 
-<script>
-  function scrollIbot(direction) {
-    const carousel = document.getElementById("ibotCarousel");
-    const scrollAmount = 320;
-    carousel.scrollBy({
-      left: direction * scrollAmount,
-      behavior: "smooth"
-    });
-  }
-</script>
+<!-- ================= ISMART SERIES ================= -->
+
+<section class="series-section" id="ismart-series">
+
+
+<div class="series-container">
+
+    <h1 class="series-title">ISMART SERIES</h1>
+
+    <div class="series-layout">
+
+        <div class="book-stack">
+            <img src="{% static 'images/low 1 - Copy.png' %}" class="book active">
+            <img src="{% static 'images/low 2.png' %}" class="book">
+            <img src="{% static 'images/low 3.png' %}" class="book">
+            <img src="{% static 'images/high 6.png' %}" class="book">
+            <img src="{% static 'images/high 7.png' %}" class="book">
+            <img src="{% static 'images/high 8.png' %}" class="book">
+            <img src="{% static 'images/high 9.png' %}" class="book">
+        </div>
+
+        <div class="index-preview">
+            <img src="{% static 'images/high 9.png' %}" class="index active">
+            <img src="{% static 'images/high 8.png' %}" class="index">
+            <img src="{% static 'images/high 7.png' %}" class="index">
+            <img src="{% static 'images/high 6.png' %}" class="index">
+            <img src="{% static 'images/low 3.png' %}" class="index">
+            <img src="{% static 'images/low 2.png' %}" class="index">
+            <img src="{% static 'images/low 1 - Copy.png' %}" class="index">
+
+        </div>
+
+        <div class="book-content">
+            <div class="content active"><p>ISMART Level 1...</p></div>
+            <div class="content"><p>ISMART Level 2...</p></div>
+            <div class="content"><p>ISMART Level 3...</p></div>
+            <div class="content"><p>ISMART Level 4...</p></div>
+            <div class="content"><p>ISMART Level 5...</p></div>
+            <div class="content"><p>ISMART Level 6...</p></div>
+            <div class="content"><p>ISMART Level 7...</p></div>
+        </div>
+
+    </div>
+
+     <div class="series-nav">
+        <button onclick="goSeries(-1)">←</button>
+        <button onclick="goSeries(1)">→</button>
+    </div>
+
+</div>
+
+
+</section>
+</div> <!-- End of series-wrapper -->
+
+<section class="purchase-section">
+
+    <div class="purchase-container">
+
+        <h2 class="purchase-title">Purchase Request</h2>
+
+        <!-- Toggle Buttons -->
+        <div class="purchase-toggle">
+            <button class="toggle-btn active" onclick="showPurchase('whatsapp')">
+                WhatsApp Order
+            </button>
+
+            <button class="toggle-btn" onclick="showPurchase('email')">
+                Email Request
+            </button>
+        </div>
+
+        <!-- ================= WHATSAPP OPTION ================= -->
+        <div id="whatsapp-box" class="purchase-box active">
+
+            <div class="qr-area">
+                <img src="{% static 'images/whatsapp.jpeg' %}" alt="WhatsApp QR">
+            </div>
+
+            <div class="purchase-info">
+                <h3>Scan & Order Instantly</h3>
+                <p>
+                    Scan the QR code to open WhatsApp and place your order directly with us.
+                    Share your required book list and school details for quick processing.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- ================= EMAIL OPTION ================= -->
+        <div id="email-box" class="purchase-box">
+
+            <form class="purchase-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="text" placeholder="School Name" required>
+                <input type="email" placeholder="Mail ID" required>
+
+                <textarea placeholder="Your Request (Books / Quantity / Details)" rows="4"></textarea>
+
+                <button type="submit" class="send-btn">Send Request</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="{% static 'js/products.js' %}"></script>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

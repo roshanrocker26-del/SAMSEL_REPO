@@ -150,7 +150,12 @@
 
 /* FOOTER */
 footer {
-    background: #ffffff;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(249, 249, 249, 0.6) 50%,
+        rgba(247, 247, 247, 0.5) 100%
+    );
     color: black;
     text-align: center;
     padding: 15px;

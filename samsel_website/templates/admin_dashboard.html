@@ -1,44 +1,286 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Admin Dashboard | SAMSEL</title>
+    <!-- Reusing teacher styles for the layout -->
     <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 </head>
+
 <body>
 
-<div class="dashboard">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <h2>SAMSEL</h2>
-        <nav>
-            <div class="nav-item active">Dashboard</div>
-            <div class="nav-item">Books</div>
-            <div class="nav-item">Profile</div>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="/">
+                        <span class="logo-main">SAMSEL</span>
+                        <span class="logo-sub">Publications</span>
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'admin_logout' %}">Logout</a></li>
+                </ul>
+            </div>
         </nav>
+    </header>
 
-        <a href="{% url 'admin_logout' %}" class="logout">Logout</a>
-    </aside>
+    <div class="dashboard">
 
-    <!-- MAIN CONTENT -->
-    <main class="main">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
 
-        <div class="card analytics">
-            <div class="circle"></div>
-            <h3>Subscription Analytics</h3>
-            <p>+2500 Active Users</p>
-        </div>
+            <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
 
-        <div class="card chart-card">
-            <h3>Book Sales</h3>
-            <div class="chart"></div>
-        </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <button class="active" onclick="showSection('dashboard-view')">
+                        📊 <span>Dashboard</span>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="showSection('books-view')">
+                        📚 <span>Books</span>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="showSection('profile-view')">
+                        👤 <span>Profile</span>
+                    </button>
+                </li>
+            </ul>
+        </aside>
 
-    </main>
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-content">
 
-</div>
+            <!-- DASHBOARD SECTION -->
+            <section id="dashboard-view" class="content-section active">
+                <h2>Overview</h2>
+                <div class="analytics-grid" style="display: flex; gap: 20px;">
+                    <div class="card analytics" style="flex: 1; text-align: center;">
+                        <div class="circle"></div>
+                        <h3>Subscription Analytics</h3>
+                        <p>+2500 Active Users</p>
+                    </div>
 
+                    <div class="card chart-card" style="flex: 2;">
+                        <h3>Book Sales</h3>
+                        <div class="chart"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BOOKS SECTION -->
+            <section id="books-view" class="content-section">
+                <h2>Teacher Book Selection</h2>
+
+                <div class="books-form-container card">
+                    <form id="book-selection-form" onsubmit="handleBookSubmit(event)">
+
+                        <!-- Teacher Details: Horizontal Layout -->
+                        <div class="teacher-details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px;">
+                            <div class="form-group">
+                                <label>Teacher Name</label>
+                                <input type="text" name="teacher_name" required placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Teacher ID</label>
+                                <input type="text" name="teacher_id" required placeholder="Enter ID">
+                            </div>
+                            <div class="form-group">
+                                <label>School Name</label>
+                                <input type="text" name="school_name" required placeholder="Enter School">
+                            </div>
+                        </div>
+
+                        <!-- Series Selection -->
+                        <div class="series-selection"
+                            style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                            <label style="font-size: 16px; margin-bottom: 10px; display: block;">Select Book
+                                Series</label>
+                            <div style="display: flex; gap: 15px;">
+                                <select id="series-dropdown"
+                                    style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                                    <option value="">-- Select Series --</option>
+                                    <option value="Series 1">Series 1</option>
+                                    <option value="Series 2">Series 2</option>
+                                    <option value="Series 3">Series 3</option>
+                                    <option value="Series 4">Series 4</option>
+                                    <option value="Series 5">Series 5</option>
+                                    <option value="Series 6">Series 6</option>
+                                    <option value="Series 7">Series 7</option>
+                                    <option value="Series 8">Series 8</option>
+                                    <option value="Series 9">Series 9</option>
+                                </select>
+                                <button type="button" onclick="addSeries()" class="add-btn">Add
+                                    Series</button>
+                            </div>
+                        </div>
+
+                        <div id="selected-series-container"
+                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                            <!-- Dynamic series blocks will appear here -->
+                        </div>
+
+                        <div class="total-summary"
+                            style="margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 12px; border-left: 5px solid #2196f3;">
+                            <h3 style="margin-top: 0;">Order Summary</h3>
+                            <ul id="total-summary-list" style="list-style: none; padding-left: 0; margin: 10px 0;">
+                                <li>No books selected yet.</li>
+                            </ul>
+                        </div>
+
+                        <button type="submit" class="submit-btn"
+                            style="margin-top: 30px; width: 100%; padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #e91e63, #f5609b); color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer;">Submit
+                            Order</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- PROFILE SECTION (Placeholder) -->
+            <section id="profile-view" class="content-section">
+                <h2>Admin Profile</h2>
+                <div class="card" style="padding: 30px; text-align: center;">
+                    <p>Admin Profile Details Here</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // Section Switching Logic
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.sidebar-menu button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Find the button that calls this function (rough way to highlight)
+            // In a real app, we might pass 'this' to the function
+            const buttons = document.querySelectorAll('.sidebar-menu button');
+            if (sectionId === 'dashboard-view') buttons[0].classList.add('active');
+            if (sectionId === 'books-view') buttons[1].classList.add('active');
+            if (sectionId === 'profile-view') buttons[2].classList.add('active');
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+
+        // Books Logic
+        const addedSeries = new Set();
+
+        function addSeries() {
+            const dropdown = document.getElementById('series-dropdown');
+            const seriesName = dropdown.value;
+
+            if (!seriesName) return alert("Please select a series");
+            if (addedSeries.has(seriesName)) return alert("Series already added");
+
+            addedSeries.add(seriesName);
+
+            // Remove placeholder if exists
+            const summaryList = document.getElementById('total-summary-list');
+            if (summaryList.innerText.includes("No books selected yet.")) {
+                summaryList.innerHTML = '';
+            }
+
+            const container = document.getElementById('selected-series-container');
+            const seriesBlock = document.createElement('div');
+            seriesBlock.className = 'series-card';
+            seriesBlock.style.background = "#fff";
+            seriesBlock.style.padding = "20px";
+            seriesBlock.style.borderRadius = "16px";
+            seriesBlock.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)";
+            seriesBlock.style.border = "1px solid #eee";
+
+            seriesBlock.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px;">
+                <h3 style="margin: 0; color: #333; font-size: 18px;">${seriesName}</h3>
+                <button type="button" onclick="removeSeries('${seriesName}', this)" style="background: #ffebee; color: #d32f2f; border: none; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">✕ Remove</button>
+            </div>
+            <div class="checkbox-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                ${Array.from({ length: 9 }, (_, i) => `
+                    <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 4px;">
+                        <input type="checkbox" onchange="updateTotals()" class="book-checkbox" data-series="${seriesName}" style="accent-color: #e91e63; width: 16px; height: 16px;"> 
+                        <span style="font-size: 14px;">Class ${i + 1}</span>
+                    </label>
+                `).join('')}
+            </div>
+            <div style="margin-top: 15px; font-size: 13px; color: #777; text-align: right;">
+                <span class="series-total">Selected: 0</span>
+            </div>
+        `;
+            container.appendChild(seriesBlock);
+
+            // Reset dropdown
+            dropdown.value = "";
+        }
+
+        function removeSeries(seriesName, btn) {
+            addedSeries.delete(seriesName);
+            // btn -> header -> seriesBlock
+            btn.parentElement.parentElement.remove();
+            updateTotals();
+
+            if (addedSeries.size === 0) {
+                document.getElementById('total-summary-list').innerHTML = '<li>No books selected yet.</li>';
+            }
+        }
+
+        function updateTotals() {
+            const summaryList = document.getElementById('total-summary-list');
+            summaryList.innerHTML = '';
+
+            const seriesCards = document.querySelectorAll('.series-card');
+            let hasSelection = false;
+
+            seriesCards.forEach(card => {
+                const seriesName = card.querySelector('h3').innerText;
+                const checkboxes = card.querySelectorAll('input[type="checkbox"]:checked');
+                const count = checkboxes.length;
+
+                card.querySelector('.series-total').innerText = `Selected: ${count}`;
+
+                if (count > 0) {
+                    hasSelection = true;
+                    const li = document.createElement('li');
+                    li.innerText = `${seriesName}: ${count} Books`;
+                    li.style.marginBottom = "5px";
+                    li.style.fontWeight = "bold";
+                    summaryList.appendChild(li);
+                }
+            });
+
+            if (!hasSelection && addedSeries.size > 0) {
+                summaryList.innerHTML = '<li>No books checked yet.</li>';
+            } else if (addedSeries.size === 0) {
+                summaryList.innerHTML = '<li>No books selected yet.</li>';
+            }
+        }
+
+        function handleBookSubmit(e) {
+            e.preventDefault();
+            alert("Order Submitted Successfully! (Demo)");
+        }
+    </script>
+
+    <script src="{% static 'js/scroll.js' %}"></script>
 </body>
+
 </html>

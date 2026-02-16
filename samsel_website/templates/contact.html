@@ -12,37 +12,31 @@
 
 <!-- NAVBAR -->
 <header>
-  <nav class="navbar">
-    <div class="nav-container">
+    <nav class="navbar">
+        <div class="nav-container">
 
-        <!-- LOGO (LEFT) -->
-        <div class="logo">
-            <a href="/">
-                <span class="logo-main">SAMSEL</span>
-                <span class="logo-sub">Publications</span>
-            </a>
+            <div class="logo reveal">
+                <div class="logo-main">SAMSEL</div>
+                <div class="logo-sub">Publications</div>
+            </div>
+
+            <ul class="menu reveal delay-1">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}" class="active">About Us</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+                <li class="dropdown">
+                    <a href="#">Login ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                        <li><a href="#">Student Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
-
-        <!-- MENU (RIGHT) -->
-        <ul class="menu">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'products' %}">Products</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
-
-            <li class="dropdown">
-                <a href="#">Login <span class="arrow">▾</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
-                    <li><a href="{% url 'student_login' %}">Student Login</a></li>
-                </ul>
-            </li>
-        </ul>
-
-    </div>
-</nav>
-
-
+    </nav>
 </header>
 <!-- HERO -->
 <section class="contact-hero">
