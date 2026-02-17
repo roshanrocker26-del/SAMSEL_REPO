@@ -1,0 +1,370 @@
+{
+  "chapters": [
+    {
+      "chapter_id": 1,
+      "chapter_title": "Introduction to Artificial Intelligence",
+      "fill_in_the_blanks": [
+        {
+          "q": "Artificial Intelligence enables machines to perform tasks that traditionally required ____.",
+          "a": "human intelligence"
+        },
+        {
+          "q": "The term Artificial Intelligence was coined in the year ____.",
+          "a": "1956"
+        }
+      ],
+      "mcqs": [
+        {
+          "q": "Who is known as the father of AI?",
+          "options": [
+            "Alan Turing",
+            "John McCarthy",
+            "Charles Babbage",
+            "Elon Musk"
+          ],
+          "a": "John McCarthy"
+        },
+        {
+          "q": "AI mainly focuses on?",
+          "options": [
+            "Human emotions",
+            "Machine intelligence",
+            "Hardware design",
+            "Networking"
+          ],
+          "a": "Machine intelligence"
+        }
+      ],
+      "true_false": [
+        {
+          "q": "AI systems can learn from data.",
+          "a": true
+        },
+        {
+          "q": "AI and ML are completely unrelated.",
+          "a": false
+        }
+      ],
+      "match_the_following": [
+        {
+          "Artificial Intelligence": "Simulating human intelligence"
+        },
+        {
+          "Turing Test": "Test for machine intelligence"
+        }
+      ],
+      "full_forms": [
+        {
+          "AI": "Artificial Intelligence"
+        },
+        {
+          "ML": "Machine Learning"
+        }
+      ],
+      "answer_the_following": [
+        {
+          "q": "Define Artificial Intelligence.",
+          "a": "Artificial Intelligence is the simulation of human intelligence in machines."
+        }
+      ]
+    },
+    {
+      "chapter_id": 2,
+      "chapter_title": "Artificial Intelligence and Robotics",
+      "fill_in_the_blanks": [
+        {
+          "q": "Robots controlled by AI can make ____ decisions.",
+          "a": "autonomous"
+        },
+        {
+          "q": "Sensors help robots to ____ their environment.",
+          "a": "perceive"
+        }
+      ],
+      "mcqs": [
+        {
+          "q": "Which field combines AI with physical machines?",
+          "options": [
+            "Networking",
+            "Robotics",
+            "Blockchain",
+            "Databases"
+          ],
+          "a": "Robotics"
+        },
+        {
+          "q": "Industrial robots are commonly used in?",
+          "options": [
+            "Farming",
+            "Manufacturing",
+            "Banking",
+            "Education"
+          ],
+          "a": "Manufacturing"
+        }
+      ],
+      "true_false": [
+        {
+          "q": "Robotics uses AI for decision making.",
+          "a": true
+        },
+        {
+          "q": "All robots are humanoids.",
+          "a": false
+        }
+      ],
+      "match_the_following": [
+        {
+          "Robot": "Programmable machine"
+        },
+        {
+          "AI": "Decision making brain"
+        }
+      ],
+      "full_forms": [
+        {
+          "RPA": "Robotic Process Automation"
+        }
+      ],
+      "answer_the_following": [
+        {
+          "q": "Explain the role of AI in robotics.",
+          "a": "AI enables robots to learn, adapt, and make decisions."
+        }
+      ]
+    },
+    {
+      "chapter_id": 3,
+      "chapter_title": "Networking",
+      "fill_in_the_blanks": [
+        {
+          "q": "A network is a group of ____ connected together.",
+          "a": "computers"
+        },
+        {
+          "q": "LAN stands for ____.",
+          "a": "Local Area Network"
+        }
+      ],
+      "mcqs": [
+        {
+          "q": "Which device connects multiple networks?",
+          "options": [
+            "Switch",
+            "Router",
+            "Hub",
+            "Repeater"
+          ],
+          "a": "Router"
+        }
+      ],
+      "true_false": [
+        {
+          "q": "The internet is an example of WAN.",
+          "a": true
+        }
+      ],
+      "match_the_following": [
+        {
+          "LAN": "Small geographical area"
+        },
+        {
+          "WAN": "Large geographical area"
+        }
+      ],
+      "full_forms": [
+        {
+          "IP": "Internet Protocol"
+        }
+      ],
+      "answer_the_following": [
+        {
+          "q": "What is computer networking?",
+          "a": "Connecting computers to share data and resources."
+        }
+      ]
+    },
+    {
+      "chapter_id": 4,
+      "chapter_title": "Introduction to Python",
+      "fill_in_the_blanks": [
+        {
+          "q": "Python is a ____ level programming language.",
+          "a": "high"
+        },
+        {
+          "q": "____ is used to define a block of code in Python.",
+          "a": "Indentation"
+        }
+      ],
+      "mcqs": [
+        {
+          "q": "Who developed Python?",
+          "options": [
+            "Dennis Ritchie",
+            "Guido van Rossum",
+            "James Gosling",
+            "Bjarne Stroustrup"
+          ],
+          "a": "Guido van Rossum"
+        }
+      ],
+      "true_false": [
+        {
+          "q": "Python supports object-oriented programming.",
+          "a": true
+        }
+      ],
+      "match_the_following": [
+        {
+          "List": "Mutable"
+        },
+        {
+          "Tuple": "Immutable"
+        }
+      ],
+      "full_forms": [
+        {
+          "IDE": "Integrated Development Environment"
+        }
+      ],
+      "answer_the_following": [
+        {
+          "q": "Mention two features of Python.",
+          "a": "Simple syntax and platform independent."
+        }
+      ]
+    },
+    {
+      "chapter_id": 5,
+      "chapter_title": "Understanding Blockchain for Beginners",
+      "fill_in_the_blanks": [
+        {
+          "q": "Blockchain is a ____ ledger.",
+          "a": "distributed"
+        },
+        {
+          "q": "Each block contains a ____ of the previous block.",
+          "a": "hash"
+        }
+      ],
+      "mcqs": [
+        {
+          "q": "Which technology is used in blockchain?",
+          "options": [
+            "AI",
+            "Cryptography",
+            "IoT",
+            "Cloud"
+          ],
+          "a": "Cryptography"
+        }
+      ],
+      "true_false": [
+        {
+          "q": "Blockchain data cannot be altered easily.",
+          "a": true
+        }
+      ],
+      "match_the_following": [
+        {
+          "Block": "Data structure"
+        },
+        {
+          "Node": "Participant in network"
+        }
+      ],
+      "full_forms": [
+        {
+          "BTC": "Bitcoin"
+        }
+      ],
+      "answer_the_following": [
+        {
+          "q": "What is blockchain?",
+          "a": "A secure and decentralized digital ledger."
+        }
+      ]
+    },
+    {
+      "chapter_id": 6,
+      "chapter_title": "Visualizations with Plotly",
+      "fill_in_the_blanks": [
+        {
+          "q": "Plotly is used for data ____.",
+          "a": "visualization"
+        }
+      ],
+      "mcqs": [
+        {
+          "q": "Plotly supports which language?",
+          "options": [
+            "Python",
+            "Java",
+            "C",
+            "Assembly"
+          ],
+          "a": "Python"
+        }
+      ],
+      "true_false": [
+        {
+          "q": "Plotly can create interactive graphs.",
+          "a": true
+        }
+      ],
+      "match_the_following": [
+        {
+          "Plotly": "Interactive charts"
+        }
+      ],
+      "full_forms": [],
+      "answer_the_following": [
+        {
+          "q": "Why use Plotly?",
+          "a": "To create interactive and dynamic visualizations."
+        }
+      ]
+    },
+    {
+      "chapter_id": 7,
+      "chapter_title": "Data Visualization with Seaborn in Python",
+      "fill_in_the_blanks": [
+        {
+          "q": "Seaborn is built on top of ____.",
+          "a": "Matplotlib"
+        }
+      ],
+      "mcqs": [
+        {
+          "q": "Seaborn is mainly used for?",
+          "options": [
+            "Data visualization",
+            "Web development",
+            "Gaming",
+            "Networking"
+          ],
+          "a": "Data visualization"
+        }
+      ],
+      "true_false": [
+        {
+          "q": "Seaborn provides statistical plots.",
+          "a": true
+        }
+      ],
+      "match_the_following": [
+        {
+          "Seaborn": "Statistical graphics"
+        }
+      ],
+      "full_forms": [],
+      "answer_the_following": [
+        {
+          "q": "Give one advantage of Seaborn.",
+          "a": "Easy creation of attractive statistical plots."
+        }
+      ]
+    }
+  ]
+}

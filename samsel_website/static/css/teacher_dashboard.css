@@ -304,3 +304,30 @@ html, body {
 .sidebar.collapsed .sidebar-menu span {
     display: none;
 }
+/* ================================
+   CHAPTER CHECKBOX GROUP
+================================ */
+
+.chapter-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 16px;
+    margin-bottom: 22px;
+}
+
+.chapter-box label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.chapter-box input[type="checkbox"] {
+    accent-color: #e91e63;
+    width: 16px;
+    height: 16px;
+}
+
