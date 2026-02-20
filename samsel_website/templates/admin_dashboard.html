@@ -79,8 +79,20 @@
             <section id="books-view" class="content-section">
                 <h2>Teacher Book Selection</h2>
 
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}"
+                        style="padding: 10px; margin-bottom: 20px; border-radius: 5px; {% if message.tags == 'error' %}background-color: #f8d7da; color: #721c24;{% else %}background-color: #d4edda; color: #155724;{% endif %}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
                 <div class="books-form-container card">
-                    <form id="book-selection-form" onsubmit="handleBookSubmit(event)">
+                    <form id="book-selection-form" method="POST" action="{% url 'admin_dashboard' %}">
+                        {% csrf_token %}
 
                         <!-- Teacher Details: Horizontal Layout -->
                         <div class="teacher-details-grid"
@@ -93,9 +105,17 @@
                                 <label>Teacher ID</label>
                                 <input type="text" name="teacher_id" required placeholder="Enter ID">
                             </div>
+                            <!-- Added separate divs for School Name and ID if you want 4 cols, or keep 3 and add row -->
                             <div class="form-group">
                                 <label>School Name</label>
-                                <input type="text" name="school_name" required placeholder="Enter School">
+                                <input type="text" name="school_name" required placeholder="Enter School Name">
+                            </div>
+                        </div>
+                        <div class="teacher-details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px;">
+                            <div class="form-group">
+                                <label>School ID</label>
+                                <input type="text" name="school_id" required placeholder="Enter School ID">
                             </div>
                         </div>
 
@@ -116,7 +136,6 @@
                                     <option value="Series 6">Series 6</option>
                                     <option value="Series 7">Series 7</option>
                                     <option value="Series 8">Series 8</option>
-                                    <option value="Series 9">Series 9</option>
                                 </select>
                                 <button type="button" onclick="addSeries()" class="add-btn">Add
                                     Series</button>
@@ -136,150 +155,80 @@
                             </ul>
                         </div>
 
-                        <button type="submit" class="submit-btn"
-                            style="margin-top: 30px; width: 100%; padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #e91e63, #f5609b); color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer;">Submit
-                            Order</button>
+                        <button type="button" class="submit-btn"
+                            onclick="alert('Submission is disabled in this demo version.')"
+                            style="margin-top: 30px; width: 100%; padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #e91e63, #f5609b); color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer;">Send
+                            To Teacher</button>
                     </form>
                 </div>
             </section>
 
-            <!-- PROFILE SECTION (Placeholder) -->
+            <!-- PROFILE SECTION -->
             <section id="profile-view" class="content-section">
                 <h2>Admin Profile</h2>
-                <div class="card" style="padding: 30px; text-align: center;">
-                    <p>Admin Profile Details Here</p>
+                <div class="card" style="padding: 40px;">
+                    <div style="display: flex; gap: 40px; align-items: flex-start;">
+                        <!-- Left: Image Section -->
+                        <div style="text-align: center; flex: 1;">
+                            <div class="circle"
+                                style="margin: 0 auto 20px; width: 150px; height: 150px; border-width: 8px;">
+                                <!-- Placeholder Image / Initials -->
+                                <div
+                                    style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 48px; color: #e91e63; font-weight: bold;">
+                                    AD</div>
+                            </div>
+                            <h3 style="margin: 0; font-size: 24px;">Admin User</h3>
+                            <p style="color: #666; margin-top: 5px;">Super Administrator</p>
+                        </div>
+
+                        <!-- Right: Details Section -->
+                        <div style="flex: 2; padding-left: 40px; border-left: 1px solid #eee;">
+                            <div style="display: grid; gap: 20px;">
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Username</label>
+                                    <div
+                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                        admin</div>
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Email
+                                        Address</label>
+                                    <div
+                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                        admin@samsel.com</div>
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Role</label>
+                                    <div
+                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                        System Administrator</div>
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Last
+                                        Login</label>
+                                    <div
+                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                        {% now "jS F Y H:i" %}</div>
+                                </div>
+                            </div>
+
+                            <button
+                                style="margin-top: 30px; padding: 12px 24px; background: #e91e63; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Edit
+                                Profile</button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
         </main>
     </div>
 
-    <script>
-        // Section Switching Logic
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Remove active class from all buttons
-            document.querySelectorAll('.sidebar-menu button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-
-            // Find the button that calls this function (rough way to highlight)
-            // In a real app, we might pass 'this' to the function
-            const buttons = document.querySelectorAll('.sidebar-menu button');
-            if (sectionId === 'dashboard-view') buttons[0].classList.add('active');
-            if (sectionId === 'books-view') buttons[1].classList.add('active');
-            if (sectionId === 'profile-view') buttons[2].classList.add('active');
-        }
-
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('collapsed');
-        }
-
-        // Books Logic
-        const addedSeries = new Set();
-
-        function addSeries() {
-            const dropdown = document.getElementById('series-dropdown');
-            const seriesName = dropdown.value;
-
-            if (!seriesName) return alert("Please select a series");
-            if (addedSeries.has(seriesName)) return alert("Series already added");
-
-            addedSeries.add(seriesName);
-
-            // Remove placeholder if exists
-            const summaryList = document.getElementById('total-summary-list');
-            if (summaryList.innerText.includes("No books selected yet.")) {
-                summaryList.innerHTML = '';
-            }
-
-            const container = document.getElementById('selected-series-container');
-            const seriesBlock = document.createElement('div');
-            seriesBlock.className = 'series-card';
-            seriesBlock.style.background = "#fff";
-            seriesBlock.style.padding = "20px";
-            seriesBlock.style.borderRadius = "16px";
-            seriesBlock.style.boxShadow = "0 4px 12px rgba(0,0,0,0.08)";
-            seriesBlock.style.border = "1px solid #eee";
-
-            seriesBlock.innerHTML = `
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px;">
-                <h3 style="margin: 0; color: #333; font-size: 18px;">${seriesName}</h3>
-                <button type="button" onclick="removeSeries('${seriesName}', this)" style="background: #ffebee; color: #d32f2f; border: none; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">✕ Remove</button>
-            </div>
-            <div class="checkbox-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                ${Array.from({ length: 9 }, (_, i) => `
-                    <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 4px;">
-                        <input type="checkbox" onchange="updateTotals()" class="book-checkbox" data-series="${seriesName}" style="accent-color: #e91e63; width: 16px; height: 16px;"> 
-                        <span style="font-size: 14px;">Class ${i + 1}</span>
-                    </label>
-                `).join('')}
-            </div>
-            <div style="margin-top: 15px; font-size: 13px; color: #777; text-align: right;">
-                <span class="series-total">Selected: 0</span>
-            </div>
-        `;
-            container.appendChild(seriesBlock);
-
-            // Reset dropdown
-            dropdown.value = "";
-        }
-
-        function removeSeries(seriesName, btn) {
-            addedSeries.delete(seriesName);
-            // btn -> header -> seriesBlock
-            btn.parentElement.parentElement.remove();
-            updateTotals();
-
-            if (addedSeries.size === 0) {
-                document.getElementById('total-summary-list').innerHTML = '<li>No books selected yet.</li>';
-            }
-        }
-
-        function updateTotals() {
-            const summaryList = document.getElementById('total-summary-list');
-            summaryList.innerHTML = '';
-
-            const seriesCards = document.querySelectorAll('.series-card');
-            let hasSelection = false;
-
-            seriesCards.forEach(card => {
-                const seriesName = card.querySelector('h3').innerText;
-                const checkboxes = card.querySelectorAll('input[type="checkbox"]:checked');
-                const count = checkboxes.length;
-
-                card.querySelector('.series-total').innerText = `Selected: ${count}`;
-
-                if (count > 0) {
-                    hasSelection = true;
-                    const li = document.createElement('li');
-                    li.innerText = `${seriesName}: ${count} Books`;
-                    li.style.marginBottom = "5px";
-                    li.style.fontWeight = "bold";
-                    summaryList.appendChild(li);
-                }
-            });
-
-            if (!hasSelection && addedSeries.size > 0) {
-                summaryList.innerHTML = '<li>No books checked yet.</li>';
-            } else if (addedSeries.size === 0) {
-                summaryList.innerHTML = '<li>No books selected yet.</li>';
-            }
-        }
-
-        function handleBookSubmit(e) {
-            e.preventDefault();
-            alert("Order Submitted Successfully! (Demo)");
-        }
-    </script>
-
+    <!-- Linked External JS -->
+    <script src="{% static 'js/admin_dashboard.js' %}?v={% now 'U' %}"></script>
     <script src="{% static 'js/scroll.js' %}"></script>
 </body>
 

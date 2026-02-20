@@ -89,34 +89,4 @@ function showSection(sectionId) {
     // Activate clicked button
     event.target.classList.add('active');
 }
-function showSection(sectionId) {
 
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.remove('active');
-    });
-
-    document.querySelectorAll('.sidebar button').forEach(button => {
-        button.classList.remove('active');
-    });
-
-    document.getElementById(sectionId).classList.add('active');
-    event.target.classList.add('active');
-}
-
-function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('collapsed');
-}
-
-function showSection(sectionId) {
-
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.remove('active');
-    });
-
-    document.querySelectorAll('.sidebar button').forEach(button => {
-        button.classList.remove('active');
-    });
-
-    document.getElementById(sectionId).classList.add('active');
-    event.target.classList.add('active');
-}

@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Teacher Dashboard | SAMSEL</title>
@@ -8,153 +9,177 @@
     <link rel="stylesheet" href="{% static 'css/teacher_dashboard.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 </head>
+
 <body>
 
-<header>
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">
-            <a href="/">
-                <span class="logo-main">SAMSEL</span>
-                <span class="logo-sub">Publications</span>
-            </a>
-        </div>
-        <ul class="menu">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="">Logout</a></li>
-        </ul>
-    </div>
-</nav>
-</header>
-
-<div class="dashboard">
-
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-
-        <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
-
-        <ul class="sidebar-menu">
-            <li>
-                <button onclick="showSection('profile')">
-                    👤 <span>Profile</span>
-                </button>
-            </li>
-            <li>
-                <button class="active" onclick="showSection('ebooks')">
-                    📚 <span>E-Books</span>
-                </button>
-            </li>
-            <li>
-                <button onclick="showSection('syllabus')">
-                    📘 <span>Syllabus</span>
-                </button>
-            </li>
-            <li>
-                <button onclick="showSection('question')">
-                    📝 <span>Question Generator</span>
-                </button>
-            </li>
-        </ul>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="dashboard-content">
-
-        <!-- PROFILE -->
-        <section id="profile" class="content-section">
-            <h2>Teacher Profile</h2>
-
-            <div class="profile-card">
-                <img src="{% static 'images/icon5.png' %}" alt="Teacher">
-
-                <div class="profile-details">
-                    <p><strong>Name:</strong> Roshan S</p>
-                    <p><strong>School:</strong> SAMSEL Public School</p>
-                    <p><strong>Purchased Series:</strong></p>
-                    <ul>
-                        <li>i-Bot Series</li>
-                        <li>Smart Maths</li>
-                        <li>English Explorer</li>
-                    </ul>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="/">
+                        <span class="logo-main">SAMSEL</span>
+                        <span class="logo-sub">Publications</span>
+                    </a>
                 </div>
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'teacher_logout' %}">Logout</a></li>
+                </ul>
             </div>
-        </section>
+        </nav>
+    </header>
 
-        <!-- EBOOKS -->
-        <section id="ebooks" class="content-section active">
-            <h2>E-Books</h2>
-            <p>Access SAMSEL interactive digital textbooks.</p>
-            <a href="#" class="download-btn">Download E-Books</a>
-        </section>
+    <div class="dashboard">
 
-        <!-- SYLLABUS -->
-        <section id="syllabus" class="content-section">
-            <h2>Syllabus</h2>
-            <p>Download the latest syllabus.</p>
-            <a href="#" class="download-btn">Download Syllabus</a>
-        </section>
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
 
-        <!-- QUESTION GENERATOR -->
-<section id="question" class="content-section">
-    <h2>Question Paper Generator</h2>
+            <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
 
-    <form method="POST" action="{% url 'generate_paper' %}" class="qp-form">
-        {% csrf_token %}
+            <ul class="sidebar-menu">
+                <li>
+                    <button onclick="showSection('profile')">
+                        👤 <span>Profile</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="active" onclick="showSection('ebooks')">
+                        📚 <span>E-Books</span>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="showSection('syllabus')">
+                        📘 <span>Syllabus</span>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="showSection('question')">
+                        📝 <span>Question Generator</span>
+                    </button>
+                </li>
+            </ul>
+        </aside>
 
-        <!-- Total Marks -->
-        <label>Total Marks</label>
-        <select name="total_marks">
-            <option value="20">20 Marks</option>
-        </select>
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-content">
 
-        <!-- Standard -->
-        <label>Standard</label>
-        <select name="standard">
-            <option value="1">Standard 1</option>
-            <option value="2">Standard 2</option>
-            <option value="3">Standard 3</option>
-            <option value="4">Standard 4</option>
-            <option value="5">Standard 5</option>
-            <option value="6">Standard 6</option>
-            <option value="7">Standard 7</option>
-            <option value="8">Standard 8</option>
-            <option value="9">Standard 9</option>
-        </select>
+            <!-- PROFILE -->
+            <section id="profile" class="content-section">
+                <h2>Teacher Profile</h2>
 
-        <!-- Book Series -->
-        <label>Book Series</label>
-        <select name="series">
-            <option value="alpha">Series Alpha</option>
-            <option value="beta">Series Beta</option>
-            <option value="gamma">Series Gamma</option>
-        </select>
+                <div class="profile-card">
+                    <img src="{% static 'images/icon5.png' %}" alt="Teacher">
 
-        <!-- Chapters -->
-        <label>Select Chapters</label>
-        <div class="chapter-box">
-            <label><input type="checkbox" name="chapters" value="1"> Chapter 1</label>
-            <label><input type="checkbox" name="chapters" value="2"> Chapter 2</label>
-            <label><input type="checkbox" name="chapters" value="3"> Chapter 3</label>
-            <label><input type="checkbox" name="chapters" value="4"> Chapter 4</label>
-            <label><input type="checkbox" name="chapters" value="5"> Chapter 5</label>
-            <label><input type="checkbox" name="chapters" value="6"> Chapter 6</label>
-            <label><input type="checkbox" name="chapters" value="7"> Chapter 7</label>
-        </div>
+                    <div class="profile-details">
+                        <p><strong>Name:</strong> {{ teacher.teacher_name }}</p>
+                        <p><strong>Teacher ID:</strong> {{ teacher.t_id }}</p>
+                        <p><strong>Contact Number:</strong> {{ teacher.contact }}</p>
+                        <p><strong>School:</strong> {{ teacher.school_name }}</p>
+                        <p><strong>School ID:</strong> {{ teacher.school_id }}</p>
 
-        <button type="submit">Generate & Download</button>
-    </form>
-</section>
+                        <p><strong>Purchased Books:</strong></p>
+                        <table class="books-table">
+                            <thead>
+                                <tr>
+                                    <th>Book Series</th>
+                                    <th>Classes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if books %}
+                                {% for book in books %}
+                                <tr>
+                                    <td>{{ book.series }}</td>
+                                    <td>{{ book.class_num }}</td>
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <tr>
+                                    <td colspan="2" style="text-align:center;">No books purchased yet.</td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- EBOOKS -->
+            <section id="ebooks" class="content-section active">
+                <h2>E-Books</h2>
+                <p>Access SAMSEL interactive digital textbooks.</p>
+                <a href="#" class="download-btn">Download E-Books</a>
+            </section>
+
+            <!-- SYLLABUS -->
+            <section id="syllabus" class="content-section">
+                <h2>Syllabus</h2>
+                <p>Download the latest syllabus.</p>
+                <a href="#" class="download-btn">Download Syllabus</a>
+            </section>
+
+            <!-- QUESTION GENERATOR -->
+            <section id="question" class="content-section">
+                <h2>Question Paper Generator</h2>
+
+                <form method="POST" action="{% url 'generate_paper' %}" class="qp-form">
+                    {% csrf_token %}
+
+                    <!-- Total Marks -->
+                    <label>Total Marks</label>
+                    <select name="total_marks">
+                        <option value="20">20 Marks</option>
+                    </select>
+
+                    <!-- Standard -->
+                    <label>Standard</label>
+                    <select name="standard">
+                        <option value="1">Standard 1</option>
+                        <option value="2">Standard 2</option>
+                        <option value="3">Standard 3</option>
+                        <option value="4">Standard 4</option>
+                        <option value="5">Standard 5</option>
+                        <option value="6">Standard 6</option>
+                        <option value="7">Standard 7</option>
+                        <option value="8">Standard 8</option>
+                        <option value="9">Standard 9</option>
+                    </select>
+
+                    <!-- Book Series -->
+                    <label>Book Series</label>
+                    <select name="series">
+                        <option value="alpha">Series Alpha</option>
+                        <option value="beta">Series Beta</option>
+                        <option value="gamma">Series Gamma</option>
+                    </select>
+
+                    <!-- Chapters -->
+                    <label>Select Chapters</label>
+                    <div class="chapter-box">
+                        <label><input type="checkbox" name="chapters" value="1"> Chapter 1</label>
+                        <label><input type="checkbox" name="chapters" value="2"> Chapter 2</label>
+                        <label><input type="checkbox" name="chapters" value="3"> Chapter 3</label>
+                        <label><input type="checkbox" name="chapters" value="4"> Chapter 4</label>
+                        <label><input type="checkbox" name="chapters" value="5"> Chapter 5</label>
+                        <label><input type="checkbox" name="chapters" value="6"> Chapter 6</label>
+                        <label><input type="checkbox" name="chapters" value="7"> Chapter 7</label>
+                    </div>
+
+                    <button type="submit">Generate & Download</button>
+                </form>
+            </section>
 
 
 
-    </main>
-</div>
+        </main>
+    </div>
 
-<footer>
-    <p>© 2026 SAMSEL Publications</p>
-</footer>
+    <footer>
+        <p>© 2026 SAMSEL Publications</p>
+    </footer>
 
-<script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
 </body>
+
 </html>

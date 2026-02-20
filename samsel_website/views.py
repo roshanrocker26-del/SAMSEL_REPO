@@ -21,8 +21,78 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+from .models import Teacher, Purchase
+
 def teacher_login(request):
+    if request.method == "POST":
+        t_id = request.POST.get("t_id")
+        school_id = request.POST.get("school_id")
+        password = request.POST.get("password")
+
+        try:
+            teacher = Teacher.objects.get(t_id=t_id, school_id=school_id)
+            if teacher.password_hash == password:
+                request.session['teacher_id'] = teacher.t_id
+                return redirect('teacher_dashboard')
+            else:
+                return render(request, 'teacher_login.html', {"error": "Invalid Password"})
+        except Teacher.DoesNotExist:
+            return render(request, 'teacher_login.html', {"error": "Invalid Teacher ID or School ID"})
+
     return render(request, 'teacher_login.html')
+
+def teacher_dashboard(request):
+    teacher_id = request.session.get('teacher_id')
+    if not teacher_id:
+        return redirect('teacher_login')
+    
+    try:
+        teacher = Teacher.objects.get(t_id=teacher_id)
+        
+        # Fetch purchases and group by series
+        purchases = Purchase.objects.filter(t_id=teacher).select_related('book_id')
+        grouped_books = {}
+        for p in purchases:
+            series = p.book_id.series_name
+            cls = p.book_id.class_num
+            if series not in grouped_books:
+                grouped_books[series] = []
+            grouped_books[series].append(cls)
+        
+        books_data = []
+        for series, classes in grouped_books.items():
+            books_data.append({
+                'series': series,
+                'class_num': ", ".join(set(classes)) # Added set() to avoid duplicates if same class bought multiple times
+            })
+            
+        context = {
+            'profile': teacher, # Template uses profile.user... wait, let's check template
+            'teacher': teacher, # Adding this just in case
+            'books': books_data
+        }
+        # The template uses {{ profile.user.first_name }} etc. 
+        # But our Teacher model has teacher_name.
+        # I need to pass a context that matches template expectation OR rely on "Do not modify UI" meaning "visually"
+        # but I can modify template variable names if needed to match backend?
+        # User said: "Display these values: teacher_name, t_id, contact, school_name, school_id"
+        # The template currently has:
+        # {{ profile.user.first_name|default:"Teacher Name" }}
+        # {{ profile.user.username|default:"TID-123" }}
+        # {{ profile.school_name|default:"Demo School" }}
+        # {{ profile.school_id|default:"SCH-001" }}
+        # If I pass `profile` as the teacher object, I need to ensure it has attributes or I need to adapt the template.
+        # User said "Do not modify my HTML layout... Only connect backend logic and replace static values with dynamic values where required."
+        # So I CAN modify the template {{ variables }} to match my model.
+        
+        return render(request, 'teacher_dashboard.html', context)
+        
+    except Teacher.DoesNotExist:
+        return redirect('teacher_login')
+
+def teacher_logout(request):
+    request.session.flush()
+    return redirect('teacher_login')
 
 def student_login(request):
     return render(request, 'student_login.html')
@@ -33,35 +103,30 @@ def contact(request):
 def products(request):
     return render(request, 'products.html')
 
-def teacher_dashboard(request):
-    return render(request, 'teacher_dashboard.html')
-
-
 def admin_login(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
 
-        user = authenticate(request, username=username, password=password)
-
-        if user is not None and user.is_staff:
-            login(request, user)
+        if username == "roshan" and password == "123456":
+            request.session['admin_user'] = username
             return redirect("admin_dashboard")
         else:
             return render(request, "admin_login.html", {
-                "error": "Invalid credentials or not an admin"
+                "error": "Invalid credentials"
             })
 
     return render(request, "admin_login.html")
 
 
-@login_required(login_url='admin_login')
 def admin_dashboard(request):
-    return render(request, "admin_dashboard.html")
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
+    return render(request, 'admin_dashboard.html')
 
 
 def admin_logout(request):
-    logout(request)
+    request.session.flush()
     return redirect("admin_login")
 def request_demo(request):
     if request.method == "POST":

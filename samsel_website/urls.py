@@ -16,6 +16,8 @@ urlpatterns = [
     path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('logout/', views.admin_logout, name='admin_logout'),
     path("request-demo/", views.request_demo, name="request_demo"),
+
     path("generate-paper/", views.generate_paper, name="generate_paper"),
-     path("download-paper/", download_paper_pdf, name="download_paper_pdf"),
+    path("download-paper/", download_paper_pdf, name="download_paper_pdf"),
+    path('teacher-logout/', views.teacher_logout, name='teacher_logout'),
 ]
