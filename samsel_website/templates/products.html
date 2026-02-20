@@ -3,227 +3,616 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>SAMSEL | Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'css/products.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
 
 
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<header>
-    <nav class="navbar">
-        <div class="nav-container">
-        <div class="logo">
-            <div class="logo-main">SAMSEL</div>
-            <div class="logo-sub">Publications</div>
-        </div>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-main">SAMSEL</div>
+                    <div class="logo-sub">Publications</div>
+                </div>
 
-        <ul class="menu">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'products' %}" class="active">Products</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                <ul class="menu">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'products' %}" class="active">Products</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
-            <li class="dropdown">
-                <a href="#">Login ▾</a>
-                <ul class="dropdown-menu">
-                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
-                    <li><a href="#">Student Login</a></li>
+                    <li class="dropdown">
+                        <a href="#">Login ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                            <li><a href="#">Student Login</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-        </ul>
 
-    </div>
-</nav>
-</header>
+            </div>
+        </nav>
+    </header>
 
-<!-- ================= IBOT SERIES ================= -->
- <div class="series-wrapper">
+    <!-- ================= IBOT SERIES ================= -->
+    <div class="series-wrapper">
 
-<section class="series-section active-series" id="ibot-series">
+        <section class="series-section active-series" id="ibot-series">
 
 
-<div class="series-container">
+            <div class="series-container">
 
-    <h1 class="series-title">IBOT SERIES</h1>
+                <h1 class="series-title">IBOT SERIES</h1>
 
-    <div class="series-layout">
+                <div class="series-layout">
 
-        <!-- LEFT : BOOK STACK -->
-        <div class="book-stack">
-            <img src="{% static 'images/ibot9.jpg' %}" class="book active">
-            <img src="{% static 'images/ibot8.jpg' %}" class="book">
-            <img src="{% static 'images/ibot7.jpg' %}" class="book">
-            <img src="{% static 'images/ibot6.jpg' %}" class="book">
-            <img src="{% static 'images/ibot5.jpg' %}" class="book">
-            <img src="{% static 'images/ibot4.jpg' %}" class="book">
-            <img src="{% static 'images/ibot3.jpg' %}" class="book">
-            <img src="{% static 'images/ibot2.jpg' %}" class="book">
-            <img src="{% static 'images/ibot1.jpg' %}" class="book">
-        </div>
+                    <!-- LEFT : BOOK STACK -->
+                    <div class="book-stack">
+                        <img src="{% static 'images/ibot1.jpg' %}" class="book active">
+                        <img src="{% static 'images/ibot2.jpg' %}" class="book">
+                        <img src="{% static 'images/ibot3.jpg' %}" class="book">
+                        <img src="{% static 'images/ibot4.jpg' %}" class="book">
+                        <img src="{% static 'images/ibot5.jpg' %}" class="book">
+                        <img src="{% static 'images/ibot6.jpg' %}" class="book">
+                        <img src="{% static 'images/ibot7.jpg' %}" class="book">
+                        <img src="{% static 'images/ibot8.jpg' %}" class="book">
+                        <img src="{% static 'images/ibot9.jpg' %}" class="book">
+                    </div>
 
-        <!-- CENTER : INDEX PAGE -->
-        <div class="index-preview">
-            <img src="{% static 'images/ibot1.jpg' %}" class="index active">
-            <img src="{% static 'images/ibot2.jpg' %}" class="index">
-            <img src="{% static 'images/ibot3.jpg' %}" class="index">
-            <img src="{% static 'images/ibot4.jpg' %}" class="index">
-            <img src="{% static 'images/ibot5.jpg' %}" class="index">
-            <img src="{% static 'images/ibot6.jpg' %}" class="index">
-            <img src="{% static 'images/ibot7.jpg' %}" class="index">
-            <img src="{% static 'images/ibot8.jpg' %}" class="index">
-            <img src="{% static 'images/ibot9.jpg' %}" class="index">
-        </div>
+                    <!-- CENTER : INDEX PAGE -->
+                    <div class="index-preview">
+                        <img src="{% static 'images/ibotindex1.jpeg' %}" class="index active">
+                        <img src="{% static 'images/ibot2.jpg' %}" class="index">
+                        <img src="{% static 'images/ibot3.jpg' %}" class="index">
+                        <img src="{% static 'images/ibot4.jpg' %}" class="index">
+                        <img src="{% static 'images/ibot5.jpg' %}" class="index">
+                        <img src="{% static 'images/ibot6.jpg' %}" class="index">
+                        <img src="{% static 'images/ibot7.jpg' %}" class="index">
+                        <img src="{% static 'images/ibot8.jpg' %}" class="index">
+                        <img src="{% static 'images/ibot9.jpg' %}" class="index">
+                    </div>
 
-        <!-- RIGHT : CONTENT -->
-        <div class="book-content">
-            <div class="content active"><p>IBOT Class 1 description...</p></div>
-            <div class="content"><p>IBOT Class 2 description...</p></div>
-            <div class="content"><p>IBOT Class 3 description...</p></div>
-            <div class="content"><p>IBOT Class 4 description...</p></div>
-            <div class="content"><p>IBOT Class 5 description...</p></div>
-            <div class="content"><p>IBOT Class 6 description...</p></div>
-            <div class="content"><p>IBOT Class 7 description...</p></div>
-            <div class="content"><p>IBOT Class 8 description...</p></div>
-            <div class="content"><p>IBOT Class 9 description...</p></div>
-        </div>
+                    <!-- RIGHT : CONTENT -->
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>This book is designed to introduce Class 1 students to the exciting world of computers in
+                                a fun and simple way. It begins with understanding smart machines and the basic parts of
+                                a computer, helping children recognize how technology helps us in daily life. The book
+                                gradually introduces young learners to ScratchJr, where they can start creating small
+                                animations and stories through easy blocks.</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 2 description...</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 3 description...</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 4 description...</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 5 description...</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 6 description...</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 7 description...</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 8 description...</p>
+                        </div>
+                        <div class="content">
+                            <p>IBOT Class 9 description...</p>
+                        </div>
+                    </div>
 
-    </div>
+                </div>
 
-    <div class="series-nav">
-        <button onclick="goSeries(-1)">←</button>
-        <button onclick="goSeries(1)">→</button>
-    </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
 
-</div>
-
-
-</section>
-
-<!-- ================= ISMART SERIES ================= -->
-
-<section class="series-section" id="ismart-series">
-
-
-<div class="series-container">
-
-    <h1 class="series-title">ISMART SERIES</h1>
-
-    <div class="series-layout">
-
-        <div class="book-stack">
-            <img src="{% static 'images/low 1 - Copy.png' %}" class="book active">
-            <img src="{% static 'images/low 2.png' %}" class="book">
-            <img src="{% static 'images/low 3.png' %}" class="book">
-            <img src="{% static 'images/high 6.png' %}" class="book">
-            <img src="{% static 'images/high 7.png' %}" class="book">
-            <img src="{% static 'images/high 8.png' %}" class="book">
-            <img src="{% static 'images/high 9.png' %}" class="book">
-        </div>
-
-        <div class="index-preview">
-            <img src="{% static 'images/high 9.png' %}" class="index active">
-            <img src="{% static 'images/high 8.png' %}" class="index">
-            <img src="{% static 'images/high 7.png' %}" class="index">
-            <img src="{% static 'images/high 6.png' %}" class="index">
-            <img src="{% static 'images/low 3.png' %}" class="index">
-            <img src="{% static 'images/low 2.png' %}" class="index">
-            <img src="{% static 'images/low 1 - Copy.png' %}" class="index">
-
-        </div>
-
-        <div class="book-content">
-            <div class="content active"><p>ISMART Level 1...</p></div>
-            <div class="content"><p>ISMART Level 2...</p></div>
-            <div class="content"><p>ISMART Level 3...</p></div>
-            <div class="content"><p>ISMART Level 4...</p></div>
-            <div class="content"><p>ISMART Level 5...</p></div>
-            <div class="content"><p>ISMART Level 6...</p></div>
-            <div class="content"><p>ISMART Level 7...</p></div>
-        </div>
-
-    </div>
-
-     <div class="series-nav">
-        <button onclick="goSeries(-1)">←</button>
-        <button onclick="goSeries(1)">→</button>
-    </div>
-
-</div>
-
-
-</section>
-</div> <!-- End of series-wrapper -->
-
-<section class="purchase-section">
-
-    <div class="purchase-container">
-
-        <h2 class="purchase-title">Purchase Request</h2>
-
-        <!-- Toggle Buttons -->
-        <div class="purchase-toggle">
-            <button class="toggle-btn active" onclick="showPurchase('whatsapp')">
-                WhatsApp Order
-            </button>
-
-            <button class="toggle-btn" onclick="showPurchase('email')">
-                Email Request
-            </button>
-        </div>
-
-        <!-- ================= WHATSAPP OPTION ================= -->
-        <div id="whatsapp-box" class="purchase-box active">
-
-            <div class="qr-area">
-                <img src="{% static 'images/whatsapp.jpeg' %}" alt="WhatsApp QR">
             </div>
 
-            <div class="purchase-info">
-                <h3>Scan & Order Instantly</h3>
-                <p>
-                    Scan the QR code to open WhatsApp and place your order directly with us.
-                    Share your required book list and school details for quick processing.
-                </p>
+
+        </section>
+
+
+        <!-- ================= ISMART SERIES ================= -->
+
+        <section class="series-section" id="ismart-series">
+
+
+            <div class="series-container">
+
+                <h1 class="series-title">ISMART SERIES</h1>
+
+                <div class="series-layout">
+
+                    <div class="book-stack">
+                        <img src="{% static 'images/low 1 - Copy.png' %}" class="book active">
+                        <img src="{% static 'images/low 2.png' %}" class="book">
+                        <img src="{% static 'images/low 3.png' %}" class="book">
+                        <img src="{% static 'images/low 4.png' %}" class="book">
+                        <img src="{% static 'images/low 5.png' %}" class="book">
+                        <img src="{% static 'images/high 6.png' %}" class="book">
+                        <img src="{% static 'images/high 7.png' %}" class="book">
+                        <img src="{% static 'images/high 8.png' %}" class="book">
+                        <img src="{% static 'images/high 9.png' %}" class="book">
+                    </div>
+
+                    <div class="index-preview">
+                        <img src="{% static 'images/low 1 - Copy.png' %}" class="index active">
+                        <img src="{% static 'images/low 2.png' %}" class="index">
+                        <img src="{% static 'images/low 3.png' %}" class="index">
+                        <img src="{% static 'images/low 4.png' %}" class="index">
+                        <img src="{% static 'images/low 5.png' %}" class="index">
+                        <img src="{% static 'images/high 6.png' %}" class="index">
+                        <img src="{% static 'images/high 7.png' %}" class="index">
+                        <img src="{% static 'images/high 8.png' %}" class="index">
+                        <img src="{% static 'images/high 9.png' %}" class="index">
+
+                    </div>
+
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>ISMART Level 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 3...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 4...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 5...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 6...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 7...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 8...</p>
+                        </div>
+                        <div class="content">
+                            <p>ISMART Level 9...</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= I-WHIZZ SERIES ================= -->
+        <section class="series-section" id="iwhizz-series">
+            <div class="series-container">
+                <h1 class="series-title">I-WHIZZ SERIES</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/iwhizz1.jpg' %}" class="book active">
+                        <img src="{% static 'images/iwhizz2.jpg' %}" class="book">
+                        <img src="{% static 'images/iwhizz3.jpg' %}" class="book">
+                        <img src="{% static 'images/iwhizz4.jpg' %}" class="book">
+                        <img src="{% static 'images/iwhizz5.jpg' %}" class="book">
+                        <img src="{% static 'images/iwhizz6.jpg' %}" class="book">
+                        <img src="{% static 'images/iwhizz7.jpg' %}" class="book">
+                        <img src="{% static 'images/iwhizz8.jpg' %}" class="book">
+                        <img src="{% static 'images/iwhizz9.jpg' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/iwhizz1.jpg' %}" class="index active">
+                        <img src="{% static 'images/iwhizz2.jpg' %}" class="index">
+                        <img src="{% static 'images/iwhizz3.jpg' %}" class="index">
+                        <img src="{% static 'images/iwhizz4.jpg' %}" class="index">
+                        <img src="{% static 'images/iwhizz5.jpg' %}" class="index">
+                        <img src="{% static 'images/iwhizz6.jpg' %}" class="index">
+                        <img src="{% static 'images/iwhizz7.jpg' %}" class="index">
+                        <img src="{% static 'images/iwhizz8.jpg' %}" class="index">
+                        <img src="{% static 'images/iwhizz9.jpg' %}" class="index">
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>i-Whizz Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 3...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 4...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 5...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 6...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 7...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 8...</p>
+                        </div>
+                        <div class="content">
+                            <p>i-Whizz Class 9...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= APPLICATION SERIES 2007 ================= -->
+        <section class="series-section" id="app2007-series">
+            <div class="series-container">
+                <h1 class="series-title">APPLICATION SERIES 2007</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/App1.jpg' %}" class="book active">
+                        <img src="{% static 'images/App2.jpg' %}" class="book">
+                        <img src="{% static 'images/App3.jpg' %}" class="book">
+                        <img src="{% static 'images/App4.jpg' %}" class="book">
+                        <img src="{% static 'images/App5.jpg' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/App1.jpg' %}" class="index active">
+                        <img src="{% static 'images/App2.jpg' %}" class="index">
+                        <img src="{% static 'images/App3.jpg' %}" class="index">
+                        <img src="{% static 'images/App4.jpg' %}" class="index">
+                        <img src="{% static 'images/App5.jpg' %}" class="index">
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>App Series 2007 Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>App Series 2007 Class 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>App Series 2007 Class 3...</p>
+                        </div>
+                        <div class="content">
+                            <p>App Series 2007 Class 4...</p>
+                        </div>
+                        <div class="content">
+                            <p>App Series 2007 Class 5...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= APPLICATION SERIES 2016 ================= -->
+        <section class="series-section" id="app2016-series">
+            <div class="series-container">
+                <h1 class="series-title">APPLICATION SERIES 2016</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/2016 ppt.png' %}" class="book active">
+                        <img src="{% static 'images/2016 excel.png' %}" class="book">
+                        <img src="{% static 'images/2016 word.png' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/2016 ppt.png' %}" class="index active">
+                        <img src="{% static 'images/2016 excel.png' %}" class="index">
+                        <img src="{% static 'images/2016 word.png' %}" class="index">
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>App Series 2016 Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>App Series 2016 Class 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>App Series 2016 Class 3...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= YOUNG WIZARD SERIES ================= -->
+        <section class="series-section" id="young-wizard-series">
+            <div class="series-container">
+                <h1 class="series-title">YOUNG WIZARD SERIES</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/young1.jpg' %}" class="book active">
+                        <img src="{% static 'images/young2.jpg' %}" class="book">
+                        <img src="{% static 'images/young3.jpg' %}" class="book">
+                        <img src="{% static 'images/young4.jpg' %}" class="book">
+                        <img src="{% static 'images/young5.jpg' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/young1.jpg' %}" class="index active">
+                        <img src="{% static 'images/young2.jpg' %}" class="index">
+                        <img src="{% static 'images/young3.jpg' %}" class="index">
+                        <img src="{% static 'images/young4.jpg' %}" class="index">
+                        <img src="{% static 'images/young5.jpg' %}" class="index">
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>Young Wizard Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>Young Wizard Class 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>Young Wizard Class 3...</p>
+                        </div>
+                        <div class="content">
+                            <p>Young Wizard Class 4...</p>
+                        </div>
+                        <div class="content">
+                            <p>Young Wizard Class 5...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROGRAMMING SERIES ================= -->
+        <section class="series-section" id="programming-series">
+            <div class="series-container">
+                <h1 class="series-title">PROGRAMMING SERIES</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/Pro1 New.jpg' %}" class="book active">
+                        <img src="{% static 'images/Pro2.jpg' %}" class="book">
+                        <img src="{% static 'images/Pro3.jpg' %}" class="book">
+                        <img src="{% static 'images/Pro4 New.jpg' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/Pro1 New.jpg' %}" class="index active">
+                        <img src="{% static 'images/Pro2.jpg' %}" class="index">
+                        <img src="{% static 'images/Pro3.jpg' %}" class="index">
+                        <img src="{% static 'images/Pro4 New.jpg' %}" class="index">
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>Programming Series Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>Programming Series Class 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>Programming Series Class 3...</p>
+                        </div>
+                        <div class="content">
+                            <p>Programming Series Class 4...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= RIGHT-CLICK SERIES ================= -->
+        <section class="series-section" id="right-click-series">
+            <div class="series-container">
+                <h1 class="series-title">RIGHT-CLICK SERIES</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/ict6.jpg' %}" class="book active">
+                        <img src="{% static 'images/ict7.jpg' %}" class="book">
+                        <img src="{% static 'images/ict8.jpg' %}" class="book">
+                        <img src="{% static 'images/ict9.jpg' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/ict6.jpg' %}" class="index active">
+                        <img src="{% static 'images/ict7.jpg' %}" class="index">
+                        <img src="{% static 'images/ict8.jpg' %}" class="index">
+                        <img src="{% static 'images/ict9.jpg' %}" class="index">
+                        <img src="{% static 'images/ict7.jpg' %}" class="index">
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>Right-click Series Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>Right-click Series Class 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>Right-click Series Class 3...</p>
+                        </div>
+                        <div class="content">
+                            <p>Right-click Series Class 4...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MY COMPUTER SERIES ================= -->
+        <section class="series-section" id="my-computer-series">
+            <div class="series-container">
+                <h1 class="series-title">MY COMPUTER SERIES</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/my1.jpg' %}" class="book active">
+                        <img src="{% static 'images/my2.jpg' %}" class="book">
+                        <img src="{% static 'images/my3.jpg' %}" class="book">
+                        <img src="{% static 'images/my4.jpg' %}" class="book">
+                        <img src="{% static 'images/my5.jpg' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/my1.jpg' %}" class="index active">
+                        <img src="{% static 'images/my2.jpg' %}" class="index">
+                        <img src="{% static 'images/my3.jpg' %}" class="index">
+                        <img src="{% static 'images/my4.jpg' %}" class="index">
+                        <img src="{% static 'images/my5.jpg' %}" class="index">
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>My Computer Series Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>My Computer Series Class 2...</p>
+                        </div>
+                        <div class="content">
+                            <p>My Computer Series Class 3...</p>
+                        </div>
+                        <div class="content">
+                            <p>My Computer Series Class 4...</p>
+                        </div>
+                        <div class="content">
+                            <p>My Computer Series Class 5...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LITTLE WIZARD SERIES ================= -->
+        <section class="series-section" id="little-wizard-series">
+            <div class="series-container">
+                <h1 class="series-title">LITTLE WIZARD SERIES</h1>
+                <div class="series-layout">
+                    <div class="book-stack">
+                        <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" class="book active">
+                        <img src="{% static 'images/Kids level 2 wrapper.jpg' %}" class="book">
+                    </div>
+                    <div class="index-preview">
+                        <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" class="index active">
+                        <img src="{% static 'images/Kids level 2 wrapper.jpg' %}" class="index">
+
+                    </div>
+                    <div class="book-content">
+                        <div class="content active">
+                            <p>Little Wizard Series Class 1...</p>
+                        </div>
+                        <div class="content">
+                            <p>Little Wizard Series Class 2...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="series-nav">
+                    <button onclick="goSeries(-1)">←</button>
+                    <button onclick="goSeries(1)">→</button>
+                </div>
+            </div>
+        </section>
+    </div> <!-- End of series-wrapper -->
+
+    <section class="purchase-section">
+
+        <div class="purchase-container">
+
+            <h2 class="purchase-title">Purchase Request</h2>
+
+            <!-- Toggle Buttons -->
+            <div class="purchase-toggle">
+                <button class="toggle-btn active" onclick="showPurchase('whatsapp')">
+                    WhatsApp Order
+                </button>
+
+                <button class="toggle-btn" onclick="showPurchase('email')">
+                    Email Request
+                </button>
+            </div>
+
+            <!-- ================= WHATSAPP OPTION ================= -->
+            <div id="whatsapp-box" class="purchase-box active">
+
+                <div class="qr-area">
+                    <img src="{% static 'images/whatsapp.jpeg' %}" alt="WhatsApp QR">
+                </div>
+
+                <div class="purchase-info">
+                    <h3>Scan & Order Instantly</h3>
+                    <p>
+                        Scan the QR code to open WhatsApp and place your order directly with us.
+                        Share your required book list and school details for quick processing.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- ================= EMAIL OPTION ================= -->
+            <div id="email-box" class="purchase-box">
+
+                <form class="purchase-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="School Name" required>
+                    <input type="email" placeholder="Mail ID" required>
+
+                    <textarea placeholder="Your Request (Books / Quantity / Details)" rows="4"></textarea>
+
+                    <button type="submit" class="send-btn">Send Request</button>
+                </form>
+
             </div>
 
         </div>
 
-
-        <!-- ================= EMAIL OPTION ================= -->
-        <div id="email-box" class="purchase-box">
-
-            <form class="purchase-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="text" placeholder="School Name" required>
-                <input type="email" placeholder="Mail ID" required>
-
-                <textarea placeholder="Your Request (Books / Quantity / Details)" rows="4"></textarea>
-
-                <button type="submit" class="send-btn">Send Request</button>
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 
-<script src="{% static 'js/products.js' %}"></script>
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
-</footer>
+    <script src="{% static 'js/products.js' %}"></script>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
+    </footer>
 
 </body>
+
 </html>

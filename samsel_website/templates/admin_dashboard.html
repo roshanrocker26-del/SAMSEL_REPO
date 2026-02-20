@@ -108,15 +108,17 @@
                                 <select id="series-dropdown"
                                     style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
                                     <option value="">-- Select Series --</option>
-                                    <option value="Series 1">Series 1</option>
-                                    <option value="Series 2">Series 2</option>
-                                    <option value="Series 3">Series 3</option>
-                                    <option value="Series 4">Series 4</option>
-                                    <option value="Series 5">Series 5</option>
-                                    <option value="Series 6">Series 6</option>
-                                    <option value="Series 7">Series 7</option>
-                                    <option value="Series 8">Series 8</option>
-                                    <option value="Series 9">Series 9</option>
+
+                                    <option value="Series 1">i-Smart Series</option>
+                                    <option value="Series 2">i-Whizz Series</option>
+                                    <option value="Series 3"> Application Series 2007</option>
+                                    <option value="Series 4">i-Bot Series</option>
+                                    <option value="Series 5">Young Wizard Series</option>
+                                    <option value="Series 6">Application Series 2016</option>
+                                    <option value="Series 7"> Right-click Series </option>
+                                    <option value="Series 8">Programming Series</option>
+                                    <option value="Series 9">My Computer Series</option>
+                                    <option value="Series 10">Little Wizard Series</option>
                                 </select>
                                 <button type="button" onclick="addSeries()" class="add-btn">Add
                                     Series</button>
@@ -187,7 +189,8 @@
 
         function addSeries() {
             const dropdown = document.getElementById('series-dropdown');
-            const seriesName = dropdown.value;
+            if (!dropdown.value) return alert("Please select a series");
+            const seriesName = dropdown.options[dropdown.selectedIndex].text.trim();
 
             if (!seriesName) return alert("Please select a series");
             if (addedSeries.has(seriesName)) return alert("Series already added");
@@ -199,6 +202,22 @@
             if (summaryList.innerText.includes("No books selected yet.")) {
                 summaryList.innerHTML = '';
             }
+
+
+            const seriesConfig = {
+                "i-Smart Series": ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9"],
+                "i-Whizz Series": ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9"],
+                "i-Bot Series": ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9"],
+                "Application Series 2007": ["MS OFFICE 2007", "MS WORD 2007", "MS EXCEL 2007", "MS POWERPOINT 2007", "MS ACCESS 2007"],
+                "Young Wizard Series": ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"],
+                "Application Series 2016": ["MS Word 2016", "MS Excel 2016", "MS PowerPoint 2016"],
+                "Right-click Series": ["Std 6", "Std 7", "Std 8", "Std 9"],
+                "Programming Series": ["Multimedia & Flash", "HTML (English & Tamil)", "C Programming", "C++ Programming", "Visual Basic and MS Access 2007"],
+                "My Computer Series": ["Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5"],
+                "Little Wizard Series": ["Book A", "Book B"]
+            };
+
+            const books = seriesConfig[seriesName] || ["Class 1", "Class 2", "Class 3", "Class 4", "Class 5", "Class 6", "Class 7", "Class 8", "Class 9"];
 
             const container = document.getElementById('selected-series-container');
             const seriesBlock = document.createElement('div');
@@ -214,11 +233,11 @@
                 <h3 style="margin: 0; color: #333; font-size: 18px;">${seriesName}</h3>
                 <button type="button" onclick="removeSeries('${seriesName}', this)" style="background: #ffebee; color: #d32f2f; border: none; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: bold;">✕ Remove</button>
             </div>
-            <div class="checkbox-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-                ${Array.from({ length: 9 }, (_, i) => `
+            <div class="checkbox-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px;">
+                ${books.map(book => `
                     <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 4px;">
                         <input type="checkbox" onchange="updateTotals()" class="book-checkbox" data-series="${seriesName}" style="accent-color: #e91e63; width: 16px; height: 16px;"> 
-                        <span style="font-size: 14px;">Class ${i + 1}</span>
+                        <span style="font-size: 14px;">${book}</span>
                     </label>
                 `).join('')}
             </div>
