@@ -14,6 +14,20 @@ urlpatterns = [
     path('teacher/dashboard/', views.teacher_dashboard, name='teacher_dashboard'),
     path('admin-login/', views.admin_login, name='admin_login'),
     path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    path('super-admin/', views.super_admin, name='super_admin'),
+    # School CRUD
+    path('super-admin/school/add/', views.add_school, name='add_school'),
+    path('super-admin/school/edit/<str:pk>/', views.edit_school, name='edit_school'),
+    path('super-admin/school/delete/<str:pk>/', views.delete_school, name='delete_school'),
+    # Teacher CRUD
+    path('super-admin/teacher/add/', views.add_teacher, name='add_teacher'),
+    path('super-admin/teacher/edit/<str:pk>/', views.edit_teacher, name='edit_teacher'),
+    path('super-admin/teacher/delete/<str:pk>/', views.delete_teacher, name='delete_teacher'),
+    # Book CRUD
+    path('super-admin/book/add/', views.add_book, name='add_book'),
+    path('super-admin/book/edit/<str:pk>/', views.edit_book, name='edit_book'),
+    path('super-admin/book/delete/<str:pk>/', views.delete_book, name='delete_book'),
+    
     path('logout/', views.admin_logout, name='admin_logout'),
     path("request-demo/", views.request_demo, name="request_demo"),
     path("generate-paper/", views.generate_paper, name="generate_paper"),

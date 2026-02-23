@@ -1,0 +1,545 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin Dashboard - SAMSEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/super_admin.css' %}">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">SAMSEL ADMIN</span>
+            </div>
+            <button class="toggle-btn" id="toggleBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="#" class="menu-link active" data-section="overview">
+                    <i class="fas fa-th-large"></i>
+                    <span>Overview</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link" data-section="series">
+                    <i class="fas fa-book"></i>
+                    <span>Book Series</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link" data-section="teachers">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teacher Directory</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link" data-section="schools">
+                    <i class="fas fa-school"></i>
+                    <span>School Info</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer" style="padding: 20px; border-top: 1px solid var(--glass-border);">
+            <a href="{% url 'admin_logout' %}" class="menu-link" style="color: var(--danger-color);">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="header-section">
+            <div class="welcome-text">
+                <h1 id="section-title">Dashboard Overview</h1>
+                <p>Welcome back, Super Admin! Management console is ready.</p>
+            </div>
+            <div class="action-header">
+                <button class="btn btn-primary" id="global-add-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add New</span>
+                </button>
+            </div>
+        </div>
+
+        {% if messages %}
+        <div class="messages-container">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                <span>{{ message }}</span>
+                <i class="fas fa-times" onclick="this.parentElement.style.display='none'"></i>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- OVERVIEW SECTION -->
+        <div id="overview" class="dashboard-section active">
+            <div class="section-header">
+                <h2>Quick Statistics</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px;">
+                <div
+                    style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <p style="color: #636e72; font-size: 14px; margin-bottom: 10px;">Total Series</p>
+                    <h3 style="font-size: 28px;">{{ series|length }}</h3>
+                </div>
+                <div
+                    style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <p style="color: #636e72; font-size: 14px; margin-bottom: 10px;">Active Teachers</p>
+                    <h3 style="font-size: 28px;">{{ teachers|length }}</h3>
+                </div>
+                <div
+                    style="background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+                    <p style="color: #636e72; font-size: 14px; margin-bottom: 10px;">Registered Schools</p>
+                    <h3 style="font-size: 28px;">{{ schools|length }}</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOOK SERIES SECTION -->
+        <div id="series" class="dashboard-section">
+            <div class="section-header">
+                <h2>Book Series List</h2>
+                <div class="actions">
+                    <button class="btn btn-primary btn-sm" style="padding: 8px 16px;">
+                        <i class="fas fa-plus"></i> Create Series
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Series Name</th>
+                            <th>Total Books</th>
+                            <th>Target Classes</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in series %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>
+                                <ul style="list-style: none; font-size: 13px; color: #636e72;">
+                                    {% for book in item.books %}
+                                    <li>• {{ book.series_name }} (Cl {{ book.class_name }})</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>{{ item.class_range }}</td>
+                            <td><span class="status-badge status-active">Live</span></td>
+                            <td class="actions">
+                                <button class="btn-icon btn-view" title="View Details"><i
+                                        class="fas fa-eye"></i></button>
+                                <button class="btn-icon btn-edit" title="Edit"
+                                    onclick="editBook('{{ book.book_id }}', '{{ book.series_name }}', '{{ book.class_name }}')"><i
+                                        class="fas fa-edit"></i></button>
+                                <a href="" class="btn-icon btn-delete" title="Delete"
+                                    onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" style="text-align: center; padding: 40px; color: #636e72;">No book series
+                                found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TEACHER DIRECTORY SECTION -->
+        <div id="teachers" class="dashboard-section">
+            <div class="section-header">
+                <h2>Teacher Directory</h2>
+                <div class="actions">
+                    <button class="btn btn-primary btn-sm" style="padding: 8px 16px;">
+                        <i class="fas fa-user-plus"></i> Add Teacher
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>School</th>
+                            <th>Contact</th>
+                            <th>Books Purchased</th>
+                            <th>Purchase ID</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for teacher in teachers %}
+                        <tr>
+                            <td>{{ teacher.teacher_name }}</td>
+                            <td>{{ teacher.school_name|default:teacher.school_id }}</td>
+                            <td>{{ teacher.contact }}</td>
+                            <td>{{ teacher.no_of_series_purchased }} Series</td>
+                            <td>{{ teacher.purchase_id|default:"N/A" }}</td>
+                            <td class="actions">
+                                <button class="btn-icon btn-edit"
+                                    onclick="editTeacher('{{ teacher.t_id }}', '{{ teacher.teacher_name }}', '{{ teacher.school_id }}', '{{ teacher.school_name }}', '{{ teacher.contact }}', '{{ teacher.no_of_series_purchased }}', '{{ teacher.purchase_id }}')"><i
+                                        class="fas fa-user-edit"></i></button>
+                                <a href="{% url 'delete_teacher' teacher.t_id %}" class="btn-icon btn-delete"
+                                    onclick="return confirm('Are you sure?')"><i class="fas fa-user-times"></i></a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 40px; color: #636e72;">No teachers
+                                found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SCHOOL INFO SECTION -->
+        <div id="schools" class="dashboard-section">
+            <div class="section-header">
+                <h2>Registered Schools</h2>
+                <div class="actions">
+                    <button class="btn btn-primary btn-sm" style="padding: 8px 16px;"
+                        onclick="openModal('schoolModal')">
+                        <i class="fas fa-plus-circle"></i> Register School
+                    </button>
+                </div>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>School ID</th>
+                            <th>School Name</th>
+                            <th>Teacher Name</th> <!-- Using teacher_name from School model per user SQL -->
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for school in schools %}
+                        <tr>
+                            <td>{{ school.school_id }}</td>
+                            <td>{{ school.school_name }}</td>
+                            <td>{{ school.teacher_name }}</td>
+                            <!-- Using teacher_name from School model per user SQL -->
+                            <td><span class="status-badge status-active">Premium</span></td>
+                            <td class="actions">
+                                <button class="btn-icon btn-edit"
+                                    onclick="editSchool('{{ school.school_id }}', '{{ school.school_name }}', '{{ school.teacher_name }}')"><i
+                                        class="fas fa-edit"></i></button>
+                                <a href="{% url 'delete_school' school.school_id %}" class="btn-icon btn-delete"
+                                    onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" style="text-align: center; padding: 40px; color: #636e72;">No schools
+                                registered.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- MODALS -->
+    <!-- School Modal -->
+    <div class="modal-overlay" id="schoolModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="schoolModalTitle">Add New School</h2>
+                <button class="close-modal" onclick="closeModal('schoolModal')">&times;</button>
+            </div>
+            <form id="schoolForm" action="{% url 'add_school' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>School ID</label>
+                    {{ school_form.school_id }}
+                </div>
+                <div class="form-group">
+                    <label>School Name</label>
+                    {{ school_form.school_name }}
+                </div>
+                <div class="form-group">
+                    <label>Teacher Name</label>
+                    {{ school_form.teacher_name }}
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('schoolModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save School</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Teacher Modal -->
+    <div class="modal-overlay" id="teacherModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="teacherModalTitle">Add New Teacher</h2>
+                <button class="close-modal" onclick="closeModal('teacherModal')">&times;</button>
+            </div>
+            <form id="teacherForm" action="{% url 'add_teacher' %}" method="POST">
+                {% csrf_token %}
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Teacher ID</label>
+                        {{ teacher_form.t_id }}
+                    </div>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        {{ teacher_form.teacher_name }}
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>School ID</label>
+                        {{ teacher_form.school_id }}
+                    </div>
+                    <div class="form-group">
+                        <label>School Name</label>
+                        {{ teacher_form.school_name }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Contact</label>
+                    {{ teacher_form.contact }}
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    {{ teacher_form.password_hash }}
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('teacherModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Teacher</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Book Modal -->
+    <div class="modal-overlay" id="bookModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="bookModalTitle">Add New Book</h2>
+                <button class="close-modal" onclick="closeModal('bookModal')">&times;</button>
+            </div>
+            <form id="bookForm" action="{% url 'add_book' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Book ID</label>
+                    {{ book_form.book_id }}
+                </div>
+                <div class="form-group">
+                    <label>Series Name</label>
+                    {{ book_form.series_name }}
+                </div>
+                <div class="form-group">
+                    <label>Class</label>
+                    {{ book_form.class_name }}
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('bookModal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const menuLinks = document.querySelectorAll('.menu-link[data-section]');
+        const sections = document.querySelectorAll('.dashboard-section');
+        const sectionTitle = document.getElementById('section-title');
+        const globalAddBtnText = document.querySelector('#global-add-btn span');
+
+        // Toggle Sidebar
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+
+        // Global Add Button Logic
+        const globalAddBtn = document.getElementById('global-add-btn');
+        globalAddBtn.addEventListener('click', () => {
+            const activeLink = document.querySelector('.menu-link.active');
+            const section = activeLink.getAttribute('data-section');
+
+            if (section === 'schools') openModal('schoolModal');
+            else if (section === 'teachers') openModal('teacherModal');
+            else if (section === 'series') openModal('bookModal');
+            else alert('Select a section (Book Series, Teachers, or Schools) to add items.');
+        });
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            // Reset forms when opening for "Add"
+            if (!modalId.includes('Edit')) {
+                const form = document.getElementById(modalId).querySelector('form');
+                form.reset();
+                if (modalId === 'schoolModal') {
+                    document.getElementById('schoolModalTitle').innerText = "Add New School";
+                    form.action = "{% url 'add_school' %}";
+                    form.querySelector('input[name="school_id"]').readOnly = false;
+                }
+                if (modalId === 'teacherModal') {
+                    document.getElementById('teacherModalTitle').innerText = "Add New Teacher";
+                    form.action = "{% url 'add_teacher' %}";
+                    form.querySelector('input[name="t_id"]').readOnly = false;
+                }
+                if (modalId === 'bookModal') {
+                    document.getElementById('bookModalTitle').innerText = "Add New Book";
+                    form.action = "{% url 'add_book' %}";
+                    form.querySelector('input[name="book_id"]').readOnly = false;
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        // Edit Functions
+        function editSchool(id, name, teacher) {
+            const form = document.getElementById('schoolForm');
+            document.getElementById('schoolModalTitle').innerText = "Edit School: " + id;
+            form.action = "/super-admin/school/edit/" + id + "/";
+
+            form.querySelector('input[name="school_id"]').value = id;
+            form.querySelector('input[name="school_id"]').readOnly = true;
+            form.querySelector('input[name="school_name"]').value = name;
+            form.querySelector('input[name="teacher_name"]').value = teacher;
+
+            openModal('schoolModal');
+        }
+
+        function editTeacher(id, name, s_id, s_name, contact, purchased, p_id) {
+            const form = document.getElementById('teacherForm');
+            document.getElementById('teacherModalTitle').innerText = "Edit Teacher: " + id;
+            form.action = "/super-admin/teacher/edit/" + id + "/";
+
+            form.querySelector('input[name="t_id"]').value = id;
+            form.querySelector('input[name="t_id"]').readOnly = true;
+            form.querySelector('input[name="teacher_name"]').value = name;
+            form.querySelector('input[name="school_id"]').value = s_id;
+            form.querySelector('input[name="school_name"]').value = s_name;
+            form.querySelector('input[name="contact"]').value = contact;
+            form.querySelector('input[name="no_of_series_purchased"]').value = purchased;
+            form.querySelector('input[name="purchase_id"]').value = p_id;
+
+            openModal('teacherModal');
+        }
+
+        function editBook(id, series, cl) {
+            const form = document.getElementById('bookForm');
+            document.getElementById('bookModalTitle').innerText = "Edit Book: " + id;
+            form.action = "/super-admin/book/edit/" + id + "/";
+
+            form.querySelector('input[name="book_id"]').value = id;
+            form.querySelector('input[name="book_id"]').readOnly = true;
+            form.querySelector('input[name="series_name"]').value = series;
+            form.querySelector('input[name="class_name"]').value = cl;
+
+            openModal('bookModal');
+        }
+
+        // Switch Sections
+        menuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Update active link
+                menuLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Show target section
+                const targetId = link.getAttribute('data-section');
+                sections.forEach(sec => {
+                    sec.classList.remove('active');
+                    if (sec.id === targetId) {
+                        sec.classList.add('active');
+                    }
+                });
+
+                // Update UI titles based on section
+                updateHeaderText(targetId);
+
+                // On mobile, close sidebar after click
+                if (window.innerWidth <= 992) {
+                    sidebar.classList.remove('mobile-active');
+                }
+            });
+        });
+
+        function updateHeaderText(section) {
+            switch (section) {
+                case 'overview':
+                    sectionTitle.innerText = "Dashboard Overview";
+                    globalAddBtnText.innerText = "Add New";
+                    break;
+                case 'series':
+                    sectionTitle.innerText = "Book Series Management";
+                    globalAddBtnText.innerText = "Add Series";
+                    break;
+                case 'teachers':
+                    sectionTitle.innerText = "Teacher Directory Management";
+                    globalAddBtnText.innerText = "Add Teacher";
+                    break;
+                case 'schools':
+                    sectionTitle.innerText = "School Information";
+                    globalAddBtnText.innerText = "Add School";
+                    break;
+                default:
+                    sectionTitle.innerText = "Super Admin Console";
+            }
+        }
+
+        // Mobile responsive toggle (via hamburger if needed)
+        // Add basic touch support
+        let touchStartX = 0;
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        document.addEventListener('touchend', e => {
+            let touchEndX = e.changedTouches[0].screenX;
+            if (touchEndX - touchStartX > 100) {
+                sidebar.classList.add('mobile-active');
+            } else if (touchStartX - touchEndX > 100) {
+                sidebar.classList.remove('mobile-active');
+            }
+        }, false);
+    </script>
+</body>
+
+</html>
