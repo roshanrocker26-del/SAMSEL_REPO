@@ -15,6 +15,16 @@ from django.template.loader import get_template
 
 
 from samsel_project.settings import EMAIL_HOST_USER
+from functools import wraps
+
+def super_admin_required(view_func):
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.session.get('is_super_admin', False):
+            return redirect('super_admin_login')
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
+
 
 def home(request):
     return render(request, 'home.html')
@@ -56,6 +66,28 @@ def admin_login(request):
     return render(request, "admin_login.html")
 
 
+def super_admin_login(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        if username == "admin" and password == "admin789":
+            request.session['is_super_admin'] = True
+            return redirect("super_admin")
+        else:
+            return render(request, "super_admin_login.html", {
+                "error": "Invalid credentials for Super Admin"
+            })
+
+    return render(request, "super_admin_login.html")
+
+
+def super_admin_logout(request):
+    if 'is_super_admin' in request.session:
+        del request.session['is_super_admin']
+    return redirect("super_admin_login")
+
+
 @login_required(login_url='admin_login')
 def admin_dashboard(request):
     return render(request, "admin_dashboard.html")
@@ -65,7 +97,7 @@ from .forms import SchoolForm, TeacherForm, BookForm
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
-@login_required(login_url='admin_login')
+@super_admin_required
 def super_admin(request):
     schools = School.objects.all()
     teachers = Teacher.objects.all()
@@ -106,7 +138,7 @@ def super_admin(request):
     return render(request, "super_admin.html", context)
 
 # --- CRUD for School ---
-@login_required(login_url='admin_login')
+@super_admin_required
 def add_school(request):
     if request.method == "POST":
         form = SchoolForm(request.POST)
@@ -115,7 +147,7 @@ def add_school(request):
             messages.success(request, "School added successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
+@super_admin_required
 def edit_school(request, pk):
     school = get_object_or_404(School, pk=pk)
     if request.method == "POST":
@@ -125,7 +157,7 @@ def edit_school(request, pk):
             messages.success(request, "School updated successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
+@super_admin_required
 def delete_school(request, pk):
     school = get_object_or_404(School, pk=pk)
     school.delete()
@@ -133,7 +165,7 @@ def delete_school(request, pk):
     return redirect('super_admin')
 
 # --- CRUD for Teacher ---
-@login_required(login_url='admin_login')
+@super_admin_required
 def add_teacher(request):
     if request.method == "POST":
         form = TeacherForm(request.POST)
@@ -142,7 +174,7 @@ def add_teacher(request):
             messages.success(request, "Teacher added successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
+@super_admin_required
 def edit_teacher(request, pk):
     teacher = get_object_or_404(Teacher, pk=pk)
     if request.method == "POST":
@@ -152,7 +184,7 @@ def edit_teacher(request, pk):
             messages.success(request, "Teacher updated successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
+@super_admin_required
 def delete_teacher(request, pk):
     teacher = get_object_or_404(Teacher, pk=pk)
     teacher.delete()
@@ -160,7 +192,7 @@ def delete_teacher(request, pk):
     return redirect('super_admin')
 
 # --- CRUD for Book ---
-@login_required(login_url='admin_login')
+@super_admin_required
 def add_book(request):
     if request.method == "POST":
         form = BookForm(request.POST)
@@ -169,7 +201,7 @@ def add_book(request):
             messages.success(request, "Book added successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
+@super_admin_required
 def edit_book(request, pk):
     book = get_object_or_404(Book, pk=pk)
     if request.method == "POST":
@@ -179,7 +211,7 @@ def edit_book(request, pk):
             messages.success(request, "Book updated successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
+@super_admin_required
 def delete_book(request, pk):
     book = get_object_or_404(Book, pk=pk)
     book.delete()
