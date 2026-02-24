@@ -141,6 +141,7 @@ body {
   position: absolute;
   width: 240px;
   border-radius: 14px;
+  max-width: 240px;
 
   box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
 

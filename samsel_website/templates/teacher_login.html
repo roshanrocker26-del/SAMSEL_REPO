@@ -9,23 +9,25 @@
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <!-- Font Awesome for the eye icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <style>
         .password-container {
             position: relative;
             width: 100%;
         }
-        
+
         .password-container input {
             width: 100%;
-            padding-right: 45px; /* Space for the icon */
+            padding-right: 45px;
+            /* Space for the icon */
             box-sizing: border-box;
         }
-        
+
         .toggle-password {
             position: absolute;
             right: 15px;
-            top: 25px; /* Adjust based on input height/padding */
+            top: 25px;
+            /* Adjust based on input height/padding */
             transform: translateY(-50%);
             cursor: pointer;
             color: #6b7280;
@@ -33,7 +35,7 @@
             transition: color 0.3s;
             z-index: 10;
         }
-        
+
         .toggle-password:hover {
             color: #540821;
         }
@@ -92,7 +94,7 @@
                 {% csrf_token %}
                 <input type="text" name="t_id" placeholder="Teacher ID" required>
                 <input type="text" name="school_id" placeholder="School ID" required>
-                
+
                 <div class="password-container">
                     <input type="password" name="password" id="password" placeholder="Password" required>
                     <i class="fa-solid fa-eye-slash toggle-password" id="eyeIcon"></i>
@@ -113,11 +115,11 @@
         const passwordInput = document.getElementById('password');
         const eyeIcon = document.getElementById('eyeIcon');
 
-        eyeIcon.addEventListener('click', function() {
+        eyeIcon.addEventListener('click', function () {
             // Toggle the type attribute
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
-            
+
             // Toggle the icon
             this.classList.toggle('fa-eye');
             this.classList.toggle('fa-eye-slash');

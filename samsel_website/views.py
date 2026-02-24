@@ -1,3 +1,4 @@
+from samsel_website.models import Teacher, Books, Purchase
 import json
 import os
 from django.conf import settings
@@ -123,6 +124,118 @@ def admin_dashboard(request):
     if not request.session.get('admin_user'):
         return redirect('admin_login')
     return render(request, 'admin_dashboard.html')
+
+
+from .forms import TeacherForm, BookForm
+from django.shortcuts import get_object_or_404
+from django.contrib import messages
+
+@login_required(login_url='admin_login')
+def super_admin(request):
+    teachers = Teacher.objects.all()
+    books = Books.objects.all()
+    
+    # Group books by series for the Series table
+    series_data = {}
+    for book in books:
+        if book.series_name not in series_data:
+            series_data[book.series_name] = {
+                'name': book.series_name,
+                'books': [],
+                'classes': set()
+            }
+        series_data[book.series_name]['books'].append(book)
+        series_data[book.series_name]['classes'].add(book.class_num)
+    
+    # Format series data for template
+    formatted_series = []
+    for s_name, data in series_data.items():
+        classes_list = sorted(list(data['classes']))
+        class_range = f"Class {classes_list[0]} - {classes_list[-1]}" if classes_list else "N/A"
+        formatted_series.append({
+            'name': s_name,
+            'books': data['books'],
+            'count': len(data['books']),
+            'class_range': class_range
+        })
+
+    context = {
+        'series': formatted_series,
+        'teachers': teachers,
+        'teacher_form': TeacherForm(),
+        'book_form': BookForm(),
+    }
+    return render(request, "super_admin.html", context)
+
+# --- School CRUD stubs (School model not in current schema) ---
+@login_required(login_url='admin_login')
+def add_school(request):
+    messages.error(request, "School management is not available yet.")
+    return redirect('super_admin')
+
+@login_required(login_url='admin_login')
+def edit_school(request, pk):
+    messages.error(request, "School management is not available yet.")
+    return redirect('super_admin')
+
+@login_required(login_url='admin_login')
+def delete_school(request, pk):
+    messages.error(request, "School management is not available yet.")
+    return redirect('super_admin')
+
+# --- CRUD for Teacher ---
+@login_required(login_url='admin_login')
+def add_teacher(request):
+    if request.method == "POST":
+        form = TeacherForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Teacher added successfully!")
+    return redirect('super_admin')
+
+@login_required(login_url='admin_login')
+def edit_teacher(request, pk):
+    teacher = get_object_or_404(Teacher, pk=pk)
+    if request.method == "POST":
+        form = TeacherForm(request.POST, instance=teacher)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Teacher updated successfully!")
+    return redirect('super_admin')
+
+@login_required(login_url='admin_login')
+def delete_teacher(request, pk):
+    teacher = get_object_or_404(Teacher, pk=pk)
+    teacher.delete()
+    messages.success(request, "Teacher deleted successfully!")
+    return redirect('super_admin')
+
+# --- CRUD for Book ---
+@login_required(login_url='admin_login')
+def add_book(request):
+    if request.method == "POST":
+        form = BookForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Book added successfully!")
+    return redirect('super_admin')
+
+@login_required(login_url='admin_login')
+def edit_book(request, pk):
+    book = get_object_or_404(Books, pk=pk)
+    if request.method == "POST":
+        form = BookForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Book updated successfully!")
+    return redirect('super_admin')
+
+@login_required(login_url='admin_login')
+def delete_book(request, pk):
+    book = get_object_or_404(Books, pk=pk)
+    book.delete()
+    messages.success(request, "Book deleted successfully!")
+    return redirect('super_admin')
 
 
 def admin_logout(request):

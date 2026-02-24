@@ -43,5 +43,3 @@ class Purchase(models.Model):
 
     def __str__(self):
         return f"{self.t_id.teacher_name} -> {self.book_id.book_id}"
-
-

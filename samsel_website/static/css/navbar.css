@@ -1,24 +1,21 @@
-
 /* ================================
    NAVBAR (CLEAN & PROFESSIONAL)
    ================================ */
 .navbar {
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.7) 0%,
-        rgba(249, 249, 249, 0.6) 50%,
-        rgba(247, 247, 247, 0.5) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(249, 249, 249, 0.6) 50%,
+            rgba(247, 247, 247, 0.5) 100%);
     padding: 12px 40px;
     position: sticky;
     top: 12px;
     z-index: 1000;
     margin: 12px 20px 0 20px;
     border-radius: 20px;
-    box-shadow: 
-        0 12px 30px rgba(0,0,0,0.12),
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12),
         0 0 25px rgba(233, 30, 99, 0.25),
-        inset 0 1px 0 rgba(255,255,255,0.8);
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
 }
 
@@ -45,13 +42,13 @@
 
 .logo-main {
     font-family: 'Brush Script MT';
-    font-size: 28px;
+    font-size: 48px;
     color: #e91e63;
 }
 
 .logo-sub {
     font-family: 'Times New Roman';
-    font-size: 16px;
+    font-size: 30px;
     color: #111;
 }
 
@@ -61,6 +58,7 @@
     display: flex;
     gap: 22px;
 }
+
 .menu li {
     position: relative;
 }
@@ -103,10 +101,12 @@
 /* Dropdown */
 .dropdown-menu {
     position: absolute;
-    top: 100%;                 /* remove hover gap */
+    top: 100%;
+    /* remove hover gap */
     right: 0;
 
-    margin-top: 10px;          /* visual spacing */
+    margin-top: 10px;
+    /* visual spacing */
 
     background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
     min-width: 180px;
@@ -115,8 +115,8 @@
     flex-direction: column;
 
     border-radius: 16px;
-    box-shadow: 
-        0 15px 35px rgba(0,0,0,0.15),
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15),
         0 0 20px rgba(233, 30, 99, 0.2);
 
     overflow: hidden;
@@ -135,9 +135,10 @@
     visibility: visible;
     transform: translateY(0);
 }
+
 .dropdown-menu li a {
-    padding: 12px 16px;
-    font-size: 14px;
+    padding: 14px 20px;
+    font-size: 16px;
     border-radius: 0;
     transition: all 0.2s ease;
 }
@@ -150,12 +151,10 @@
 
 /* FOOTER */
 footer {
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.7) 0%,
-        rgba(249, 249, 249, 0.6) 50%,
-        rgba(247, 247, 247, 0.5) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.7) 0%,
+            rgba(249, 249, 249, 0.6) 50%,
+            rgba(247, 247, 247, 0.5) 100%);
     color: black;
     text-align: center;
     padding: 15px;
