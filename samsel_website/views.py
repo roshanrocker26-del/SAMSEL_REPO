@@ -15,6 +15,16 @@ from django.template.loader import get_template
 
 
 from samsel_project.settings import EMAIL_HOST_USER
+from functools import wraps
+
+def super_admin_required(view_func):
+    @wraps(view_func)
+    def _wrapped_view(request, *args, **kwargs):
+        if not request.session.get('is_super_admin', False):
+            return redirect('super_admin_login')
+        return view_func(request, *args, **kwargs)
+    return _wrapped_view
+
 
 def home(request):
     return render(request, 'home.html')
@@ -72,19 +82,6 @@ def teacher_dashboard(request):
             'teacher': teacher, # Adding this just in case
             'books': books_data
         }
-        # The template uses {{ profile.user.first_name }} etc. 
-        # But our Teacher model has teacher_name.
-        # I need to pass a context that matches template expectation OR rely on "Do not modify UI" meaning "visually"
-        # but I can modify template variable names if needed to match backend?
-        # User said: "Display these values: teacher_name, t_id, contact, school_name, school_id"
-        # The template currently has:
-        # {{ profile.user.first_name|default:"Teacher Name" }}
-        # {{ profile.user.username|default:"TID-123" }}
-        # {{ profile.school_name|default:"Demo School" }}
-        # {{ profile.school_id|default:"SCH-001" }}
-        # If I pass `profile` as the teacher object, I need to ensure it has attributes or I need to adapt the template.
-        # User said "Do not modify my HTML layout... Only connect backend logic and replace static values with dynamic values where required."
-        # So I CAN modify the template {{ variables }} to match my model.
         
         return render(request, 'teacher_dashboard.html', context)
         
@@ -120,6 +117,28 @@ def admin_login(request):
     return render(request, "admin_login.html")
 
 
+def super_admin_login(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        if username == "admin" and password == "admin789":
+            request.session['is_super_admin'] = True
+            return redirect("super_admin")
+        else:
+            return render(request, "super_admin_login.html", {
+                "error": "Invalid credentials for Super Admin"
+            })
+
+    return render(request, "super_admin_login.html")
+
+
+def super_admin_logout(request):
+    if 'is_super_admin' in request.session:
+        del request.session['is_super_admin']
+    return redirect("super_admin_login")
+
+
 def admin_dashboard(request):
     if not request.session.get('admin_user'):
         return redirect('admin_login')
@@ -130,9 +149,8 @@ from .forms import TeacherForm, BookForm
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
+@super_admin_required
 def super_admin(request):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     teachers = Teacher.objects.all()
     books = Books.objects.all()
     
@@ -169,28 +187,24 @@ def super_admin(request):
     return render(request, "super_admin.html", context)
 
 # --- School CRUD stubs (School model not in current schema) ---
+@super_admin_required
 def add_school(request):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     messages.error(request, "School management is not available yet.")
     return redirect('super_admin')
 
+@super_admin_required
 def edit_school(request, pk):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     messages.error(request, "School management is not available yet.")
     return redirect('super_admin')
 
+@super_admin_required
 def delete_school(request, pk):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     messages.error(request, "School management is not available yet.")
     return redirect('super_admin')
 
 # --- CRUD for Teacher ---
+@super_admin_required
 def add_teacher(request):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     if request.method == "POST":
         form = TeacherForm(request.POST)
         if form.is_valid():
@@ -198,9 +212,8 @@ def add_teacher(request):
             messages.success(request, "Teacher added successfully!")
     return redirect('super_admin')
 
+@super_admin_required
 def edit_teacher(request, pk):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     teacher = get_object_or_404(Teacher, pk=pk)
     if request.method == "POST":
         form = TeacherForm(request.POST, instance=teacher)
@@ -209,18 +222,16 @@ def edit_teacher(request, pk):
             messages.success(request, "Teacher updated successfully!")
     return redirect('super_admin')
 
+@super_admin_required
 def delete_teacher(request, pk):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     teacher = get_object_or_404(Teacher, pk=pk)
     teacher.delete()
     messages.success(request, "Teacher deleted successfully!")
     return redirect('super_admin')
 
 # --- CRUD for Book ---
+@super_admin_required
 def add_book(request):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     if request.method == "POST":
         form = BookForm(request.POST)
         if form.is_valid():
@@ -228,9 +239,8 @@ def add_book(request):
             messages.success(request, "Book added successfully!")
     return redirect('super_admin')
 
+@super_admin_required
 def edit_book(request, pk):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     book = get_object_or_404(Books, pk=pk)
     if request.method == "POST":
         form = BookForm(request.POST, instance=book)
@@ -239,9 +249,8 @@ def edit_book(request, pk):
             messages.success(request, "Book updated successfully!")
     return redirect('super_admin')
 
+@super_admin_required
 def delete_book(request, pk):
-    if not request.session.get('admin_user'):
-        return redirect('admin_login')
     book = get_object_or_404(Books, pk=pk)
     book.delete()
     messages.success(request, "Book deleted successfully!")
@@ -251,6 +260,7 @@ def delete_book(request, pk):
 def admin_logout(request):
     request.session.flush()
     return redirect("admin_login")
+
 def request_demo(request):
     if request.method == "POST":
         contact_name = request.POST.get("contact_name")

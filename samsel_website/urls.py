@@ -14,6 +14,8 @@ urlpatterns = [
     path('admin-login/', views.admin_login, name='admin_login'),
     path('admin-dashboard/', views.admin_dashboard, name='admin_dashboard'),
     path('super-admin/', views.super_admin, name='super_admin'),
+    path('super-admin-login/', views.super_admin_login, name='super_admin_login'),
+    path('super-admin-logout/', views.super_admin_logout, name='super_admin_logout'),
     # School CRUD
     path('super-admin/school/add/', views.add_school, name='add_school'),
     path('super-admin/school/edit/<str:pk>/', views.edit_school, name='edit_school'),
