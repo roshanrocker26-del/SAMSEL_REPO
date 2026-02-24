@@ -130,8 +130,9 @@ from .forms import TeacherForm, BookForm
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
-@login_required(login_url='admin_login')
 def super_admin(request):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     teachers = Teacher.objects.all()
     books = Books.objects.all()
     
@@ -168,24 +169,28 @@ def super_admin(request):
     return render(request, "super_admin.html", context)
 
 # --- School CRUD stubs (School model not in current schema) ---
-@login_required(login_url='admin_login')
 def add_school(request):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     messages.error(request, "School management is not available yet.")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
 def edit_school(request, pk):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     messages.error(request, "School management is not available yet.")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
 def delete_school(request, pk):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     messages.error(request, "School management is not available yet.")
     return redirect('super_admin')
 
 # --- CRUD for Teacher ---
-@login_required(login_url='admin_login')
 def add_teacher(request):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     if request.method == "POST":
         form = TeacherForm(request.POST)
         if form.is_valid():
@@ -193,8 +198,9 @@ def add_teacher(request):
             messages.success(request, "Teacher added successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
 def edit_teacher(request, pk):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     teacher = get_object_or_404(Teacher, pk=pk)
     if request.method == "POST":
         form = TeacherForm(request.POST, instance=teacher)
@@ -203,16 +209,18 @@ def edit_teacher(request, pk):
             messages.success(request, "Teacher updated successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
 def delete_teacher(request, pk):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     teacher = get_object_or_404(Teacher, pk=pk)
     teacher.delete()
     messages.success(request, "Teacher deleted successfully!")
     return redirect('super_admin')
 
 # --- CRUD for Book ---
-@login_required(login_url='admin_login')
 def add_book(request):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     if request.method == "POST":
         form = BookForm(request.POST)
         if form.is_valid():
@@ -220,8 +228,9 @@ def add_book(request):
             messages.success(request, "Book added successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
 def edit_book(request, pk):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     book = get_object_or_404(Books, pk=pk)
     if request.method == "POST":
         form = BookForm(request.POST, instance=book)
@@ -230,8 +239,9 @@ def edit_book(request, pk):
             messages.success(request, "Book updated successfully!")
     return redirect('super_admin')
 
-@login_required(login_url='admin_login')
 def delete_book(request, pk):
+    if not request.session.get('admin_user'):
+        return redirect('admin_login')
     book = get_object_or_404(Books, pk=pk)
     book.delete()
     messages.success(request, "Book deleted successfully!")
