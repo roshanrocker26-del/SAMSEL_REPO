@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <title>Admin Dashboard | SAMSEL</title>
     <!-- Reusing teacher styles for the layout -->
-    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}?v={% now 'U' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}?v={% now 'U' %}">
 </head>
 
 <body>
@@ -61,14 +61,14 @@
             <!-- DASHBOARD SECTION -->
             <section id="dashboard-view" class="content-section active">
                 <h2>Overview</h2>
-                <div class="analytics-grid" style="display: flex; gap: 20px;">
-                    <div class="card analytics" style="flex: 1; text-align: center;">
+                <div class="analytics-grid">
+                    <div class="card analytics analytics-card">
                         <div class="circle"></div>
                         <h3>Subscription Analytics</h3>
                         <p>+2500 Active Users</p>
                     </div>
 
-                    <div class="card chart-card" style="flex: 2;">
+                    <div class="card chart-card">
                         <h3>Book Sales</h3>
                         <div class="chart"></div>
                     </div>
@@ -82,8 +82,7 @@
                 {% if messages %}
                 <div class="messages">
                     {% for message in messages %}
-                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}"
-                        style="padding: 10px; margin-bottom: 20px; border-radius: 5px; {% if message.tags == 'error' %}background-color: #f8d7da; color: #721c24;{% else %}background-color: #d4edda; color: #155724;{% endif %}">
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
                         {{ message }}
                     </div>
                     {% endfor %}
@@ -95,8 +94,7 @@
                         {% csrf_token %}
 
                         <!-- Teacher Details: Horizontal Layout -->
-                        <div class="teacher-details-grid"
-                            style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px;">
+                        <div class="teacher-details-grid">
                             <div class="form-group">
                                 <label>Teacher Name</label>
                                 <input type="text" name="teacher_name" required placeholder="Enter Name">
@@ -111,8 +109,7 @@
                                 <input type="text" name="school_name" required placeholder="Enter School Name">
                             </div>
                         </div>
-                        <div class="teacher-details-grid"
-                            style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; margin-bottom: 30px;">
+                        <div class="teacher-details-grid">
                             <div class="form-group">
                                 <label>School ID</label>
                                 <input type="text" name="school_id" required placeholder="Enter School ID">
@@ -120,13 +117,11 @@
                         </div>
 
                         <!-- Series Selection -->
-                        <div class="series-selection"
-                            style="background: #f8f9fa; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
-                            <label style="font-size: 16px; margin-bottom: 10px; display: block;">Select Book
+                        <div class="series-selection">
+                            <label class="series-selection-label">Select Book
                                 Series</label>
-                            <div style="display: flex; gap: 15px;">
-                                <select id="series-dropdown"
-                                    style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                            <div class="series-input-group">
+                                <select id="series-dropdown" class="series-dropdown">
                                     <option value="">-- Select Series --</option>
                                     <option value="Series 1">Series 1</option>
                                     <option value="Series 2">Series 2</option>
@@ -142,22 +137,19 @@
                             </div>
                         </div>
 
-                        <div id="selected-series-container"
-                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+                        <div id="selected-series-container" class="selected-series-container">
                             <!-- Dynamic series blocks will appear here -->
                         </div>
 
-                        <div class="total-summary"
-                            style="margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 12px; border-left: 5px solid #2196f3;">
-                            <h3 style="margin-top: 0;">Order Summary</h3>
-                            <ul id="total-summary-list" style="list-style: none; padding-left: 0; margin: 10px 0;">
+                        <div class="total-summary">
+                            <h3>Order Summary</h3>
+                            <ul id="total-summary-list" class="summary-list">
                                 <li>No books selected yet.</li>
                             </ul>
                         </div>
 
                         <button type="button" class="submit-btn"
-                            onclick="alert('Submission is disabled in this demo version.')"
-                            style="margin-top: 30px; width: 100%; padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #e91e63, #f5609b); color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer;">Send
+                            onclick="alert('Submission is disabled in this demo version.')">Send
                             To Teacher</button>
                     </form>
                 </div>
@@ -166,58 +158,47 @@
             <!-- PROFILE SECTION -->
             <section id="profile-view" class="content-section">
                 <h2>Admin Profile</h2>
-                <div class="card" style="padding: 40px;">
-                    <div style="display: flex; gap: 40px; align-items: flex-start;">
+                <div class="card profile-card">
+                    <div class="profile-container">
                         <!-- Left: Image Section -->
-                        <div style="text-align: center; flex: 1;">
-                            <div class="circle"
-                                style="margin: 0 auto 20px; width: 150px; height: 150px; border-width: 8px;">
+                        <div class="profile-left">
+                            <div class="circle profile-circle">
                                 <!-- Placeholder Image / Initials -->
-                                <div
-                                    style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 48px; color: #e91e63; font-weight: bold;">
+                                <div class="profile-initials">
                                     AD</div>
                             </div>
-                            <h3 style="margin: 0; font-size: 24px;">Admin User</h3>
-                            <p style="color: #666; margin-top: 5px;">Super Administrator</p>
+                            <h3 class="profile-name">Admin User</h3>
+                            <p class="profile-role">Super Administrator</p>
                         </div>
 
                         <!-- Right: Details Section -->
-                        <div style="flex: 2; padding-left: 40px; border-left: 1px solid #eee;">
-                            <div style="display: grid; gap: 20px;">
+                        <div class="profile-right">
+                            <div class="profile-details-grid">
                                 <div class="form-group">
-                                    <label
-                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Username</label>
-                                    <div
-                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                    <label class="profile-label">Username</label>
+                                    <div class="profile-value">
                                         admin</div>
                                 </div>
                                 <div class="form-group">
-                                    <label
-                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Email
+                                    <label class="profile-label">Email
                                         Address</label>
-                                    <div
-                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                    <div class="profile-value">
                                         admin@samsel.com</div>
                                 </div>
                                 <div class="form-group">
-                                    <label
-                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Role</label>
-                                    <div
-                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                    <label class="profile-label">Role</label>
+                                    <div class="profile-value">
                                         System Administrator</div>
                                 </div>
                                 <div class="form-group">
-                                    <label
-                                        style="display: block; font-weight: 600; margin-bottom: 8px; color: #444;">Last
+                                    <label class="profile-label">Last
                                         Login</label>
-                                    <div
-                                        style="padding: 12px; background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px;">
+                                    <div class="profile-value">
                                         {% now "jS F Y H:i" %}</div>
                                 </div>
                             </div>
 
-                            <button
-                                style="margin-top: 30px; padding: 12px 24px; background: #e91e63; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Edit
+                            <button class="edit-profile-btn">Edit
                                 Profile</button>
                         </div>
                     </div>
