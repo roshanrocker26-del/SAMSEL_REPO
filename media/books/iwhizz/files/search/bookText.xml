@@ -1,0 +1,2235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Search><pages Count="38"><page Index="1"/><page Index="2"><![CDATA[Covering the Latest Syllabus in Computer Education
+
+                                         based on Windows Curriculum
+
+                                                             By
+
+
+                                              V. SAMSON PRAKASH
+
+                                                        Director
+
+                                      UNIQUE SOFTWARE SOLUTIONS
+
+
+                             SAMSEL Publications
+
+
+
+                              # 44, 2nd Floor, Taylor’s Road, Kilpauk, Chennai - 600 010.
+                                      Phone: 044- 26474736 / 26454598 / 42857186
+                                             Email: usssamsel@yahoo.co.in
+
+                                    A unit of  U S S UNIQUE SOFTWARE SOLUTIONS]]></page><page Index="3"><![CDATA[It goes without saying that Computers have become an integral part of our daily life. Technology
+             Growth is at a faster pace and the need for learning the technology at an early age has become a
+             necessity.
+
+             In most schools computers have already paved its way,  as part of the regular curriculum.  At
+ First Edition 2014
+ Revised Edition 2015  present the stage is set to abreast with the fast growing pace of technology.
+ Reprint - 2016  To fulfill the requirements of the present scenario, we at SAMSEL  bring to you the i-whizz ICT
+ Reprint - 2017  computer books at School level graded VI to IX. This new multicolour series is based on
+ Reprint - 2018  Windows Environment and focused purely on practical concepts with ample Activity based
+ SAMSEL’S ©  exercises and Lab sessions.
+
+ i-whizz series  Great care has been taken to elucidate the concepts and present it in a lively manner, in simple
+
+ Information & Communication Technology  and lucid style with Multicolour Graphics, Suitable Illustrations, Exercises and Activities.
+
+ Standard - VI  The contents include Computer Fundamentals and Windows Operating System in order to bring
+             familiarity with the latest technology developments. MS Office 2007 package @ various Levels
+ © Reserved  covering MS Word, PowerPoint and Excel concepts are dealt in a detailed manner supported by
+
+             MS Office 2007 actual screenshots along with suitable illustrations and try in your lab activities.
+             QBASIC, a programming language is also dealt in this series in order to enable children to
+             develop problem solving abilities and learn its techniques. We have also dealt with animation
+             package Flash and designing package Photoshop in this series.
+
+             The 'Do You Know' concepts and 'Hint' are added features to give more wider knowledge of the
+             concepts dealt here.
+
+             The overwhelming response for our titles gained over the years has encouraged us to bring this
+ Published by  new series. We hope that you find the learning process more interesting and enjoyable as the
+ SAMSEL Publications  subject flow is simple and self-explanatory.
+ # 44, 2nd Floor, Taylor’s Road
+ Kilpauk, Chennai - 600 010.  I would like to gratefully acknowledge for the guidance and assistance provided by the editorial
+ Ph: 044-26474736, 42857186   board of SAMSEL  and teaching staff of Unique Software Solutions in bringing this book to its
+ Email: usssamsel@yahoo.co.in  present form.
+ A unit of  U S S UNIQUE SOFTWARE SOLUTIONS
+             We wish to continue this series with other books in the series which would enable the art of fun
+
+             along with education and hope to achieve our mission at SAMSEL        'to educate every child and
+             no one be left behind'.
+             Suggestions for improvement of these books from teachers and readers are most welcome.
+ Rs.130/-
+
+
+
+
+
+             V. SAMSON PRAKASH
+
+ © All rights reserved. No part of this publication may be reproduced or distributed in any form or by any
+ means or stored in a database or retrieval system without prior permission of the publisher.]]></page><page Index="4"><![CDATA[]]></page><page Index="5"><![CDATA[CH
+                                                                        CHAPTER 1APTER 1
+
+                                         Computer Fundamentals
+ Contents
+ C Coonntteennttss  Introduction
+
+
+
+           Computer is an electronic data processing machine capable of performing millions of
+           operations with tremendous speed.  It has the capacity of storing large volume of data,
+           which can be used in future. Computer only follows the instructions given by the user,
+           without any strain, self-thinking or reasoning. With the above qualities, Computer can be
+
+           used in almost all fields.
+ 1  Computer Fundamentals  5  Computer consists of three main units namely
+
+
+
+                                        (i)  Input Unit
+ 2  Introduction to Windows 7  18
+                                        (ii) Central Processing Unit
+
+
+ 3  MS Word 2007     29                 (iii) Output Unit
+
+           INPUT UNIT
+
+ 4  Formatting in MS Word 2007  39  The Input unit is a means of communication between the computer and the user.   To
+           solve any problem, a set of instructions and data are fed into the computer through this
+
+           unit.  These  instructions  are  converted  into  a  series  of  electronic  pulses,  which  the
+ 5  Advanced Word Processing  49  computer can understand and later sent to the Central Processing Unit. Some of the
+           commonly used input devices are Keyboard and Mouse.
+
+
+ 6  Programming Fundamentals  CENTRAL PROCESSING UNIT
+
+ using QBasic  56  It is in this unit that the entire work is done. It takes information from the input unit,
+
+           processes them according to the instructions that the computer has received and then
+           the processed data is sent to the output unit. CPU is also called as the brain of the
+ 7  QBasic Commands  64  computer.  This unit consists of three sub-units namely
+
+                                        (i)  Memory Unit (MU)
+
+
+                                        (ii) Control Unit (CU)
+
+                                        (iii) Arithmetic and Logic Unit (ALU)
+
+
+           OUTPUT UNIT
+
+           This unit gives out the processed data (result) in user readable form.   Some of the
+           commonly used output devices are monitor, printer, speaker, plotter and projector.  The
+           result seen on the monitor is referred as Softcopy and the result got in the printed form
+
+           on a paper is referred as Hardcopy.
+
+                                                                                                              5]]></page><page Index="6"><![CDATA[ICT
+                                                                 COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS                                                             C             ICT
+                                                                 C
+                                                                                                                                                                       COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+
+
+
+            How does a Computer work?                                                                                                   RAMRAM
+
+            The working principle of computer can be explained with the help of a block diagram,                                       RAM stands for Random Access Memory. This is a temporary
+            as the internal structure of the machine cannot be drawn.                                                                  memory since the information stored in it is lost, when the
+                                                             ALU                                                                       power is switched off. Hence it is called as volatile memory.
+                                                                                                                                       There are three types of RAM namely,
+
+
+                                                                                                                                                       1.  Dynamic Random Access Memory (DRAM)
+
+                           INPUT                        MEMORY                         OUTPUT                                                          2.  Static Random Access Memory (SRAM)
+                                                                                                                                                       3.  Complementary Metal Oxide Semi conductor (CMOS)
+
+                                                                                                                                        ROMROM                       ROM stands for  ead  nly  emory. The information stored in
+                                                                                                                                                                                        R
+                                                                                                                                                                                                     M
+                                                                                                                                                                                               O
+                                                       CONTROL                                                                                                       this memory is permanent in nature and is not erased even
+                                                                                                                                                                     when the power goes off. Hence it is called as non-volatile
+                                                 Block diagram of a Computer
+                                                                                                                                                                     memory. The information stored in this memory is written by
+            After  receiving  the  data  from  the  input  unit,  the  processing  is  carried  out  by  the                                                         the  manufacturers.  There  are  three  types  of  ROM  namely,
+            sub-units  of CPU.                                                                                                                                       PROM   , EPROM    and EAROM    .
+
+
+             CONTROL UNITONTROL UNIT
+             C                                                                                                                         PROM
+                                                                                                                                       In  rogrammable  ead  nly  emory, a programmer can permanently store programs P  R  O  M
+                                                                                                                                       into this chip thus it is varied from ROM, whereas in ROM it cannot be programmed but
+                                                                                                                                       instead the program is burnt into the chip by the manufacturer himself.
+
+                                                                                                                                       EPROM
+
+                                                                                                                                                                         R
+             ARITHMETIC AND LOGIC UNIT                                                                                                 In  rasable  rogrammable  ead  O            nly  M emory,  we  can  erase  the program  already
+                                                                                                                                           E
+             ARITHMETIC AND LOGIC UNIT
+                                                                                                                                                      P
+                                                                                                                                       stored in the chip and later a new program can be programmed on the same chip. It can
+            This unit performs arithmetic calculations and logical operations. All  data are sent here
+            for processing and after manipulation, the control unit directs the result to memory unit.                                 be erased by removing the chip from the circuit board and exposing it under ultraviolet
+                                                                                                                                       rays for a few minutes. The program in EPROM is permanent in nature until it is erased
+            This unit consists of accumulators and registers.
+                                                                                                                                       and hence it is non-volatile.
+            Accumulator stores the results of mathematical calculations temporarily till the control
+            unit gives the transfer instruction.                                                                                       EAROM
+
+            Registers are small memory of CPU which stores digital information.                                                        Electrically  Alterable  Read   Only   Memory is similar to that of EPROM except that it can
+             ME                                                                                                                        be  re-programmed  without  removing  the  chip  from  the  circuit  board  i.e.  it  can  be
+             MEMORY UNITMORY UNIT
+                                                                                                                                       re-programmed electrically by a matter of milliseconds. The advantage of EAROM is that it
+                                                                                                                                       can be re-programmed partially or completely which is not possible in the case of EPROM.
+                                                                                                                                       UNITS OF MEMORY
+
+
+                                                                                                                                       As solids are measured in grams and kilograms, liquids are measured in millilitres and
+
+                                                          1) RAM                                                                       litres, computer's memory is measured in Bytes. A Byte is made up of 8 bits. A bit is a
+                                                                                                                                       Binary Digit which represents 0 or 1.
+                                                          2) ROM
+
+              6                                                                                                                                                                                                                           7]]></page><page Index="7"><![CDATA[ICT
+ COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS  C           ICT
+ C
+                                          COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+
+
+
+ How does a Computer work?  RAMRAM
+
+ The working principle of computer can be explained with the help of a block diagram,   RAM stands for Random Access Memory. This is a temporary
+ as the internal structure of the machine cannot be drawn.  memory since the information stored in it is lost, when the
+ ALU       power is switched off. Hence it is called as volatile memory.
+           There are three types of RAM namely,
+
+
+                          1.  Dynamic Random Access Memory (DRAM)
+
+ INPUT  MEMORY  OUTPUT    2.  Static Random Access Memory (SRAM)
+                          3.  Complementary Metal Oxide Semi conductor (CMOS)
+
+           ROMROM                        ROM stands for  ead  nly  emory. The information stored in
+                                                            R
+                                                                         M
+                                                                   O
+ CONTROL                                 this memory is permanent in nature and is not erased even
+                                         when the power goes off. Hence it is called as non-volatile
+ Block diagram of a Computer
+                                         memory. The information stored in this memory is written by
+ After  receiving  the  data  from  the  input  unit,  the  processing  is  carried  out  by  the   the  manufacturers.  There  are  three  types  of  ROM  namely,
+ sub-units  of CPU.                      PROM   , EPROM    and EAROM    .
+
+
+ CONTROL UNITONTROL UNIT
+ C         PROM
+           In  rogrammable  ead  nly  emory, a programmer can permanently store programs P  R  O  M
+           into this chip thus it is varied from ROM, whereas in ROM it cannot be programmed but
+           instead the program is burnt into the chip by the manufacturer himself.
+
+           EPROM
+
+                                             R
+ ARITHMETIC AND LOGIC UNIT  In  rasable  rogrammable  ead  O nly  M emory,  we  can  erase  the  program  already
+              E
+ ARITHMETIC AND LOGIC UNIT
+                          P
+           stored in the chip and later a new program can be programmed on the same chip. It can
+ This unit performs arithmetic calculations and logical operations. All  data are sent here
+ for processing and after manipulation, the control unit directs the result to memory unit.   be erased by removing the chip from the circuit board and exposing it under ultraviolet
+           rays for a few minutes. The program in EPROM is permanent in nature until it is erased
+ This unit consists of accumulators and registers.
+           and hence it is non-volatile.
+ Accumulator stores the results of mathematical calculations temporarily till the control
+ unit gives the transfer instruction.   EAROM
+
+ Registers are small memory of CPU which stores digital information.  Electrically  Alterable  Read  Only  Memory is similar to that of EPROM except that it can
+ ME        be  re-programmed  without  removing  the  chip  from  the  circuit  board  i.e.  it  can  be
+ MEMORY UNITMORY UNIT
+           re-programmed electrically by a matter of milliseconds. The advantage of EAROM is that it
+           can be re-programmed partially or completely which is not possible in the case of EPROM.
+           UNITS OF MEMORY
+
+
+           As solids are measured in grams and kilograms, liquids are measured in millilitres and
+
+ 1) RAM    litres, computer's memory is measured in Bytes. A Byte is made up of 8 bits. A bit is a
+           Binary Digit which represents 0 or 1.
+ 2) ROM
+
+ 6                                                                                                            7]]></page><page Index="8"><![CDATA[ICT
+                                                                 COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                                                 C                                                                                                     C             ICT
+                                                                                                                                                                       COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+
+
+
+                                                                                                                                        Mouseouse
+                                             CHART OF MEMORY MEASUREMENT                                                                M
+
+                               4 Bits                          =     1 Nibble                                                          A Mouse     is an input device. When we click on the button, the
+                               8 Bits                          =     1 Byte                                                            mouse sends information to the computer. It is an alternative way
+                               1024 Bytes                      =     1 Kilo Byte (KB)                                                  to interact with the computer besides a keyboard. When the user
+                               1024 KB                         =     1 Mega Byte (MB)                                                  moves the mouse, the mouse pointer also moves in the screen. The
+
+                               1024 MB                         =     1 Giga Byte (GB)                                                  different types of mice are scroll mouse, optical mouse, wireless mouse etc.
+                                                                                                                                        Scannercanner
+                               1024 GB                         =     1 Tera Byte (TB)                                                   S                       Scanner is an input device that is used to read/scan images
+                               1024 TB                         =     1 Peta Byte (PB)                                                                           or  text  and  convert  them  to  digital  form.  It  creates  an
+                               1024 PB                         =     1 Exa Byte (EB)                                                                            electronic version of the document that can be viewed and
+                               1024 EB                         =     1 Zetta Byte (ZB)                                                                          edited on the computer. There are many different types of
+                               1024 ZB                         =     1 Yotta Byte (YB)                                                                          scanners available based on the size, cost, clarity etc. One of
+
+                               1024 YB                         =     1 Bronto Byte (BB)                                                                         the most commonly used scanner is flat bed scanner.
+                               1024 Bronto Byte                =     1 Geon Byte (GB)
+                                                                                                                                        W
+                                                                                                                                        Web Cameraeb Camera
+            INPUT DEVICES                                                                                                              Web camera is commonly called webcam. Webcam is an input device
+
+            An input device      is the device that is used to input data to the computer. An input unit                               which is used to capture images. Webcam is the combination of web and
+
+            takes the input and converts it into binary form so that it can be understood by the                                       video camera. It is mainly used in online chatting, video conferencing,
+            computer. Some of the commonly used input devices are keyboard, mouse, scanner,                                            videos, still photographs and broadcast them on the web.
+            digital camera, joystick and touch screen.                                                                                  J
+                                                                                                                                        Joystickoystick
+             Keyboardeyboard                                                                                                                                    Joystick  is  a  popular  input  device.
+             K
+                                                                                                                                                                Joysticks are often used to control video
+            Keyboard  is  the  most  commonly  used
+                                                                                                                                                                games and have one or more push buttons
+            input device which is used to enter data in
+                                                                                                                                                                whose state can be read by the computer.
+            to the computer. It consists of typewriter
+                                                                                                                                        Touch Screenouch Screen
+            like  keys  to  enter  data.  Computer                                                                                      T
+            keyboards  are  similar  to  electronic
+                                                                                                                                       Touch screen is an input device that allows the user to operate PC by
+            typewriter keyboard with some additional                               Standard Keyboard                                   simply touching the display in the screen region such as icons or graphical
+            keys.
+                                                                                                                                       buttons. The touch screen enables the user to interact directly with what
+                                                The  keyboard        detects  the  key  pressed  and  generates
+                                                                                                                                       is displayed, rather than using a mouse or any other intermediate device.
+                                                the  corresponding  ASCII  code  which  is  recognized  by
+                                                                                                                                       Touch  screen  monitors  have  become  very  popular  as  their  price  has
+                                                computer. There are different types of keyboards such as
+                                                                                                                                       steadily dropped when compared to the ones in the last decade.
+                                                standard  keyboard,  multimedia  keyboard,  internet
+                                                                                                                                       OU
+                                                keyboard, wireless keyboard, Blue-tooth keyboard etc.                                  OUTPUT DEVICESTPUT DEVICES
+                                                                                                                                       The output devices help us to see the final result. Any device that outputs information
+                                                                               O
+                                                                   DO  Y U  KNOW?                                                      from a computer is called an output device. Example of output devices include
+                                                                                                                                                     Monitor, Printer, Speaker, Plotter, Projector, Headphone
+                                                                    The QWERTY layout in
+                Multimedia Keyboard                             the keyboard was invented by                                           But the most commonly used output devices are monitors, speakers and printers.
+              8                                                       Christopher Sholes.                                                                                                                                                 9]]></page><page Index="9"><![CDATA[ICT
+                                                         ICT
+ C
+ COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS  COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                          C
+
+
+
+            Mouseouse
+ CHART OF MEMORY MEASUREMENT  M
+
+ 4 Bits  =  1 Nibble  A Mouse  is an input device. When we click on the button, the
+ 8 Bits  =  1 Byte  mouse sends information to the computer. It is an alternative way
+ 1024 Bytes  =  1 Kilo Byte (KB)  to interact with the computer besides a keyboard. When the user
+ 1024 KB  =  1 Mega Byte (MB)  moves the mouse, the mouse pointer also moves in the screen. The
+
+ 1024 MB  =  1 Giga Byte (GB)  different types of mice are scroll mouse, optical mouse, wireless mouse etc.
+            S
+ 1024 GB  =  1 Tera Byte (TB)  Scannercanner  Scanner is an input device that is used to read/scan images
+ 1024 TB  =  1 Peta Byte (PB)       or  text  and  convert  them  to  digital  form.  It  creates  an
+ 1024 PB  =  1 Exa Byte (EB)        electronic version of the document that can be viewed and
+ 1024 EB  =  1 Zetta Byte (ZB)      edited on the computer. There are many different types of
+ 1024 ZB  =  1 Yotta Byte (YB)      scanners available based on the size, cost, clarity etc. One of
+
+ 1024 YB  =  1 Bronto Byte (BB)     the most commonly used scanner is flat bed scanner.
+ 1024 Bronto Byte  =  1 Geon Byte (GB)
+            Web CameraWeb Camera
+ INPUT DEVICES  Web camera is commonly called webcam. Webcam is an input device
+
+ An input device  is the device that is used to input data to the computer. An input unit   which is used to capture images. Webcam is the combination of web and
+
+ takes the input and converts it into binary form so that it can be understood by the   video camera. It is mainly used in online chatting, video conferencing,
+ computer. Some of the commonly used input devices are keyboard, mouse, scanner,   videos, still photographs and broadcast them on the web.
+ digital camera, joystick and touch screen.  J
+            Joystickoystick
+ K
+ Keyboardeyboard                    Joystick  is  a  popular  input  device.
+                                    Joysticks are often used to control video
+ Keyboard  is  the  most  commonly  used
+                                    games and have one or more push buttons
+ input device which is used to enter data in
+                                    whose state can be read by the computer.
+ to the computer. It consists of typewriter
+           T
+ like  keys  to  enter  data.  Computer   Touch Screenouch Screen
+ keyboards  are  similar  to  electronic
+           Touch screen is an input device that allows the user to operate PC by
+ typewriter keyboard with some additional   Standard Keyboard  simply touching the display in the screen region such as icons or graphical
+ keys.
+           buttons. The touch screen enables the user to interact directly with what
+ The  keyboard   detects  the  key  pressed  and  generates
+           is displayed, rather than using a mouse or any other intermediate device.
+ the  corresponding  ASCII  code  which  is  recognized  by
+           Touch  screen  monitors  have  become  very  popular  as  their  price  has
+ computer. There are different types of keyboards such as
+           steadily dropped when compared to the ones in the last decade.
+ standard  keyboard,  multimedia  keyboard,  internet
+           OUTPUT DEVICESTPUT DEVICES
+ keyboard, wireless keyboard, Blue-tooth keyboard etc.   OU
+           The output devices help us to see the final result. Any device that outputs information
+ DO  Y U  KNOW?  from a computer is called an output device. Example of output devices include
+ O
+                         Monitor, Printer, Speaker, Plotter, Projector, Headphone
+ The QWERTY layout in
+ Multimedia Keyboard  the keyboard was invented by  But the most commonly used output devices are monitors, speakers and printers.
+ 8  Christopher Sholes.                                                                                       9]]></page><page Index="10"><![CDATA[ICT
+                                                                                                                                                                                     ICT
+                                                                 COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                                                                                                                                                       C
+                                                                 C                                                                                                     COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+
+
+
+                                                                                                                                        LCD MonitorD Monitor (Liquid Crystal Display)
+              MONITOR                                                                                                                   LC
+
+            The monitor     is an output device used to display the result.  It is also called as Screen or                            LCD monitor use ccfl back lights which contain Mercury. LCD
+            Visual Display Unit (VDU).  The monitors are of two types                                                                  monitors  are  much  thinner,  lighter,  use  less  energy  and
+
+                                                                                                                                       provide a greater graphics quality compared to CRT monitors.
+                                                                                                                                        LED MonitorED Monitor (Light Emitting Diode)
+                                                                                                                                        L
+
+
+
+
+                                                                                                                                                                       LED monitor is basically the new version of
+                                                                                                                                                                       LCD monitors. LED monitor's backlight uses
+                                                                                                                                                                       less power and the screen gets brighter fast
+                                                                                                                                                                       and  the  lighting  distribution  is  more  when
+                                                                                                                                                                       compared to LCD.
+
+
+
+                                                                                                                                         P
+                                                                                                                                         PRINTERRINTER
+
+                                                                                                                                       Printer gives the output of the computer programs on a paper. There are two types of
+            Monochrome Monitor                                                                                                         printers namely Impact printer and Non-impact printer
+
+            Monochrome monitor uses single colour and it resembles the black
+            and white TV.  They are available in three different base colours namely
+
+                              Softwhite    , Green Phosphor       , Amber
+
+            The softwhite monochrome monitor was very commonly used. Now a
+            days these monitors are not in use as the  advent of new technologies
+            have made monitors more compact and easy to use.
+
+            Colour Monitor
+                                               Colour monitors are very similar to Colour TV, which can
+
+                                               display different colours.  The colour monitors are capable                               IMP
+                                                                                                                                         IMPACT PRINTERACT PRINTER
+                                               of displaying different colours using the combination of
+                                               the base colours Red, Green and Blue.                                                   In this type of printers the ribbon and the head comes in direct contact with the paper.
+
+                                               The monitors are also available in different sizes such as                              Some examples of impact printers are :  Dot Matrix Printer             , Line Printer
+                                               14", 17" and 21".  The display is seen in the monitor with                               D
+                                                                                                                                        Dot Matrix Printerot Matrix Printer
+                                               the help of Cathode Ray Tube (CRT). These are the oldest
+                                               among all the available models these days. The best thing                               Dot  Matrix  Printer  can  print  characters  and  graphics  of
+
+                                               in these monitors is that they are cheaper in price and                                 different sizes.  The output is printed as a combination of tiny
+                                               their  drawback  is  their  weight,  size  and  they  consume                           dots. It can print at a speed of 300 characters per second (CPS)
+                                               more power.                                                                             and more. The dot matrix printers comes in two standard sizes
+                                                                                                                                       80 column and 132 column.
+             10                                                                                                                                                                                                                          11]]></page><page Index="11"><![CDATA[ICT
+                                                         ICT
+ COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+ C                                        COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                          C
+
+
+
+            LCD MonitorD Monitor (Liquid Crystal Display)
+ MONITOR    LC
+
+ The monitor  is an output device used to display the result.  It is also called as Screen or   LCD monitor use ccfl back lights which contain Mercury. LCD
+ Visual Display Unit (VDU).  The monitors are of two types  monitors  are  much  thinner,  lighter,  use  less  energy  and
+
+           provide a greater graphics quality compared to CRT monitors.
+            L
+            LED MonitorED Monitor (Light Emitting Diode)
+
+
+
+
+                                           LED monitor is basically the new version of
+                                           LCD monitors. LED monitor's backlight uses
+                                           less power and the screen gets brighter fast
+                                           and  the  lighting  distribution  is  more  when
+                                           compared to LCD.
+
+
+
+            P
+            PRINTERRINTER
+
+           Printer gives the output of the computer programs on a paper. There are two types of
+ Monochrome Monitor  printers namely Impact printer and Non-impact printer
+
+ Monochrome monitor uses single colour and it resembles the black
+ and white TV.  They are available in three different base colours namely
+
+ Softwhite , Green Phosphor , Amber
+
+ The softwhite monochrome monitor was very commonly used. Now a
+ days these monitors are not in use as the  advent of new technologies
+ have made monitors more compact and easy to use.
+
+ Colour Monitor
+ Colour monitors are very similar to Colour TV, which can
+
+ display different colours.  The colour monitors are capable   IMP
+            IMPACT PRINTERACT PRINTER
+ of displaying different colours using the combination of
+ the base colours Red, Green and Blue.  In this type of printers the ribbon and the head comes in direct contact with the paper.
+
+ The monitors are also available in different sizes such as   Some examples of impact printers are :  Dot Matrix Printer , Line Printer
+ 14", 17" and 21".  The display is seen in the monitor with   D
+            Dot Matrix Printerot Matrix Printer
+ the help of Cathode Ray Tube (CRT). These are the oldest
+ among all the available models these days. The best thing   Dot  Matrix  Printer  can  print  characters  and  graphics  of
+
+ in these monitors is that they are cheaper in price and   different sizes.  The output is printed as a combination of tiny
+ their  drawback  is  their  weight,  size  and  they  consume   dots. It can print at a speed of 300 characters per second (CPS)
+ more power.  and more. The dot matrix printers comes in two standard sizes
+           80 column and 132 column.
+ 10                                                                                                          11]]></page><page Index="12"><![CDATA[ICT
+                                                                                                                                                                                     ICT
+                                                                                                                                                                       C
+                                                                 COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS                                                             COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                                                 C
+
+
+
+             Lin
+             Line Printere Printer                                                                                                     It has large storage capacity. The typical examples for secondary storage devices are
+                                                                                                                                       Floppy disk, Hard disk and Compact disk.
+            The  Line  Printer      can  print  300  to  3000  lines  per  minute.  The
+                                                                                                                                         Floppy Diskloppy Disk
+            quality of printing is not so good because the head comes in contact                                                         F
+            with the paper for less time.                                                                                              It was developed by IBM Company. It is used to transfer data or software
+
+             NON-IMPACT PRINTER                                                                                                        from one computer to other. A floppy disk is made up of mylar material
+                                                                                                                                       with  magnetic  oxide  on  both  sides.  Initially  floppy  disks  were  8"  in
+            These printers use a different technology to form images on paper and the head do not                                      diameter later it was replaced by 5¼ "and 3½ ".  Floppy disks are slower
+            come in direct contact with the paper. They produce very less noise. Some examples of                                      to access and the storage capacity is also low when compared to other
+            Non-Impact printers are: Inkjet printer            , Laser printer                                                         external storage devices. Now a days the floppy disks are not in use.
+
+                                                                                                                                         H
+             Ink
+             Inkjet Printerjet Printer                                                                                                   Hard diskard disk    Hard disk is a metallic disk, coated with magnetic material, which is
+            This printer has tiny nozzles (outlet), which sprays ink, forming                                                                                 permanently  fixed  inside  the  computer.  It  is  kept  in  airtight
+                                                                                                                                                              environment that protects the disk from being damaged and also to
+            images on the paper. This is achieved by using magnetized plates
+            which direct the ink's path on to the paper in the desired pattern.                                                                               resist dust. The access (reading and writing) speed is more in the
+                                                                                                                                                              case of Hard disk. They generally have large storage capacity, which
+            The print quality is good in inkjet printers.
+             Laser Printeraser Printer                                                                                                                        is measured in terms of gigabytes. Hard disk with a storage capacity
+             L
+                                                                                                                                                              of 4 TB (Terabyte) is also available. The capacity of the disk is likely
+                                                                                                                                                              to increase in future.
+                                                  The laser printer     works on the electrostatic technology.
+                                                                                                                                         Compact disk (CD)ompact disk (CD)
+                                                  It  is  similar  to  a  xerox  machine.  These  printers  can                          C
+                                                  produce wide selection of characters and graphics and
+
+                                                  print the same at a high speed. The laser printer can print                          The most proving technology for high external storage capacity is
+                                                  up to 50 pages per minute.                                                           Compact Disk    , sometimes known as Laser disk or Optical disk. CD
+             P                                                                                                                         is a small shiny circular plate made of polycarbonate and is about
+             Plotterlotter
+                                                                                                                                       12 cm in diameter along with a central hole.  The thickness of the
+            Plotter  is  an  output  device  that  is  used  to  print  graphs  and
+                                                                                                                                       CD is 12 mm.   Information on the disk is stored in the form of
+            pictures. It draws picture on paper using multiple pens. The lines
+                                                                                                                                       "pits" and "lands" using a beam of light.  As the disk rotates, the laser
+            are not made up of dots but they are actually drawn providing
+                                                                                                                                       head traces out a continuous signal to sense pits and lands.  This is converted into 1's
+            infinite  resolution.  The  plotter  was  the  first  computer  output
+                                                                                                                                       and 0's by the electronic interface and sent to the computer.
+            device that could print graphs as well as accommodate full size
+            engineering  and  architectural  drawings.  It  is  mainly  used  in                                                       CD's are of two types, Audio CD       and Video CD    .  In an Audio CD only sounds are digitized
+
+            technical drawing and CAD (Computer Aided Design) applications.                                                            and stored whereas in a Video CD, the data can be in any form either text, still pictures or
+             SP                                                                                                                        motion pictures with audio combination.   CD's can hold a gigabyte of data or more,
+             SPEAKERSEAKERS
+                                                                                                                                       which is twice the capacity of a floppy disk pack.
+            Speakers  are  one  of  the  most  commonly  used  output  device  used  with  computers.
+                                                                                                                                        Digital Versatile Disk (DVD)ital Versatile Disk (DVD)
+            Speakers convert electrical signals into sound.                                                                             Dig
+            SEC
+            SECONDARY STORAGEONDARY STORAGE                                                                                            DVD is a storage device used to store large amount of data
+                                                                                                                                       rather than compact disk. It was developed in the year 1995.
+            Secondary storage devices stores data as per user's request. The main memory does not
+                                                                                                                                       There are two types of DVD namely recordable and rewritable.
+            store data permanently.  Due to this limitation, the secondary memory device has been
+                                                                                                                                       DVDs are also available with different storage capacities.
+            developed. These devices are also called as Auxiliary memory or External memory.
+             12                                                                                                                                                                                                                          13]]></page><page Index="13"><![CDATA[ICT
+ C                                        C             ICT
+ COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                          COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+
+
+
+ Line Printere Printer
+ Lin       It has large storage capacity. The typical examples for secondary storage devices are
+           Floppy disk, Hard disk and Compact disk.
+ The  Line  Printer   can  print  300  to  3000  lines  per  minute.  The
+            Floppy Diskloppy Disk
+ quality of printing is not so good because the head comes in contact   F
+ with the paper for less time.  It was developed by IBM Company. It is used to transfer data or software
+
+ NON-IMPACT PRINTER  from one computer to other. A floppy disk is made up of mylar material
+           with  magnetic  oxide  on  both  sides.  Initially  floppy  disks  were  8"  in
+ These printers use a different technology to form images on paper and the head do not   diameter later it was replaced by 5¼ "and 3½ ".  Floppy disks are slower
+ come in direct contact with the paper. They produce very less noise. Some examples of   to access and the storage capacity is also low when compared to other
+ Non-Impact printers are: Inkjet printer , Laser printer  external storage devices. Now a days the floppy disks are not in use.
+
+            Hard diskard disk
+ Inkjet Printerjet Printer  H     Hard disk is a metallic disk, coated with magnetic material, which is
+ Ink
+ This printer has tiny nozzles (outlet), which sprays ink, forming   permanently  fixed  inside  the  computer.  It  is  kept  in  airtight
+                                  environment that protects the disk from being damaged and also to
+ images on the paper. This is achieved by using magnetized plates
+ which direct the ink's path on to the paper in the desired pattern.   resist dust. The access (reading and writing) speed is more in the
+                                  case of Hard disk. They generally have large storage capacity, which
+ The print quality is good in inkjet printers.
+ Laser Printeraser Printer
+ L                                is measured in terms of gigabytes. Hard disk with a storage capacity
+                                  of 4 TB (Terabyte) is also available. The capacity of the disk is likely
+                                  to increase in future.
+ The laser printer  works on the electrostatic technology.
+            Compact disk (CD)ompact disk (CD)
+ It  is  similar  to  a  xerox  machine.  These  printers  can   C
+ produce wide selection of characters and graphics and
+
+ print the same at a high speed. The laser printer can print   The most proving technology for high external storage capacity is
+ up to 50 pages per minute.  Compact Disk , sometimes known as Laser disk or Optical disk. CD
+ P
+ Plotterlotter  is a small shiny circular plate made of polycarbonate and is about
+           12 cm in diameter along with a central hole.  The thickness of the
+ Plotter  is  an  output  device  that  is  used  to  print  graphs  and
+           CD is 12 mm.   Information on the disk is stored in the form of
+ pictures. It draws picture on paper using multiple pens. The lines
+           "pits" and "lands" using a beam of light.  As the disk rotates, the laser
+ are not made up of dots but they are actually drawn providing
+           head traces out a continuous signal to sense pits and lands.  This is converted into 1's
+ infinite  resolution.  The  plotter  was  the  first  computer  output
+           and 0's by the electronic interface and sent to the computer.
+ device that could print graphs as well as accommodate full size
+ engineering  and  architectural  drawings.  It  is  mainly  used  in   CD's are of two types, Audio CD  and Video CD .  In an Audio CD only sounds are digitized
+
+ technical drawing and CAD (Computer Aided Design) applications.  and stored whereas in a Video CD, the data can be in any form either text, still pictures or
+ SPEAKERSEAKERS
+ SP        motion pictures with audio combination.   CD's can hold a gigabyte of data or more,
+           which is twice the capacity of a floppy disk pack.
+ Speakers  are  one  of  the  most  commonly  used  output  device  used  with  computers.
+ Speakers convert electrical signals into sound.  Digital Versatile Disk (DVD)Digital Versatile Disk (DVD)
+ SEC
+ SECONDARY STORAGEONDARY STORAGE  DVD is a storage device used to store large amount of data
+           rather than compact disk. It was developed in the year 1995.
+ Secondary storage devices stores data as per user's request. The main memory does not
+           There are two types of DVD namely recordable and rewritable.
+ store data permanently.  Due to this limitation, the secondary memory device has been
+           DVDs are also available with different storage capacities.
+ developed. These devices are also called as Auxiliary memory or External memory.
+ 12                                                                                                          13]]></page><page Index="14"><![CDATA[C
+                                                                 COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+
+
+
+
+
+                                                                                                                                              FILL IN THE BLANKS
+                                      DVD                                   CAPACITY
+                    Single sided, single layer disk                  4.7 GB                                                            1. A set of instructions are fed into the computer through ________________                   unit.
+                    Single sided, double layer disk                  8.5 GB - 8.7 GB
+                    Double Sided, single layer disk                  9.4 GB                                                            2. __________________             is called brain of the computer.
+
+                    Double Sided, double layer disk                  17.08 GB                                                          3. The result seen on the monitor is referred as __________________                 .
+
+             Pen Driveen Drive
+             P                                                                                                                         4. _________________           unit co-ordinates all other units of the computer.
+            A Pen Drive     is a portable USB (Universal Serial Bus) flash memory                                                      5. ________________           are small memory of CPU which stores digital information.
+            device for storing and transferring audio, video and data files from                                                       6. In ______________         , the program can be erased by using ultraviolet rays.
+
+            a computer. It is used to store large amount of data and provides
+                                                                                                                                       7. A floppy disk is made up of ___________________                 material.
+            quick data transfer. It is small in size. It is also called as USB Flash
+            drive  or  Thumb  drive.  It  is  available  with  different  memory                                                       8. In colour monitor, the display is seen with the help of __________________                  .
+            capacities like 2GB, 4GB, 8GB, 16GB etc.
+                                                                                                                                       9. The Webcam is the combination of ______________                  and _________________         .
+            How to use the Pen drive
+            It is very simple to use a pen drive. The user can insert one end of the drive which is                                    10. The laser printer works on the __________________                technology.
+
+            equipped with a USB connector into the USB port on a desktop or laptop. Once the drive is                                  11. _______________         is a storage device used to store large amount of data rather
+            active, files can be dragged and dropped or copied and pasted into the Pen drive.                                               than the compact disk.
+
+             Memory Cardemory Card                                                                                                     12. A _________________           is a portable USB device.
+             M
+            A Memory Card        is used to store various types of electronic data. It is also referred as                             13. A memory card is used to store various types of _______________                  data.
+
+            flash memory card; it is capable of storing a wide range of data files such as audio and
+            video clips, images, and text documents.                                                                                   14. __________________           is the most commonly used input device.
+
+            Memory card is used in computers, cell phones and in digital cameras. A card reader is                                     15. ________________________              draws picture on paper using multiple pens.
+            essentially required for the memory card to be connected to the computer.
+                                                                                                                                                TICK TRUE OR FALSE
+                                                                                                                                        1. Control unit performs arithmetic and logical calculations.                    True          False
+
+
+                                                                                                                                        2. RAM stands for Random Access Memory.                                          True          False
+
+                                                                                                                                        3. 1024 KB makes one tera byte.                                                  True          False
+
+                                                                                                                                        4. CD is otherwise known as Laser disk.                                          True          False
+
+                                                                                                                                        5. Amber is the base colour of colour monitor.                                   True          False
+
+                                                                                                                                        6. Scanner is an output device                                                   True          False
+            It is available with different memory capacities like 2GB, 4GB, 8GB, 16GB etc. It also
+            comes in different sizes.                                                                                                   7. Plotter is used to print graphs and pictures.                                 True          False
+
+
+
+
+             14                                                                                                                                                                                                                          15]]></page><page Index="15"><![CDATA[C
+ COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+
+
+
+
+
+                  FILL IN THE BLANKS
+ DVD  CAPACITY
+ Single sided, single layer disk  4.7 GB  1. A set of instructions are fed into the computer through ________________  unit.
+ Single sided, double layer disk  8.5 GB - 8.7 GB
+ Double Sided, single layer disk  9.4 GB  2. __________________   is called brain of the computer.
+
+ Double Sided, double layer disk  17.08 GB  3. The result seen on the monitor is referred as __________________ .
+
+ Pen Driveen Drive
+ P         4. _________________           unit co-ordinates all other units of the computer.
+ A Pen Drive  is a portable USB (Universal Serial Bus) flash memory   5. ________________  are small memory of CPU which stores digital information.
+ device for storing and transferring audio, video and data files from   6. In ______________ , the program can be erased by using ultraviolet rays.
+
+ a computer. It is used to store large amount of data and provides
+           7. A floppy disk is made up of ___________________                 material.
+ quick data transfer. It is small in size. It is also called as USB Flash
+ drive  or  Thumb  drive.  It  is  available  with  different  memory   8. In colour monitor, the display is seen with the help of __________________ .
+ capacities like 2GB, 4GB, 8GB, 16GB etc.
+           9. The Webcam is the combination of ______________                  and _________________         .
+ How to use the Pen drive
+ It is very simple to use a pen drive. The user can insert one end of the drive which is   10. The laser printer works on the __________________  technology.
+
+ equipped with a USB connector into the USB port on a desktop or laptop. Once the drive is   11. _______________  is a storage device used to store large amount of data rather
+ active, files can be dragged and dropped or copied and pasted into the Pen drive.   than the compact disk.
+
+ Memory Cardemory Card  12. A _________________  is a portable USB device.
+ M
+ A Memory Card  is used to store various types of electronic data. It is also referred as   13. A memory card is used to store various types of _______________  data.
+
+ flash memory card; it is capable of storing a wide range of data files such as audio and
+ video clips, images, and text documents.    14. __________________  is the most commonly used input device.
+
+ Memory card is used in computers, cell phones and in digital cameras. A card reader is   15. ________________________  draws picture on paper using multiple pens.
+ essentially required for the memory card to be connected to the computer.
+                    TICK TRUE OR FALSE
+            1. Control unit performs arithmetic and logical calculations.                    True         False
+
+
+            2. RAM stands for Random Access Memory.                                          True         False
+
+            3. 1024 KB makes one tera byte.                                                  True         False
+
+            4. CD is otherwise known as Laser disk.                                          True         False
+
+            5. Amber is the base colour of colour monitor.                                   True         False
+
+            6. Scanner is an output device                                                   True         False
+ It is available with different memory capacities like 2GB, 4GB, 8GB, 16GB etc. It also
+ comes in different sizes.  7. Plotter is used to print graphs and pictures.                 True         False
+
+
+
+
+ 14                                                                                                          15]]></page><page Index="16"><![CDATA[ICT
+                                                                                                                                                                                     ICT
+                                                                 COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                                                 C                                                                                                     COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                                                                                                                                                       C
+
+
+
+
+             8. Joy stick is mainly used for playing games.                                    True         False                            ANSWER THE FOLLOWING
+             9. Pen drive is also referred as flash memory card.                               True         False                      1. What is a computer? Name its main units.
+
+
+             10. There are three types of DVD.                                                 True         False                      2. What are the three sub units of CPU?
+                                                                                                                                       3. What is accumulator?
+                  MATCH THE FOLLOWING                                                                                                  4. What is RAM? What are its types?
+
+
+            1. Inkjet printer                          -      1 Nibble                                                                 5. What is a pendrive?
+
+            2. Monochrome monitor                      -      uses tiny nozzles                                                        6. Write any two points on monochrome monitor and colour monitor.
+
+            3. 4 Bits                                  -      online chatting                                                          7. Tabulate the chart of memory measurement.
+                                                                                                                                       8. Write about the types of CD's.
+            4. Web Cam                                 -      secondary storage device
+                                                                                                                                       9. What are the two types of printer?
+            5. Hard disk                               -      Green Phosphor
+                                                                                                                                       10. What is Address?
+
+
+                  CHOOSE THE CORRECT ANSWER                                                                                            11. Write a short note on DVD.
+                                                                                                                                       12. What is touch screen?                                                                                     E
+            1. The result in the printed form on a paper is referred as ________________                    .
+                                                                                                                                       13. What is a scanner?
+                                                                                     c)
+               (  Softcopy                      (  Hardcopy                         (  Printcopy
+                                                 b)
+                a)
+                                                                                                                                       14. Write a short note on LED monitor.                                                                        S
+            2. The storage location in memory is identified by a unique number known as                                                15. What is the use of a memory card?
+               _________________         .                                                                                                                                                                                                           I
+                                                                                                                                             ANSWER THE FOLLOWING IN DETAIL
+                                                                                     c)
+                                                 b)
+               (  Memory                        (  Location                         (  Address                                                                                                                                                       C
+                a)
+                                                                                                                                       1. How does a computer work? Explain with a neat diagram.
+            3. ________________         stores the results of mathematical calculations temporarily.
+                                                                                                                                       2. What is ROM? Explain its types.
+                                                                                     c)
+                                                 b)
+                a)
+               (  Accumulator                   (  Address                          (  Register                                                                                                                                                      R
+                                                                                                                                       3. Write a note on Hard disk.
+            4. ROM is a ________________             memory.                                                                           4. Discuss the various types of printers.
+                                                 b)
+               (  Non-volatile                  (  Volatile                         (  Static                                          5. Write a note on Floppy disk with a neat diagram.                                                           E
+                a)
+                                                                                     c)
+            5. _____________        is an example of Non-Impact printer.                                                               6.  Discuss the various types of monitors.
+                                                                                     c)
+                                                 b)
+                a)
+               (  Line printer                  (  Dot Matrix printer               (  Laser printer                                                                                                                                                 X
+                  EXPAND THE FOLLOWING                                                                                                                                                                                                               E
+
+            1. CRT        2. EAROM       3. EPROM   4. CPS                   5. PROM              6. DVD
+
+            7. USB        8. CAD                9. LCD        10. LED        11. DRAM             12. CMOS
+
+
+
+
+
+
+
+             16                                                                                                                                                                                                                          17]]></page><page Index="17"><![CDATA[ICT
+                                                         ICT
+ COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+ C                                        COMPUTER FUNDAMENTALSOMPUTER FUNDAMENTALS
+                                          C
+
+
+
+
+ 8. Joy stick is mainly used for playing games.  True  False  ANSWER THE FOLLOWING
+ 9. Pen drive is also referred as flash memory card.  True  False  1. What is a computer? Name its main units.
+
+
+ 10. There are three types of DVD.  True  False  2. What are the three sub units of CPU?
+           3. What is accumulator?
+ MATCH THE FOLLOWING  4. What is RAM? What are its types?
+
+
+ 1. Inkjet printer  -  1 Nibble  5. What is a pendrive?
+
+ 2. Monochrome monitor  -  uses tiny nozzles  6. Write any two points on monochrome monitor and colour monitor.
+
+ 3. 4 Bits  -  online chatting  7. Tabulate the chart of memory measurement.
+           8. Write about the types of CD's.
+ 4. Web Cam  -  secondary storage device
+           9. What are the two types of printer?
+ 5. Hard disk   -  Green Phosphor
+           10. What is Address?
+
+
+ CHOOSE THE CORRECT ANSWER  11. Write a short note on DVD.
+           12. What is touch screen?                                                                                     E
+ 1. The result in the printed form on a paper is referred as ________________ .
+           13. What is a scanner?
+ c)
+ (  Softcopy  (  Hardcopy  (  Printcopy
+ b)
+ a)
+           14. Write a short note on LED monitor.                                                                        S
+ 2. The storage location in memory is identified by a unique number known as   15. What is the use of a memory card?
+ _________________ .                                                                                                     I
+                 ANSWER THE FOLLOWING IN DETAIL
+ c)
+ b)
+ (  Memory  (  Location  (  Address                                                                                      C
+ a)
+           1. How does a computer work? Explain with a neat diagram.
+ 3. ________________  stores the results of mathematical calculations temporarily.
+           2. What is ROM? Explain its types.
+ c)
+ b)
+ a)
+ (  Accumulator  (  Address  (  Register                                                                                 R
+           3. Write a note on Hard disk.
+ 4. ROM is a ________________  memory.  4. Discuss the various types of printers.
+ b)
+ (  Non-volatile  (  Volatile  (  Static  5. Write a note on Floppy disk with a neat diagram.                            E
+ a)
+ c)
+ 5. _____________  is an example of Non-Impact printer.  6.  Discuss the various types of monitors.
+ c)
+ b)
+ a)
+ (  Line printer  (  Dot Matrix printer  (  Laser printer                                                                X
+ EXPAND THE FOLLOWING                                                                                                    E
+
+ 1. CRT  2. EAROM       3. EPROM   4. CPS  5. PROM  6. DVD
+
+ 7. USB  8. CAD         9. LCD  10. LED  11. DRAM  12. CMOS
+
+
+
+
+
+
+
+ 16                                                                                                          17]]></page><page Index="18"><![CDATA[ICT
+                                                                                                                                                                                     ICT
+                                                                                         CHAPTER 2CHAPTER 2                                                      INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                                                                                                                                 I
+                                                Introduction to                                                                        Touch
+
+
+
+                                                                     Windows 7                                                         Touch is the new feature added to Windows 7. It is a new way of interacting with the
+
+            Introduction                                                                                                               computer. This feature works only on those screens which are touch enabled.
+                                                                                                                                       Desktop Gadgets
+            As  we  need  energy  to  work,  a  car  needs  fuel  to  run,  similarly  computer  needs  an
+            Operating System (OS) to make it work. Operating System is nothing but a program                                           Gadgets such as weather, clock, calendar, CPU meter etc., can be placed on desktop.
+
+            which enables the computer to accept commands from the user to perform necessary                                           Aero Shake                                                        When many applications are open,
+            actions.                                                                                                                   When many applications are open to minimize               Hint    to automatically minimize them, click
+
+            An Operating System is thus defined as a collection of programs, which controls the                                        them in one shot, Aero shake can be used.                         and shake an open window.
+            overall activities of the computer such as input, process, memory and storing of data.                                     Aero Snap
+            Thus, it acts as an interface between the user and the computer. Some of the operating                                     Aero snap is used to resize and expand application windows quickly.
+            systems are MS DOS, Windows, Unix and Linux.                                                                               Now let us discuss how files are manipulated in Windows 7 Operating System.
+
+            We shall now discuss about Windows 7 Operating system.                                                                     FILES
+
+             WINDOWS 7                                                                                                                 A file is a collection of information. It consists of text, pictures, numbers, sounds or
+                                                                                                                                       combination of all. A file is identified by its name. For example “samsel.docx”. The
+            Windows 7 is a computer operating system developed by Microsoft. It has a Graphical
+                                                                                                                                       filename has three parts: Filename, a dot and the extension. Filename is the name given
+            User Interface (GUI) that allows the user to interact with the items on the screen.
+                                                                                                                                       to a file. Here the extension docx indicates that it is a document created using MS Word
+                                                                                                                                       application.  The  dot  separates  the  filename  and  the  extension.  Some  of  the  file
+                                                                                                                                       extensions are listed below:
+
+                                                                                                                                                        EXTENSION                            MEANING
+                                                                                                                                                            .txt            Extension of Notepad Application files
+                                                                                                                                                            .bmp            Extension of Paint application files
+
+                                                                                                                                                            .jpg            Extension of Picture files
+                                                                                                                                                            .gif            Extension of Animated Picture files
+                                                                                                                                                            .wav            Extension of Sound files
+
+
+                                                                                                                                       FOLDERS
+
+                                                                                                                                       When different files are grouped under one name then it is called a folder. A folder
+                                                                                                                                       consists of files and sub folders.
+                                                                                                                                       DRIVES
+
+                                                                                                                                       The hard disk in the computer can be divided into two, three or more partitions and each
+             FEATURES OF WINDOWS 7                                                                                                     partition is called a drive. A drive is a storage area in the hard disk where files, folders
+
+                                                                                                                                       and application programs are stored.
+            Some of the common features of Windows 7 are,
+            Speed                                                                                                                      WINDOWS EXPLORER
+
+
+            The time taken for booting the system is reduced when compared to other older versions.                                    Windows Explorer is a program, which manages the contents of the hard disk. It helps us
+                                                                                                                                       to explore the files, folders and drives. To open Windows Explorer
+             18                                                                                                                                                                                                                          19]]></page><page Index="19"><![CDATA[ICT
+                                                         ICT
+ CHAPTER 2CHAPTER 2                  INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                     I
+ Introduction to   Touch
+
+
+
+ Windows 7  Touch is the new feature added to Windows 7. It is a new way of interacting with the
+
+ Introduction  computer. This feature works only on those screens which are touch enabled.
+           Desktop Gadgets
+ As  we  need  energy  to  work,  a  car  needs  fuel  to  run,  similarly  computer  needs  an
+ Operating System (OS) to make it work. Operating System is nothing but a program   Gadgets such as weather, clock, calendar, CPU meter etc., can be placed on desktop.
+
+ which enables the computer to accept commands from the user to perform necessary   Aero Shake  When many applications are open,
+ actions.  When many applications are open to minimize               Hint   to automatically minimize them, click
+
+ An Operating System is thus defined as a collection of programs, which controls the   them in one shot, Aero shake can be used.   and shake an open window.
+ overall activities of the computer such as input, process, memory and storing of data.   Aero Snap
+ Thus, it acts as an interface between the user and the computer. Some of the operating   Aero snap is used to resize and expand application windows quickly.
+ systems are MS DOS, Windows, Unix and Linux.  Now let us discuss how files are manipulated in Windows 7 Operating System.
+
+ We shall now discuss about Windows 7 Operating system.  FILES
+
+ WINDOWS 7  A file is a collection of information. It consists of text, pictures, numbers, sounds or
+           combination of all. A file is identified by its name. For example “samsel.docx”. The
+ Windows 7 is a computer operating system developed by Microsoft. It has a Graphical
+           filename has three parts: Filename, a dot and the extension. Filename is the name given
+ User Interface (GUI) that allows the user to interact with the items on the screen.
+           to a file. Here the extension docx indicates that it is a document created using MS Word
+           application.  The  dot  separates  the  filename  and  the  extension.  Some  of  the  file
+           extensions are listed below:
+
+                            EXTENSION                            MEANING
+                                .txt            Extension of Notepad Application files
+                                .bmp            Extension of Paint application files
+
+                                .jpg            Extension of Picture files
+                                .gif            Extension of Animated Picture files
+                                .wav            Extension of Sound files
+
+
+           FOLDERS
+
+           When different files are grouped under one name then it is called a folder. A folder
+           consists of files and sub folders.
+           DRIVES
+
+           The hard disk in the computer can be divided into two, three or more partitions and each
+ FEATURES OF WINDOWS 7  partition is called a drive. A drive is a storage area in the hard disk where files, folders
+
+           and application programs are stored.
+ Some of the common features of Windows 7 are,
+ Speed     WINDOWS EXPLORER
+
+
+ The time taken for booting the system is reduced when compared to other older versions.  Windows Explorer is a program, which manages the contents of the hard disk. It helps us
+           to explore the files, folders and drives. To open Windows Explorer
+ 18                                                                                                          19]]></page><page Index="20"><![CDATA[ICT
+                                                            INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                                                                                                                                 INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                            I                                                                                                    I                   ICT
+
+
+                                                                                                                                       OPEN A FILE / FOLDER
+            i) Click on Start button and type Windows Explorer
+                                                                                                                                       This option is used to view the contents of a file/folder. A file/folder can be opened in
+               in the Search box.  (OR)                                                                                                three different ways.
+
+            ii) Start  è    All Programs  è      Accessories  è                                                                        i)  Select the folder you want to open. Click on Open button from the Menu bar.
+               Windows Explorer                                                                                                        ii)  Double click on the folder.
+
+                                                                                                                                       iii)  Right click on the folder and select the option Open.
+            The left part of Windows Explorer displays drives,
+            folders and other hardware details and the right part                                                                      RENAME A FILE/FOLDER
+            displays  files,  sub-folders  and  the  content  of  the
+                                                                                                                                       This option is used to change the name of a file/folder. A folder can be renamed in two
+            selected item on the left part.
+                                                                                                                                       different ways.
+             FILE MANAGEMENT                                                                                                           i)  Select the folder and click on Organize   Rename.
+                                                                                                                                                                                        à
+            Some of the basic operations that can be performed on files and folders are create, copy,                                  ii) Right click on the folder and select Rename.
+            move and rename. We shall now discuss how to perform these operations in Windows                                           Then, type a new name and press Enter key.
+
+            Explorer.                                                                                                                  COPY A FILE/FOLDER
+            CREATION OF A FOLDER                                                                                                       This option is used to create a copy of file/folder in different location.
+
+            To create a folder, open the drive in                                                                                      i)  Select  the  folder  and  click  on  Organize  à       Copy.  The  folder  gets  copied  on  the
+            which  you  want  to  create  a  new                                                                                           clipboard.  Select  the  location  where  the  folder  has  to  get  copied.  Now  click  on
+
+            folder. Creation of new folder can                                                                                             Organize  à
+                                                                                                                                                          Paste. Thus the folder gets copied on to the selected location. (OR)
+            be done in two different ways.                                                                                             ii)  Right click on the folder to be copied and then click on Copy. Now select the location.
+
+            i)   Click on the New folder button,                                                                                           Right click on the empty area and select the option Paste.
+                 which is present in the Menu                                                                                          MOVE A FILE/FOLDER
+                 bar.
+                                                                                                                                       This option is used to move a folder from one location to another. To move a folder
+                 (OR)
+                                                                                                                                       i)   Select the folder, click on Organize  à      Cut. Now select a different location where the
+                                                                                                                                                                                                     Paste. The folder gets moved to the
+                                                                                                                                           folder has to be moved then click on Organize  à
+                                                                                                                                           selected location. (OR)
+
+                                                                       ii) Right click and then select NEW                             ii)   Right click the folder and click on Cut. Then select the location. Right click on empty
+                                                                           a  submenu  will  appear.  Then                                 area and select the option Paste.
+                                                                           click on Folder.
+                                                                                                                                       DELETE A FILE/FOLDER
+
+                                                                                                                                       This option is used to delete a folder.
+
+                                                                                                                                       i)  Select the folder and click on Organize à           Delete. (OR)
+                                                                                  DO  Y U  KNOW?                                       ii) Right click on the folder and select the                   DO  Y U  KNOW?
+                                                                                              O
+                                                                                                                                                                                                                  O
+                                                                                                                                           option Delete.
+                                                                                    Unit Conversion, Date                                                                                            The keyboard shortcut for
+                                                                                  Calculation, Lease Value                                                                                              Cut, Copy and Paste is
+                                                                                Calculation can also be done                                                                                         Ctrl + X, Ctrl + C & Ctrl + V
+             20                                                                 using Windows 7 Calculator.                                                                                                 respectively.                21]]></page><page Index="21"><![CDATA[ICT
+ INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                     INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+ I                                   I                  ICT
+
+
+           OPEN A FILE / FOLDER
+ i) Click on Start button and type Windows Explorer
+           This option is used to view the contents of a file/folder. A file/folder can be opened in
+ in the Search box.  (OR)  three different ways.
+
+ ii) Start  è   All Programs  è  Accessories  è   i)  Select the folder you want to open. Click on Open button from the Menu bar.
+ Windows Explorer  ii)  Double click on the folder.
+
+           iii)  Right click on the folder and select the option Open.
+ The left part of Windows Explorer displays drives,
+ folders and other hardware details and the right part   RENAME A FILE/FOLDER
+ displays  files,  sub-folders  and  the  content  of  the
+           This option is used to change the name of a file/folder. A folder can be renamed in two
+ selected item on the left part.
+           different ways.
+ FILE MANAGEMENT  i)  Select the folder and click on Organize   Rename.
+                                                            à
+ Some of the basic operations that can be performed on files and folders are create, copy,   ii) Right click on the folder and select Rename.
+ move and rename. We shall now discuss how to perform these operations in Windows   Then, type a new name and press Enter key.
+
+ Explorer.  COPY A FILE/FOLDER
+ CREATION OF A FOLDER  This option is used to create a copy of file/folder in different location.
+
+ To create a folder, open the drive in   i)  Select  the  folder  and  click  on  Organize  à   Copy.  The  folder  gets  copied  on  the
+ which  you  want  to  create  a  new   clipboard.  Select  the  location  where  the  folder  has  to  get  copied.  Now  click  on
+
+ folder. Creation of new folder can   Organize  à  Paste. Thus the folder gets copied on to the selected location. (OR)
+ be done in two different ways.  ii)  Right click on the folder to be copied and then click on Copy. Now select the location.
+
+ i)  Click on the New folder button,   Right click on the empty area and select the option Paste.
+ which is present in the Menu   MOVE A FILE/FOLDER
+ bar.
+           This option is used to move a folder from one location to another. To move a folder
+ (OR)
+           i)   Select the folder, click on Organize  à      Cut. Now select a different location where the
+                                                                         Paste. The folder gets moved to the
+               folder has to be moved then click on Organize  à
+               selected location. (OR)
+
+ ii) Right click and then select NEW   ii)   Right click the folder and click on Cut. Then select the location. Right click on empty
+ a  submenu  will  appear.  Then   area and select the option Paste.
+ click on Folder.
+           DELETE A FILE/FOLDER
+
+           This option is used to delete a folder.
+
+           i)  Select the folder and click on Organize à           Delete. (OR)
+ DO  Y U  KNOW?  ii) Right click on the folder and select the             DO  Y U  KNOW?
+ O
+                                                                                      O
+               option Delete.
+ Unit Conversion, Date                                                   The keyboard shortcut for
+ Calculation, Lease Value                                                  Cut, Copy and Paste is
+ Calculation can also be done                                            Ctrl + X, Ctrl + C & Ctrl + V
+ 20  using Windows 7 Calculator.                                                respectively.                21]]></page><page Index="22"><![CDATA[ICT
+                                                                                                                                                                                     ICT
+                                                            I                                                                                                    INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                            INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                                                                                                                                 I
+
+
+
+
+             VIEWING FILES AND FOLDERS                                                                                                 MEDIUM ICONS
+
+
+            Change your view         button helps to view the files and folders in different ways. This                                                                                          It gives a good idea of the content
+            option is available in the upper right corner of the window. The More options button will                                                                                            but the icon size is smaller than the
+            display a list of views as follows                                                                                                                                                   Large Icons.
+                     1. Extra large icons
+
+
+                     2. Large icons
+
+
+                     3. Medium icons
+
+                     4. Small icons
+
+
+                     5. List
+
+                     6. Details                                                                                                         SMALL ICONS
+
+                                                                                                                                       Small Icons view is much smaller than
+                     7. Tiles
+                                                                                                                                       the  Medium  Icons.  Here  the  folders
+
+                     8. Content                                                                                                        and files are displayed as icons with
+                                                                                                                                       their names in the right side. If the
+            The files/folders can also be viewed by Right clicking at any blank area and selecting the
+                                                                                                                                       file/folder name is big, it displays only
+            option view.                                                                                                               the first part of it.
+
+
+
+             EXTRA LARGE ICONS & LARGE ICONS
+
+            Extra Large Icons gives the biggest view of the folders. Large Icons also gives a bigger
+            view of the folders but the view is smaller when compared to Extra Large Icons.
+                                                                                                                                       LIST
+
+
+
+                                                                                                                                                                                                 In this view, the folders are displayed
+                                                                                                                                                                                                 one below the other followed by files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                          Extra large icons                                         Large icons
+
+
+
+             22                                                                                                                                                                                                                          23]]></page><page Index="23"><![CDATA[ICT
+                                                         ICT
+ I                                   INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+ INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                     I
+
+
+
+
+ VIEWING FILES AND FOLDERS  MEDIUM ICONS
+
+
+ Change your view         button helps to view the files and folders in different ways. This   It gives a good idea of the content
+ option is available in the upper right corner of the window. The More options button will   but the icon size is smaller than the
+ display a list of views as follows                                  Large Icons.
+ 1. Extra large icons
+
+
+ 2. Large icons
+
+
+ 3. Medium icons
+
+ 4. Small icons
+
+
+ 5. List
+
+ 6. Details   SMALL ICONS
+
+           Small Icons view is much smaller than
+ 7. Tiles
+           the  Medium  Icons.  Here  the  folders
+
+ 8. Content  and files are displayed as icons with
+           their names in the right side. If the
+ The files/folders can also be viewed by Right clicking at any blank area and selecting the
+           file/folder name is big, it displays only
+ option view.  the first part of it.
+
+
+
+ EXTRA LARGE ICONS & LARGE ICONS
+
+ Extra Large Icons gives the biggest view of the folders. Large Icons also gives a bigger
+ view of the folders but the view is smaller when compared to Extra Large Icons.
+           LIST
+
+
+
+                                                                     In this view, the folders are displayed
+                                                                     one below the other followed by files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Extra large icons  Large icons
+
+
+
+ 22                                                                                                          23]]></page><page Index="24"><![CDATA[INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                            I
+
+
+
+
+            DETAILS                                                   Details view is similar to list view but it                            FILL IN THE BLANKS
+
+                                                                      gives more information. In this view                             1. _________________           acts as an interface between the user and computer.
+                                                                      also, the folder names are displayed
+                                                                      first one below the other preceeded by                           2. _______________          feature of Windows7 is used to resize the application
+
+                                                                      small icons, then followed by files.                                  windows quickly.
+                                                                      For Folders  : It displays the date and                          3. A file is a collection of _________________             .
+                                                                      the  time  it  was  created  or  last
+                                                                      modified.                                                        4. Sound files are stored with the extension _________________                   .
+                                                                      For Files : It displays the file size, the                       5. The partitions in the hard disk are called _________________                  .
+
+                                                                      application name along with the date
+                                                                                                                                       6. GUI stands for_________________               .
+                                                                      and  time  it  was  created  or  last
+                                                                      modified.                                                        7. _________________           consists of files and sub-folders.
+
+
+            TILES                                                                                                                      8. _________________           option is used to change the name of the folder.
+
+            In tiles view, the files and folders are                                                                                   9. The Keyboard shortcut for cut is _________________                  .
+            displayed  as  icons  with  their                                                                                          10. _________________         button helps to view the files and folders in different ways.
+            respective  names  on  the  right  side.                                                                                                                                                                                                   E
+            For  Files  it  also  displays  the                                                                                              TICK TRUE OR FALSE
+
+            application  name  and  the  file  size
+            too.  Here  it  displays  the  complete                                                                                    1. In Windows 7, Gadgets such as weather, clock etc., cannot                       True          False          S
+            file/folder name.                                                                                                             be placed on Desktop.
+                                                                                                                                       2. A filename has three parts.                                                     True          False          I
+
+
+                                                                                                                                       3. The Keyboard shortcut for paste in Ctrl + P.                                    True          False          C
+
+            CONTENT                                                                                                                    4. Cut Option is used to move a folder.                                            True          False
+
+
+                                                                                                                                       5. .wav is the extension of Paint application files.                               True          False          R
+                                                                      Content  view  displays  the  folders
+                                                                      and  files  row  wise  with  detailed                                  MATCH THE FOLLOWING
+
+                                                                      information.                                                                                                                                                                     E
+                                                                                                                                       1. Unix                                    -      .jpg
+
+
+                                                                                                                                       2. Picture files                           -      content of the hard disk                                      X
+
+                                                                                                                                       3. Notepad extension                       -      .gif
+
+                                                                                                                                                                                                                                                       E
+                                                                                                                                       4. Windows Explorer                        -      .txt
+
+                                                                                                                                       5. Animated picture files                  -      Operating System
+
+
+             24                                                                                                                                                                                                                          25]]></page><page Index="25"><![CDATA[INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+ I
+
+
+
+
+ DETAILS  Details view is similar to list view but it   FILL IN THE BLANKS
+
+ gives more information. In this view   1. _________________  acts as an interface between the user and computer.
+ also, the folder names are displayed
+ first one below the other preceeded by   2. _______________  feature of Windows7 is used to resize the application
+
+ small icons, then followed by files.  windows quickly.
+ For Folders : It displays the date and   3. A file is a collection of _________________ .
+ the  time  it  was  created  or  last
+ modified.  4. Sound files are stored with the extension _________________                  .
+ For Files : It displays the file size, the   5. The partitions in the hard disk are called _________________ .
+
+ application name along with the date
+           6. GUI stands for_________________              .
+ and  time  it  was  created  or  last
+ modified.  7. _________________          consists of files and sub-folders.
+
+
+ TILES     8. _________________           option is used to change the name of the folder.
+
+ In tiles view, the files and folders are   9. The Keyboard shortcut for cut is _________________ .
+ displayed  as  icons  with  their   10. _________________ button helps to view the files and folders in different ways.
+ respective  names  on  the  right  side.                                                                                 E
+ For  Files  it  also  displays  the   TICK TRUE OR FALSE
+
+ application  name  and  the  file  size
+ too.  Here  it  displays  the  complete   1. In Windows 7, Gadgets such as weather, clock etc., cannot   True  False     S
+ file/folder name.  be placed on Desktop.
+           2. A filename has three parts.                                                     True         False          I
+
+
+           3. The Keyboard shortcut for paste in Ctrl + P.                                    True         False          C
+
+ CONTENT   4. Cut Option is used to move a folder.                                            True         False
+
+
+           5. .wav is the extension of Paint application files.                               True         False          R
+ Content  view  displays  the  folders
+ and  files  row  wise  with  detailed   MATCH THE FOLLOWING
+
+ information.                                                                                                             E
+           1. Unix                                    -      .jpg
+
+
+           2. Picture files                           -      content of the hard disk                                     X
+
+           3. Notepad extension                       -      .gif
+
+                                                                                                                          E
+           4. Windows Explorer                        -      .txt
+
+           5. Animated picture files                  -      Operating System
+
+
+ 24                                                                                                          25]]></page><page Index="26"><![CDATA[ICT
+                                                                                                                                                                 INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                            I                                                                                                    I                   ICT
+                                                            INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+
+
+
+
+                   CHOOSE THE CORRECT ANSWER                                                                                                   ANSWER THE FOLLOWING IN DETAIL
+                                                                                                                                        1. Explain Windows Explorer and its parts.
+            1. In Windows 7, the time taken for booting the System is ________________                       when                       2. What are the operations involved in File Management? Explain any three.
+
+               compared to other older versions.
+                                                                                                                                        3. Explain the different View options.
+               a) Increased                     b)  Reduced                         c)  Same
+
+            2. ___________       separates filename and the extension.                                                                                    try
+                                                                                                                                                          in your
+               a) Semi-colon                    b)  Dot                            c)  Comma                                                                     lab
+
+            3. Sound files are saved with the extension _____________                .
+                                                                                                                                          1.   Create a file containing information about
+               a) .gif                          b)  .sou                           c)  .wav                                                    "Role of Computer in today's life" in Notepad.
+
+            4. To ____________        a folder select the folder, Click on organize   cut.
+                                                                                             à
+                                                                                                                                                    1 Save the file as "Computer" in D drive.
+               a) Move                          b)  Copy                            c)  Paste                                                       1 Create a folder named "PC" in D drive.
+
+            5. The Keyboard shortcut for copy is ____________               .                                             E                         1 Copy the file "Computer" to "PC" folder.                                                   E
+
+
+               a) Ctrl + X                      b)  Ctrl + C                        c)  Ctrl + V
+                                                                                                                          S              2. Create the following Folder and Sub-folders in F drive:
+
+                   ANSWER THE FOLLOWING                                                                                                                                                                                                          S
+
+                                                                                                                          I
+            1. What is an Operating System?                                                                                                                                                                                                      I
+
+
+            2. Name any four File extensions.                                                                             C                                                                                                                      C
+
+            3. What is a File?  Explain its parts.                                                                        R
+
+            4. What is Folder?                                                                                                                                                                                                                   R
+
+                                                                                                                          E
+            5. What is Drive?
+
+            6. How will you create a Folder?                                                                                                                                                                                                     E
+
+            7. Name any four Views.                                                                                       X
+
+
+            8. Give some examples of Operating System.                                                                                                   1    Make a copy of the above folders in D drive.                                       X
+
+            9. How will you delete a file or folder?                                                                      E                              1    Rename the folder "Animals" to "Creatures".
+                                                                                                                                                         1    Move the folder "Wild animals" to E drive.
+            10. What are the features of Windows7 Operating System?                                                                                                                                                                              E
+                                                                                                                                                         1    Rename the folder "Cat" to "Cow".
+
+                                                                                                                                                         1    Delete the folder "Domestic animals".
+
+
+
+             26                                                                                                                                                                                                                          27]]></page><page Index="27"><![CDATA[ICT
+                                     INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+ I                                   I                  ICT
+ INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+
+
+
+
+ CHOOSE THE CORRECT ANSWER  ANSWER THE FOLLOWING IN DETAIL
+            1. Explain Windows Explorer and its parts.
+ 1. In Windows 7, the time taken for booting the System is ________________  when   2. What are the operations involved in File Management? Explain any three.
+
+ compared to other older versions.
+            3. Explain the different View options.
+ a) Increased     b)  Reduced  c)  Same
+
+ 2. ___________  separates filename and the extension.  try
+                              in your
+ a) Semi-colon      b)  Dot                c)  Comma  lab
+
+ 3. Sound files are saved with the extension _____________ .
+             1.    Create a file containing information about
+ a) .gif     b)  .sou                c)  .wav  "Role of Computer in today's life" in Notepad.
+
+ 4. To ____________  a folder select the folder, Click on organize   cut.
+ à
+                        1 Save the file as "Computer" in D drive.
+ a) Move      b)  Copy                c)  Paste  1 Create a folder named "PC" in D drive.
+
+ 5. The Keyboard shortcut for copy is ____________ .  E  1 Copy the file "Computer" to "PC" folder.                  E
+
+
+ a) Ctrl + X      b)  Ctrl + C                c)  Ctrl + V
+ S           2. Create the following Folder and Sub-folders in F drive:
+
+ ANSWER THE FOLLOWING                                                                                                S
+
+ I
+ 1. What is an Operating System?                                                                                     I
+
+
+ 2. Name any four File extensions.  C                                                                                C
+
+ 3. What is a File?  Explain its parts.  R
+
+ 4. What is Folder?                                                                                                  R
+
+ E
+ 5. What is Drive?
+
+ 6. How will you create a Folder?                                                                                    E
+
+ 7. Name any four Views.  X
+
+
+ 8. Give some examples of Operating System.  1  Make a copy of the above folders in D drive.                         X
+
+ 9. How will you delete a file or folder?  E  1  Rename the folder "Animals" to "Creatures".
+                             1    Move the folder "Wild animals" to E drive.
+ 10. What are the features of Windows7 Operating System?                                                             E
+                             1    Rename the folder "Cat" to "Cow".
+
+                             1    Delete the folder "Domestic animals".
+
+
+
+ 26                                                                                                          27]]></page><page Index="28"><![CDATA[ICT
+                                                                                                                                                                                                      CHAPTER 3APTER 3
+                                                                                                                                                                                                      CH
+                                                            INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+                                                            I                                                                                                                        ICT
+                                                                                                                                                                           MS Word 2007
+
+
+                        try
+                        in your                                                                                                        Introduction
+                             lab                                                                                                       In earlier days to print letters, prepare statements or documents a manual typewriter
+
+
+             3. Create the folder and sub-folders in F drive as shown below:                                                           was used which was later replaced by electronic typewriter machine. The invention of
+
+                                                                                                                                       computers quickly replaced most of manual documentation and almost the typewriters
+                                                                                                                                       are extinct in most workplaces.
+
+                                                                                                                                        WORD PROCESSORS
+
+                                                                                                                                       As  computers  are  fast  replacing  most  of  the  manual  documentation  work,  software
+                                                                                                                                       technically called "Word Processors" are introduced to process text. Word Processors are
+                                                                                                                                       application software that are used for creating, editing, sorting and printing all kinds of
+                                                                                                                                       documents. Some examples of word processors are Microsoft Word 2003, MS Word 2007,
+                                                                                                                                       MS Word 2010, Adobe Acrobat and Open office.
+
+
+                                                                                                                 E                     Word processors are applied in the fields of journalism, E-Publishing and DTP (Desk Top
+                                                                                                                                       Publishing). Thus Word processing is integral for the preparation and presentation of
+
+                                                                                                                                       documents.
+                                                                                                                 S                     MS Word 2007 was developed by Microsoft Corporation. It has gained its popularity due
+                                                                                                                                        FEATURES OF MS WORD 2007
+
+
+                                                                                                                                       to its advanced features. Some of them are
+                                                                                                                 I
+                1    Make a copy of "Parrot" in Flightless.                                                                            1.  It comes with a gallery of building blocks, which can drop into a document to add
+                                                                                                                                            elements like headers, footers, cover pages, slide bars etc.
+                1    Move the folder "Flightless" into "Flight".                                                 C                     2.  It adds a great multilane view that makes comparing different versions of the same
+                     (Use Mouse not Menu option)                                                                                            document easy.
+
+
+                1    Rename the folder "Parrot" to "Crow" in Flight and                                          R                     3.  The new Contextual spelling checker is a wonderful feature.
+                                                                                                                                        G
+                                                                                                                                        GETTING INTO MS WORD 2007ETTING INTO MS WORD 2007
+                     delete the same.                                                                            E                     One of the common ways to get into
+
+
+                1    Create one more folder in "Flight" and name it as                                                                 MS Word 2007 is using the Start
+                     "Dove".                                                                                     X                     button   .                Microsoft Office
+                                                                                                                                                  Programs ð
+                                                                                                                                       Start ð
+                1    Move the "Birds" folder from F drive to desktop.                                                                  ð   Microsoft Office Word 2007.
+                                                                                                                 E
+
+              4. Open F drive view all the files and folders using
+
+                  different view options and note down the difference.
+
+
+
+
+             28                                                                                                                                                                                                                          29]]></page><page Index="29"><![CDATA[ICT
+                                                                         CHAPTER 3APTER 3
+                                                                         CH
+ INTRODUCTION TO WINDOWS 7NTRODUCTION TO WINDOWS 7
+ I                                                      ICT
+                                               MS Word 2007
+
+
+ try
+ in your    Introduction
+ lab       In earlier days to print letters, prepare statements or documents a manual typewriter
+
+
+ 3. Create the folder and sub-folders in F drive as shown below:  was used which was later replaced by electronic typewriter machine. The invention of
+
+           computers quickly replaced most of manual documentation and almost the typewriters
+           are extinct in most workplaces.
+
+           WORD PROCESSORS
+
+           As  computers  are  fast  replacing  most  of  the  manual  documentation  work,  software
+           technically called "Word Processors" are introduced to process text. Word Processors are
+           application software that are used for creating, editing, sorting and printing all kinds of
+           documents. Some examples of word processors are Microsoft Word 2003, MS Word 2007,
+           MS Word 2010, Adobe Acrobat and Open office.
+
+
+ E         Word processors are applied in the fields of journalism, E-Publishing and DTP (Desk Top
+           Publishing). Thus Word processing is integral for the preparation and presentation of
+
+           documents.
+ S         MS Word 2007 was developed by Microsoft Corporation. It has gained its popularity due
+           FEATURES OF MS WORD 2007
+
+
+           to its advanced features. Some of them are
+ I
+ 1  Make a copy of "Parrot" in Flightless.  1.  It comes with a gallery of building blocks, which can drop into a document to add
+                elements like headers, footers, cover pages, slide bars etc.
+ 1  Move the folder "Flightless" into "Flight".  C  2.  It adds a great multilane view that makes comparing different versions of the same
+ (Use Mouse not Menu option)  document easy.
+
+
+ 1  Rename the folder "Parrot" to "Crow" in Flight and   R  3.  The new Contextual spelling checker is a wonderful feature.
+           G
+           GETTING INTO MS WORD 2007ETTING INTO MS WORD 2007
+ delete the same.  E  One of the common ways to get into
+
+
+ 1  Create one more folder in "Flight" and name it as   MS Word 2007 is using the Start
+ "Dove".  X  button .                Microsoft Office
+                     Programs ð
+           Start ð
+ 1  Move the "Birds" folder from F drive to desktop.  ð  Microsoft Office Word 2007.
+ E
+
+ 4. Open F drive view all the files and folders using
+
+     different view options and note down the difference.
+
+
+
+
+ 28                                                                                                          29]]></page><page Index="30"><![CDATA[ICT
+                                                                                                                                                                                              MS WORD 2007S WORD 2007
+                                                                                        MS WORD 2007S WORD 2007
+                                                                                        M                                                                                            ICT
+                                                                                                                                                                                              M
+
+            COMPONENTS OF MS WORD 2007 WINDOW                                                                                          Scroll bars
+
+            The Microsoft Office button                                                                                                Scroll bars are used to scroll across the window (up, down, left and right).There are two
+
+            This button is found at the top left part of the MS Word 2007 window. This button helps us                                 types of scroll bars namely horizontal and vertical. A horizontal scroll bar is used to scroll
+
+            to perform many functions. Using this button we can create a new document, open an                                         from left to right and vice versa and the vertical scroll bar is used for up and down
+            existing document, save a document, print, send a document through (E-mail or Fax) or                                      movement and vice versa.
+            close the current document.
+                                                                                                                                       Rulers
+            Quick Access Toolbar
+                                                                                                                                       Rulers control the margins of the page. They appear on the top and left side of the
+            By default this toolbar appears next to the MS Office Button. The Quick access toolbar                                     work area.
+            helps us to access the frequently used commands. In other words, it is a shortcut to
+
+            frequently used commands. By default only three buttons appear on this tool bar Save,                                       CREATING A NEW DOCUMENT
+            Undo and Redo. The Save button is to save the document. The Undo button is to roll back                                    To  create  a  new  document  in  MS  Word
+            an action and Redo is to apply the same action again.                                                                      2007, the following methods are used.
+
+            Note: The keyboard short cuts for Save is Ctrl + S, Undo and Redo are Ctrl + Z and                                         Method  1   :  Click  on  the  Microsoft  office
+            Ctrl + Y respectively.                                                                                                     button and then click on New option. A list
+
+            We can also add other commands to this tool bar by right clicking on any command in the                                    of choices are displayed about the type of
+            MS Office button or in the Ribbon and click on 'Add to Quick Access toolbar'. By doing this                                document  to  be  created.  Click  on  the
+            a shortcut will be added to the Quick Access toolbar.                                                                      option  Blank  document  to  start  a  new
+                                                                                                                                       document.
+            Ribbon
+                                                                                                                                       Method 2   : Using the keyboard shortcut Ctrl
+            The Ribbon is a collection of tabs in a panel at the top portion of the document. It is
+            designed to help us to find the commands quickly to complete a task. The commands are                                      + N, a new blank document can be created.
+            organised in groups, which are collected together under tabs. The ribbon has seven tabs                                     ENTERING TEXT IN A NEW DOCUMENT
+            as shown in the picture below:
+                                                                                                                                       Once the blank document is created, it is ready for typing text. The text will appear on the
+                                                                                                                                       work area where the blinking cursor is located. As the text is typed the cursor moves
+                                                                                                                                       towards the right of the screen.
+
+
+
+
+
+
+
+                                                          Ribbon
+
+            Each tab contains many features for carrying out related type of activities. The ribbon
+            can be minimized to make more space on the screen.
+
+            Note: The keyboard short cut key for minimizing / maximizing the ribbon is Ctrl+ F1.
+            Work Area
+
+            It is a blank area where the text can be keyed in. It has a blinking vertical line called
+
+            cursor that indicates where the text will appear.                                                                                                             Entering text in a document
+             30                                                                                                                                                                                                                          31]]></page><page Index="31"><![CDATA[ICT
+                                                                  MS WORD 2007S WORD 2007
+ MS WORD 2007S WORD 2007
+ M                                                      ICT
+                                                                  M
+
+ COMPONENTS OF MS WORD 2007 WINDOW  Scroll bars
+
+ The Microsoft Office button  Scroll bars are used to scroll across the window (up, down, left and right).There are two
+
+ This button is found at the top left part of the MS Word 2007 window. This button helps us   types of scroll bars namely horizontal and vertical. A horizontal scroll bar is used to scroll
+
+ to perform many functions. Using this button we can create a new document, open an   from left to right and vice versa and the vertical scroll bar is used for up and down
+ existing document, save a document, print, send a document through (E-mail or Fax) or   movement and vice versa.
+ close the current document.
+           Rulers
+ Quick Access Toolbar
+           Rulers control the margins of the page. They appear on the top and left side of the
+ By default this toolbar appears next to the MS Office Button. The Quick access toolbar   work area.
+ helps us to access the frequently used commands. In other words, it is a shortcut to
+
+ frequently used commands. By default only three buttons appear on this tool bar Save,   CREATING A NEW DOCUMENT
+ Undo and Redo. The Save button is to save the document. The Undo button is to roll back   To  create  a  new  document  in  MS  Word
+ an action and Redo is to apply the same action again.  2007, the following methods are used.
+
+ Note: The keyboard short cuts for Save is Ctrl + S, Undo and Redo are Ctrl + Z and   Method  1 :  Click  on  the  Microsoft  office
+ Ctrl + Y respectively.  button and then click on New option. A list
+
+ We can also add other commands to this tool bar by right clicking on any command in the   of choices are displayed about the type of
+ MS Office button or in the Ribbon and click on 'Add to Quick Access toolbar'. By doing this   document  to  be  created.  Click  on  the
+ a shortcut will be added to the Quick Access toolbar.  option  Blank  document  to  start  a  new
+           document.
+ Ribbon
+           Method 2   : Using the keyboard shortcut Ctrl
+ The Ribbon is a collection of tabs in a panel at the top portion of the document. It is
+ designed to help us to find the commands quickly to complete a task. The commands are   + N, a new blank document can be created.
+ organised in groups, which are collected together under tabs. The ribbon has seven tabs   ENTERING TEXT IN A NEW DOCUMENT
+ as shown in the picture below:
+           Once the blank document is created, it is ready for typing text. The text will appear on the
+           work area where the blinking cursor is located. As the text is typed the cursor moves
+           towards the right of the screen.
+
+
+
+
+
+
+
+ Ribbon
+
+ Each tab contains many features for carrying out related type of activities. The ribbon
+ can be minimized to make more space on the screen.
+
+ Note: The keyboard short cut key for minimizing / maximizing the ribbon is Ctrl+ F1.
+ Work Area
+
+ It is a blank area where the text can be keyed in. It has a blinking vertical line called
+
+ cursor that indicates where the text will appear.  Entering text in a document
+ 30                                                                                                          31]]></page><page Index="32"><![CDATA[ICT
+                                                                                                                                                                                              MS WORD 2007S WORD 2007
+                                                                                                                                                                                              M
+                                                                                        M
+                                                                                        MS WORD 2007S WORD 2007                                                                      ICT
+
+            SAVING A DOCUMENT
+
+            The Save option helps us to store the document in the computer for future purpose. To                                       CLOSING A DOCUMENT
+
+            save a document click on the Microsoft office button and click Save option, the Save As                                    A document must be closed after using it. To close the current document click the option
+            dialog box appears as shown below. Now type a file name and click on Save button.                                          Close. This is the last option in MS Office button. If the file contains any unsaved changes
+                                                                                                                                       MS Word 2007 prompts to save the changes by displaying the confirmation dialogue box
+                                                                                                                                       as shown.
+
+
+                                                                                                                                                                                                                                Hint
+
+                                                                                                                                                                                                                          Use Ctrl + W or
+                                                                                                                                                                                                                              Ctrl + F4
+                                                                                                                                                                                                                             to close the
+                                                                                                                                                                                                                         current document.
+
+
+
+
+
+                                                     Save a document
+            Note: The keyboard shortcut for saving a document is Ctrl+S.
+                                                                                                                                       We can also close MS Word 2007 by clicking on
+            SAVE AS OPTION                                                                                                             the close button     . This is found at the top
+
+
+            The Save As option is used to save the document in a different location or with a different                                right corner of the document. If the file has
+            name. To use this option click on the Microsoft office button and then select the option                                   been  saved  before  and  there  are  no  new
+            Save As. Now type a new file name to save the document with a different name.                                              changes, MS Word simply closes the file. The
+                                                                                                                                       keyboard shortcut for closing a document is
+            Note: The keyboard shortcut for Save As option is F12 (Function key).
+                                                                                                                                       Ctrl + F4.
+                            Difference between Save                  and Save As         option
+                                                                                                                                        OPENING AN EXISTING DOCUMENT
+
+
+
+                                    SAVE                                   SAVE AS                                                                                                               The  Open  option  is  used  to  open  an
+                                                                                                                                                                                                 existing document. To open a document
+                       To save a document for the first         To make a copy of the document                                                                                                   click  on  MS  Office  button  and  select
+                       time the save option used.               the Save As option is used.                                                                                                      the option Open. The Open dialog box
+                                                                                                                                                                                                 appears as shown, displaying a list of
+                       Each time when this option is            Each time when this option is                                                                                                    files. You can choose the document by
+                       used the document is simply              used the document is saved with                                                                                                  clicking on the filename and click Open
+                       saved with the same name.                a different name or location or                                                                                                  button  or  if  you  have  used  the  file
+                                                                both.
+                                                                                                                                                                                                 recently you can choose the file from
+                       The keyboard shortcut for Save           The keyboard shortcut for Save As
+                       option is Ctrl + S.                      option is F12.                                                                                                                   recent document section.
+
+
+
+                                                                                                                                       Note: The keyboard shortcut for opening a document is Ctrl + O.
+
+             32                                                                                                                                                                                                                          33]]></page><page Index="33"><![CDATA[ICT
+                                                                  MS WORD 2007S WORD 2007
+                                                                  M
+ M
+ MS WORD 2007S WORD 2007                                ICT
+
+ SAVING A DOCUMENT
+
+ The Save option helps us to store the document in the computer for future purpose. To   CLOSING A DOCUMENT
+
+ save a document click on the Microsoft office button and click Save option, the Save As    A document must be closed after using it. To close the current document click the option
+ dialog box appears as shown below. Now type a file name and click on Save button.  Close. This is the last option in MS Office button. If the file contains any unsaved changes
+           MS Word 2007 prompts to save the changes by displaying the confirmation dialogue box
+           as shown.
+
+
+                                                                                                    Hint
+
+                                                                                              Use Ctrl + W or
+                                                                                                  Ctrl + F4
+                                                                                                 to close the
+                                                                                             current document.
+
+
+
+
+
+ Save a document
+ Note: The keyboard shortcut for saving a document is Ctrl+S.
+           We can also close MS Word 2007 by clicking on
+ SAVE AS OPTION  the close button     . This is found at the top
+
+
+ The Save As option is used to save the document in a different location or with a different   right corner of the document. If the file has
+ name. To use this option click on the Microsoft office button and then select the option   been  saved  before  and  there  are  no  new
+ Save As. Now type a new file name to save the document with a different name.  changes, MS Word simply closes the file. The
+           keyboard shortcut for closing a document is
+ Note: The keyboard shortcut for Save As option is F12 (Function key).
+           Ctrl + F4.
+ Difference between Save  and Save As  option
+           OPENING AN EXISTING DOCUMENT
+
+
+
+ SAVE  SAVE AS                                                       The  Open  option  is  used  to  open  an
+                                                                     existing document. To open a document
+ To save a document for the first   To make a copy of the document   click  on  MS  Office  button  and  select
+ time the save option used.  the Save As option is used.             the option Open. The Open dialog box
+                                                                     appears as shown, displaying a list of
+ Each time when this option is  Each time when this option is        files. You can choose the document by
+ used the document is simply  used the document is saved with        clicking on the filename and click Open
+ saved with the same name.  a different name or location or          button  or  if  you  have  used  the  file
+ both.
+                                                                     recently you can choose the file from
+ The keyboard shortcut for Save  The keyboard shortcut for Save As
+ option is Ctrl + S.  option is F12.                                 recent document section.
+
+
+
+           Note: The keyboard shortcut for opening a document is Ctrl + O.
+
+ 32                                                                                                          33]]></page><page Index="34"><![CDATA[M
+                                                                                        MS WORD 2007S WORD 2007                                                                               MS WORD 2007S WORD 2007
+                                                                                        M
+
+
+            EXITING MS WORD 2007                                                                                                        TEXT INSERTION
+
+            To close MS Word 2007 application click on MS Office button and select the option Exit                                     To insert text in a document we can move the cursor to the desired location where the text
+
+            Word. This option is found in the lower right corner of MS Office button. We can also Exit                                 is to be inserted and simply start typing. We can also insert text in a document by other
+            by double clicking on MS Office button. The keyboard shortcut is ALT+F4.                                                   methods using cut, copy and paste options. Now let us discuss the other methods.
+            TEXT SELECTION                                                                                                              CUT OPTION
+
+            To work or edit any text it is necessary to select a particular text that includes a word, line
+                                                                                                                                       This option is used to cut a particular portion of the text and temporarily place it on the
+            or a paragraph. The text can be selected in two different ways, namely
+                                                                                                                                       clipboard. In other words, this option is used to move a portion of the text from one part of
+                                         •      Using keyboard                                                                         the document to the other position in the same document or can be placed in some other
+
+                                         •      Using Mouse                                                                            document too. To perform the cut option follow the steps given below.
+            SELECTING TEXT WITH KEYBOARD                                                                                               Step 1  :  Select the text that you wish to cut (using the Mouse or Shift + arrow key)
+
+            This  way  of  selection  is  done  when  a  particular  word,  line  or  paragraph  has  to  be                           Step 2  :  Right click and select the option Cut. Now the highlighted text is removed from
+            selected. Keyboard selection is carried out by pressing the Shift key along with the                                                  the current position and placed on the clipboard, which is a temporary storage
+            appropriate arrow keys.                                                                                                                 area.
+
+            SELECTING TEXT WITH MOUSE                                                                                                  Note: The keyboard shortcut for performing the cut action is Ctrl + X              . The Cut option is
+
+            The mouse selection can be done by placing the cursor at the beginning of the text,                                        always followed by the Paste option.
+            holding the left mouse button and dragging across the text that is to be selected. Once                                     PASTE OPTION
+            the desired text is selected, it will be highlighted. The text can be deselected by clicking
+                                                                                                                                       This option is used to insert the contents of the clipboard (contains text cut/copied) at the
+            the mouse outside the selected area.
+                                                                                                                                       cursor position where the desired text is required. To perform the paste option follow the
+                                                                                                                                       steps given below.
+
+                                                                                                                                       Step 1  :  Place the cursor at the position, where you want the text to be inserted.
+
+                                                                                                                                       Step 2  : Right click on the mouse and select the option Paste. Now the selected text is
+                                                                                                                                                  pasted. The keyboard shortcut for the Paste option is Ctrl + V         .
+                                                                                                                                        COPY OPTION
+
+                                                                                                                                       This option is used to make a copy of a part of the text or the whole text in the same
+                                                                                                                                       document or in a different document at the cursor position. To perform the copy option
+                                                                                                                                       follow the steps given below.
+
+                                                                                                                                       Step 1  :  Select the text which you want to copy.
+
+                                                                                                                                       Step 2  :  Right  click  on  the  mouse  and  select  the  option  copy.  Now  a  copy  of  the
+                                                                                                                                                  highlighted text is placed on the clipboard, but the original text remains in the
+            Note:
+                                                                                                                                                  same position. The Copy option is also followed by the Paste option.
+            •   To select a word double-click within the word.
+                                                                                                                                       Place the cursor at the position where you want a copy of the text to be inserted (either in
+            •   To select a paragraph triple-click within the paragraph.                                                               the same document or open another document). Then right click on the mouse and select
+
+            •   To select the entire document click on the select button located in the right corner                                   the option Paste. This action will paste a copy of the text at the cursor position.
+                of the Home tab and choose Select All from the drop down list or press Ctrl + A.                                       Note: The keyboard shortcut for copy option is         Ctrl + C.
+
+             34                                                                                                                                                                                                                          35]]></page><page Index="35"><![CDATA[M
+ MS WORD 2007S WORD 2007                                          MS WORD 2007S WORD 2007
+ M
+
+
+ EXITING MS WORD 2007  TEXT INSERTION
+
+ To close MS Word 2007 application click on MS Office button and select the option Exit   To insert text in a document we can move the cursor to the desired location where the text
+
+ Word. This option is found in the lower right corner of MS Office button. We can also Exit   is to be inserted and simply start typing. We can also insert text in a document by other
+ by double clicking on MS Office button. The keyboard shortcut is ALT+F4.  methods using cut, copy and paste options. Now let us discuss the other methods.
+ TEXT SELECTION  CUT OPTION
+
+ To work or edit any text it is necessary to select a particular text that includes a word, line
+           This option is used to cut a particular portion of the text and temporarily place it on the
+ or a paragraph. The text can be selected in two different ways, namely
+           clipboard. In other words, this option is used to move a portion of the text from one part of
+ •  Using keyboard  the document to the other position in the same document or can be placed in some other
+
+ •  Using Mouse  document too. To perform the cut option follow the steps given below.
+ SELECTING TEXT WITH KEYBOARD  Step 1 :  Select the text that you wish to cut (using the Mouse or Shift + arrow key)
+
+ This  way  of  selection  is  done  when  a  particular  word,  line  or  paragraph  has  to  be   Step 2 :  Right click and select the option Cut. Now the highlighted text is removed from
+ selected. Keyboard selection is carried out by pressing the Shift key along with the             the current position and placed on the clipboard, which is a temporary storage
+ appropriate arrow keys.               area.
+
+ SELECTING TEXT WITH MOUSE  Note: The keyboard shortcut for performing the cut action is Ctrl + X . The Cut option is
+
+ The mouse selection can be done by placing the cursor at the beginning of the text,   always followed by the Paste option.
+ holding the left mouse button and dragging across the text that is to be selected. Once   PASTE OPTION
+ the desired text is selected, it will be highlighted. The text can be deselected by clicking
+           This option is used to insert the contents of the clipboard (contains text cut/copied) at the
+ the mouse outside the selected area.
+           cursor position where the desired text is required. To perform the paste option follow the
+           steps given below.
+
+           Step 1 :  Place the cursor at the position, where you want the text to be inserted.
+
+           Step 2 : Right click on the mouse and select the option Paste. Now the selected text is
+                      pasted. The keyboard shortcut for the Paste option is Ctrl + V         .
+           COPY OPTION
+
+           This option is used to make a copy of a part of the text or the whole text in the same
+           document or in a different document at the cursor position. To perform the copy option
+           follow the steps given below.
+
+           Step 1 :  Select the text which you want to copy.
+
+           Step 2 :  Right  click  on  the  mouse  and  select  the  option  copy.  Now  a  copy  of  the
+                      highlighted text is placed on the clipboard, but the original text remains in the
+ Note:
+                      same position. The Copy option is also followed by the Paste option.
+ •  To select a word double-click within the word.
+           Place the cursor at the position where you want a copy of the text to be inserted (either in
+ •  To select a paragraph triple-click within the paragraph.  the same document or open another document). Then right click on the mouse and select
+
+ •  To select the entire document click on the select button located in the right corner   the option Paste. This action will paste a copy of the text at the cursor position.
+ of the Home tab and choose Select All from the drop down list or press Ctrl + A.  Note: The keyboard shortcut for copy option is  Ctrl + C.
+
+ 34                                                                                                          35]]></page><page Index="36"><![CDATA[ICT
+                                                                                                                                                                                              MS WORD 2007S WORD 2007
+                                                                                                                                                                                              M
+                                                                                        MS WORD 2007S WORD 2007
+                                                                                        M                                                                                            ICT
+
+
+                 FILL IN THE BLANKS                                                                                                            CHOOSE THE CORRECT ANSWER
+
+            1.  DTP stands for _____________________________                   .                                                        1. Keyboard selection is carried out by pressing the ____________                  key along
+
+            2.  MS word 2007 was developed by ______________                  corporation.                                                 with the appropriate arrow keys.
+
+
+                                                                  a
+                                                                                  a
+            3.  To get into MS Word 2007, click on start   programs   __________________ a                                                 (a) Shift                 (b) Control                  (c) Home
+                 Microsoft office Word 2007.                                                                                            2. To select a word _____________            within the word.
+            4.  _______________         is found at the top left part of the MS Word 2007 window.                                          (a) Click                 (b) Triple click             (c) Double click
+
+            5.  _______________         toolbar help us to access the frequently used commands.                                         3. The keyboard shortcut for Save As option is  ________________                   .
+
+            6.  Ribbon  is  a  collection  of  ____________           in  a  panel  at  the  top  portion  of  the                         (a) F10                   (b) F12                      (c) F4
+                 document.                                                                                                              4. ____________       button is found at the top right corner of the document.
+
+            7.  A horizontal scroll bar is used to scroll from ______________               to  _____________                              (a) Restore               (b) Maximize                 (c) Close
+
+                 and vice versa.                                                                                                        5. To exit MS Word 2007 click MS Office button and select the option _________                       .
+            8.  ______________         controls the margins of the page.                                                                   (a) Close                 (b) Exit Word                (c) None of these
+
+
+            9.  ______________        option is used to move a text from one part of the document to                                           MATCH THE FOLLOWING
+                 the other position in the same document.                                                                E              1.  Ctrl + S                 -      Redo                                                                      E
+
+            10. The text can be _______________          by clicking the mouse outside the selected area.                               2.  Ctrl + Z                 -      Saves the document
+
+                  TICK TRUE OR FALSE                                                                                     S              3.  Ctrl + Y                 -      Minimizing /maximizing the ribbon                                         S
+
+
+            1. Word processing is integral for the preparation and                                                                      4.  Ctrl + V                 -      New blank document
+               presentation of documents.                                                      True         False        I              5.  Ctrl + F4                -      Undo                                                                      I
+
+            2. By default only two buttons appear in the quick access toolbar. True                         False        C              6.  Ctrl + F1                -      Paste                                                                     C
+            3. The ribbon has nine tabs.                                                       True         False
+
+            4. The Keyboard shortcut for minimizing/maximizing the ribbon                                                               7.  Ctrl + N                 -      Copy
+               is Ctrl +F1.                                                                    True         False        R              8.  Ctrl + O                 -      Select All                                                                R
+
+            5. The text can be selected in three different ways.                               True         False                       9.  Ctrl + A                 -      Opens a document
+
+            6.  To select a paragraph, triple click within the paragraph.                      True         False        E              10. Ctrl + C                 -      Closes a document                                                         E
+            7.  The keyboard shortcut for undo is Ctrl+Y.                                      True         False
+
+            8.  To open a document, click on MS Office button and select                       True         False        X                     ANSWER THE FOLLOWING                                                                                   X
+                the option open.                                                                                                        1.  What is a Word processor? Give few examples.
+
+            9.  Exit word option is found in the lower left corner of the                      True         False                       2.  Write a short note on MS Office button.
+                MS Office button.                                                                                        E              3.  What is Ribbon?                                                                                           E
+
+            10. The Keyboard shortcut for closing a document is Ctrl+F4.                       True         False                       4.  Name the two types of scroll bars.
+
+             36                                                                                                                                                                                                                          37]]></page><page Index="37"><![CDATA[ICT
+                                                                  MS WORD 2007S WORD 2007
+                                                                  M
+ MS WORD 2007S WORD 2007
+ M                                                      ICT
+
+
+ FILL IN THE BLANKS  CHOOSE THE CORRECT ANSWER
+
+ 1.  DTP stands for _____________________________ .  1. Keyboard selection is carried out by pressing the ____________  key along
+
+ 2.  MS word 2007 was developed by ______________  corporation.  with the appropriate arrow keys.
+
+
+ a
+ a
+ 3.  To get into MS Word 2007, click on start   programs   __________________ a  (a) Shift  (b) Control  (c) Home
+ Microsoft office Word 2007.  2. To select a word _____________  within the word.
+ 4.  _______________  is found at the top left part of the MS Word 2007 window.  (a) Click  (b) Triple click  (c) Double click
+
+ 5.  _______________  toolbar help us to access the frequently used commands.  3. The keyboard shortcut for Save As option is  ________________ .
+
+ 6.  Ribbon  is  a  collection  of  ____________   in  a  panel  at  the  top  portion  of  the   (a) F10  (b) F12  (c) F4
+ document.  4. ____________       button is found at the top right corner of the document.
+
+ 7.  A horizontal scroll bar is used to scroll from ______________  to  _____________    (a) Restore  (b) Maximize  (c) Close
+
+ and vice versa.  5. To exit MS Word 2007 click MS Office button and select the option _________                 .
+ 8.  ______________  controls the margins of the page.  (a) Close  (b) Exit Word  (c) None of these
+
+
+ 9.  ______________ option is used to move a text from one part of the document to   MATCH THE FOLLOWING
+ the other position in the same document.  E  1.  Ctrl + S  -  Redo                                                       E
+
+ 10. The text can be _______________ by clicking the mouse outside the selected area.  2.  Ctrl + Z  -  Saves the document
+
+ TICK TRUE OR FALSE  S  3.  Ctrl + Y     -      Minimizing /maximizing the ribbon                                         S
+
+
+ 1. Word processing is integral for the preparation and    4.  Ctrl + V  -  New blank document
+ presentation of documents.  True  False  I  5.  Ctrl + F4  -  Undo                                                       I
+
+ 2. By default only two buttons appear in the quick access toolbar. True  False  C  6.  Ctrl + F1  -  Paste               C
+ 3. The ribbon has nine tabs.  True  False
+
+ 4. The Keyboard shortcut for minimizing/maximizing the ribbon   7.  Ctrl + N  -  Copy
+ is Ctrl +F1.  True  False  R  8.  Ctrl + O  -  Select All                                                                R
+
+ 5. The text can be selected in three different ways.  True  False  9.  Ctrl + A  -  Opens a document
+
+ 6.  To select a paragraph, triple click within the paragraph.  True  False  E  10. Ctrl + C  -  Closes a document        E
+ 7.  The keyboard shortcut for undo is Ctrl+Y.  True  False
+
+ 8.  To open a document, click on MS Office button and select   True  False  X  ANSWER THE FOLLOWING                      X
+ the option open.  1.  What is a Word processor? Give few examples.
+
+ 9.  Exit word option is found in the lower left corner of the   True  False  2.  Write a short note on MS Office button.
+ MS Office button.  E  3.  What is Ribbon?                                                                                E
+
+ 10. The Keyboard shortcut for closing a document is Ctrl+F4.  True  False  4.  Name the two types of scroll bars.
+
+ 36                                                                                                          37]]></page><page Index="38"><![CDATA[ICT
+                                                                                                                                                                                     ICT
+                                                                                        MS WORD 2007S WORD 2007
+                                                                                        M                                                                                                             CHAPTER 4CHAPTER 4
+                                                                                                                                                                        Formatting in
+
+
+           5.  Differentiate Save and Save As options.
+           6.  How will you close a document?                                                                                          Introduction                                           MS Word 2007
+
+           7.  Write the steps to cut the text in a document?
+                                                                                                                                       A document usually comprises primarily of text. Thus it is important for this text to be laid
+           8.  What are the different ways to select text?
+                                                                                                                                       out such that it is clear and legible to read.
+           9.  Write any two features of MS Word 2007.
+                                                                                                                                       Laying out text to make it appear organised and attractive is called Formatting. Word
+           10. What is work area?                                                                                                      2007  provides  many  formatting  features  like  applying  fonts,  font  styles  and  sizes,
+
+                 ANSWER THE FOLLOWING IN DETAIL                                                                                        paragraphing and alignment of a group of text, character and line spacing, changing
+                                                                                                                                       case, bulleting and numbering etc.
+           1. Explain Quick Access toolbar.
+
+           2. Explain the different ways of text selection.                                                                             TEXT FORMATTING
+
+                                 try                                                                                                   Applying Fonts
+                                 in your                                                                                               Font is writing style or technique. MS word 2007 contains a collection of fonts, some of
+                                      lab                                                                                              which are used for corporate, decorative and designing purposes. Some fonts are also
+
+                                                                                                                                       symbolic in nature. These are used to stylize
+                   1.  Create a new file and type your name and class you                                                              any writing. By applying fonts, one can make
+                        are studying in                                                                                                document look more attractive.
+
+                   2.  Create another file and type the following text:                                  E                             To  change  the  font  type,  click  on  the  font
+
+                        "Word  processing  is  one  of  the  most  important                                                           name drop down arrow, which is found in the
+                        activities carried out in a work place"                                          S                             Home tab of the ribbon. You will find a list of
+                   3.  Minimize  the  currently  working  file  and  type  the                                                         fonts, which can be viewed by scrolling and
+
+                        same in the first file.                                                          I                             you can choose the font and then start keying
+
+                   4.  Close the first file, observe what happens.                                                                     in the text.        Use the keyboard shortcut
+                   5.  Save the same file with the filename "Myfile.docx"in                              C                             Font Sizes          Ctrl + D to change the      Hint
+                                                                                                                                                           font name.
+                        C Drive and close it.                                                                                                                                         The  size  of  text  matters  considerably  while
+
+                   6.  Save the second file with the filename happy.docx.                                R                                                                            formatting. The text must be large enough to
+
+                   7.  Open the file MyFile.docx and search for text "Word                                                                                                            appear legible. Usually, font size is measured in
+                        Processor "and observe what happens.                                                                                                                          points. The minimum size provided is 8 and the
+
+                   8.  Open any of the existing file (Created by you and                                 E                                                                            maximum  size  is  72.  The  font  size  can  be
+                        type the first paragraph of this chapter.                                                                                                                     changed by clicking on the font size drop down
+
+                   9.  Save  the  file.  Copy  only  the  first  two  lines  in  the                     X                                                                            arrow and choosing the appropriate size.
+                        2nd page.                                                                                                                                                                  DO  Y U  KNOW?
+                                                                                                                                                                                                               O
+                   10. Select all the text and move it to the 3rd page.
+                   11. Select the text using keyboard and mouse.                                         E                                                                                          'Ctrl + [ '  increases the
+                                                                                                                                                                                                      font size by 1 point
+                   12. Exit MS Word 2007.                                                                                                                                                          and   'Ctrl + ]'   reduces the
+             38                                                                                                                                                                                       font size by 1 point               39]]></page></pages></Search>
