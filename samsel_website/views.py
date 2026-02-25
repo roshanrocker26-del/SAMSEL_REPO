@@ -12,6 +12,11 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from xhtml2pdf import pisa
 from django.template.loader import get_template
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from django.db import connection
+import uuid
+from datetime import date, timedelta
 
 
 from samsel_project.settings import EMAIL_HOST_USER
@@ -60,7 +65,7 @@ def teacher_dashboard(request):
     try:
         teacher = Teacher.objects.get(t_id=teacher_id)
         
-        # Fetch purchases and group by series
+        # Fetch purchases and group by series for Profile
         purchases = Purchase.objects.filter(t_id=teacher).select_related('book_id')
         grouped_books = {}
         for p in purchases:
@@ -74,13 +79,22 @@ def teacher_dashboard(request):
         for series, classes in grouped_books.items():
             books_data.append({
                 'series': series,
-                'class_num': ", ".join(set(classes)) # Added set() to avoid duplicates if same class bought multiple times
+                'class_num': ", ".join(sorted(list(set(classes))))
             })
             
+        # Specific list for E-books section
+        ebooks_list = []
+        for p in purchases:
+            if p.book_id.book_path:
+                ebooks_list.append({
+                    'title': f"{p.book_id.series_name} - Class {p.book_id.class_num}",
+                    'view_url': p.book_id.book_path
+                })
+
         context = {
-            'profile': teacher, # Template uses profile.user... wait, let's check template
-            'teacher': teacher, # Adding this just in case
-            'books': books_data
+            'teacher': teacher,
+            'books': books_data,
+            'ebooks': ebooks_list
         }
         
         return render(request, 'teacher_dashboard.html', context)
@@ -142,7 +156,102 @@ def super_admin_logout(request):
 def admin_dashboard(request):
     if not request.session.get('admin_user'):
         return redirect('admin_login')
-    return render(request, 'admin_dashboard.html')
+    
+    # Fetch all purchases for the Purchase Info section
+    purchases = Purchase.objects.all().select_related('t_id', 'book_id').order_by('-purchase_date')
+    
+    return render(request, 'admin_dashboard.html', {'purchases': purchases})
+
+
+@require_POST
+def delete_purchase(request, pk):
+    """Admin deletes a purchase record."""
+    if not request.session.get('admin_user'):
+        return JsonResponse({'success': False, 'error': 'Not authenticated'}, status=403)
+    
+    try:
+        # Using raw SQL because Purchase model is managed=False
+        with connection.cursor() as cursor:
+            # First get teacher ID to update their count later
+            cursor.execute("SELECT t_id FROM purchase WHERE s_no = %s", [pk])
+            row = cursor.fetchone()
+            if not row:
+                 return JsonResponse({'success': False, 'error': 'Record not found'})
+            
+            teacher_id = row[0]
+            
+            # Delete the record
+            cursor.execute("DELETE FROM purchase WHERE s_no = %s", [pk])
+            
+            # Update teacher's no_of_series_purchased
+            cursor.execute(
+                "UPDATE teacher SET no_of_series_purchased = (SELECT COUNT(DISTINCT b.series_name) FROM purchase p JOIN books b ON p.book_id = b.book_id WHERE p.t_id = %s) WHERE t_id = %s",
+                [teacher_id, teacher_id]
+            )
+            
+        return JsonResponse({'success': True, 'message': 'Purchase record deleted successfully'})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)})
+
+
+@require_POST
+def assign_books(request):
+    """Admin assigns selected books to a teacher → creates Purchase records."""
+    if not request.session.get('admin_user'):
+        return JsonResponse({'success': False, 'error': 'Not authenticated'}, status=403)
+
+    teacher_id = request.POST.get('teacher_id', '').strip()
+    book_ids = request.POST.getlist('book_ids')  # list of book_id values
+
+    if not teacher_id:
+        return JsonResponse({'success': False, 'error': 'Teacher ID is required'})
+    if not book_ids:
+        return JsonResponse({'success': False, 'error': 'No books selected'})
+
+    # Validate teacher exists
+    try:
+        teacher = Teacher.objects.get(t_id=teacher_id)
+    except Teacher.DoesNotExist:
+        return JsonResponse({'success': False, 'error': f'Teacher with ID "{teacher_id}" not found'})
+
+    # Validate books exist
+    valid_books = Books.objects.filter(book_id__in=book_ids)
+    if not valid_books.exists():
+        return JsonResponse({'success': False, 'error': 'None of the selected books were found in the database'})
+
+    # Create purchase records (using raw SQL since table is managed=False)
+    purchase_id = f"p-{date.today().strftime('%d%m%y')}"
+    valid_upto = date.today() + timedelta(days=365)
+    created_count = 0
+
+    with connection.cursor() as cursor:
+        for book in valid_books:
+            # Check if this purchase already exists
+            cursor.execute(
+                "SELECT COUNT(*) FROM purchase WHERE t_id = %s AND book_id = %s",
+                [teacher_id, book.book_id]
+            )
+            if cursor.fetchone()[0] == 0:
+                cursor.execute(
+                    "INSERT INTO purchase (purchase_id, t_id, book_id, purchase_date, valid_upto) VALUES (%s, %s, %s, %s, %s)",
+                    [purchase_id, teacher_id, book.book_id, date.today(), valid_upto]
+                )
+                created_count += 1
+
+    # Update teacher's no_of_series_purchased
+    if created_count > 0:
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "UPDATE teacher SET no_of_series_purchased = (SELECT COUNT(DISTINCT b.series_name) FROM purchase p JOIN books b ON p.book_id = b.book_id WHERE p.t_id = %s) WHERE t_id = %s",
+                [teacher_id, teacher_id]
+            )
+
+    skipped = len(book_ids) - created_count
+    msg = f"Successfully assigned {created_count} book(s) to {teacher.teacher_name}."
+    if skipped > 0:
+        msg += f" ({skipped} already assigned, skipped)"
+
+    return JsonResponse({'success': True, 'message': msg, 'created': created_count})
 
 
 from .forms import TeacherForm, BookForm

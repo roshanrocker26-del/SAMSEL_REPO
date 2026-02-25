@@ -109,7 +109,23 @@
             <section id="ebooks" class="content-section active">
                 <h2>E-Books</h2>
                 <p>Access SAMSEL interactive digital textbooks.</p>
-                <a href="#" class="download-btn">Download E-Books</a>
+
+                <div class="ebooks-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+                    {% if ebooks %}
+                    {% for book in ebooks %}
+                    <div class="card"
+                        style="background: rgba(255,255,255,0.85); padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); text-align: center; transition: transform 0.3s ease;">
+                        <h3 style="font-size: 18px; margin-bottom: 20px; color: #111827;">{{ book.title }}</h3>
+                        <a href="{{ book.view_url }}" target="_blank" class="download-btn"
+                            style="display: block; width: auto; margin: 0 auto; padding: 12px 20px;">View Book</a>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <p style="grid-column: 1/-1; text-align: center; color: #6b7280; font-style: italic;">No e-books
+                        assigned to you yet. Please contact the administrator.</p>
+                    {% endif %}
+                </div>
             </section>
 
             <!-- SYLLABUS -->

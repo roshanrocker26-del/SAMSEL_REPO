@@ -30,6 +30,8 @@ urlpatterns = [
     path('super-admin/book/delete/<str:pk>/', views.delete_book, name='delete_book'),
     
     path('logout/', views.admin_logout, name='admin_logout'),
+    path('admin/assign-books/', views.assign_books, name='assign_books'),
+    path('admin/delete-purchase/<int:pk>/', views.delete_purchase, name='delete_purchase'),
     path("request-demo/", views.request_demo, name="request_demo"),
 
     path("generate-paper/", views.generate_paper, name="generate_paper"),

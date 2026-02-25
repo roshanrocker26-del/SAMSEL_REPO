@@ -21,6 +21,7 @@ class Books(models.Model):
     book_id = models.CharField(primary_key=True, max_length=50)
     series_name = models.CharField(max_length=150)
     class_num = models.CharField(db_column='class', max_length=50)  # 'class' is a reserved keyword in Python
+    book_path = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
