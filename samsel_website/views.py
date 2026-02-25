@@ -405,6 +405,7 @@ def generate_paper(request):
     if request.method == "POST":
 
         selected_chapters = request.POST.getlist("chapters")
+        total_marks = request.POST.get("total_marks", 20)
 
         json_path = os.path.join(
             settings.BASE_DIR,
@@ -424,7 +425,7 @@ def generate_paper(request):
             if str(ch["chapter_id"]) in selected_chapters
         ]
 
-        paper = generate_question_paper(chosen_chapters)
+        paper = generate_question_paper(chosen_chapters, total_marks=total_marks)
 
         return render(request, "generated_paper.html", {
             "paper": paper
@@ -442,13 +443,14 @@ def download_paper_pdf(request):
         data = json.load(f)
 
     chapters = data["chapters"]
-    paper = generate_question_paper(chapters)
+    total_marks = request.GET.get("marks", 20)
+    paper = generate_question_paper(chapters, total_marks=total_marks)
 
     html = render_to_string("generated_paper.html", {"paper": paper})
 
     response = HttpResponse(content_type="application/pdf")
     response["Content-Disposition"] = (
-        'attachment; filename="question_paper_20_marks.pdf"'
+        f'attachment; filename="question_paper_{total_marks}_marks.pdf"'
     )
 
     pisa.CreatePDF(html, dest=response)

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Generated Question Paper</title>
@@ -9,7 +10,8 @@
             margin: 30px;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             text-align: center;
         }
 
@@ -23,7 +25,8 @@
             margin-top: 10px;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid black;
             padding: 6px;
             text-align: left;
@@ -44,87 +47,89 @@
         }
     </style>
 </head>
+
 <body>
 
-<!-- DOWNLOAD BUTTON 
-<div class="download-btn">
-    <a href="{% url 'download_paper_pdf' %}">⬇ Download PDF</a>
-</div>-->
+    DOWNLOAD BUTTON
+    <div class="download-btn">
+        <a href="{% url 'download_paper_pdf' %}?marks={{ paper.total_marks }}">⬇ Download PDF</a>
+    </div>
 
-<h2>SAMSEL PUBLICATIONS</h2>
-<h3>Question Paper – 20 Marks</h3>
+    <h2>SAMSEL PUBLICATIONS</h2>
+    <h3>Question Paper – {{ paper.total_marks }} Marks</h3>
 
-<hr>
+    <hr>
 
-<h3>I. Fill in the blanks (3 × 1 = 3)</h3>
-{% for q in paper.fill %}
-<p>{{ forloop.counter }}. {{ q.q }}</p>
-{% empty %}
-<p>No fill-in-the-blanks questions available.</p>
-{% endfor %}
-
-<hr>
-
-<h3>II. MCQs (3 × 1 = 3)</h3>
-<!--
-
-{% for q in paper.mcq %}
-<p>{{ forloop.counter }}. {{ q.q }}</p>
-<ol type="A">
-    {% for opt in q.options %}
-    <li>{{ opt }}</li>
-    {% endfor %}
-</ol>
-{% empty %}
-<p>No MCQ questions available.</p>
-{% endfor %}-->
-
-<hr>
-
-<h3>III. True / False (3 × 1 = 3)</h3>
-{% for q in paper.tf %}
-<p>{{ forloop.counter }}. {{ q.q }}</p>
-{% empty %}
-<p>No True/False questions available.</p>
-{% endfor %}
-
-<hr>
-
-<h3>IV. Match the following (5 × 1 = 5)</h3>
-<table>
-    <tr>
-        <th>Column A</th>
-        <th>Column B</th>
-    </tr>
-    {% for q in paper.match %}
-    <tr>
-        <td>{{ q.left }}</td>
-        <td>{{ q.right }}</td>
-    </tr>
+    <h3>I. Fill in the blanks ({{ paper.config.fill }} × 1 = {{ paper.config.fill }})</h3>
+    {% for q in paper.fill %}
+    <p>{{ forloop.counter }}. {{ q.q }}</p>
     {% empty %}
-    <tr>
-        <td colspan="2">No Match-the-following questions available.</td>
-    </tr>
+    <p>No fill-in-the-blanks questions available.</p>
     {% endfor %}
-</table>
 
-<hr>
+    <hr>
 
-<h3>V. Full Form (2 × 1 = 2)</h3>
-{% for q in paper.full %}
-<p>{{ forloop.counter }}. {{ q.q }}</p>
-{% empty %}
-<p>No Full Form questions available.</p>
-{% endfor %}
+    <h3>II. MCQs ({{ paper.config.mcq }} × 1 = {{ paper.config.mcq }})</h3>
 
-<hr>
 
-<h3>VI. Answer the following (2 × 2 = 4)</h3>
-{% for q in paper.short %}
-<p>{{ forloop.counter }}. {{ q.q }}</p>
-{% empty %}
-<p>No descriptive questions available.</p>
-{% endfor %}
+    {% for q in paper.mcq %}
+    <p>{{ forloop.counter }}. {{ q.q }}</p>
+    <ol type="A">
+        {% for opt in q.options %}
+        <li>{{ opt }}</li>
+        {% endfor %}
+    </ol>
+    {% empty %}
+    <p>No MCQ questions available.</p>
+    {% endfor %}
+
+    <hr>
+
+    <h3>III. True / False ({{ paper.config.tf }} × 1 = {{ paper.config.tf }})</h3>
+    {% for q in paper.tf %}
+    <p>{{ forloop.counter }}. {{ q.q }}</p>
+    {% empty %}
+    <p>No True/False questions available.</p>
+    {% endfor %}
+
+    <hr>
+
+    <h3>IV. Match the following ({{ paper.config.match }} × 1 = {{ paper.config.match }})</h3>
+    <table>
+        <tr>
+            <th>Column A</th>
+            <th>Column B</th>
+        </tr>
+        {% for q in paper.match %}
+        <tr>
+            <td>{{ q.left }}</td>
+            <td>{{ q.right }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No Match-the-following questions available.</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <hr>
+
+    <h3>V. Full Form ({{ paper.config.full }} × 1 = {{ paper.config.full }})</h3>
+    {% for q in paper.full %}
+    <p>{{ forloop.counter }}. {{ q.q }}</p>
+    {% empty %}
+    <p>No Full Form questions available.</p>
+    {% endfor %}
+
+    <hr>
+
+    <h3>VI. Answer the following ({{ paper.config.short }} × 2 = {% widthratio paper.config.short 1 2 %})</h3>
+    {% for q in paper.short %}
+    <p>{{ forloop.counter }}. {{ q.q }}</p>
+    {% empty %}
+    <p>No descriptive questions available.</p>
+    {% endfor %}
 
 </body>
+
 </html>

@@ -5,7 +5,18 @@ def pick(items, count):
     return random.sample(items, min(len(items), count))
 
 
-def generate_question_paper(chapters):
+def generate_question_paper(chapters, total_marks=20):
+    # Configuration for different mark totals
+    configs = {
+        20: {"fill": 3, "mcq": 3, "tf": 3, "match": 5, "full": 2, "short": 2},
+        30: {"fill": 5, "mcq": 5, "tf": 5, "match": 5, "full": 4, "short": 3},
+        40: {"fill": 6, "mcq": 6, "tf": 6, "match": 6, "full": 6, "short": 5},
+        50: {"fill": 8, "mcq": 8, "tf": 7, "match": 7, "full": 6, "short": 7},
+        60: {"fill": 10, "mcq": 10, "tf": 8, "match": 8, "full": 4, "short": 10},
+    }
+
+    # Default to 20 marks if not found
+    config = configs.get(int(total_marks), configs[20])
 
     fill = []
     mcq = []
@@ -44,11 +55,13 @@ def generate_question_paper(chapters):
         short.extend(chapter.get("answer_the_following", []))
 
     return {
-        "fill": pick(fill, 3),
-        "mcq": pick(mcq, 3),
-        "tf": pick(tf, 3),
-        "match": pick(match, 5),
-        "full": pick(full, 2),
-        "short": pick(short, 2),
+        "total_marks": total_marks,
+        "config": config,
+        "fill": pick(fill, config["fill"]),
+        "mcq": pick(mcq, config["mcq"]),
+        "tf": pick(tf, config["tf"]),
+        "match": pick(match, config["match"]),
+        "full": pick(full, config["full"]),
+        "short": pick(short, config["short"]),
     }
 

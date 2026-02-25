@@ -104,12 +104,10 @@
                     </div>
                 </div>
             </section>
-
             <!-- EBOOKS -->
             <section id="ebooks" class="content-section active">
                 <h2>E-Books</h2>
                 <p>Access SAMSEL interactive digital textbooks.</p>
-
                 <div class="ebooks-grid"
                     style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
                     {% if ebooks %}
@@ -146,6 +144,10 @@
                     <label>Total Marks</label>
                     <select name="total_marks">
                         <option value="20">20 Marks</option>
+                        <option value="30">30 Marks</option>
+                        <option value="40">40 Marks</option>
+                        <option value="50">50 Marks</option>
+                        <option value="60">60 Marks</option>
                     </select>
 
                     <!-- Standard -->
@@ -165,9 +167,16 @@
                     <!-- Book Series -->
                     <label>Book Series</label>
                     <select name="series">
-                        <option value="alpha">Series Alpha</option>
-                        <option value="beta">Series Beta</option>
-                        <option value="gamma">Series Gamma</option>
+                        <option value="ibot">Series ibot</option>
+                        <option value="ismart">Series ismart</option>
+                        <option value="iwhizz">Series iwhizz</option>
+                        <option value="Application 2007">Series Application 2007</option>
+                        <option value="Application 2016">Series Application 2016</option>
+                        <option value="Young Wizard">Series Young Wizard</option>
+                        <option value="Programming">Series Programming</option>
+                        <option value="Right-click">Series Right-click</option>
+                        <option value="My Computer">Series My Computer</option>
+                        <option value="Little Wizard">Series iwhizz</option>
                     </select>
 
                     <!-- Chapters -->
@@ -180,6 +189,9 @@
                         <label><input type="checkbox" name="chapters" value="5"> Chapter 5</label>
                         <label><input type="checkbox" name="chapters" value="6"> Chapter 6</label>
                         <label><input type="checkbox" name="chapters" value="7"> Chapter 7</label>
+                        <label><input type="checkbox" name="chapters" value="8"> Chapter 8</label>
+                        <label><input type="checkbox" name="chapters" value="9"> Chapter 9</label>
+                        <label><input type="checkbox" name="chapters" value="10"> Chapter 10</label>
                     </div>
 
                     <button type="submit">Generate & Download</button>
