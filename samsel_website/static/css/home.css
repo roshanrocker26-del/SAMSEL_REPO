@@ -162,8 +162,6 @@ body {
   line-height: 1.6;
 }
 
-
-/* PROMO SECTION */
 /* PROMO SECTION */
 .promo {
   background: transparent;
@@ -430,11 +428,15 @@ body {
 
 
 .promo2 {
-  background: linear-gradient(135deg,
-      #D6E9F5 0%,
-      #FFF1C1 55%,
-      #F8C7DA 85%);
-  padding: 70px 0;
+  background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%);
+  padding: 70px 40px;
+  border-radius: 20px;
+  margin: 20px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 0 25px rgba(233, 30, 99, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 /* Flex container */
@@ -530,10 +532,7 @@ body {
 
 /* Stats section */
 .stats-section {
-  background: linear-gradient(135deg,
-      #D6E9F5 0%,
-      #FFF1C1 55%,
-      #F8C7DA 85%);
+  background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%);
   padding: 80px 40px;
   border-radius: 20px;
   margin: 20px;
@@ -555,7 +554,7 @@ body {
 
 /* LEFT ICON */
 .stats-icon img {
-  width: 180px;
+  width: 280px;
 }
 
 /* Initial hidden state */
@@ -592,8 +591,21 @@ body {
 
 .stat-box h2 {
   font-size: 36px;
-  color: #ff6a00;
+  color: #e91e63;
   margin-bottom: 10px;
+}
+
+.stat-box h2 .counter {
+  font-size: 36px;
+  font-weight: 800;
+  color: #e91e63;
+}
+
+.stat-box h2 .plus {
+  font-size: 24px;
+  font-weight: 700;
+  color: #e91e63;
+  margin-left: 2px;
 }
 
 .stat-box p {
@@ -1211,10 +1223,7 @@ body {
 ================================ */
 
 .demo-request {
-  background: linear-gradient(135deg,
-      #D6E9F5 0%,
-      #FFF1C1 55%,
-      #F8C7DA 85%);
+  background: transparent;
   padding: 90px 40px;
   margin: 20px;
   border-radius: 30px;
@@ -1275,7 +1284,7 @@ body {
 .demo-form button {
   margin-top: 10px;
   align-self: flex-start;
-  background: linear-gradient(135deg, #111827, #e91e63);
+  background: #111827;
   color: #fff;
   padding: 14px 34px;
   border-radius: 30px;

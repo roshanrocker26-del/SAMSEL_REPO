@@ -3,17 +3,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #ffffff;
+    background: linear-gradient(135deg, #CBB4D4, #CBB4D4);
     background-attachment: fixed;
     color: #3e2723;
 }
 
 /* ABOUT PAGE */
 .about-hero {
-    background: linear-gradient(135deg,
-            #D6E9F5 0%,
-            #FFF1C1 55%,
-            #F8C7DA 85%),
+    background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%),
         url("../images/image10.png") center;
     padding: 100px 20px;
     text-align: center;
@@ -62,10 +59,7 @@ body {
     align-items: center;
     flex-direction: row-reverse;
 
-    background: linear-gradient(135deg,
-            #D6E9F5 0%,
-            #FFF1C1 55%,
-            #F8C7DA 85%);
+    background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%);
 
     border-radius: 20px;
 
@@ -297,10 +291,7 @@ body {
     padding: 80px 40px;
     text-align: center;
 
-    background: linear-gradient(135deg,
-            #D6E9F5 0%,
-            #FFF1C1 55%,
-            #F8C7DA 85%);
+    background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%);
 
     border-radius: 20px;
 
@@ -421,10 +412,7 @@ body {
     margin: 40px 20px 60px;
     padding: 80px 60px;
 
-    background: linear-gradient(135deg,
-            #D6E9F5 0%,
-            #FFF1C1 55%,
-            #F8C7DA 85%);
+    background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%);
 
     border-radius: 20px;
 
@@ -594,10 +582,7 @@ body {
     padding: 80px 40px;
     text-align: center;
 
-    background: linear-gradient(135deg,
-            #D6E9F5 0%,
-            #FFF1C1 55%,
-            #F8C7DA 85%);
+    background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%);
     border-radius: 20px;
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.12),

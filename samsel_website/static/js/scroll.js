@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function animateCounter(counter) {
         const target = +counter.getAttribute("data-target");
         let current = 0;
-        const increment = target / 80;
+        const increment = target / 200; // Slower increment (denominator increased from 80 to 200)
 
         function update() {
             current += increment;

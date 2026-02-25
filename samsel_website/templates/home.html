@@ -360,23 +360,23 @@
 
             <!-- LEFT ICON -->
             <div class="stats-icon slide-on-scroll fade-left">
-                <img src="{% static 'images/icon1.png' %}" alt="Icon">
+                <img src="{% static 'images/icon4.png' %}" alt="Icon">
             </div>
 
             <!-- RIGHT STATS -->
             <div class="stats-container fade-right">
                 <div class="stat-box">
-                    <h2>2500+</h2>
+                    <h2><span class="counter" data-target="2500">0</span><span class="plus">+</span></h2>
                     <p>Schools Associated</p>
                 </div>
 
                 <div class="stat-box">
-                    <h2>50+</h2>
+                    <h2><span class="counter" data-target="50">0</span><span class="plus">+</span></h2>
                     <p>Books Published</p>
                 </div>
 
                 <div class="stat-box">
-                    <h2>25+</h2>
+                    <h2><span class="counter" data-target="25">0</span><span class="plus">+</span></h2>
                     <p>Years of Experience</p>
                 </div>
 
@@ -414,6 +414,7 @@
         <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
     </footer>
 
+    <script src="{% static 'js/scroll.js' %}"></script>
     <script>
         document.querySelector(".dropdown-toggle").addEventListener("click", function () {
             document.querySelector(".dropdown-menu").classList.toggle("show");
