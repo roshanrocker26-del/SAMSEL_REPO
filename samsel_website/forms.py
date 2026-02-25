@@ -1,24 +1,14 @@
 from django import forms
-from .models import School, Book, Teacher
-
-class SchoolForm(forms.ModelForm):
-    class Meta:
-        model = School
-        fields = ['school_id', 'school_name', 'teacher_name']
-        widgets = {
-            'school_id': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'e.g. SCL-101'}),
-            'school_name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Full School Name'}),
-            'teacher_name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Assigned Teacher Name'}),
-        }
+from .models import Books, Teacher
 
 class BookForm(forms.ModelForm):
     class Meta:
-        model = Book
-        fields = ['book_id', 'series_name', 'class_name']
+        model = Books
+        fields = ['book_id', 'series_name', 'class_num']
         widgets = {
             'book_id': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'e.g. ibot1'}),
             'series_name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Series Name'}),
-            'class_name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'e.g. 1'}),
+            'class_num': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'e.g. 1'}),
         }
 
 class TeacherForm(forms.ModelForm):

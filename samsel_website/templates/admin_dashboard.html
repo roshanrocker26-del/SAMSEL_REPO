@@ -52,6 +52,11 @@
                         👤 <span>Profile</span>
                     </button>
                 </li>
+                <li>
+                    <button onclick="showSection('purchase-info-view')">
+                        🛒 <span>Purchase Info</span>
+                    </button>
+                </li>
             </ul>
         </aside>
 
@@ -81,6 +86,7 @@
 
                 <div class="books-form-container card">
                     <form id="book-selection-form" onsubmit="handleBookSubmit(event)">
+                        {% csrf_token %}
 
                         <!-- Teacher Details: Horizontal Layout -->
                         <div class="teacher-details-grid"
@@ -139,8 +145,8 @@
                         </div>
 
                         <button type="submit" class="submit-btn"
-                            style="margin-top: 30px; width: 100%; padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #e91e63, #f5609b); color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer;">Submit
-                            Order</button>
+                            style="margin-top: 30px; width: 100%; padding: 16px; border-radius: 12px; background: linear-gradient(135deg, #e91e63, #f5609b); color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer;">Send
+                            To Teacher</button>
                     </form>
                 </div>
             </section>
@@ -150,6 +156,45 @@
                 <h2>Admin Profile</h2>
                 <div class="card" style="padding: 30px; text-align: center;">
                     <p>Admin Profile Details Here</p>
+                </div>
+            </section>
+
+            <!-- PURCHASE INFO SECTION -->
+            <section id="purchase-info-view" class="content-section">
+                <h2>Purchase Info</h2>
+                <div class="card" style="padding: 20px; overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                        <thead>
+                            <tr style="background: #f8f9fa; border-bottom: 2px solid #eee;">
+                                <th style="padding: 12px; text-align: left;">Teacher Name</th>
+                                <th style="padding: 12px; text-align: left;">School ID</th>
+                                <th style="padding: 12px; text-align: left;">Series Name</th>
+                                <th style="padding: 12px; text-align: left;">Class</th>
+                                <th style="padding: 12px; text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for purchase in purchases %}
+                            <tr style="border-bottom: 1px solid #eee;">
+                                <td style="padding: 12px;">{{ purchase.t_id.teacher_name }}</td>
+                                <td style="padding: 12px;">{{ purchase.t_id.school_id }}</td>
+                                <td style="padding: 12px;">{{ purchase.book_id.series_name }}</td>
+                                <td style="padding: 12px;">{{ purchase.book_id.class_num }}</td>
+                                <td style="padding: 12px; text-align: center;">
+                                    <button onclick="confirmDelete('{{ purchase.s_no }}')"
+                                        style="background: #ffebee; color: #d32f2f; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 500;">
+                                        Delete
+                                    </button>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" style="padding: 20px; text-align: center; color: #777;">No purchase
+                                    records found.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
@@ -178,6 +223,7 @@
             if (sectionId === 'dashboard-view') buttons[0].classList.add('active');
             if (sectionId === 'books-view') buttons[1].classList.add('active');
             if (sectionId === 'profile-view') buttons[2].classList.add('active');
+            if (sectionId === 'purchase-info-view') buttons[3].classList.add('active');
         }
 
         function toggleSidebar() {
@@ -295,7 +341,105 @@
 
         function handleBookSubmit(e) {
             e.preventDefault();
-            alert("Order Submitted Successfully! (Demo)");
+
+            const teacherId = document.querySelector('input[name="teacher_id"]').value.trim();
+            const teacherName = document.querySelector('input[name="teacher_name"]').value.trim();
+
+            if (!teacherId) {
+                alert("Please enter a Teacher ID");
+                return;
+            }
+
+            // Map series display names to DB series_name and book_id prefix
+            const seriesMap = {
+                "i-Smart Series": { db: "i-smart", prefix: "is" },
+                "i-Whizz Series": { db: "i-whizz", prefix: "iw" },
+                "i-Bot Series": { db: "i-bot", prefix: "ib" }
+            };
+
+            // Collect all checked book_ids
+            const bookIds = [];
+            const seriesCards = document.querySelectorAll('.series-card');
+
+            seriesCards.forEach(card => {
+                const seriesName = card.querySelector('h3').innerText.trim();
+                const mapping = seriesMap[seriesName];
+                if (!mapping) return; // Series not in DB, skip
+
+                const checkboxes = card.querySelectorAll('input[type="checkbox"]:checked');
+                checkboxes.forEach(cb => {
+                    const label = cb.parentElement.querySelector('span').innerText.trim();
+                    // Extract class number from label like "Class 3" → "3"
+                    const classMatch = label.match(/(\d+)/);
+                    if (classMatch) {
+                        const classNum = classMatch[1].padStart(2, '0');
+                        bookIds.push(mapping.prefix + classNum);
+                    }
+                });
+            });
+
+            if (bookIds.length === 0) {
+                alert("Please select at least one book (only i-Smart, i-Whizz, and i-Bot series are available in the database)");
+                return;
+            }
+
+            // Build form data
+            const formData = new FormData();
+            formData.append('teacher_id', teacherId);
+            bookIds.forEach(id => formData.append('book_ids', id));
+
+            // Get CSRF token from hidden input
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+            fetch('/admin/assign-books/', {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrfToken
+                },
+                body: formData
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        // Reset form
+                        document.getElementById('book-selection-form').reset();
+                        document.getElementById('selected-series-container').innerHTML = '';
+                        document.getElementById('total-summary-list').innerHTML = '<li>No books selected yet.</li>';
+                        addedSeries.clear();
+                    } else {
+                        alert("Error: " + data.error);
+                    }
+                })
+                .catch(err => {
+                    alert("Network error. Please try again.");
+                    console.error(err);
+                });
+        }
+
+        function confirmDelete(purchaseId) {
+            if (confirm("Are you sure you want to delete this purchase record?")) {
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                fetch(`/admin/delete-purchase/${purchaseId}/`, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': csrfToken
+                    }
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            location.reload(); // Reload to update the table
+                        } else {
+                            alert("Error: " + data.error);
+                        }
+                    })
+                    .catch(err => {
+                        alert("Network error. Please try again.");
+                        console.error(err);
+                    });
+            }
         }
     </script>
 

@@ -331,3 +331,35 @@ html, body {
     height: 16px;
 }
 
+/* ================================
+   BOOKS TABLE
+================================ */
+
+.books-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.books-table th,
+.books-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+.books-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.books-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.books-table tr:hover {
+    background-color: #f1f1f1;
+}
+
