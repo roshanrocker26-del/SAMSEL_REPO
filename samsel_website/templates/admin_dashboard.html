@@ -352,9 +352,9 @@
 
             // Map series display names to DB series_name and book_id prefix
             const seriesMap = {
-                "i-Smart Series": { db: "i-smart", prefix: "is" },
-                "i-Whizz Series": { db: "i-whizz", prefix: "iw" },
-                "i-Bot Series": { db: "i-bot", prefix: "ib" }
+                "i-Smart Series": { db: "i-smart", prefix: "ismart" },
+                "i-Whizz Series": { db: "i-whizz", prefix: "iwhizz" },
+                "i-Bot Series": { db: "i-bot", prefix: "ibot" }
             };
 
             // Collect all checked book_ids
@@ -372,7 +372,7 @@
                     // Extract class number from label like "Class 3" → "3"
                     const classMatch = label.match(/(\d+)/);
                     if (classMatch) {
-                        const classNum = classMatch[1].padStart(2, '0');
+                        const classNum = classMatch[1];
                         bookIds.push(mapping.prefix + classNum);
                     }
                 });

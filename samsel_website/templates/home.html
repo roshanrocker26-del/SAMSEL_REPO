@@ -5,472 +5,261 @@
 <head>
     <meta charset="UTF-8">
     <title>SAMSEL PUBLICATIONS</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Replace individual CSS with global UI framework -->
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
+    <!-- TOP NAVBAR (Centered) -->
+    <nav class="top-navbar">
+        <ul class="top-menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
-                <!-- LOGO (LEFT) -->
-                <div class="logo">
-                    <a href="/">
-                        <span class="logo-main">SAMSEL</span>
-                        <span class="logo-sub">Publications</span>
-                    </a>
-                </div>
-
-                <!-- MENU (RIGHT) -->
-                <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="{% url 'about' %}">About Us</a></li>
-                    <li><a href="{% url 'products' %}">Products</a></li>
-                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
-
-                    <li class="dropdown">
-                        <a href="#">Login <span class="arrow">▾</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
-                        </ul>
-                    </li>
+            <!-- Removed Student Login, kept only Teacher Login dropdown -->
+            <li class="dropdown">
+                <a href="#">Login <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
                 </ul>
+            </li>
+        </ul>
+    </nav>
 
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- LOGO (LEFT) -->
+            <div class="logo">
+                <a href="/">
+                    <span class="logo-main">SAMSEL</span>
+                    <span class="logo-sub">Publications</span>
+                </a>
             </div>
-        </nav>
 
-
+            <!-- BUTTON (RIGHT) -->
+            <div class="header-action">
+                <a href="#demo" class="demo-btn">
+                    REQUEST DEMO <span class="icon"></span>
+                </a>
+            </div>
+        </div>
     </header>
 
-    <section class="hero-cover fade-in">
-        <div class="hero-glass">
-
-            <!-- HERO TITLE -->
-            <div class="hero-title">
-                <h1 class="hero-title-main">
-                    <span>S</span><span>A</span><span>M</span><span>S</span><span>E</span><span>L</span>
-                </h1>
-            </div>
-
-
-
-
-
-            <!-- FLOATING BUBBLES SYSTEM -->
-
-        </div>
-        <!-- FLOATING BUBBLES SYSTEM (Moved to Cover Level) -->
-        <div class="floating-bubbles-container">
-            <!-- 15 Bubbles with random positions/delays -->
-            <div class="bubble-icon b1"><img src="{% static 'images/icon28.png' %}"></div>
-            <div class="bubble-icon b2"><img src="{% static 'images/icon29.png' %}"></div>
-            <div class="bubble-icon b3"><img src="{% static 'images/icon17.png' %}"></div>
-            <div class="bubble-icon b4"><img src="{% static 'images/icon30.png' %}"></div>
-            <div class="bubble-icon b5"><img src="{% static 'images/icon12.png' %}"></div>
-            <div class="bubble-icon b6"><img src="{% static 'images/icon14.png' %}"></div>
-            <div class="bubble-icon b7"><img src="{% static 'images/icon16.png' %}"></div>
-            <div class="bubble-icon b8"><img src="{% static 'images/icon17.png' %}"></div>
-            <div class="bubble-icon b9"><img src="{% static 'images/icon18.png' %}"></div>
-            <div class="bubble-icon b10"><img src="{% static 'images/icon19.png' %}"></div>
-            <div class="bubble-icon b11"><img src="{% static 'images/icon21.gif' %}"></div>
-            <div class="bubble-icon b12"><img src="{% static 'images/icon22.gif' %}"></div>
-            <div class="bubble-icon b13"><img src="{% static 'images/icon23.gif' %}"></div>
-            <div class="bubble-icon b14"><img src="{% static 'images/icon24.gif' %}"></div>
-            <div class="bubble-icon b15"><img src="{% static 'images/icon20.gif' %}"></div>
+    <section class="hero-section reveal-up">
+        <h1 class="hero-tagline">Shaping Digital Minds for Over 25 Years</h1>
+        <p class="hero-subtitle">
+            Empowering schools and educators with curriculum-aligned, high-quality Computer Science resources.
+        </p>
+        <div class="hero-actions">
+            <a href="{% url 'products' %}" class="btn-primary">Explore Books</a>
+            <a href="#demo" class="btn-secondary">Request Demo</a>
         </div>
     </section>
 
-    <!-- FLOATING BOOKS SECTION 
-    <section class="books-section fade-in">
-        <div class="books-container">
-
-            <a href="#" class="book-btn float delay1 fade-in">
-                <img src="{% static 'images/low 5.png' %}" alt="ICT Book">
-            </a>
-
-            <a href="#" class="book-btn float delay1 fade-in">
-                <img src="{% static 'images/iwhizz1.jpg' %}" alt="ICT Junior">
-            </a>
-
-            <a href="#" class="book-btn float delay1 fade-in">
-                <img src="{% static 'images/ibot6.jpg' %}" alt="Robotics">
-            </a>
-
-            <a href="#" class="book-btn float delay4 fade-in">
-                <img src="{% static 'images/young3.jpg' %}" alt="Know Your Computer 1">
-            </a>
-
-            <a href="#" class="book-btn float delay5 fade-in">
-                <img src="{% static 'images/young4.jpg' %}" alt="Know Your Computer 2">
-            </a>
-
-        </div>
-    </section>-->
-    <!-- FEATURES -->
-    <section class="features fade-in">
-        <div class="feature-card fade-in">
-            <h3>Academic Excellence</h3>
-            <p>Curriculum-based books for schools.</p>
-        </div>
-
-        <div class="feature-card fade-in">
-            <h3>Expert Authors</h3>
-            <p>Written by experienced educators and professionals.</p>
-        </div>
-
-        <div class="feature-card fade-in">
-            <h3>Trusted Publisher</h3>
-            <p>Serving institutions with quality content for years.</p>
+    <!-- TRUST STRIP -->
+    <section class="container reveal-up delay-100">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>25+ Years</h3>
+                <p>Of academic excellence and educational heritage.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏫</div>
+                <h3>1500+ Schools</h3>
+                <p>Trusted by premier institutions across the nation.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Modern Pedagogy</h3>
+                <p>Curriculum-aligned with NEP 2020 standards.</p>
+            </div>
         </div>
     </section>
 
-    <section class="promo fade-in">
-        <div class="promo-card">
-
-            <!-- LEFT IMAGE -->
-            <div class="promo-image fade-left">
-                <img src="{% static 'images/img11.png' %}" alt="Student Learning">
+    <!-- INTRODUCTION / SHOWCASE -->
+    <section class="container reveal-up delay-200">
+        <div class="showcase-card"
+            style="display: flex; gap: 4rem; align-items: center; background: var(--card-bg); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+            <div class="showcase-image" style="flex: 1;">
+                <img src="{% static 'images/img11.png' %}" alt="Student Learning"
+                    style="border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
             </div>
-
-            <!-- RIGHT CONTENT -->
-            <div class="promo-content fade-right">
-                <span class="badge">Board Exam</span>
-
-                <h2>Countdown is ON!</h2>
-
-                <p class="subtitle">
-                    Start your Personalized Practice Today! <br>
+            <div class="showcase-content" style="flex: 1;">
+                <span
+                    style="background: rgba(13,59,102,0.1); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Board
+                    Exam Ready</span>
+                <h2 style="margin-top: 1rem; font-size: 2.5rem;">Countdown is ON!</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Start your Personalized Practice Today!<br>
                     <strong>SAMSEL</strong> – Your Trusted Learning Partner
                 </p>
-
-                <h4>Key Features</h4>
-                <ul class="features-list">
-                    <li>✔ Curriculum-aligned questions</li>
-                    <li>✔ Personalized practice tests</li>
-                    <li>✔ Instant evaluation & feedback</li>
-                    <li>✔ Teacher & student friendly</li>
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
+                            style="color: var(--primary);">✓</span> Curriculum-aligned questions</li>
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
+                            style="color: var(--primary);">✓</span> Personalized practice tests</li>
+                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
+                            style="color: var(--primary);">✓</span> Instant evaluation & feedback</li>
                 </ul>
-
-                <a href="#" class="btn dark">KNOW MORE</a>
-            </div>
-
-        </div>
-    </section>
-
-
-    <section class="our-series-section fade-in">
-        <h2 class="section-title">OUR SERIES ➠</h2>
-
-        <div class="series-grid">
-            <!-- Row 1 -->
-            <div class="series-book-wrapper float delay1">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/ibot6.jpg' %}" alt="i-Bot Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>i-Bot Series</h3>
-                        <a href="{% url 'products' %}#ibot-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay2">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>i-Whizz Series</h3>
-                        <a href="{% url 'products' %}#iwhizz-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay3">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/low 4.png' %}" alt="i-Smart Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>i-Smart Series</h3>
-                        <a href="{% url 'products' %}#ismart-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay4">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/App1.jpg' %}" alt="Application Series 2007">
-                    </div>
-                    <div class="series-back">
-                        <h3>Application Series 2007</h3>
-                        <a href="{% url 'products' %}#app2007-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay5">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/2016 ppt.png' %}" alt="Application Series 2016">
-                    </div>
-                    <div class="series-back">
-                        <h3>Application Series 2016</h3>
-                        <a href="{% url 'products' %}#app2016-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="series-book-wrapper float delay1">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/young2.jpg' %}" alt="Young Wizard Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>Young Wizard Series</h3>
-                        <a href="{% url 'products' %}#young-wizard-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay2">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>Programming Series</h3>
-                        <a href="{% url 'products' %}#programming-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay3">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/ict7.jpg' %}" alt="Right-click Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>Right-click Series</h3>
-                        <a href="{% url 'products' %}#right-click-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay4">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/my4.jpg' %}" alt="My Computer Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>My Computer Series</h3>
-                        <a href="{% url 'products' %}#my-computer-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="series-book-wrapper float delay5">
-                <div class="series-book">
-                    <div class="series-front">
-                        <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Little Wizard Series">
-                    </div>
-                    <div class="series-back">
-                        <h3>Little Wizard Series</h3>
-                        <a href="{% url 'products' %}#little-wizard-series" class="checkout-btn">Checkout</a>
-                    </div>
-                </div>
+                <a href="{% url 'products' %}" class="btn-primary">Know More</a>
             </div>
         </div>
     </section>
 
-    <div class="promo2 fade-in">
-        <div class="promo2-container">
-            <div class="promo2-content">
-                <p>
-                    Discover Samsel Publications' premier computer science education resources, crafted to ignite
-                    curiosity and build foundational skills for the digital age.
-                    Our comprehensive textbooks cover algorithms, data structures, programming fundamentals, and
-                    emerging technologies like AI and cybersecurity, aligned with global curricula standards.
-                </p>
-            </div>
+    <!-- OUR SERIES (Redesigned Grid) -->
+    <section class="container reveal-up">
+        <h2 class="section-title">Our Featured Series</h2>
+        <div class="bookshelf-grid">
+            <!-- IBOT Series -->
+            <a href="{% url 'products' %}#ibot-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/ibot6.jpg' %}" alt="i-Bot Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">i-Bot Series</h3>
+                    <span class="book-series">Robotics & AI</span>
+                </div>
+            </a>
 
-            <div class="promo2-image">
-                <img src="{% static 'images/img2.jpg' %}" alt="Promo Image">
-            </div>
+            <!-- IWHIZZ Series -->
+            <a href="{% url 'products' %}#iwhizz-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">i-Whizz Series</h3>
+                    <span class="book-series">Computer Science</span>
+                </div>
+            </a>
+
+            <!-- ISMART Series -->
+            <a href="{% url 'products' %}#ismart-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/low 4.png' %}" alt="i-Smart Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">i-Smart Series</h3>
+                    <span class="book-series">Core IT</span>
+                </div>
+            </a>
+
+            <!-- APP 2016 Series -->
+            <a href="{% url 'products' %}#app2016-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/2016 ppt.png' %}" alt="Application Series 2016">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">App Series 2016</h3>
+                    <span class="book-series">Office Productivity</span>
+                </div>
+            </a>
+
+            <!-- Programming Series -->
+            <a href="{% url 'products' %}#programming-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Programming</h3>
+                    <span class="book-series">Coding & Logic</span>
+                </div>
+            </a>
+
+            <!-- i-ICT Series -->
+            <a href="{% url 'products' %}#i-ict-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/ict6.jpg' %}" alt="i-ICT Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">i-ICT Series</h3>
+                    <span class="book-series">Information Technology</span>
+                </div>
+            </a>
+
+            <!-- Young Learners Series -->
+            <a href="{% url 'products' %}#young-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/young1.jpg' %}" alt="Young Learners Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Young Learners</h3>
+                    <span class="book-series">Early Learning</span>
+                </div>
+            </a>
+
+            <!-- My Series -->
+            <a href="{% url 'products' %}#my-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/my1.jpg' %}" alt="My Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">My Series</h3>
+                    <span class="book-series">General Knowledge</span>
+                </div>
+            </a>
+
+            <!-- Kids Series -->
+            <a href="{% url 'products' %}#kids-series" class="book-card">
+                <div class="book-cover">
+                    <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Kids Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Kids Series</h3>
+                    <span class="book-series">Preschool</span>
+                </div>
+            </a>
         </div>
-    </div>
+    </section>
 
-    <!-- REQUEST DEMO SECTION -->
-    <section id="demo" class="demo-request fade-in">
-        <div class="demo-container">
-
-            <!-- LEFT CONTENT -->
-            <div class="demo-content fade-left">
-                <h2>Request a Free Demo</h2>
-                <p>
-                    Experience how <strong>SAMSEL Publications</strong> transforms learning
-                    with interactive, curriculum-aligned computer science resources.
+    <!-- DEMO REQUEST -->
+    <section id="demo" class="container reveal-up delay-100">
+        <div class="demo-card"
+            style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 4rem; display: flex; gap: 4rem; align-items: center; box-shadow: var(--shadow-md);">
+            <div class="demo-content" style="flex: 1;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Experience SAMSEL</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Book a personalized demo for your school or institution and explore our digital-first teaching
+                    approach.
                 </p>
-                <p>
-                    Book a personalized demo for your school or institution
-                    and explore our digital-first teaching approach.
-                </p>
-                <p class="demo-note">
-                    📩 Our team will get back to you within 24 hours.
-                </p>
-                <form class="demo-form" method="post" action="{% url 'request_demo' %}">
+                <form class="demo-form" method="post" action="{% url 'request_demo' %}"
+                    style="display: flex; flex-direction: column; gap: 1rem;">
                     {% csrf_token %}
-
-                    <input type="text" name="contact_name" placeholder="Name of the Contact Person" required>
-
-                    <input type="text" name="organization" placeholder="Organization / School Name" required>
-
-                    <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}"
-                        placeholder="Phone Number (10 digits)" required>
-
-                    <input type="email" name="email" placeholder="Your Email Address" required>
-
-                    <textarea name="message" placeholder="Your Query / Requirement" rows="4" required></textarea>
-
-                    <button type="submit">Request Demo →</button>
+                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name"
+                        required>
+                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name"
+                        required>
+                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number"
+                        required>
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                    <textarea name="message" class="form-control" rows="3" placeholder="Your Query / Requirement"
+                        required></textarea>
+                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 1rem;">Request
+                        Demo</button>
                 </form>
-
-
             </div>
-
-            <!-- RIGHT ICON / IMAGE -->
-            <div class="demo-visual fade-right">
-                <div class="demo-icon float">
-                    <img src="{% static 'images/icon22.gif' %}" alt="Demo Icon">
-                </div>
+            <div class="demo-visual" style="flex: 1; text-align: center;">
+                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual" style="max-width: 300px; margin: auto;">
             </div>
-
         </div>
     </section>
-
-    <!-- STATS SECTION -->
-    <section class="stats-section fade-in">
-        <div class="stats-wrapper">
-
-            <!-- LEFT ICON -->
-            <div class="stats-icon slide-on-scroll fade-left">
-                <img src="{% static 'images/icon4.png' %}" alt="Icon">
-            </div>
-
-            <!-- RIGHT STATS -->
-            <div class="stats-container fade-right">
-                <div class="stat-box">
-                    <h2><span class="counter" data-target="2500">0</span><span class="plus">+</span></h2>
-                    <p>Schools Associated</p>
-                </div>
-
-                <div class="stat-box">
-                    <h2><span class="counter" data-target="50">0</span><span class="plus">+</span></h2>
-                    <p>Books Published</p>
-                </div>
-
-                <div class="stat-box">
-                    <h2><span class="counter" data-target="25">0</span><span class="plus">+</span></h2>
-                    <p>Years of Experience</p>
-                </div>
-
-                <div class="stat-box">
-                    <h2>Need Help?</h2>
-                    <p><a href="{% url 'contact' %}">Customer Support</a></p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const elements = document.querySelectorAll(".slide-on-scroll");
-
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("active");
-                        }
-                    });
-                },
-                { threshold: 0.3 }
-            );
-
-            elements.forEach(el => observer.observe(el));
-        });
-    </script>
-
 
     <!-- FOOTER -->
-    <footer>
-        <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <h3 class="footer-logo">SAMSEL Publications</h3>
+            <p class="footer-text">© 2026 SAMSEL PUBLICATIONS. All Rights Reserved.<br>Shaping Digital Minds since 2001.
+            </p>
+        </div>
     </footer>
 
-    <script src="{% static 'js/scroll.js' %}"></script>
-    <script>
-        document.querySelector(".dropdown-toggle").addEventListener("click", function () {
-            document.querySelector(".dropdown-menu").classList.toggle("show");
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const animatedElements = document.querySelectorAll(
-                ".fade-in, .fade-left, .fade-right"
-            );
-
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("show");
-                        }
-                    });
-                },
-                { threshold: 0.2 }
-            );
-
-            animatedElements.forEach(el => observer.observe(el));
-        });
-    </script>
-
-    <script>
-        const track = document.querySelector('.services-track');
-        const cards = document.querySelectorAll('.service-card');
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                track.classList.toggle('paused');
-            });
-        });
-    </script>
-
-
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const bubbles = document.querySelectorAll('.bubble-icon');
-
-            bubbles.forEach(bubble => {
-                bubble.addEventListener('click', function () {
-                    this.classList.add('popped');
-                    // Remove from DOM after animation completes (0.4s)
-                    setTimeout(() => {
-                        this.remove();
-                    }, 400);
-                });
-            });
-        });
-    </script>
+    <!-- GLOBAL JS -->
+    <script src="{% static 'js/global.js' %}"></script>
 </body>
 
 </html>

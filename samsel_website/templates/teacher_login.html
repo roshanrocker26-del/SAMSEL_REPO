@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Teacher Login | SAMSEL</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/loginpages.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <!-- Font Awesome for the eye icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
@@ -48,35 +48,41 @@
         <img src="{% static 'images/icon5.png' %}" alt="Teacher Icon">
     </div>
 
-    <!-- NAVBAR -->
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
+    <!-- TOP NAVBAR (Centered) -->
+    <nav class="top-navbar">
+        <ul class="top-menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
-                <div class="logo">
-                    <a href="/">
-                        <span class="logo-main">SAMSEL</span>
-                        <span class="logo-sub">Publications</span>
-                    </a>
-                </div>
-
-                <ul class="menu">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'about' %}">About Us</a></li>
-                    <li><a href="{% url 'products' %}">Products</a></li>
-                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
-
-                    <li class="dropdown">
-                        <a href="#">Login ▾</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
-                            <li><a href="{% url 'student_login' %}">Student Login</a></li>
-                        </ul>
-                    </li>
+            <li class="dropdown">
+                <a href="#">Login <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'teacher_login' %}" class="active">Teacher Login</a></li>
                 </ul>
+            </li>
+        </ul>
+    </nav>
 
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- LOGO (LEFT) -->
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <span class="logo-main">SAMSEL</span>
+                    <span class="logo-sub">Publications</span>
+                </a>
             </div>
-        </nav>
+
+            <!-- BUTTON (RIGHT) -->
+            <div class="header-action">
+                <a href="{% url 'home' %}#demo" class="demo-btn">
+                    REQUEST DEMO <span class="icon"></span>
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- LOGIN SECTION -->

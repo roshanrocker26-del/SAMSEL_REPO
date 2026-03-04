@@ -1400,3 +1400,108 @@ body {
     font-size: 13px;
   }
 }
+
+/* ================================
+   REDESIGNED FEATURED SERIES GRID
+   ================================ */
+.bookshelf-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  /* Force 5 columns */
+  grid-template-rows: auto auto;
+  gap: 30px;
+  padding: 40px 20px;
+  width: 100%;
+  /* Ensure full width of container */
+  max-width: 1400px;
+  /* Allow wider spread */
+  margin: 0 auto;
+}
+
+.book-card {
+  background: white;
+  padding: 15px;
+  border-radius: 30px;
+  /* Round corners */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(173, 128, 217, 0.1);
+  /* Subtle lilac border */
+  text-align: center;
+  overflow: hidden;
+}
+
+.book-cover {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.book-info {
+  padding: 5px 0;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4a3a55;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.book-series {
+  font-size: 0.85rem;
+  color: #8e7aa0;
+  font-weight: 500;
+}
+
+/* Hover Animation */
+.book-card:hover {
+  transform: translateY(-15px) scale(1.03);
+  box-shadow:
+    0 20px 40px rgba(173, 128, 217, 0.25),
+    /* Lilac glow */
+    0 0 20px rgba(203, 180, 212, 0.4);
+  border-color: #ad80d9;
+}
+
+.book-card:hover .book-cover img {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+.book-card:hover .book-title {
+  color: #ad80d9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .bookshelf-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bookshelf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bookshelf-grid {
+    grid-template-columns: 1fr;
+  }
+}
