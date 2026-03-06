@@ -9,8 +9,7 @@
     <title>SAMSEL | Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/products.css' %}">
 
 
@@ -20,33 +19,42 @@
 
     <!-- ================= NAVBAR ================= -->
 
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <div class="logo-main">SAMSEL</div>
-                    <div class="logo-sub">Publications</div>
-                </div>
+    <!-- TOP NAVBAR (Centered) -->
+    <nav class="top-navbar">
+        <ul class="top-menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'products' %}">Products</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
-                <ul class="menu">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'about' %}">About Us</a></li>
-                    <li><a href="{% url 'products' %}" class="active">Products</a></li>
-                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
-
-                    <li class="dropdown">
-                        <a href="#">Login ▾</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
-                            <li><a href="#">Student Login</a></li>
-                        </ul>
-                    </li>
+            <li class="dropdown">
+                <a href="#">Login <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
                 </ul>
+            </li>
+        </ul>
+    </nav>
 
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- LOGO (LEFT) -->
+            <div class="logo">
+                <a href="/">
+                    <span class="logo-main">SAMSEL</span>
+                    <span class="logo-sub">Publications</span>
+                </a>
             </div>
-        </nav>
-    </header>
 
+            <!-- BUTTON (RIGHT) -->
+            <div class="header-action">
+                <a href="#demo" class="demo-btn">
+                    REQUEST DEMO <span class="icon"></span>
+                </a>
+            </div>
+        </div>
+    </header>
     <!-- ================= IBOT SERIES ================= -->
     <div class="series-wrapper">
 
@@ -607,10 +615,16 @@
     </section>
 
 
+    <script src="{% static 'js/global.js' %}"></script>
     <script src="{% static 'js/products.js' %}"></script>
+
     <!-- FOOTER -->
-    <footer>
-        <p>© 2026 SAMSEL PUBLICATIONS | All Rights Reserved</p>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <h3 class="footer-logo">SAMSEL Publications</h3>
+            <p class="footer-text">© 2026 SAMSEL PUBLICATIONS. All Rights Reserved.<br>Shaping Digital Minds since 2001.
+            </p>
+        </div>
     </footer>
 
 </body>

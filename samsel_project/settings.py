@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'samsel_website',
+     'samsel_website',
 ]
 
 MIDDLEWARE = [
@@ -86,15 +86,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'samsel_project.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'samweb',
         'USER': 'postgres',
-        'PASSWORD': 'root',  # Leave empty if no password, or update as needed
+        'PASSWORD': 'root',
         'HOST': 'localhost',
         'PORT': '5432',
     }

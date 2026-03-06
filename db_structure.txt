@@ -1,0 +1,161 @@
+﻿=== ALL TABLES IN samweb ===
+  auth_group
+  auth_group_permissions
+  auth_permission
+  auth_user
+  auth_user_groups
+  auth_user_user_permissions
+  books
+  django_admin_log
+  django_content_type
+  django_migrations
+  django_session
+  purchase
+  samsel_website_books
+  samsel_website_purchase
+  samsel_website_teacher
+  teacher
+
+=== TABLE: auth_group ===
+  id  (integer)
+  name  (character varying)
+  (no data)
+
+=== TABLE: auth_group_permissions ===
+  id  (integer)
+  group_id  (integer)
+  permission_id  (integer)
+  (no data)
+
+=== TABLE: auth_permission ===
+  id  (integer)
+  name  (character varying)
+  content_type_id  (integer)
+  codename  (character varying)
+  Sample data (3 rows):
+    (1, 'Can add log entry', 1, 'add_logentry')
+    (2, 'Can change log entry', 1, 'change_logentry')
+    (3, 'Can delete log entry', 1, 'delete_logentry')
+
+=== TABLE: auth_user ===
+  id  (integer)
+  password  (character varying)
+  last_login  (timestamp with time zone)
+  is_superuser  (boolean)
+  username  (character varying)
+  first_name  (character varying)
+  last_name  (character varying)
+  email  (character varying)
+  is_staff  (boolean)
+  is_active  (boolean)
+  date_joined  (timestamp with time zone)
+  (no data)
+
+=== TABLE: auth_user_groups ===
+  id  (integer)
+  user_id  (integer)
+  group_id  (integer)
+  (no data)
+
+=== TABLE: auth_user_user_permissions ===
+  id  (integer)
+  user_id  (integer)
+  permission_id  (integer)
+  (no data)
+
+=== TABLE: books ===
+  book_id  (character varying)
+  series_name  (character varying)
+  class  (character varying)
+  Sample data (3 rows):
+    ('ib01', 'i-bot', '1')
+    ('ib02', 'i-bot', '2')
+    ('ib03', 'i-bot', '3')
+
+=== TABLE: django_admin_log ===
+  id  (integer)
+  action_time  (timestamp with time zone)
+  object_id  (text)
+  object_repr  (character varying)
+  action_flag  (smallint)
+  change_message  (text)
+  content_type_id  (integer)
+  user_id  (integer)
+  (no data)
+
+=== TABLE: django_content_type ===
+  id  (integer)
+  app_label  (character varying)
+  model  (character varying)
+  Sample data (3 rows):
+    (1, 'admin', 'logentry')
+    (2, 'auth', 'permission')
+    (3, 'auth', 'group')
+
+=== TABLE: django_migrations ===
+  id  (integer)
+  app  (character varying)
+  name  (character varying)
+  applied  (timestamp with time zone)
+  Sample data (3 rows):
+    (1, 'contenttypes', '0001_initial', datetime.datetime(2026, 2, 18, 16, 3, 34, 760674, tzinfo=datetime.timezone.utc))
+    (2, 'auth', '0001_initial', datetime.datetime(2026, 2, 18, 16, 3, 34, 838046, tzinfo=datetime.timezone.utc))
+    (3, 'admin', '0001_initial', datetime.datetime(2026, 2, 18, 16, 3, 34, 858094, tzinfo=datetime.timezone.utc))
+
+=== TABLE: django_session ===
+  session_key  (character varying)
+  session_data  (text)
+  expire_date  (timestamp with time zone)
+  (no data)
+
+=== TABLE: purchase ===
+  s_no  (integer)
+  purchase_id  (character varying)
+  t_id  (character varying)
+  book_id  (character varying)
+  purchase_date  (date)
+  valid_upto  (date)
+  Sample data (3 rows):
+    (5, 'p-260120', 'Gok789', 'ib01', datetime.date(2026, 2, 19), datetime.date(2027, 2, 19))
+    (6, 'p-260120', 'Gok789', 'iw01', datetime.date(2026, 2, 19), datetime.date(2027, 2, 19))
+    (7, 'p-260121', 'Aru456', 'iw05', datetime.date(2026, 2, 19), datetime.date(2027, 2, 19))
+
+=== TABLE: samsel_website_books ===
+  id  (bigint)
+  title  (character varying)
+  series_name  (character varying)
+  class_num  (character varying)
+  (no data)
+
+=== TABLE: samsel_website_purchase ===
+  id  (bigint)
+  purchase_date  (timestamp with time zone)
+  book_id  (bigint)
+  teacher_id  (bigint)
+  (no data)
+
+=== TABLE: samsel_website_teacher ===
+  id  (bigint)
+  t_id  (character varying)
+  school_id  (character varying)
+  password  (character varying)
+  teacher_name  (character varying)
+  contact  (character varying)
+  school_name  (character varying)
+  Sample data (1 rows):
+    (1, 'T001', 'SCH001', 'teacher123', 'Sample Teacher', '9876543210', 'Demo School')
+
+=== TABLE: teacher ===
+  t_id  (character varying)
+  teacher_name  (character varying)
+  school_id  (character varying)
+  school_name  (character varying)
+  password_hash  (character varying)
+  contact  (bigint)
+  no_of_series_purchased  (integer)
+  purchase_id  (character varying)
+  Sample data (3 rows):
+    ('Gok789', 'Gokul', 'Bet01', 'Bethel', 'GokBet789@25', 9876543789, 3, 'p-260120')
+    ('Aru456', 'Arun', 'SG01', 'St.George', 'AruSGO456@19', 9123456456, 2, 'p-260121')
+    ('Pri234', 'Priya', 'MAH01', 'Maharishi', 'PriMAH234@33', 9988777234, 4, 'p-260122')
+
