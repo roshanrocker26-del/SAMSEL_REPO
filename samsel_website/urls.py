@@ -5,7 +5,7 @@ from .views import download_paper_pdf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('', views.home, name='home'),    
     path('about/', views.about, name='about'),
     path('teacher-login/', views.teacher_login, name='teacher_login'),
     path('student-login/', views.student_login, name='student_login'),

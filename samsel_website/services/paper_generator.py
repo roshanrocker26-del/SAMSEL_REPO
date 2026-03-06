@@ -1,10 +1,10 @@
 import random
-
+  
 
 def pick(items, count):
     return random.sample(items, min(len(items), count))
 
-
+  
 def generate_question_paper(chapters, total_marks=20):
     # Configuration for different mark totals
     configs = {
