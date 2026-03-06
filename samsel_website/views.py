@@ -406,6 +406,7 @@ def generate_paper(request):
 
         selected_chapters = request.POST.getlist("chapters")
         total_marks = request.POST.get("total_marks", 20)
+        standard = request.POST.get("standard", "1")
 
         json_path = os.path.join(
             settings.BASE_DIR,
@@ -425,11 +426,12 @@ def generate_paper(request):
             if str(ch["chapter_id"]) in selected_chapters
         ]
 
-        paper = generate_question_paper(chosen_chapters, total_marks=total_marks)
+        paper = generate_question_paper(chosen_chapters, total_marks=total_marks, standard=standard)
+        paper['standard'] = standard
 
         return render(request, "generated_paper.html", {
             "paper": paper
-})
+        })
 
 def download_paper_pdf(request):
     json_path = os.path.join(
@@ -444,7 +446,9 @@ def download_paper_pdf(request):
 
     chapters = data["chapters"]
     total_marks = request.GET.get("marks", 20)
-    paper = generate_question_paper(chapters, total_marks=total_marks)
+    standard = request.GET.get("standard", "1")
+    paper = generate_question_paper(chapters, total_marks=total_marks, standard=standard)
+    paper['standard'] = standard
 
     html = render_to_string("generated_paper.html", {"paper": paper})
 

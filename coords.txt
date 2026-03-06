@@ -1,0 +1,8 @@
+.chennai { top: 57.07%; left: 56.99%; }
+.pondy { top: 65.18%; left: 53.24%; }
+.madurai { top: 79.43%; left: 39.58%; }
+.coimbatore { top: 71.73%; left: 30.15%; }
+.bangalore { top: 57.86%; left: 35.32%; }
+.hyderabad { top: 26.12%; left: 42.55%; }
+.kochi { top: 79.39%; left: 24.58%; }
+.vijayawada { top: 32.5%; left: 60.04%; }
