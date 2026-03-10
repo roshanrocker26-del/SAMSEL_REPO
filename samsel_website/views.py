@@ -1,4 +1,4 @@
-from samsel_website.models import Teacher, Books, Purchase
+from samsel_website.models import School, Books, Purchase, PurchaseItems
 import json
 import os
 from django.conf import settings
@@ -37,40 +37,42 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-from .models import Teacher, Purchase
+from .models import School, Purchase
 
-def teacher_login(request):
+def school_login(request):
     if request.method == "POST":
-        t_id = request.POST.get("t_id")
-        school_id = request.POST.get("school_id")
-        password = request.POST.get("password")
+        school_name = request.POST.get("school_name", "").strip()
+        school_id = request.POST.get("school_id", "").strip()
+        password = request.POST.get("password", "")
 
         try:
-            teacher = Teacher.objects.get(t_id=t_id, school_id=school_id)
-            if teacher.password_hash == password:
-                request.session['teacher_id'] = teacher.t_id
-                return redirect('teacher_dashboard')
+            school = School.objects.get(school_id=school_id, school_name__iexact=school_name)
+            if school.password_hash == password:
+                request.session['school_id'] = school.school_id
+                return redirect('school_dashboard')
             else:
-                return render(request, 'teacher_login.html', {"error": "Invalid Password"})
-        except Teacher.DoesNotExist:
-            return render(request, 'teacher_login.html', {"error": "Invalid Teacher ID or School ID"})
+                return render(request, 'school_login.html', {"error": "Invalid Password"})
+        except School.DoesNotExist:
+            return render(request, 'school_login.html', {"error": "Invalid School Name or School ID"})
 
-    return render(request, 'teacher_login.html')
+    return render(request, 'school_login.html')
 
-def teacher_dashboard(request):
-    teacher_id = request.session.get('teacher_id')
-    if not teacher_id:
-        return redirect('teacher_login')
+def school_dashboard(request):
+    school_id = request.session.get('school_id')
+    if not school_id:
+        return redirect('school_login')
     
     try:
-        teacher = Teacher.objects.get(t_id=teacher_id)
+        school = School.objects.get(school_id=school_id)
         
         # Fetch purchases and group by series for Profile
-        purchases = Purchase.objects.filter(t_id=teacher).select_related('book_id')
+        from .models import PurchaseItems
+        purchases = PurchaseItems.objects.filter(purchase__school=school).select_related('book')
         grouped_books = {}
         for p in purchases:
-            series = p.book_id.series_name
-            cls = p.book_id.class_num
+            if not p.book: continue
+            series = p.book.series_name
+            cls = p.book.class_field
             if series not in grouped_books:
                 grouped_books[series] = []
             grouped_books[series].append(cls)
@@ -84,27 +86,31 @@ def teacher_dashboard(request):
             
         # Specific list for E-books section
         ebooks_list = []
+        seen_books = set()
         for p in purchases:
-            if p.book_id.book_path:
-                ebooks_list.append({
-                    'title': f"{p.book_id.series_name} - Class {p.book_id.class_num}",
-                    'view_url': p.book_id.book_path
-                })
+            if p.book and p.book.path:
+                book_key = f"{p.book.series_name} - Class {p.book.class_field}"
+                if book_key not in seen_books:
+                    seen_books.add(book_key)
+                    ebooks_list.append({
+                        'title': book_key,
+                        'view_url': p.book.path
+                    })
 
         context = {
-            'teacher': teacher,
+            'school': school,
             'books': books_data,
             'ebooks': ebooks_list
         }
         
-        return render(request, 'teacher_dashboard.html', context)
+        return render(request, 'school_dashboard.html', context)
         
-    except Teacher.DoesNotExist:
-        return redirect('teacher_login')
+    except School.DoesNotExist:
+        return redirect('school_login')
 
-def teacher_logout(request):
+def school_logout(request):
     request.session.flush()
-    return redirect('teacher_login')
+    return redirect('school_login')
 
 def student_login(request):
     return render(request, 'student_login.html')
@@ -158,9 +164,60 @@ def admin_dashboard(request):
         return redirect('admin_login')
     
     # Fetch all purchases for the Purchase Info section
-    purchases = Purchase.objects.all().select_related('t_id', 'book_id').order_by('-purchase_date')
+    from .models import PurchaseItems, School, Books
+    from django.db.models import Count
+    import json
     
-    return render(request, 'admin_dashboard.html', {'purchases': purchases})
+    purchases = PurchaseItems.objects.all().select_related('purchase__school', 'book').order_by('-purchase__purchase_date')
+    
+    # ---- Analytics & Metrix ----
+    total_schools = School.objects.count()
+    total_books_assigned = purchases.count()
+    
+    # Advanced Series Popularity (Pie Chart)
+    series_distribution = PurchaseItems.objects.values('book__series_name').annotate(
+        count=Count('id')
+    ).order_by('-count')
+    
+    series_labels = [s['book__series_name'] for s in series_distribution if s['book__series_name']]
+    series_data = [s['count'] for s in series_distribution if s['book__series_name']]
+    
+    # Recent Assignment Trends (Line Chart)
+    date_trends = PurchaseItems.objects.values('purchase__purchase_date').annotate(
+        count=Count('id')
+    ).order_by('purchase__purchase_date')
+    
+    trend_labels = [d['purchase__purchase_date'].strftime("%Y-%m-%d") for d in date_trends if d['purchase__purchase_date']]
+    trend_data = [d['count'] for d in date_trends if d['purchase__purchase_date']]
+
+    # Search and Pagination for the Table
+    from django.core.paginator import Paginator
+    from django.db.models import Q
+    
+    table_purchases = purchases
+    search_query = request.GET.get('search', '').strip()
+    if search_query:
+        table_purchases = table_purchases.filter(
+            Q(purchase__school__school_name__icontains=search_query) |
+            Q(purchase__school__school_id__icontains=search_query) |
+            Q(book__series_name__icontains=search_query)
+        )
+        
+    paginator = Paginator(table_purchases, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj,
+        'total_schools': total_schools,
+        'total_books_assigned': total_books_assigned,
+        'series_labels': json.dumps(series_labels),
+        'series_data': json.dumps(series_data),
+        'trend_labels': json.dumps(trend_labels),
+        'trend_data': json.dumps(trend_data)
+    }
+
+    return render(request, 'admin_dashboard.html', context)
 
 
 @require_POST
@@ -170,24 +227,10 @@ def delete_purchase(request, pk):
         return JsonResponse({'success': False, 'error': 'Not authenticated'}, status=403)
     
     try:
-        # Using raw SQL because Purchase model is managed=False
-        with connection.cursor() as cursor:
-            # First get teacher ID to update their count later
-            cursor.execute("SELECT t_id FROM purchase WHERE s_no = %s", [pk])
-            row = cursor.fetchone()
-            if not row:
-                 return JsonResponse({'success': False, 'error': 'Record not found'})
-            
-            teacher_id = row[0]
-            
-            # Delete the record
-            cursor.execute("DELETE FROM purchase WHERE s_no = %s", [pk])
-            
-            # Update teacher's no_of_series_purchased
-            cursor.execute(
-                "UPDATE teacher SET no_of_series_purchased = (SELECT COUNT(DISTINCT b.series_name) FROM purchase p JOIN books b ON p.book_id = b.book_id WHERE p.t_id = %s) WHERE t_id = %s",
-                [teacher_id, teacher_id]
-            )
+        from .models import PurchaseItems
+        deleted, _ = PurchaseItems.objects.filter(id=pk).delete()
+        if deleted == 0:
+            return JsonResponse({'success': False, 'error': 'Record not found'})
             
         return JsonResponse({'success': True, 'message': 'Purchase record deleted successfully'})
     except Exception as e:
@@ -196,23 +239,23 @@ def delete_purchase(request, pk):
 
 @require_POST
 def assign_books(request):
-    """Admin assigns selected books to a teacher → creates Purchase records."""
+    """Admin assigns selected books to a school → creates Purchase records."""
     if not request.session.get('admin_user'):
         return JsonResponse({'success': False, 'error': 'Not authenticated'}, status=403)
 
-    teacher_id = request.POST.get('teacher_id', '').strip()
+    school_id = request.POST.get('school_id', '').strip()
     book_ids = request.POST.getlist('book_ids')  # list of book_id values
 
-    if not teacher_id:
-        return JsonResponse({'success': False, 'error': 'Teacher ID is required'})
+    if not school_id:
+        return JsonResponse({'success': False, 'error': 'School ID is required'})
     if not book_ids:
         return JsonResponse({'success': False, 'error': 'No books selected'})
 
-    # Validate teacher exists
+    # Validate school exists
     try:
-        teacher = Teacher.objects.get(t_id=teacher_id)
-    except Teacher.DoesNotExist:
-        return JsonResponse({'success': False, 'error': f'Teacher with ID "{teacher_id}" not found'})
+        school = School.objects.get(school_id=school_id)
+    except School.DoesNotExist:
+        return JsonResponse({'success': False, 'error': f'School with ID "{school_id}" not found'})
 
     # Validate books exist
     valid_books = Books.objects.filter(book_id__in=book_ids)
@@ -220,47 +263,115 @@ def assign_books(request):
         return JsonResponse({'success': False, 'error': 'None of the selected books were found in the database'})
 
     # Create purchase records (using raw SQL since table is managed=False)
-    purchase_id = f"p-{date.today().strftime('%d%m%y')}"
+    purchase_id = f"p-{date.today().strftime('%d%m%y')}-{school_id}"
     valid_upto = date.today() + timedelta(days=365)
     created_count = 0
 
     with connection.cursor() as cursor:
-        for book in valid_books:
-            # Check if this purchase already exists
+        # Ensure a parent purchase record exists or create one
+        cursor.execute("SELECT purchase_id FROM purchase WHERE purchase_id = %s", [purchase_id])
+        if not cursor.fetchone():
             cursor.execute(
-                "SELECT COUNT(*) FROM purchase WHERE t_id = %s AND book_id = %s",
-                [teacher_id, book.book_id]
+                "INSERT INTO purchase (purchase_id, school_id, purchase_date) VALUES (%s, %s, %s)",
+                [purchase_id, school_id, date.today()]
+            )
+
+        for book in valid_books:
+            # Check if this school already has this book
+            cursor.execute(
+                """
+                SELECT COUNT(*) FROM purchase_items pi
+                JOIN purchase p ON p.purchase_id = pi.purchase_id
+                WHERE p.school_id = %s AND pi.book_id = %s
+                """,
+                [school_id, book.book_id]
             )
             if cursor.fetchone()[0] == 0:
                 cursor.execute(
-                    "INSERT INTO purchase (purchase_id, t_id, book_id, purchase_date, valid_upto) VALUES (%s, %s, %s, %s, %s)",
-                    [purchase_id, teacher_id, book.book_id, date.today(), valid_upto]
+                    "INSERT INTO purchase_items (purchase_id, book_id, valid_upto) VALUES (%s, %s, %s)",
+                    [purchase_id, book.book_id, valid_upto]
                 )
                 created_count += 1
 
-    # Update teacher's no_of_series_purchased
-    if created_count > 0:
-        with connection.cursor() as cursor:
-            cursor.execute(
-                "UPDATE teacher SET no_of_series_purchased = (SELECT COUNT(DISTINCT b.series_name) FROM purchase p JOIN books b ON p.book_id = b.book_id WHERE p.t_id = %s) WHERE t_id = %s",
-                [teacher_id, teacher_id]
-            )
-
     skipped = len(book_ids) - created_count
-    msg = f"Successfully assigned {created_count} book(s) to {teacher.teacher_name}."
+    msg = f"Successfully assigned {created_count} book(s) to {school.school_name}."
     if skipped > 0:
         msg += f" ({skipped} already assigned, skipped)"
 
     return JsonResponse({'success': True, 'message': msg, 'created': created_count})
 
 
-from .forms import TeacherForm, BookForm
+
+from .forms import SchoolForm, BookForm
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
 @super_admin_required
+def delete_purchase_super(request, pk):
+    try:
+        from .models import PurchaseItems
+        deleted, _ = PurchaseItems.objects.filter(id=pk).delete()
+        if deleted > 0:
+            messages.success(request, 'Purchase record deleted successfully.')
+        else:
+            messages.error(request, 'Purchase record not found.')
+    except Exception as e:
+        messages.error(request, f'Failed to delete purchase record: {str(e)}')
+    return redirect('super_admin')
+
+@super_admin_required
+def assign_purchase_super(request):
+    if request.method == "POST":
+        purchase_id = request.POST.get('purchase_id')
+        school_id = request.POST.get('school_id')
+        book_id = request.POST.get('book_id')
+        valid_upto_str = request.POST.get('valid_upto')
+
+        if not all([purchase_id, school_id, book_id, valid_upto_str]):
+            messages.error(request, "All fields are required.")
+            return redirect('super_admin')
+
+        try:
+            from datetime import datetime
+            valid_upto = datetime.strptime(valid_upto_str, '%Y-%m-%d').date()
+            school = School.objects.get(school_id=school_id)
+            book = Books.objects.get(book_id=book_id)
+
+            from django.db import connection
+            with connection.cursor() as cursor:
+                # 1. Check if the purchase_id exists, create if not
+                cursor.execute("SELECT purchase_id FROM purchase WHERE purchase_id = %s", [purchase_id])
+                if not cursor.fetchone():
+                    cursor.execute(
+                        "INSERT INTO purchase (purchase_id, school_id, purchase_date) VALUES (%s, %s, %s)",
+                        [purchase_id, school_id, date.today()]
+                    )
+
+                # 2. Add item to purchase_items
+                cursor.execute(
+                    "INSERT INTO purchase_items (purchase_id, book_id, valid_upto) VALUES (%s, %s, %s)",
+                    [purchase_id, book_id, valid_upto]
+                )
+            messages.success(request, f"Successfully assigned book {book_id} to {school.school_name} (Purchase ID: {purchase_id}).")
+        except School.DoesNotExist:
+            messages.error(request, f"School with ID '{school_id}' not found.")
+        except Books.DoesNotExist:
+            messages.error(request, f"Book with ID '{book_id}' not found.")
+        except Exception as e:
+            messages.error(request, f"Database error occurred: {str(e)}")
+
+    return redirect('super_admin')
+
+@super_admin_required
 def super_admin(request):
-    teachers = Teacher.objects.all()
+    from .models import School
+    from django.db.models import Count
+    from django.contrib.postgres.aggregates import StringAgg
+    
+    schools = School.objects.annotate(
+        purchased_count=Count('purchase__purchaseitems__book__series_name', distinct=True),
+        purchase_ids=StringAgg('purchase__purchase_id', delimiter=', ', distinct=True)
+    )
     books = Books.objects.all()
     
     # Group books by series for the Series table
@@ -273,7 +384,7 @@ def super_admin(request):
                 'classes': set()
             }
         series_data[book.series_name]['books'].append(book)
-        series_data[book.series_name]['classes'].add(book.class_num)
+        series_data[book.series_name]['classes'].add(book.class_field)
     
     # Format series data for template
     formatted_series = []
@@ -287,55 +398,51 @@ def super_admin(request):
             'class_range': class_range
         })
 
+    # Fetch all purchases for the new Purchase Management table
+    from .models import PurchaseItems
+    purchases = PurchaseItems.objects.all().select_related('purchase__school', 'book').order_by('-purchase__purchase_date')
+
     context = {
         'series': formatted_series,
-        'teachers': teachers,
-        'teacher_form': TeacherForm(),
+        'books': books,
+        'schools': schools,
+        'purchases': purchases,
+        'school_form': SchoolForm(),
         'book_form': BookForm(),
     }
     return render(request, "super_admin.html", context)
 
-# --- School CRUD stubs (School model not in current schema) ---
+# --- School CRUD Direct Database ---
 @super_admin_required
 def add_school(request):
-    messages.error(request, "School management is not available yet.")
+    if request.method == "POST":
+        form = SchoolForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "School added successfully!")
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"Error in {field}: {error}")
+            messages.error(request, "Failed to add school. Please check your inputs.")
     return redirect('super_admin')
 
 @super_admin_required
 def edit_school(request, pk):
-    messages.error(request, "School management is not available yet.")
+    from .models import School
+    school = get_object_or_404(School, pk=pk)
+    if request.method == "POST":
+        form = SchoolForm(request.POST, instance=school)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "School updated successfully!")
     return redirect('super_admin')
 
 @super_admin_required
 def delete_school(request, pk):
-    messages.error(request, "School management is not available yet.")
-    return redirect('super_admin')
-
-# --- CRUD for Teacher ---
-@super_admin_required
-def add_teacher(request):
-    if request.method == "POST":
-        form = TeacherForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Teacher added successfully!")
-    return redirect('super_admin')
-
-@super_admin_required
-def edit_teacher(request, pk):
-    teacher = get_object_or_404(Teacher, pk=pk)
-    if request.method == "POST":
-        form = TeacherForm(request.POST, instance=teacher)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Teacher updated successfully!")
-    return redirect('super_admin')
-
-@super_admin_required
-def delete_teacher(request, pk):
-    teacher = get_object_or_404(Teacher, pk=pk)
-    teacher.delete()
-    messages.success(request, "Teacher deleted successfully!")
+    from .models import School
+    School.objects.filter(school_id=pk).delete()
+    messages.success(request, "School and associated records deleted successfully!")
     return redirect('super_admin')
 
 # --- CRUD for Book ---

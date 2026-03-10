@@ -30,7 +30,7 @@
             <li class="dropdown">
                 <a href="#">Login <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                    <li><a href="{% url 'school_login' %}">School Login</a></li>
                 </ul>
             </li>
         </ul>
@@ -55,563 +55,736 @@
             </div>
         </div>
     </header>
+
+    <!-- PRODUCTS HERO SECTION -->
+    <section class="hero-section reveal-up">
+        <h1 class="hero-tagline" style="margin-top:2rem;">Our Premium Collection</h1>
+        <p class="hero-subtitle">
+            Explore our expertly crafted book series, designed to empower schools and educators with world-class
+            curriculum-aligned resources.
+        </p>
+    </section>
+
     <!-- ================= IBOT SERIES ================= -->
     <div class="series-wrapper">
 
-        <section class="series-section active-series" id="ibot-series">
-
-
+        <section class="series-section reveal-up" id="ibot-series">
             <div class="series-container">
-
                 <h1 class="series-title">IBOT SERIES</h1>
-
-                <div class="series-layout">
-
-                    <!-- LEFT : BOOK STACK -->
-                    <div class="book-stack">
-                        <img src="{% static 'images/ibot1.jpg' %}" class="book active">
-                        <img src="{% static 'images/ibot2.jpg' %}" class="book">
-                        <img src="{% static 'images/ibot3.jpg' %}" class="book">
-                        <img src="{% static 'images/ibot4.jpg' %}" class="book">
-                        <img src="{% static 'images/ibot5.jpg' %}" class="book">
-                        <img src="{% static 'images/ibot6.jpg' %}" class="book">
-                        <img src="{% static 'images/ibot7.jpg' %}" class="book">
-                        <img src="{% static 'images/ibot8.jpg' %}" class="book">
-                        <img src="{% static 'images/ibot9.jpg' %}" class="book">
-                    </div>
-
-                    <!-- CENTER : INDEX PAGE -->
-                    <div class="index-preview">
-                        <img src="{% static 'images/ibotindex1.jpeg' %}" class="index active">
-                        <img src="{% static 'images/ibot2.jpg' %}" class="index">
-                        <img src="{% static 'images/ibot3.jpg' %}" class="index">
-                        <img src="{% static 'images/ibot4.jpg' %}" class="index">
-                        <img src="{% static 'images/ibot5.jpg' %}" class="index">
-                        <img src="{% static 'images/ibot6.jpg' %}" class="index">
-                        <img src="{% static 'images/ibot7.jpg' %}" class="index">
-                        <img src="{% static 'images/ibot8.jpg' %}" class="index">
-                        <img src="{% static 'images/ibot9.jpg' %}" class="index">
-                    </div>
-
-                    <!-- RIGHT : CONTENT -->
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>This book is designed to introduce Class 1 students to the exciting world of computers in
-                                a fun and simple way. It begins with understanding smart machines and the basic parts of
-                                a computer, helping children recognize how technology helps us in daily life. The book
-                                gradually introduces young learners to ScratchJr, where they can start creating small
-                                animations and stories through easy blocks.</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 2 description...</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 3 description...</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 4 description...</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 5 description...</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 6 description...</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 7 description...</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 8 description...</p>
-                        </div>
-                        <div class="content">
-                            <p>IBOT Class 9 description...</p>
+                <div class="premium-bookshelf">
+                    <!-- Book 1 -->
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot1.jpg' %}" alt="IBOT Class 1">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 1</h3>
+                                <p>Introduces young learners to smart machines, basic computer parts, and early coding
+                                    concepts using ScratchJr.</p>
+                            </div>
                         </div>
                     </div>
-
+                    <!-- Book 2 -->
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot2.jpg' %}" alt="IBOT Class 2">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 2</h3>
+                                <p>Building on basics, exploring input/output devices, and intermediate creative
+                                    projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book 3 -->
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot3.jpg' %}" alt="IBOT Class 3">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 3</h3>
+                                <p>Understanding OS environments, word processing, and an introduction to computational
+                                    thinking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book 4 -->
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot4.jpg' %}" alt="IBOT Class 4">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 4</h3>
+                                <p>Advanced word processing, safe internet browsing, and block-based programming
+                                    exercises.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book 5 -->
+                    <div class="premium-book-card delay5">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot5.jpg' %}" alt="IBOT Class 5">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 5</h3>
+                                <p>Presentations, spreadsheets basics, and developing algorithms using visual coding
+                                    tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book 6 -->
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot6.jpg' %}" alt="IBOT Class 6">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 6</h3>
+                                <p>Deep dive into robotics principles, electronics basics, and intro to Python syntax.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book 7 -->
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot7.jpg' %}" alt="IBOT Class 7">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 7</h3>
+                                <p>AI concepts, intermediate Python programming, and hardware integration projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book 8 -->
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot8.jpg' %}" alt="IBOT Class 8">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 8</h3>
+                                <p>Advanced robotics, IoT fundamentals, and machine learning basics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Book 9 -->
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front">
+                                <img src="{% static 'images/ibot9.jpg' %}" alt="IBOT Class 9">
+                            </div>
+                            <div class="book-back">
+                                <h3>IBOT Class 9</h3>
+                                <p>Comprehensive IT matrix, app development, and specialized AI/ML problem solving.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
-                </div>
-
             </div>
-
-
         </section>
 
 
         <!-- ================= ISMART SERIES ================= -->
-
-        <section class="series-section" id="ismart-series">
-
-
-            <div class="series-container">
-
+        <section class="series-section reveal-up" id="ismart-series">
+            <div class="series-container" style="position: relative;">
                 <h1 class="series-title">ISMART SERIES</h1>
-
-                <div class="series-layout">
-
-                    <div class="book-stack">
-                        <img src="{% static 'images/low 1 - Copy.png' %}" class="book active">
-                        <img src="{% static 'images/low 2.png' %}" class="book">
-                        <img src="{% static 'images/low 3.png' %}" class="book">
-                        <img src="{% static 'images/low 4.png' %}" class="book">
-                        <img src="{% static 'images/low 5.png' %}" class="book">
-                        <img src="{% static 'images/high 6.png' %}" class="book">
-                        <img src="{% static 'images/high 7.png' %}" class="book">
-                        <img src="{% static 'images/high 8.png' %}" class="book">
-                        <img src="{% static 'images/high 9.png' %}" class="book">
-                    </div>
-
-                    <div class="index-preview">
-                        <img src="{% static 'images/low 1 - Copy.png' %}" class="index active">
-                        <img src="{% static 'images/low 2.png' %}" class="index">
-                        <img src="{% static 'images/low 3.png' %}" class="index">
-                        <img src="{% static 'images/low 4.png' %}" class="index">
-                        <img src="{% static 'images/low 5.png' %}" class="index">
-                        <img src="{% static 'images/high 6.png' %}" class="index">
-                        <img src="{% static 'images/high 7.png' %}" class="index">
-                        <img src="{% static 'images/high 8.png' %}" class="index">
-                        <img src="{% static 'images/high 9.png' %}" class="index">
-
-                    </div>
-
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>ISMART Level 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 3...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 4...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 5...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 6...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 7...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 8...</p>
-                        </div>
-                        <div class="content">
-                            <p>ISMART Level 9...</p>
-                        </div>
-                    </div>
-
+                <!-- Decorative Icon 1 -->
+                <div class="decorative-icon absolute-right">
+                    <img src="{% static 'images/icon1.png' %}" alt="Decoration">
                 </div>
-
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                <div class="premium-bookshelf">
+                    <!-- Books 1-9 -->
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/low 1 - Copy.png' %}" alt="ISMART 1">
+                            </div>
+                            <div class="book-back">
+                                <h3>ISMART Level 1</h3>
+                                <p>Foundations of smart learning and digital literacy.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/low 2.png' %}" alt="ISMART 2"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 2</h3>
+                                <p>Interactive exercises building core IT competencies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/low 3.png' %}" alt="ISMART 3"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 3</h3>
+                                <p>Exploring creative software and basic problem solving.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/low 4.png' %}" alt="ISMART 4"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 4</h3>
+                                <p>Introduction to connected devices and cyber safety.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay5">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/low 5.png' %}" alt="ISMART 5"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 5</h3>
+                                <p>Advanced office tools and beginner coding loops.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/high 6.png' %}" alt="ISMART 6"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 6</h3>
+                                <p>Structuring ideas and intermediate algorithmic logic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/high 7.png' %}" alt="ISMART 7"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 7</h3>
+                                <p>Web technologies and introductory networking.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/high 8.png' %}" alt="ISMART 8"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 8</h3>
+                                <p>Data handling, analysis, and programming constructs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/high 9.png' %}" alt="ISMART 9"></div>
+                            <div class="book-back">
+                                <h3>ISMART Level 9</h3>
+                                <p>Comprehensive system design and applied technology projects.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
-
         </section>
 
-
         <!-- ================= I-WHIZZ SERIES ================= -->
-        <section class="series-section" id="iwhizz-series">
+        <section class="series-section reveal-up" id="iwhizz-series">
             <div class="series-container">
                 <h1 class="series-title">I-WHIZZ SERIES</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/iwhizz1.jpg' %}" class="book active">
-                        <img src="{% static 'images/iwhizz2.jpg' %}" class="book">
-                        <img src="{% static 'images/iwhizz3.jpg' %}" class="book">
-                        <img src="{% static 'images/iwhizz4.jpg' %}" class="book">
-                        <img src="{% static 'images/iwhizz5.jpg' %}" class="book">
-                        <img src="{% static 'images/iwhizz6.jpg' %}" class="book">
-                        <img src="{% static 'images/iwhizz7.jpg' %}" class="book">
-                        <img src="{% static 'images/iwhizz8.jpg' %}" class="book">
-                        <img src="{% static 'images/iwhizz9.jpg' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/iwhizz1.jpg' %}" class="index active">
-                        <img src="{% static 'images/iwhizz2.jpg' %}" class="index">
-                        <img src="{% static 'images/iwhizz3.jpg' %}" class="index">
-                        <img src="{% static 'images/iwhizz4.jpg' %}" class="index">
-                        <img src="{% static 'images/iwhizz5.jpg' %}" class="index">
-                        <img src="{% static 'images/iwhizz6.jpg' %}" class="index">
-                        <img src="{% static 'images/iwhizz7.jpg' %}" class="index">
-                        <img src="{% static 'images/iwhizz8.jpg' %}" class="index">
-                        <img src="{% static 'images/iwhizz9.jpg' %}" class="index">
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>i-Whizz Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 3...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 4...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 5...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 6...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 7...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 8...</p>
-                        </div>
-                        <div class="content">
-                            <p>i-Whizz Class 9...</p>
+                <div class="premium-bookshelf">
+                    <!-- Books 1-9 -->
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz1.jpg' %}" alt="i-Whizz 1"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 1</h3>
+                                <p>Early steps into the world of tech and logic.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz2.jpg' %}" alt="i-Whizz 2"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 2</h3>
+                                <p>Building foundational computer operation skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz3.jpg' %}" alt="i-Whizz 3"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 3</h3>
+                                <p>Logical puzzles and introducing digital creativity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz4.jpg' %}" alt="i-Whizz 4"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 4</h3>
+                                <p>Word processing and exploring the internet safely.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay5">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz5.jpg' %}" alt="i-Whizz 5"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 5</h3>
+                                <p>Presentation tools and beginning programming principles.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz 6"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 6</h3>
+                                <p>Deeper dive into software apps and coding techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz7.jpg' %}" alt="i-Whizz 7"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 7</h3>
+                                <p>Advanced digital tools and structured logic building.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz8.jpg' %}" alt="i-Whizz 8"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 8</h3>
+                                <p>Web design basics and advanced conceptual frameworks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/iwhizz9.jpg' %}" alt="i-Whizz 9"></div>
+                            <div class="book-back">
+                                <h3>i-Whizz Class 9</h3>
+                                <p>Comprehensive studies in modern computing architectures.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ================= APPLICATION SERIES 2007 ================= -->
-        <section class="series-section" id="app2007-series">
+        <section class="series-section reveal-up" id="app2007-series">
             <div class="series-container">
                 <h1 class="series-title">APPLICATION SERIES 2007</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/App1.jpg' %}" class="book active">
-                        <img src="{% static 'images/App2.jpg' %}" class="book">
-                        <img src="{% static 'images/App3.jpg' %}" class="book">
-                        <img src="{% static 'images/App4.jpg' %}" class="book">
-                        <img src="{% static 'images/App5.jpg' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/App1.jpg' %}" class="index active">
-                        <img src="{% static 'images/App2.jpg' %}" class="index">
-                        <img src="{% static 'images/App3.jpg' %}" class="index">
-                        <img src="{% static 'images/App4.jpg' %}" class="index">
-                        <img src="{% static 'images/App5.jpg' %}" class="index">
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>App Series 2007 Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>App Series 2007 Class 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>App Series 2007 Class 3...</p>
-                        </div>
-                        <div class="content">
-                            <p>App Series 2007 Class 4...</p>
-                        </div>
-                        <div class="content">
-                            <p>App Series 2007 Class 5...</p>
+                <div class="premium-bookshelf">
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/App1.jpg' %}" alt="App Series 1"></div>
+                            <div class="book-back">
+                                <h3>App Series 2007 Level 1</h3>
+                                <p>Foundations of Office 2007 applications.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/App2.jpg' %}" alt="App Series 2"></div>
+                            <div class="book-back">
+                                <h3>App Series 2007 Level 2</h3>
+                                <p>Intermediate skills in Word and Excel formatting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/App3.jpg' %}" alt="App Series 3"></div>
+                            <div class="book-back">
+                                <h3>App Series 2007 Level 3</h3>
+                                <p>Advanced presentations and formulas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/App4.jpg' %}" alt="App Series 4"></div>
+                            <div class="book-back">
+                                <h3>App Series 2007 Level 4</h3>
+                                <p>Database management introduction.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay5">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/App5.jpg' %}" alt="App Series 5"></div>
+                            <div class="book-back">
+                                <h3>App Series 2007 Level 5</h3>
+                                <p>Mastering the Office 2007 suite.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+
+
         <!-- ================= APPLICATION SERIES 2016 ================= -->
-        <section class="series-section" id="app2016-series">
-            <div class="series-container">
+        <section class="series-section reveal-up" id="app2016-series">
+            <div class="series-container" style="position: relative;">
                 <h1 class="series-title">APPLICATION SERIES 2016</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/2016 ppt.png' %}" class="book active">
-                        <img src="{% static 'images/2016 excel.png' %}" class="book">
-                        <img src="{% static 'images/2016 word.png' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/2016 ppt.png' %}" class="index active">
-                        <img src="{% static 'images/2016 excel.png' %}" class="index">
-                        <img src="{% static 'images/2016 word.png' %}" class="index">
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>App Series 2016 Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>App Series 2016 Class 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>App Series 2016 Class 3...</p>
-                        </div>
-                    </div>
+                <!-- Decorative Icon 2 -->
+                <div class="decorative-icon absolute-right">
+                    <img src="{% static 'images/icon4.png' %}" alt="Decoration">
                 </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                <div class="premium-bookshelf">
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/2016 ppt.png' %}" alt="PowerPoint 2016">
+                            </div>
+                            <div class="book-back">
+                                <h3>PowerPoint 2016</h3>
+                                <p>Create stunning presentations with modern tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/2016 excel.png' %}" alt="Excel 2016">
+                            </div>
+                            <div class="book-back">
+                                <h3>Excel 2016</h3>
+                                <p>Data analysis, charting, and advanced functions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/2016 word.png' %}" alt="Word 2016">
+                            </div>
+                            <div class="book-back">
+                                <h3>Word 2016</h3>
+                                <p>Professional document creation and formatting.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ================= YOUNG WIZARD SERIES ================= -->
-        <section class="series-section" id="young-wizard-series">
+        <section class="series-section reveal-up" id="young-wizard-series">
             <div class="series-container">
                 <h1 class="series-title">YOUNG WIZARD SERIES</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/young1.jpg' %}" class="book active">
-                        <img src="{% static 'images/young2.jpg' %}" class="book">
-                        <img src="{% static 'images/young3.jpg' %}" class="book">
-                        <img src="{% static 'images/young4.jpg' %}" class="book">
-                        <img src="{% static 'images/young5.jpg' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/young1.jpg' %}" class="index active">
-                        <img src="{% static 'images/young2.jpg' %}" class="index">
-                        <img src="{% static 'images/young3.jpg' %}" class="index">
-                        <img src="{% static 'images/young4.jpg' %}" class="index">
-                        <img src="{% static 'images/young5.jpg' %}" class="index">
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>Young Wizard Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>Young Wizard Class 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>Young Wizard Class 3...</p>
-                        </div>
-                        <div class="content">
-                            <p>Young Wizard Class 4...</p>
-                        </div>
-                        <div class="content">
-                            <p>Young Wizard Class 5...</p>
+                <div class="premium-bookshelf">
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/young1.jpg' %}" alt="Young Wizard 1">
+                            </div>
+                            <div class="book-back">
+                                <h3>Young Wizard Level 1</h3>
+                                <p>Magical introduction to computers.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/young2.jpg' %}" alt="Young Wizard 2">
+                            </div>
+                            <div class="book-back">
+                                <h3>Young Wizard Level 2</h3>
+                                <p>Exploring creative tech tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/young3.jpg' %}" alt="Young Wizard 3">
+                            </div>
+                            <div class="book-back">
+                                <h3>Young Wizard Level 3</h3>
+                                <p>Building logic through fun exercises.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/young4.jpg' %}" alt="Young Wizard 4">
+                            </div>
+                            <div class="book-back">
+                                <h3>Young Wizard Level 4</h3>
+                                <p>Intermediate magical computing tasks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay5">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/young5.jpg' %}" alt="Young Wizard 5">
+                            </div>
+                            <div class="book-back">
+                                <h3>Young Wizard Level 5</h3>
+                                <p>Advanced puzzles and digital mastery.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ================= PROGRAMMING SERIES ================= -->
-        <section class="series-section" id="programming-series">
+        <section class="series-section reveal-up" id="programming-series">
             <div class="series-container">
                 <h1 class="series-title">PROGRAMMING SERIES</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/Pro1 New.jpg' %}" class="book active">
-                        <img src="{% static 'images/Pro2.jpg' %}" class="book">
-                        <img src="{% static 'images/Pro3.jpg' %}" class="book">
-                        <img src="{% static 'images/Pro4 New.jpg' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/Pro1 New.jpg' %}" class="index active">
-                        <img src="{% static 'images/Pro2.jpg' %}" class="index">
-                        <img src="{% static 'images/Pro3.jpg' %}" class="index">
-                        <img src="{% static 'images/Pro4 New.jpg' %}" class="index">
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>Programming Series Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>Programming Series Class 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>Programming Series Class 3...</p>
-                        </div>
-                        <div class="content">
-                            <p>Programming Series Class 4...</p>
+                <div class="premium-bookshelf">
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming 1">
+                            </div>
+                            <div class="book-back">
+                                <h3>Programming Level 1</h3>
+                                <p>The fundamentals of coding and syntax.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/Pro2.jpg' %}" alt="Programming 2"></div>
+                            <div class="book-back">
+                                <h3>Programming Level 2</h3>
+                                <p>Data structures and algorithms introduction.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/Pro3.jpg' %}" alt="Programming 3"></div>
+                            <div class="book-back">
+                                <h3>Programming Level 3</h3>
+                                <p>Object-oriented concepts and design.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/Pro4 New.jpg' %}" alt="Programming 4">
+                            </div>
+                            <div class="book-back">
+                                <h3>Programming Level 4</h3>
+                                <p>Advanced applied programming techniques.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+
+
         <!-- ================= RIGHT-CLICK SERIES ================= -->
-        <section class="series-section" id="right-click-series">
-            <div class="series-container">
-                <h1 class="series-title">RIGHT-CLICK SERIES</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/ict6.jpg' %}" class="book active">
-                        <img src="{% static 'images/ict7.jpg' %}" class="book">
-                        <img src="{% static 'images/ict8.jpg' %}" class="book">
-                        <img src="{% static 'images/ict9.jpg' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/ict6.jpg' %}" class="index active">
-                        <img src="{% static 'images/ict7.jpg' %}" class="index">
-                        <img src="{% static 'images/ict8.jpg' %}" class="index">
-                        <img src="{% static 'images/ict9.jpg' %}" class="index">
-                        <img src="{% static 'images/ict7.jpg' %}" class="index">
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>Right-click Series Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>Right-click Series Class 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>Right-click Series Class 3...</p>
-                        </div>
-                        <div class="content">
-                            <p>Right-click Series Class 4...</p>
-                        </div>
-                    </div>
+        <section class="series-section reveal-up" id="right-click-series">
+            <div class="series-container" style="position: relative;">
+                <h1 class="series-title">RIGHT-CLICK SERIES (i-ICT)</h1>
+                <!-- Decorative Icon 3 -->
+                <div class="decorative-icon absolute-right">
+                    <img src="{% static 'images/icon5.png' %}" alt="Decoration">
                 </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                <div class="premium-bookshelf">
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/ict6.jpg' %}" alt="ICT 6"></div>
+                            <div class="book-back">
+                                <h3>i-ICT Level 6</h3>
+                                <p>Information and Communication Tech basics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/ict7.jpg' %}" alt="ICT 7"></div>
+                            <div class="book-back">
+                                <h3>i-ICT Level 7</h3>
+                                <p>Networks and data communication.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/ict8.jpg' %}" alt="ICT 8"></div>
+                            <div class="book-back">
+                                <h3>i-ICT Level 8</h3>
+                                <p>Applied IT systems in the real world.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/ict9.jpg' %}" alt="ICT 9"></div>
+                            <div class="book-back">
+                                <h3>i-ICT Level 9</h3>
+                                <p>Comprehensive technology integration.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ================= MY COMPUTER SERIES ================= -->
-        <section class="series-section" id="my-computer-series">
+        <section class="series-section reveal-up" id="my-computer-series">
             <div class="series-container">
                 <h1 class="series-title">MY COMPUTER SERIES</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/my1.jpg' %}" class="book active">
-                        <img src="{% static 'images/my2.jpg' %}" class="book">
-                        <img src="{% static 'images/my3.jpg' %}" class="book">
-                        <img src="{% static 'images/my4.jpg' %}" class="book">
-                        <img src="{% static 'images/my5.jpg' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/my1.jpg' %}" class="index active">
-                        <img src="{% static 'images/my2.jpg' %}" class="index">
-                        <img src="{% static 'images/my3.jpg' %}" class="index">
-                        <img src="{% static 'images/my4.jpg' %}" class="index">
-                        <img src="{% static 'images/my5.jpg' %}" class="index">
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>My Computer Series Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>My Computer Series Class 2...</p>
-                        </div>
-                        <div class="content">
-                            <p>My Computer Series Class 3...</p>
-                        </div>
-                        <div class="content">
-                            <p>My Computer Series Class 4...</p>
-                        </div>
-                        <div class="content">
-                            <p>My Computer Series Class 5...</p>
+                <div class="premium-bookshelf">
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/my1.jpg' %}" alt="My Computer 1"></div>
+                            <div class="book-back">
+                                <h3>My Computer Level 1</h3>
+                                <p>Exploring your first PC.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/my2.jpg' %}" alt="My Computer 2"></div>
+                            <div class="book-back">
+                                <h3>My Computer Level 2</h3>
+                                <p>Handling files and folders safely.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay3">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/my3.jpg' %}" alt="My Computer 3"></div>
+                            <div class="book-back">
+                                <h3>My Computer Level 3</h3>
+                                <p>Navigating operating systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay4">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/my4.jpg' %}" alt="My Computer 4"></div>
+                            <div class="book-back">
+                                <h3>My Computer Level 4</h3>
+                                <p>Settings, customization, and tools.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay5">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/my5.jpg' %}" alt="My Computer 5"></div>
+                            <div class="book-back">
+                                <h3>My Computer Level 5</h3>
+                                <p>System maintenance and troubleshooting.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+
 
         <!-- ================= LITTLE WIZARD SERIES ================= -->
-        <section class="series-section" id="little-wizard-series">
-            <div class="series-container">
+        <section class="series-section reveal-up" id="little-wizard-series">
+            <div class="series-container" style="position: relative;">
                 <h1 class="series-title">LITTLE WIZARD SERIES</h1>
-                <div class="series-layout">
-                    <div class="book-stack">
-                        <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" class="book active">
-                        <img src="{% static 'images/Kids level 2 wrapper.jpg' %}" class="book">
-                    </div>
-                    <div class="index-preview">
-                        <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" class="index active">
-                        <img src="{% static 'images/Kids level 2 wrapper.jpg' %}" class="index">
-
-                    </div>
-                    <div class="book-content">
-                        <div class="content active">
-                            <p>Little Wizard Series Class 1...</p>
-                        </div>
-                        <div class="content">
-                            <p>Little Wizard Series Class 2...</p>
-                        </div>
-                    </div>
+                <!-- Decorative Icon 4 -->
+                <div class="decorative-icon absolute-right">
+                    <img src="{% static 'images/icon6.png' %}" alt="Decoration">
                 </div>
-                <div class="series-nav">
-                    <button onclick="goSeries(-1)">←</button>
-                    <button onclick="goSeries(1)">→</button>
+                <div class="premium-bookshelf">
+                    <div class="premium-book-card delay1">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/Kids level 1 wrapper.jpg' %}"
+                                    alt="Little Wizard 1"></div>
+                            <div class="book-back">
+                                <h3>Little Wizard Level 1</h3>
+                                <p>Colorful shapes and mouse control.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premium-book-card delay2">
+                        <div class="book-flipper">
+                            <div class="book-front"><img src="{% static 'images/Kids level 2 wrapper.jpg' %}"
+                                    alt="Little Wizard 2"></div>
+                            <div class="book-back">
+                                <h3>Little Wizard Level 2</h3>
+                                <p>Typing games and early logic.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
     </div> <!-- End of series-wrapper -->
 
-    <section class="purchase-section">
+    <!-- ================= PURCHASE REQUEST SECTION ================= -->
+    <section class="container reveal-up delay-100" id="purchase">
+        <div class="demo-card"
+            style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 4rem; display: flex; gap: 4rem; align-items: center; box-shadow: var(--shadow-md);">
+            <!-- Left Side / Content -->
+            <div class="demo-content" style="flex: 1;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">Purchase Request</h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Ready to bring SAMSEL to your school? Choose your preferred method below to request a quote or place
+                    an order.
+                </p>
 
-        <div class="purchase-container">
-
-            <h2 class="purchase-title">Purchase Request</h2>
-
-            <!-- Toggle Buttons -->
-            <div class="purchase-toggle">
-                <button class="toggle-btn active" onclick="showPurchase('whatsapp')">
-                    WhatsApp Order
-                </button>
-
-                <button class="toggle-btn" onclick="showPurchase('email')">
-                    Email Request
-                </button>
-            </div>
-
-            <!-- ================= WHATSAPP OPTION ================= -->
-            <div id="whatsapp-box" class="purchase-box active">
-
-                <div class="qr-area">
-                    <img src="{% static 'images/whatsapp.jpeg' %}" alt="WhatsApp QR">
+                <!-- Toggle -->
+                <div class="purchase-toggle" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                    <button class="btn-primary toggle-btn active" onclick="showPurchase('whatsapp')"
+                        style="flex: 1; padding: 12px; font-size: 0.95rem;">WhatsApp Order</button>
+                    <button class="btn-secondary toggle-btn" onclick="showPurchase('email')"
+                        style="flex: 1; padding: 12px; font-size: 0.95rem;">Email Request</button>
                 </div>
 
-                <div class="purchase-info">
-                    <h3>Scan & Order Instantly</h3>
-                    <p>
-                        Scan the QR code to open WhatsApp and place your order directly with us.
-                        Share your required book list and school details for quick processing.
-                    </p>
+                <!-- Forms Container -->
+                <div class="purchase-box-wrapper" style="position: relative; min-height: 250px;">
+                    <!-- Email Form -->
+                    <div id="email-box" class="purchase-box form-container fade-layer">
+                        <form class="demo-form" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <input type="text" class="form-control" placeholder="Contact Person Name" required>
+                            <input type="text" class="form-control" placeholder="School Name" required>
+                            <input type="email" class="form-control" placeholder="Mail ID" required>
+                            <textarea class="form-control" placeholder="Your Request (Books & Quantity)" rows="3"
+                                required></textarea>
+                            <button type="submit" class="btn-primary" style="align-self: flex-start;">Send
+                                Request</button>
+                        </form>
+                    </div>
+
+                    <!-- WhatsApp Info -->
+                    <div id="whatsapp-box" class="purchase-box active fade-layer">
+                        <div
+                            style="background: rgba(23, 187, 85, 0.1); border: 1px solid #17bb55; padding: 1.5rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 1.5rem;">
+                            <img src="{% static 'images/whatsapp.jpeg' %}" alt="WhatsApp QR"
+                                style="width: 120px; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);">
+                            <div>
+                                <h3 style="color: #17bb55; font-size: 1.25rem; margin-bottom: 0.5rem;">Scan & Order</h3>
+                                <p style="font-size: 0.95rem; margin-bottom: 1rem;">Scan the code or click below to
+                                    message us directly on WhatsApp with your requirements.</p>
+                                <a href="#" class="btn-primary"
+                                    style="background: #17bb55; padding: 10px 20px; font-size: 0.9rem; color: #fff; border:none; border-radius: 30px; display:inline-block; text-align:center; box-shadow: 0 4px 6px rgba(23,187,85,0.2);">Open
+                                    WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
-
-            <!-- ================= EMAIL OPTION ================= -->
-            <div id="email-box" class="purchase-box">
-
-                <form class="purchase-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="text" placeholder="School Name" required>
-                    <input type="email" placeholder="Mail ID" required>
-
-                    <textarea placeholder="Your Request (Books / Quantity / Details)" rows="4"></textarea>
-
-                    <button type="submit" class="send-btn">Send Request</button>
-                </form>
-
+            <!-- Right Side / Visual -->
+            <div class="demo-visual" style="flex: 1; text-align: center;">
+                <img src="{% static 'images/icon22.gif' %}" alt="Order Books"
+                    style="max-width: 320px; margin: auto; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));">
             </div>
-
         </div>
-
     </section>
 
 
