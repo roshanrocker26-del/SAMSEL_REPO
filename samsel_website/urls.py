@@ -4,6 +4,7 @@ from samsel_website import views
 from .views import download_paper_pdf
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('school-login/', views.school_login, name='school_login'),
