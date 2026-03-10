@@ -274,7 +274,98 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 50vh;
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Paper Plane Animation Container */
+.paper-plane-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.plane-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.infinity-path {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 2;
+    stroke-dasharray: 6, 6;
+    stroke-linecap: round;
+    opacity: 0.3;
+    stroke-dashoffset: 2000;
+    animation: drawPath 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.plane-group {
+    color: var(--primary);
+    offset-path: path("M400,200 C450,100 600,100 600,200 C600,300 450,300 400,200 C350,100 200,100 200,200 C200,300 350,300 400,200");
+    offset-rotate: auto 90deg;
+    animation:
+        planeEntrance 2s ease-out forwards,
+        flyInfinity 8s cubic-bezier(0.4, 0, 0.2, 1) 2s infinite,
+        planeLanding 3s ease-in 18s forwards;
+    /* Example sequence */
+    /* Simplified logic for a continuous "premium" feel */
+    animation: flyLoop 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes drawPath {
+    0% {
+        stroke-dashoffset: 2000;
+    }
+
+    20% {
+        stroke-dashoffset: 2000;
+    }
+
+    /* Wait for entrance */
+    80% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes flyLoop {
+    0% {
+        offset-distance: 0%;
+        opacity: 0;
+        transform: scale(0.5) translateX(200px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+
+    80% {
+        offset-distance: 100%;
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        offset-distance: 100%;
+        opacity: 0;
+        transform: scale(0.8) translateY(100px) rotate(20deg);
+    }
 }
 
 .hero-tagline {
@@ -852,6 +943,46 @@ body {
     transition-delay: 1.7s;
 }
 
+.reveal-up.is-visible .map-point.chittoor {
+    transition-delay: 1.8s;
+}
+
+.reveal-up.is-visible .map-point.kakinada {
+    transition-delay: 1.9s;
+}
+
+.reveal-up.is-visible .map-point.secunderabad {
+    transition-delay: 2.0s;
+}
+
+.reveal-up.is-visible .map-point.cuddalore {
+    transition-delay: 2.1s;
+}
+
+.reveal-up.is-visible .map-point.kanyakumari {
+    transition-delay: 2.2s;
+}
+
+.reveal-up.is-visible .map-point.trichy {
+    transition-delay: 2.3s;
+}
+
+.reveal-up.is-visible .map-point.vizag {
+    transition-delay: 2.4s;
+}
+
+.reveal-up.is-visible .map-point.trivandrum {
+    transition-delay: 2.5s;
+}
+
+.reveal-up.is-visible .map-point.mangalore {
+    transition-delay: 2.6s;
+}
+
+.reveal-up.is-visible .map-point.mysuru {
+    transition-delay: 2.7s;
+}
+
 .dot {
     width: 20px;
     height: 20px;
@@ -984,6 +1115,57 @@ body {
     left: 60.04%;
 }
 
+/* Additional Cities */
+.chittoor {
+    top: 56.11%;
+    left: 47.52%;
+}
+
+.kakinada {
+    top: 29.0%;
+    left: 72.99%;
+}
+
+.secunderabad {
+    top: 25.72%;
+    left: 42.64%;
+}
+
+.cuddalore {
+    top: 66.55%;
+    left: 52.95%;
+}
+
+.kanyakumari {
+    top: 92.34%;
+    left: 34.87%;
+}
+
+.trichy {
+    top: 73.33%;
+    left: 44.31%;
+}
+
+.vizag {
+    top: 23.93%;
+    left: 80.85%;
+}
+
+.trivandrum {
+    top: 89.28%;
+    left: 30.0%;
+}
+
+.mangalore {
+    top: 58.27%;
+    left: 13.16%;
+}
+
+.mysuru {
+    top: 62.67%;
+    left: 27.59%;
+}
+
 /* =========================================
    FOOTER
 ========================================= */
@@ -1054,11 +1236,12 @@ body {
     width: 100%;
     margin-top: 2rem;
     overflow: hidden;
-    background: #f0f0f0; /* Subdued neutral light grey */
+    background: #f0f0f0;
+    /* Subdued neutral light grey */
     padding: 3rem 0;
     position: relative;
-    border-top: 1px solid rgba(0,0,0,0.03);
-    border-bottom: 1px solid rgba(0,0,0,0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
     display: flex;
 }
 
@@ -1119,17 +1302,23 @@ body {
     height: 65px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .board-item span {
     font-size: 1.35rem;
     font-weight: 500;
-    color: #555; /* Soft, professional grey text */
+    color: #555;
+    /* Soft, professional grey text */
     letter-spacing: 0.5px;
 }
 
 @keyframes scrollBoards {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100% / 3)); } 
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% / 3));
+    }
 }

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Teacher Login | SAMSEL</title>
+    <title>School Login | SAMSEL</title>
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/loginpages.css' %}">
     <!-- Font Awesome for the eye icon -->
@@ -59,7 +59,7 @@
             <li class="dropdown">
                 <a href="#">Login <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="{% url 'teacher_login' %}" class="active">Teacher Login</a></li>
+                    <li><a href="{% url 'teacher_login' %}" class="active">School Login</a></li>
                 </ul>
             </li>
         </ul>
@@ -89,8 +89,8 @@
     <section class="login-section">
 
         <div class="login-box">
-            <h2>Teacher Login</h2>
-            <p>Use your SAMSEL Teacher Account</p>
+            <h2>School Login</h2>
+            <p>Use your SAMSEL School Account</p>
 
             {% if error %}
             <p style="color: red; text-align: center;">{{ error }}</p>

@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <!-- TOP NAVBAR (Centered) -->
     <nav class="top-navbar">
         <ul class="top-menu">
@@ -59,6 +58,21 @@
             <a href="{% url 'products' %}" class="btn-primary">Explore Books</a>
             <a href="#demo" class="btn-secondary">Request Demo</a>
         </div>
+
+        <!-- Paper Plane Animation SVG -->
+        <div class="paper-plane-container" aria-hidden="true">
+            <svg class="plane-svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+                <!-- Motion Path (Infinity Symbol) - Rounder Version -->
+                <path id="infinity-path" class="infinity-path"
+                    d="M400,200 C450,100 600,100 600,200 C600,300 450,300 400,200 C350,100 200,100 200,200 C200,300 350,300 400,200" />
+
+                <!-- Plane Group -->
+                <g class="plane-group">
+                    <path class="plane-shape" d="M0,0 L20,10 L0,20 L5,10 Z" fill="currentColor" />
+                    <!-- Visual trail will be handled via CSS dashoffset on the path itself -->
+                </g>
+            </svg>
+        </div>
     </section>
 
     <!-- TRUST STRIP -->
@@ -71,7 +85,7 @@
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🏫</div>
-                <h3>1500+ Schools</h3>
+                <h3>2500+ Schools</h3>
                 <p>Trusted by premier institutions across the nation.</p>
             </div>
             <div class="feature-card">
@@ -127,16 +141,6 @@
                 </div>
             </a>
 
-            <!-- IWHIZZ Series -->
-            <a href="{% url 'products' %}#iwhizz-series" class="book-card float delay2">
-                <div class="book-cover">
-                    <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">i-Whizz Series</h3>
-                    <span class="book-series">Computer Science</span>
-                </div>
-            </a>
 
             <!-- ISMART Series -->
             <a href="{% url 'products' %}#ismart-series" class="book-card float delay3">
@@ -149,6 +153,31 @@
                 </div>
             </a>
 
+
+            <!-- IWHIZZ Series -->
+            <a href="{% url 'products' %}#iwhizz-series" class="book-card float delay2">
+                <div class="book-cover">
+                    <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">i-Whizz Series</h3>
+                    <span class="book-series">Computer Science</span>
+                </div>
+            </a>
+
+
+            <!-- APP 2007 Series -->
+            <a href="{% url 'products' %}#app2007-series" class="book-card float delay4">
+                <div class="book-cover">
+                    <img src="{% static 'images/App3.jpg' %}" alt="Application Series 2007">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">App Series 2007</h3>
+                    <span class="book-series">Office Productivity</span>
+                </div>
+            </a>
+
+
             <!-- APP 2016 Series -->
             <a href="{% url 'products' %}#app2016-series" class="book-card float delay4">
                 <div class="book-cover">
@@ -157,6 +186,18 @@
                 <div class="book-info">
                     <h3 class="book-title">App Series 2016</h3>
                     <span class="book-series">Office Productivity</span>
+                </div>
+            </a>
+
+
+            <!-- Young Wizard Series -->
+            <a href="{% url 'products' %}#youngwizard-series" class="book-card float delay2">
+                <div class="book-cover">
+                    <img src="{% static 'images/young1.jpg' %}" alt="Young Wizard Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Young Wizard</h3>
+                    <span class="book-series">Early Learning</span>
                 </div>
             </a>
 
@@ -171,58 +212,38 @@
                 </div>
             </a>
 
-            <!-- i-ICT Series -->
-            <a href="{% url 'products' %}#i-ict-series" class="book-card float delay1">
+
+            <!-- Right-Click Series -->
+            <a href="{% url 'products' %}#right-click-series" class="book-card float delay2">
                 <div class="book-cover">
-                    <img src="{% static 'images/ict6.jpg' %}" alt="i-ICT Series">
+                    <img src="{% static 'images/ict8.jpg' %}" alt="Right-Click Series">
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">i-ICT Series</h3>
-                    <span class="book-series">Information Technology</span>
+                    <h3 class="book-title">Right-Click</h3>
+                    <span class="book-series">Computer Science</span>
                 </div>
             </a>
 
-            <!-- Young Learners Series -->
-            <a href="{% url 'products' %}#young-series" class="book-card float delay2">
-                <div class="book-cover">
-                    <img src="{% static 'images/young1.jpg' %}" alt="Young Learners Series">
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Young Learners</h3>
-                    <span class="book-series">Early Learning</span>
-                </div>
-            </a>
 
-            <!-- My Series -->
-            <a href="{% url 'products' %}#my-series" class="book-card float delay3">
+            <!-- My Computer Series -->
+            <a href="{% url 'products' %}#mycomputer-series" class="book-card float delay3">
                 <div class="book-cover">
-                    <img src="{% static 'images/my1.jpg' %}" alt="My Series">
+                    <img src="{% static 'images/my1.jpg' %}" alt="My Computer Series">
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">My Series</h3>
+                    <h3 class="book-title">My Computer</h3>
                     <span class="book-series">General Knowledge</span>
                 </div>
             </a>
 
-            <!-- Kids Series -->
-            <a href="{% url 'products' %}#kids-series" class="book-card float delay4">
+            <!-- Little Wizard Series -->
+            <a href="{% url 'products' %}#littlewizard-series" class="book-card float delay2">
                 <div class="book-cover">
-                    <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Kids Series">
+                    <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Young Learners Series">
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">Kids Series</h3>
-                    <span class="book-series">Preschool</span>
-                </div>
-            </a>
-
-            <!-- IT Matrix Series -->
-            <a href="{% url 'products' %}#itmatrix-series" class="book-card float delay5">
-                <div class="book-cover">
-                    <img src="{% static 'images/itmatrix6.jpg' %}" alt="IT Matrix Series">
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">IT Matrix</h3>
-                    <span class="book-series">Computer Science</span>
+                    <h3 class="book-title">Little Wizard</h3>
+                    <span class="book-series">Early Learning</span>
                 </div>
             </a>
         </div>
@@ -327,7 +348,48 @@
                     <div class="glow"></div>
                     <div class="dot"></div>
                 </div>
+                <div class="map-point cuddalore" data-tooltip="Cuddalore">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
                 <div class="map-point vijayawada" data-tooltip="Vijayawada, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <!-- New Cities -->
+                <div class="map-point chittoor" data-tooltip="Chittoor">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point kakinada" data-tooltip="Kakinada">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point secunderabad" data-tooltip="Secunderabad">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point kanyakumari" data-tooltip="Kanyakumari">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point trichy" data-tooltip="Tiruchirappalli">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point vizag" data-tooltip="Visakhapatnam">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point trivandrum" data-tooltip="Trivandrum">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point mangalore" data-tooltip="Mangalore">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point mysuru" data-tooltip="Mysuru">
                     <div class="glow"></div>
                     <div class="dot"></div>
                 </div>
@@ -349,24 +411,23 @@
                     <span>TN BOARD</span>
                 </div>
                 <div class="board-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Council_for_the_Indian_School_Certificate_Examinations_logo.png/220px-Council_for_the_Indian_School_Certificate_Examinations_logo.png"
-                        alt="ICSC">
-                    <span>ICSC</span>
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 4</span>
+                    <span>KERALA BOARD</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 5</span>
+                    <span>KA BOARD</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 6</span>
+                    <span>AP BOARD</span>
                 </div>
             </div>
             <!-- Set 2 for infinite loop -->
@@ -380,24 +441,23 @@
                     <span>TN BOARD</span>
                 </div>
                 <div class="board-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Council_for_the_Indian_School_Certificate_Examinations_logo.png/220px-Council_for_the_Indian_School_Certificate_Examinations_logo.png"
-                        alt="ICSC">
-                    <span>ICSC</span>
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 4</span>
+                    <span>KERALA BOARD</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 5</span>
+                    <span>KA BOARD</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 6</span>
+                    <span>AP BOARD</span>
                 </div>
             </div>
             <!-- Set 3 for infinite loop fail-safe on wide screens -->
@@ -411,24 +471,23 @@
                     <span>TN BOARD</span>
                 </div>
                 <div class="board-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/75/Council_for_the_Indian_School_Certificate_Examinations_logo.png/220px-Council_for_the_Indian_School_Certificate_Examinations_logo.png"
-                        alt="ICSC">
-                    <span>ICSC</span>
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 4</span>
+                    <span>KERALA BOARD</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 5</span>
+                    <span>KA BOARD</span>
                 </div>
-                <div class="board-item" style="opacity: 0.5; filter: grayscale(1);">
-                    <img src="https://placehold.co/100x100/eeeeee/cccccc?text=LOGO"
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
-                    <span>BOARD 6</span>
+                    <span>AP BOARD</span>
                 </div>
             </div>
         </div>
