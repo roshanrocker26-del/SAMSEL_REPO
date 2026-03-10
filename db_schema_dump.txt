@@ -1,0 +1,83 @@
+auth_group | id | integer
+auth_group | name | character varying
+auth_group_permissions | id | integer
+auth_group_permissions | group_id | integer
+auth_group_permissions | permission_id | integer
+auth_permission | id | integer
+auth_permission | name | character varying
+auth_permission | content_type_id | integer
+auth_permission | codename | character varying
+auth_user | id | integer
+auth_user | password | character varying
+auth_user | last_login | timestamp with time zone
+auth_user | is_superuser | boolean
+auth_user | username | character varying
+auth_user | first_name | character varying
+auth_user | last_name | character varying
+auth_user | email | character varying
+auth_user | is_staff | boolean
+auth_user | is_active | boolean
+auth_user | date_joined | timestamp with time zone
+auth_user_groups | id | integer
+auth_user_groups | user_id | integer
+auth_user_groups | group_id | integer
+auth_user_user_permissions | id | integer
+auth_user_user_permissions | user_id | integer
+auth_user_user_permissions | permission_id | integer
+books | book_id | character varying
+books | series_name | character varying
+books | class | character varying
+books | path | character varying
+django_admin_log | id | integer
+django_admin_log | action_time | timestamp with time zone
+django_admin_log | object_id | text
+django_admin_log | object_repr | character varying
+django_admin_log | action_flag | smallint
+django_admin_log | change_message | text
+django_admin_log | content_type_id | integer
+django_admin_log | user_id | integer
+django_content_type | id | integer
+django_content_type | app_label | character varying
+django_content_type | model | character varying
+django_migrations | id | integer
+django_migrations | app | character varying
+django_migrations | name | character varying
+django_migrations | applied | timestamp with time zone
+django_session | session_key | character varying
+django_session | session_data | text
+django_session | expire_date | timestamp with time zone
+purchase | purchase_id | character varying
+purchase | t_id | character varying
+purchase | purchase_date | date
+purchase_items | id | integer
+purchase_items | purchase_id | character varying
+purchase_items | book_id | character varying
+purchase_items | valid_upto | date
+samsel_website_book | book_id | character varying
+samsel_website_book | series_name | character varying
+samsel_website_book | class | character varying
+samsel_website_purchase | s_no | integer
+samsel_website_purchase | purchase_id | character varying
+samsel_website_purchase | t_id | character varying
+samsel_website_purchase | book_id | character varying
+samsel_website_purchase | purchase_date | date
+samsel_website_purchase | valid_upto | date
+samsel_website_school | school_id | character varying
+samsel_website_school | teacher_name | character varying
+samsel_website_school | school_name | character varying
+samsel_website_teacher | t_id | character varying
+samsel_website_teacher | teacher_name | character varying
+samsel_website_teacher | school_id | character varying
+samsel_website_teacher | school_name | character varying
+samsel_website_teacher | password | character varying
+samsel_website_teacher | contact | character varying
+samsel_website_teacher | no_of_series_purchased | integer
+samsel_website_teacher | purchase_id | character varying
+school | school_id | character varying
+school | school_name | character varying
+school | contact | character varying
+teacher | t_id | character varying
+teacher | teacher_name | character varying
+teacher | school_id | character varying
+teacher | password_hash | character varying
+teacher | contact | character varying

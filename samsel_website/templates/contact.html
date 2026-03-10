@@ -23,7 +23,7 @@
             <li class="dropdown">
                 <a href="#">Login <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="{% url 'teacher_login' %}">Teacher Login</a></li>
+                    <li><a href="{% url 'school_login' %}">School Login</a></li>
                 </ul>
             </li>
         </ul>
@@ -49,76 +49,83 @@
         </div>
     </header>
     <!-- HERO -->
-    <section class="contact-hero">
-        <h1>Contact Us</h1>
+    <section class="contact-hero reveal-up">
+        <h1 style="margin-top:2rem;">Contact Us</h1>
         <p>We’re here to help you with all your publishing needs</p>
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contact-section">
+    <section class="contact-section reveal-up">
         <div class="contact-wrapper">
             <!-- LEFT INFO -->
-            <div class="contact-info animate-left">
+            <div class="contact-info-container reveal-up delay-100">
                 <h2>SAMSEL Publications</h2>
 
-                <div class="info-box">
-                    <h4>📍 Address</h4>
-                    <p>
-                        Near, 44, Taylors Rd,<br>
-                        Telecom Quarters, Kilpauk,<br>
-                        Chennai, Tamil Nadu 600010
-                    </p>
-
-                    <!-- GOOGLE MAP -->
-                    <div class="map-box">
-                        <iframe src="https://www.google.com/maps?q=44%20Taylors%20Road%20Kilpauk%20Chennai&output=embed"
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                <div class="info-card reveal-up delay-200">
+                    <div class="info-icon">📍</div>
+                    <div class="info-details">
+                        <h4>Address</h4>
+                        <p>Near, 44, Taylors Rd,<br>Telecom Quarters, Kilpauk,<br>Chennai, Tamil Nadu 600010</p>
                     </div>
                 </div>
 
-                <div class="info-box">
-                    <h4>📞 Phone</h4>
-                    <p>044 2647 4736</p>
-                    <p>044 2645 4598</p>
-                    <p>044 4285 7186</p>
+                <div class="info-card reveal-up delay-300">
+                    <div class="info-icon">📞</div>
+                    <div class="info-details">
+                        <h4>Phone</h4>
+                        <p>044 2647 4736</p>
+                        <p>044 2645 4598</p>
+                        <p>044 4285 7186</p>
+                    </div>
                 </div>
 
-                <div class="info-box">
-                    <h4>✉️ Email</h4>
-                    <p>info@samselpublications.com</p>
+                <div class="info-card reveal-up delay-400">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-details">
+                        <h4>Email</h4>
+                        <p>info@samselpublications.com</p>
+                    </div>
                 </div>
 
-                <div class="info-box">
-                    <h4>⏰ Working Hours</h4>
-                    <p>Monday – Saturday<br>9:00 AM – 6:30 PM</p>
+                <div class="info-card reveal-up delay-500">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-details">
+                        <h4>Working Hours</h4>
+                        <p>Monday – Friday<br>9:00 AM – 6:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- GOOGLE MAP -->
+                <div class="map-card reveal-up delay-600">
+                    <iframe src="https://www.google.com/maps?q=44%20Taylors%20Road%20Kilpauk%20Chennai&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
-
 
             <!-- RIGHT FORM -->
-            <div class="contact-form">
-                <div class="contact-form animate-right">
-
-                    <h3>Send us a Message</h3>
-
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Phone Number">
-                        <textarea rows="5" placeholder="Your Message"></textarea>
-
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-
+            <div class="contact-form-container reveal-up delay-300">
+                <h3>Send us a Message</h3>
+                <form class="premium-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Phone Number">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="premium-submit-btn">Send Message</button>
+                </form>
             </div>
+        </div>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <p>© 2026 SAMSEL Publications | All Rights Reserved</p>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <h3 class="footer-logo">SAMSEL Publications</h3>
+            <p class="footer-text">© 2026 SAMSEL PUBLICATIONS. All Rights Reserved.<br>Shaping Digital Minds since 2001.
+            </p>
+        </div>
     </footer>
+    <script src="{% static 'js/global.js' %}"></script>
 
 </body>
 
