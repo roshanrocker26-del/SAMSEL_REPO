@@ -19,6 +19,7 @@ class School(models.Model):
     school_id = models.CharField(primary_key=True, max_length=50)
     contact = models.CharField(max_length=15, blank=True, null=True)
     password_hash = models.CharField(max_length=200)
+    branch = models.CharField(max_length=150, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -45,6 +46,7 @@ class PurchaseItems(models.Model):
     purchase = models.ForeignKey(Purchase, models.DO_NOTHING, blank=True, null=True)
     book = models.ForeignKey(Books, models.DO_NOTHING, blank=True, null=True)
     valid_upto = models.DateField(blank=True, null=True)
+    sent_to_school = models.BooleanField(default=False)
 
     class Meta:
         managed = False

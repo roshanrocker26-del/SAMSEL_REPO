@@ -14,10 +14,11 @@ class BookForm(forms.ModelForm):
 class SchoolForm(forms.ModelForm):
     class Meta:
         model = School
-        fields = ['school_name', 'school_id', 'contact', 'password_hash']
+        fields = ['school_name', 'school_id', 'contact', 'password_hash', 'branch']
         widgets = {
             'school_name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'School Name'}),
             'school_id': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'e.g. SG01'}),
             'contact': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Contact Number'}),
             'password_hash': forms.PasswordInput(attrs={'class': 'form-input', 'placeholder': 'Password'}),
+            'branch': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Branch Name'}),
         }

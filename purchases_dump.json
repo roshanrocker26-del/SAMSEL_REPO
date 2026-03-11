@@ -1,0 +1,50 @@
+[
+  {
+    "purchase__school_id": "SG01",
+    "book__book_id": "iwhizz6",
+    "book__path": "/media/books/iwhizz/index.html",
+    "purchase_id": "pSG1"
+  },
+  {
+    "purchase__school_id": "SG01",
+    "book__book_id": "ibot2",
+    "book__path": null,
+    "purchase_id": "pSG1"
+  },
+  {
+    "purchase__school_id": "MAH01",
+    "book__book_id": "ismart9",
+    "book__path": null,
+    "purchase_id": "pMAH1"
+  },
+  {
+    "purchase__school_id": "MAH01",
+    "book__book_id": "iwhizz6",
+    "book__path": "/media/books/iwhizz/index.html",
+    "purchase_id": "pMAH1"
+  },
+  {
+    "purchase__school_id": "SKHM02",
+    "book__book_id": "ibot3",
+    "book__path": null,
+    "purchase_id": "pSK1"
+  },
+  {
+    "purchase__school_id": "SKHM02",
+    "book__book_id": "iwhizz6",
+    "book__path": "/media/books/iwhizz/index.html",
+    "purchase_id": "pSK1"
+  },
+  {
+    "purchase__school_id": "DA01",
+    "book__book_id": "iwhizz6",
+    "book__path": "/media/books/iwhizz/index.html",
+    "purchase_id": "pDA01"
+  },
+  {
+    "purchase__school_id": "BE01",
+    "book__book_id": "iwhizz6",
+    "book__path": "/media/books/iwhizz/index.html",
+    "purchase_id": "pBE1"
+  }
+]

@@ -67,7 +67,12 @@ def school_dashboard(request):
         
         # Fetch purchases and group by series for Profile
         from .models import PurchaseItems
-        purchases = PurchaseItems.objects.filter(purchase__school=school).select_related('book')
+        from datetime import date
+        purchases = PurchaseItems.objects.filter(
+            purchase__school=school,
+            valid_upto__gte=date.today(),
+            sent_to_school=True
+        ).select_related('book')
         grouped_books = {}
         for p in purchases:
             if not p.book: continue
@@ -203,10 +208,38 @@ def admin_dashboard(request):
             Q(book__series_name__icontains=search_query)
         )
         
-    paginator = Paginator(table_purchases, 10)
+    # Group by school
+    grouped_purchases = {}
+    for p in table_purchases:
+        school = p.purchase.school
+        if school.school_id not in grouped_purchases:
+            grouped_purchases[school.school_id] = {
+                'school_id': school.school_id,
+                'school_name': school.school_name,
+                'series': {}
+            }
+        
+        series_name = p.book.series_name
+        class_val = p.book.class_field
+        
+        if series_name not in grouped_purchases[school.school_id]['series']:
+            grouped_purchases[school.school_id]['series'][series_name] = []
+            
+        if class_val not in grouped_purchases[school.school_id]['series'][series_name]:
+            grouped_purchases[school.school_id]['series'][series_name].append(class_val)
+            
+    grouped_list = list(grouped_purchases.values())
+    for item in grouped_list:
+        for series in item['series']:
+            item['series'][series].sort(key=lambda x: str(x))
+            
+    paginator = Paginator(grouped_list, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+    # All schools for autocomplete
+    schools_data = list(School.objects.values('school_id', 'school_name', 'branch'))
+    
     context = {
         'page_obj': page_obj,
         'total_schools': total_schools,
@@ -214,7 +247,8 @@ def admin_dashboard(request):
         'series_labels': json.dumps(series_labels),
         'series_data': json.dumps(series_data),
         'trend_labels': json.dumps(trend_labels),
-        'trend_data': json.dumps(trend_data)
+        'trend_data': json.dumps(trend_data),
+        'schools_autocomplete': json.dumps(schools_data)
     }
 
     return render(request, 'admin_dashboard.html', context)
@@ -233,6 +267,26 @@ def delete_purchase(request, pk):
             return JsonResponse({'success': False, 'error': 'Record not found'})
             
         return JsonResponse({'success': True, 'message': 'Purchase record deleted successfully'})
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)})
+
+@require_POST
+def delete_school_purchases_admin(request, school_id):
+    """Admin deletes all purchase records for a specific school."""
+    if not request.session.get('admin_user'):
+        return JsonResponse({'success': False, 'error': 'Not authenticated'}, status=403)
+    
+    try:
+        from .models import Purchase, PurchaseItems
+        purchases = Purchase.objects.filter(school__school_id=school_id)
+        count = 0
+        for p in purchases:
+            items_deleted, _ = PurchaseItems.objects.filter(purchase=p).delete()
+            count += items_deleted
+        # Optinally delete the Purchase parents too
+        purchases.delete()
+        
+        return JsonResponse({'success': True, 'message': f'Deleted {count} books assigned to this school.'})
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)})
 
@@ -288,8 +342,20 @@ def assign_books(request):
             )
             if cursor.fetchone()[0] == 0:
                 cursor.execute(
-                    "INSERT INTO purchase_items (purchase_id, book_id, valid_upto) VALUES (%s, %s, %s)",
+                    "INSERT INTO purchase_items (purchase_id, book_id, valid_upto, sent_to_school) VALUES (%s, %s, %s, TRUE)",
                     [purchase_id, book.book_id, valid_upto]
+                )
+                created_count += 1
+            else:
+                # Book already exists for this school, just mark it as sent
+                cursor.execute(
+                    """
+                    UPDATE purchase_items SET sent_to_school = TRUE
+                    FROM purchase
+                    WHERE purchase_items.purchase_id = purchase.purchase_id
+                    AND purchase.school_id = %s AND purchase_items.book_id = %s
+                    """,
+                    [school_id, book.book_id]
                 )
                 created_count += 1
 
@@ -347,9 +413,9 @@ def assign_purchase_super(request):
                         [purchase_id, school_id, date.today()]
                     )
 
-                # 2. Add item to purchase_items
+                # 2. Add item to purchase_items (sent_to_school=FALSE, admin must send it)
                 cursor.execute(
-                    "INSERT INTO purchase_items (purchase_id, book_id, valid_upto) VALUES (%s, %s, %s)",
+                    "INSERT INTO purchase_items (purchase_id, book_id, valid_upto, sent_to_school) VALUES (%s, %s, %s, FALSE)",
                     [purchase_id, book_id, valid_upto]
                 )
             messages.success(request, f"Successfully assigned book {book_id} to {school.school_name} (Purchase ID: {purchase_id}).")
@@ -440,7 +506,15 @@ def edit_school(request, pk):
 
 @super_admin_required
 def delete_school(request, pk):
-    from .models import School
+    from .models import School, Purchase, PurchaseItems
+    
+    # Since foreign keys are DO_NOTHING and managed=False, manually delete associated records 
+    # to prevent a new school with the same ID from inheriting ghost purchases
+    purchases = Purchase.objects.filter(school_id=pk)
+    for p in purchases:
+        PurchaseItems.objects.filter(purchase=p).delete()
+    purchases.delete()
+    
     School.objects.filter(school_id=pk).delete()
     messages.success(request, "School and associated records deleted successfully!")
     return redirect('super_admin')
