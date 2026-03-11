@@ -1,0 +1,6 @@
+django==5.2.10
+gunicorn==23.0.0
+psycopg2-binary==2.9.9
+xhtml2pdf==0.2.16
+whitenoise==6.7.0
+dj-database-url==2.3.0
