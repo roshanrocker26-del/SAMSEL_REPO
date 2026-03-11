@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'j5rpn0z5-8000.inc1.devtunnels.ms',
     '.onrender.com',
+    'samsel-repo-1.onrender.com',
     'enchanting-liger-2ec4c7.netlify.app',
     'www.enchanting-liger-2ec4c7.netlify.app',
 ]
@@ -44,7 +45,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 CSRF_TRUSTED_ORIGINS = [
     'https://rosedeveloper.pythonanywhere.com',
     'https://www.rosedeveloper.pythonanywhere.com',
-    'https://*.onrender.com',
+    'https://samsel-repo-1.onrender.com',
     'https://enchanting-liger-2ec4c7.netlify.app',
     'https://www.enchanting-liger-2ec4c7.netlify.app',
 ]
