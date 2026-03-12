@@ -64,7 +64,7 @@
             <svg class="plane-svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
                 <!-- Motion Path (Infinity Symbol) - Rounder Version -->
                 <path id="infinity-path" class="infinity-path"
-                    d="M400,200 C450,100 600,100 600,200 C600,300 450,300 400,200 C350,100 200,100 200,200 C200,300 350,300 400,200" />
+                    d="M400,200 C475,50 700,50 700,200 C700,350 475,350 400,200 C325,50 100,50 100,200 C100,350 325,350 400,200" />
 
                 <!-- Plane Group -->
                 <g class="plane-group">
@@ -111,7 +111,7 @@
                 <h2 style="margin-top: 1rem; font-size: 2.5rem;">Countdown is ON!</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
                     Start your Personalized Practice Today!<br>
-                    <strong>SAMSEL</strong> – Your Trusted Learning Partner
+                    <span class="brand-text">SAMSEL</span> – Your Trusted Learning Partner
                 </p>
                 <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
                     <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
@@ -166,17 +166,52 @@
             </a>
 
 
-            <!-- APP 2007 Series -->
-            <a href="{% url 'products' %}#app2007-series" class="book-card float delay4">
+            <!-- Young Wizard Series -->
+            <a href="{% url 'products' %}#youngwizard-series" class="book-card float delay2">
                 <div class="book-cover">
-                    <img src="{% static 'images/App3.jpg' %}" alt="Application Series 2007">
+                    <img src="{% static 'images/young1.jpg' %}" alt="Young Wizard Series">
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">App Series 2007</h3>
-                    <span class="book-series">Office Productivity</span>
+                    <h3 class="book-title">Young Wizard</h3>
+                    <span class="book-series">Early Learning</span>
                 </div>
             </a>
 
+
+            <!-- Little Wizard Series -->
+            <a href="{% url 'products' %}#littlewizard-series" class="book-card float delay2">
+                <div class="book-cover">
+                    <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Young Learners Series">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Little Wizard</h3>
+                    <span class="book-series">Early Learning</span>
+                </div>
+            </a>
+
+
+            <!-- Tamil Writing Books -->
+            <a href="{% url 'products' %}#tamilwriting-books" class="book-card float delay3">
+                <div class="book-cover">
+                    <img src="{% static 'images/tamil1.jpg' %}" alt="Tamil Writing Books">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Tamil Writing Books</h3>
+                    <span class="book-series">Practice Writing</span>
+                </div>
+            </a>
+
+
+            <!-- Cursive Writing Books -->
+            <a href="{% url 'products' %}#cursive-writing-books" class="book-card float delay3">
+                <div class="book-cover">
+                    <img src="{% static 'images/Level 1.jpg' %}" alt="Cursive Writing Books">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Cursive Writing Books</h3>
+                    <span class="book-series">Better Handwriting</span>
+                </div>
+            </a>
 
             <!-- APP 2016 Series -->
             <a href="{% url 'products' %}#app2016-series" class="book-card float delay4">
@@ -189,15 +224,14 @@
                 </div>
             </a>
 
-
-            <!-- Young Wizard Series -->
-            <a href="{% url 'products' %}#youngwizard-series" class="book-card float delay2">
+            <!-- APP 2007 Series -->
+            <a href="{% url 'products' %}#app2007-series" class="book-card float delay4">
                 <div class="book-cover">
-                    <img src="{% static 'images/young1.jpg' %}" alt="Young Wizard Series">
+                    <img src="{% static 'images/App3.jpg' %}" alt="Application Series 2007">
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">Young Wizard</h3>
-                    <span class="book-series">Early Learning</span>
+                    <h3 class="book-title">App Series 2007</h3>
+                    <span class="book-series">Office Productivity</span>
                 </div>
             </a>
 
@@ -213,18 +247,6 @@
             </a>
 
 
-            <!-- Right-Click Series -->
-            <a href="{% url 'products' %}#right-click-series" class="book-card float delay2">
-                <div class="book-cover">
-                    <img src="{% static 'images/ict8.jpg' %}" alt="Right-Click Series">
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Right-Click</h3>
-                    <span class="book-series">Computer Science</span>
-                </div>
-            </a>
-
-
             <!-- My Computer Series -->
             <a href="{% url 'products' %}#mycomputer-series" class="book-card float delay3">
                 <div class="book-cover">
@@ -236,14 +258,15 @@
                 </div>
             </a>
 
-            <!-- Little Wizard Series -->
-            <a href="{% url 'products' %}#littlewizard-series" class="book-card float delay2">
+
+            <!-- Right-Click Series -->
+            <a href="{% url 'products' %}#right-click-series" class="book-card float delay2">
                 <div class="book-cover">
-                    <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Young Learners Series">
+                    <img src="{% static 'images/ict8.jpg' %}" alt="Right-Click Series">
                 </div>
                 <div class="book-info">
-                    <h3 class="book-title">Little Wizard</h3>
-                    <span class="book-series">Early Learning</span>
+                    <h3 class="book-title">Right-Click</h3>
+                    <span class="book-series">Computer Science</span>
                 </div>
             </a>
         </div>
@@ -254,7 +277,8 @@
         <div class="demo-card"
             style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 4rem; display: flex; gap: 4rem; align-items: center; box-shadow: var(--shadow-md);">
             <div class="demo-content" style="flex: 1;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Experience SAMSEL</h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Experience <span class="brand-text">SAMSEL</span>
+                </h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
                     Book a personalized demo for your school or institution and explore our digital-first teaching
                     approach.
@@ -496,8 +520,11 @@
     <!-- FOOTER -->
     <footer class="main-footer">
         <div class="footer-content">
-            <h3 class="footer-logo">SAMSEL Publications</h3>
-            <p class="footer-text">© 2026 SAMSEL PUBLICATIONS. All Rights Reserved.<br>Shaping Digital Minds since 2001.
+            <h3 class="footer-logo"><span class="brand-text">SAMSEL</span> <span
+                    class="brand-secondary">Publications</span></h3>
+            <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
+                    class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
+                2001.
             </p>
         </div>
     </footer>

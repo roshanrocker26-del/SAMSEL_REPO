@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Books(models.Model):
     book_id = models.CharField(primary_key=True, max_length=50)
     series_name = models.CharField(max_length=100)
@@ -7,7 +8,6 @@ class Books(models.Model):
     path = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'books'
 
     def __str__(self):
@@ -15,13 +15,13 @@ class Books(models.Model):
 
 
 class School(models.Model):
-    school_name = models.CharField(max_length=150)
     school_id = models.CharField(primary_key=True, max_length=50)
+    school_name = models.CharField(max_length=150)
     contact = models.CharField(max_length=15, blank=True, null=True)
     password_hash = models.CharField(max_length=200)
+    branch = models.CharField(max_length=150, blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'school'
 
     def __str__(self):
@@ -30,11 +30,10 @@ class School(models.Model):
 
 class Purchase(models.Model):
     purchase_id = models.CharField(primary_key=True, max_length=50)
-    school = models.ForeignKey(School, models.DO_NOTHING)
+    school = models.ForeignKey(School, on_delete=models.CASCADE)
     purchase_date = models.DateField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'purchase'
 
     def __str__(self):
@@ -42,12 +41,12 @@ class Purchase(models.Model):
 
 
 class PurchaseItems(models.Model):
-    purchase = models.ForeignKey(Purchase, models.DO_NOTHING, blank=True, null=True)
-    book = models.ForeignKey(Books, models.DO_NOTHING, blank=True, null=True)
+    purchase = models.ForeignKey(Purchase, on_delete=models.CASCADE)
+    book = models.ForeignKey(Books, on_delete=models.CASCADE)
     valid_upto = models.DateField(blank=True, null=True)
+    sent_to_school = models.BooleanField(default=False)
 
     class Meta:
-        managed = False
         db_table = 'purchase_items'
 
     def __str__(self):
