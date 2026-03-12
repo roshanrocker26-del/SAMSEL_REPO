@@ -7,7 +7,7 @@ class Books(models.Model):
     path = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        managed = False
+        #managed = False
         db_table = 'books'
 
     def __str__(self):
@@ -22,7 +22,7 @@ class School(models.Model):
     branch = models.CharField(max_length=150, blank=True, null=True)
 
     class Meta:
-        managed = False
+      #  managed = False
         db_table = 'school'
 
     def __str__(self):
@@ -35,7 +35,7 @@ class Purchase(models.Model):
     purchase_date = models.DateField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        #managed = False
         db_table = 'purchase'
 
     def __str__(self):
@@ -49,7 +49,7 @@ class PurchaseItems(models.Model):
     sent_to_school = models.BooleanField(default=False)
 
     class Meta:
-        managed = False
+        #managed = False
         db_table = 'purchase_items'
 
     def __str__(self):
