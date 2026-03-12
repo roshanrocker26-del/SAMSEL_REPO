@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,32 +21,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-j9hgb!15t(=dc0istxnculx(unpj&t010dq+^uw(k3ge=v2b*5')
+SECRET_KEY = 'django-insecure-j9hgb!15t(=dc0istxnculx(unpj&t010dq+^uw(k3ge=v2b*5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
+#DEBUG = True
+DEBUG = True
 
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 ALLOWED_HOSTS = [
     'rosedeveloper.pythonanywhere.com',
     '.pythonanywhere.com',
     'localhost',
     '127.0.0.1',
     'j5rpn0z5-8000.inc1.devtunnels.ms',
-    '.onrender.com',
-    'samsel-repo-1.onrender.com',
-    'enchanting-liger-2ec4c7.netlify.app',
-    'www.enchanting-liger-2ec4c7.netlify.app',
 ]
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 CSRF_TRUSTED_ORIGINS = [
     'https://rosedeveloper.pythonanywhere.com',
-    'https://www.rosedeveloper.pythonanywhere.com',
-    'https://samsel-repo-1.onrender.com',
-    'https://enchanting-liger-2ec4c7.netlify.app',
-    'https://www.enchanting-liger-2ec4c7.netlify.app',
+    'https://www.rosedeveloper.pythonanywhere.com'
 ]
 
 USE_X_FORWARDED_HOST = True
@@ -68,7 +58,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -98,10 +87,14 @@ WSGI_APPLICATION = 'samsel_project.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://postgres:root@localhost:5432/samweb',
-        conn_max_age=600,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'samweb',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
@@ -141,8 +134,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'samsel_website/static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

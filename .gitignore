@@ -14,5 +14,3 @@ staticfiles/
 # Environment
 .env
 venv/
-.venv/
-.vs/
