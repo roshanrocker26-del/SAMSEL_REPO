@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,7 +87,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'samsel_project.wsgi.application'
 
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'samweb',
@@ -95,6 +96,12 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
+}"""
+
+DATABASES = {
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL")
+    )
 }
 
 
