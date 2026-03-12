@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'j5rpn0z5-8000.inc1.devtunnels.ms',
+    'samselrepo-production.up.railway.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
