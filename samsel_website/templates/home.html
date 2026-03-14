@@ -11,23 +11,7 @@
 </head>
 
 <body>
-    <!-- TOP NAVBAR (Centered) -->
-    <nav class="top-navbar">
-        <ul class="top-menu">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'products' %}">Products</a></li>
-            <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
-            <!-- Removed Student Login, kept only School Login dropdown -->
-            <li class="dropdown">
-                <a href="#">Login <span class="arrow">▾</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="{% url 'school_login' %}">School Login</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
 
     <!-- MAIN HEADER -->
     <header class="main-header">
@@ -49,31 +33,195 @@
         </div>
     </header>
 
-    <section class="hero-section reveal-up">
-        <h1 class="hero-tagline">Shaping Digital Minds for Over 25 Years</h1>
-        <p class="hero-subtitle">
-            Empowering schools and educators with curriculum-aligned, high-quality Computer Science resources.
-        </p>
-        <div class="hero-actions">
-            <a href="{% url 'products' %}" class="btn-primary">Explore Books</a>
-            <a href="#demo" class="btn-secondary">Request Demo</a>
+    <!-- TOP NAVBAR (Centered) -->
+    <nav class="top-navbar">
+        <ul class="top-menu">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li class="dropdown">
+                <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{% url 'products' %}#ibot-series">i-Bot Series <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#ibot-class-1">Class 1</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-2">Class 2</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-3">Class 3</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-4">Class 4</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-5">Class 5</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-6">Class 6</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-7">Class 7</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-8">Class 8</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-9">Class 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span
+                                class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#ismart-level-1">Level 1</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-2">Level 2</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-3">Level 3</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-4">Level 4</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-5">Level 5</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-6">Level 6</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-7">Level 7</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-8">Level 8</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-9">Level 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span
+                                class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#iwhizz-class-1">Class 1</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-2">Class 2</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-3">Class 3</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-4">Class 4</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-5">Class 5</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-6">Class 6</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-7">Class 7</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-8">Class 8</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-9">Class 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span
+                                class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#young-wizard-1">Level 1</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-2">Level 2</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-3">Level 3</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-4">Level 4</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-5">Level 5</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span
+                                class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#app2016-ppt">PowerPoint</a></li>
+                            <li><a href="{% url 'products' %}#app2016-excel">Excel</a></li>
+                            <li><a href="{% url 'products' %}#app2016-word">Word</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+
+            <!-- Removed Student Login, kept only School Login dropdown -->
+            <li class="dropdown">
+                <a href="#">Login <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{% url 'school_login' %}">School Login</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero-slider">
+        <!-- Banner 1: Shaping Digital Minds -->
+        <div class="hero-banner active" style="background-image: url('{% static 'images/banners/banner1.png' %}');">
+            <div class="hero-content">
+                <h1 class="hero-tagline">Shaping <span class="brand-text" style="color: var(--accent);">Digital Minds</span></h1>
+                <p class="hero-subtitle">
+                    Pioneering digital-first education for over 25 years with curriculum-aligned excellence.
+                </p>
+                <div class="hero-action">
+                    <a href="{% url 'products' %}" class="btn-primary">Explore Series</a>
+                    <a href="#demo" class="btn-outline" style="border-color: #fff; color: #fff;">Request Demo</a>
+                </div>
+            </div>
         </div>
 
-        <!-- Paper Plane Animation SVG -->
-        <div class="paper-plane-container" aria-hidden="true">
-            <svg class="plane-svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-                <!-- Motion Path (Infinity Symbol) - Rounder Version -->
-                <path id="infinity-path" class="infinity-path"
-                    d="M400,200 C475,50 700,50 700,200 C700,350 475,350 400,200 C325,50 100,50 100,200 C100,350 325,350 400,200" />
+        <!-- Banner 2: Innovation -->
+        <div class="hero-banner" style="background-image: url('{% static 'images/banners/banner2.png' %}');">
+            <div class="hero-content">
+                <h1 class="hero-tagline">Innovation in <span class="brand-text" style="color: var(--accent);">Pedagogy</span></h1>
+                <p class="hero-subtitle">
+                    Seamlessly merging traditional textbook wisdom with futuristic digital learning tools.
+                </p>
+                <div class="hero-action">
+                    <a href="{% url 'about' %}" class="btn-primary">Our Vision</a>
+                </div>
+            </div>
+        </div>
 
-                <!-- Plane Group -->
-                <g class="plane-group">
-                    <path class="plane-shape" d="M0,0 L20,10 L0,20 L5,10 Z" fill="currentColor" />
-                    <!-- Visual trail will be handled via CSS dashoffset on the path itself -->
-                </g>
-            </svg>
+        <!-- Banner 3: Collaboration -->
+        <div class="hero-banner" style="background-image: url('{% static 'images/banners/banner3.png' %}');">
+            <div class="hero-content">
+                <h1 class="hero-tagline">Empowering <span class="brand-text" style="color: var(--accent);">Modern Learning</span></h1>
+                <p class="hero-subtitle">
+                    Fostering collaborative environments where teachers and students thrive together.
+                </p>
+                <div class="hero-action">
+                    <a href="{% url 'contact' %}" class="btn-primary">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner 4: Next-Gen -->
+        <div class="hero-banner" style="background-image: url('{% static 'images/banners/banner4.png' %}');">
+            <div class="hero-content">
+                <h1 class="hero-tagline">Next-Gen <span class="brand-text" style="color: var(--accent);">Curriculum</span></h1>
+                <p class="hero-subtitle">
+                    State-of-the-art computer science series designed for the thinkers of tomorrow.
+                </p>
+                <div class="hero-action">
+                    <a href="{% url 'products' %}" class="btn-primary">View Products</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-dots">
+            <div class="dot active" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const banners = document.querySelectorAll('.hero-banner');
+            const dots = document.querySelectorAll('.dot');
+            let current = 0;
+            let timer;
+
+            function showBanner(index) {
+                banners.forEach(b => b.classList.remove('active'));
+                dots.forEach(d => d.classList.remove('active'));
+                
+                banners[index].classList.add('active');
+                dots[index].classList.add('active');
+                current = index;
+            }
+
+            function nextBanner() {
+                let next = (current + 1) % banners.length;
+                showBanner(next);
+            }
+
+            function startTimer() {
+                timer = setInterval(nextBanner, 6000); // Change banner every 6 seconds
+            }
+
+            function resetTimer() {
+                clearInterval(timer);
+                startTimer();
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showBanner(index);
+                    resetTimer();
+                });
+            });
+
+            startTimer();
+        });
+    </script>
 
     <!-- TRUST STRIP -->
     <section class="container reveal-up delay-100">
@@ -132,8 +280,14 @@
         <div class="bookshelf-grid">
             <!-- IBOT Series -->
             <a href="{% url 'products' %}#ibot-series" class="book-card float delay1">
-                <div class="book-cover">
-                    <img src="{% static 'images/ibot6.jpg' %}" alt="i-Bot Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/ibot6.jpg' %}" alt="i-Bot Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">i-Bot Series</h3>
+                        <p>Exploring the world of Robotics and Artificial Intelligence.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">i-Bot Series</h3>
@@ -144,8 +298,14 @@
 
             <!-- ISMART Series -->
             <a href="{% url 'products' %}#ismart-series" class="book-card float delay3">
-                <div class="book-cover">
-                    <img src="{% static 'images/low 4.png' %}" alt="i-Smart Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/low 4.png' %}" alt="i-Smart Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">i-Smart Series</h3>
+                        <p>Mastering the core fundamentals of Information Technology.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">i-Smart Series</h3>
@@ -156,8 +316,14 @@
 
             <!-- IWHIZZ Series -->
             <a href="{% url 'products' %}#iwhizz-series" class="book-card float delay2">
-                <div class="book-cover">
-                    <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">i-Whizz Series</h3>
+                        <p>Advanced Computer Science concepts for modern learners.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">i-Whizz Series</h3>
@@ -168,8 +334,14 @@
 
             <!-- Young Wizard Series -->
             <a href="{% url 'products' %}#youngwizard-series" class="book-card float delay2">
-                <div class="book-cover">
-                    <img src="{% static 'images/young1.jpg' %}" alt="Young Wizard Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/young1.jpg' %}" alt="Young Wizard Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">Young Wizard</h3>
+                        <p>Foundational computer skills for early budding wizards.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Young Wizard</h3>
@@ -180,8 +352,14 @@
 
             <!-- Little Wizard Series -->
             <a href="{% url 'products' %}#littlewizard-series" class="book-card float delay2">
-                <div class="book-cover">
-                    <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Young Learners Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Young Learners Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">Little Wizard</h3>
+                        <p>Fun and interactive introduction to tech for young minds.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Little Wizard</h3>
@@ -192,8 +370,14 @@
 
             <!-- Tamil Writing Books -->
             <a href="{% url 'products' %}#tamilwriting-books" class="book-card float delay3">
-                <div class="book-cover">
-                    <img src="{% static 'images/tamil1.jpg' %}" alt="Tamil Writing Books">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/tamil1.jpg' %}" alt="Tamil Writing Books">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">Tamil Writing</h3>
+                        <p>Perfecting Tamil handwriting through guided practice.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Tamil Writing Books</h3>
@@ -204,8 +388,14 @@
 
             <!-- Cursive Writing Books -->
             <a href="{% url 'products' %}#cursive-writing-books" class="book-card float delay3">
-                <div class="book-cover">
-                    <img src="{% static 'images/Level 1.jpg' %}" alt="Cursive Writing Books">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/Level 1.jpg' %}" alt="Cursive Writing Books">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">Cursive Writing</h3>
+                        <p>Elegant cursive writing skills for better penmanship.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Cursive Writing Books</h3>
@@ -215,8 +405,14 @@
 
             <!-- APP 2016 Series -->
             <a href="{% url 'products' %}#app2016-series" class="book-card float delay4">
-                <div class="book-cover">
-                    <img src="{% static 'images/2016 ppt.png' %}" alt="Application Series 2016">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/2016 ppt.png' %}" alt="Application Series 2016">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">App Series 2016</h3>
+                        <p>Comprehensive guide to Microsoft Office 2016 tools.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">App Series 2016</h3>
@@ -226,8 +422,14 @@
 
             <!-- APP 2007 Series -->
             <a href="{% url 'products' %}#app2007-series" class="book-card float delay4">
-                <div class="book-cover">
-                    <img src="{% static 'images/App3.jpg' %}" alt="Application Series 2007">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/App3.jpg' %}" alt="Application Series 2007">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">App Series 2007</h3>
+                        <p>Learning the essentials of Office 2007 productivity.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">App Series 2007</h3>
@@ -237,8 +439,14 @@
 
             <!-- Programming Series -->
             <a href="{% url 'products' %}#programming-series" class="book-card float delay5">
-                <div class="book-cover">
-                    <img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">Programming</h3>
+                        <p>Building strong logic and coding skills for the future.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Programming</h3>
@@ -249,8 +457,14 @@
 
             <!-- My Computer Series -->
             <a href="{% url 'products' %}#mycomputer-series" class="book-card float delay3">
-                <div class="book-cover">
-                    <img src="{% static 'images/my1.jpg' %}" alt="My Computer Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/my1.jpg' %}" alt="My Computer Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">My Computer</h3>
+                        <p>General knowledge and basic computer operations simplified.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">My Computer</h3>
@@ -261,8 +475,14 @@
 
             <!-- Right-Click Series -->
             <a href="{% url 'products' %}#right-click-series" class="book-card float delay2">
-                <div class="book-cover">
-                    <img src="{% static 'images/ict8.jpg' %}" alt="Right-Click Series">
+                <div class="book-inner">
+                    <div class="book-front">
+                        <img src="{% static 'images/ict8.jpg' %}" alt="Right-Click Series">
+                    </div>
+                    <div class="book-back">
+                        <h3 class="book-title">Right-Click</h3>
+                        <p>Empowering students with essential Computer Science knowledge.</p>
+                    </div>
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Right-Click</h3>
@@ -272,38 +492,7 @@
         </div>
     </section>
 
-    <!-- DEMO REQUEST -->
-    <section id="demo" class="container reveal-up delay-100">
-        <div class="demo-card"
-            style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 4rem; display: flex; gap: 4rem; align-items: center; box-shadow: var(--shadow-md);">
-            <div class="demo-content" style="flex: 1;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Experience <span class="brand-text">SAMSEL</span>
-                </h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
-                    Book a personalized demo for your school or institution and explore our digital-first teaching
-                    approach.
-                </p>
-                <form class="demo-form" method="post" action="{% url 'request_demo' %}"
-                    style="display: flex; flex-direction: column; gap: 1rem;">
-                    {% csrf_token %}
-                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name"
-                        required>
-                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name"
-                        required>
-                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number"
-                        required>
-                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-                    <textarea name="message" class="form-control" rows="3" placeholder="Your Query / Requirement"
-                        required></textarea>
-                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 1rem;">Request
-                        Demo</button>
-                </form>
-            </div>
-            <div class="demo-visual" style="flex: 1; text-align: center;">
-                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual" style="max-width: 300px; margin: auto;">
-            </div>
-        </div>
-    </section>
+
 
     <!-- DISTRIBUTION MAP -->
     <section class="container reveal-up" style="padding: 6rem 20px;">
@@ -417,6 +606,84 @@
                     <div class="glow"></div>
                     <div class="dot"></div>
                 </div>
+                <!-- More New Cities -->
+                <div class="map-point guntur" data-tooltip="Guntur, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point nellore" data-tooltip="Nellore, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point kurnool" data-tooltip="Kurnool, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point rajahmundry" data-tooltip="Rajamahendravaram, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point salem" data-tooltip="Salem, TN">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point tirunelveli" data-tooltip="Tirunelveli, TN">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point erode" data-tooltip="Erode, TN">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point vellore" data-tooltip="Vellore, TN">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point hubballi" data-tooltip="Hubballi, KA">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point belagavi" data-tooltip="Belagavi, KA">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point davanagere" data-tooltip="Davanagere, KA">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point kalaburagi" data-tooltip="Kalaburagi, KA">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <!-- AP and TS Density Update -->
+                <div class="map-point tirupati" data-tooltip="Tirupati, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point anantapur" data-tooltip="Anantapur, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point kadapa" data-tooltip="Kadapa, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point ongole" data-tooltip="Ongole, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point eluru" data-tooltip="Eluru, AP">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point warangal" data-tooltip="Warangal, TS">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="map-point nizamabad" data-tooltip="Nizamabad, TS">
+                    <div class="glow"></div>
+                    <div class="dot"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -513,6 +780,39 @@
                         style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
                     <span>AP BOARD</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEMO REQUEST -->
+    <section id="demo" class="container reveal-up delay-100">
+        <div class="demo-card"
+            style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 4rem; display: flex; gap: 4rem; align-items: center; box-shadow: var(--shadow-md);">
+            <div class="demo-content" style="flex: 1;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Experience <span class="brand-text">SAMSEL</span>
+                </h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Book a personalized demo for your school or institution and explore our digital-first teaching
+                    approach.
+                </p>
+                <form class="demo-form" method="post" action="{% url 'request_demo' %}"
+                    style="display: flex; flex-direction: column; gap: 1rem;">
+                    {% csrf_token %}
+                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name"
+                        required>
+                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name"
+                        required>
+                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number"
+                        required>
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                    <textarea name="message" class="form-control" rows="3" placeholder="Your Query / Requirement"
+                        required></textarea>
+                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 1rem;">Request
+                        Demo</button>
+                </form>
+            </div>
+            <div class="demo-visual" style="flex: 1; text-align: center;">
+                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual" style="max-width: 300px; margin: auto;">
             </div>
         </div>
     </section>

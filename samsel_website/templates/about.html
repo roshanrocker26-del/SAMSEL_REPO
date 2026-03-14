@@ -168,7 +168,71 @@
         <ul class="top-menu">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}" class="active">About Us</a></li>
-            <li><a href="{% url 'products' %}">Products</a></li>
+            <li class="dropdown">
+                <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{% url 'products' %}#ibot-series">i-Bot Series <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#ibot-class-1">Class 1</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-2">Class 2</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-3">Class 3</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-4">Class 4</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-5">Class 5</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-6">Class 6</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-7">Class 7</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-8">Class 8</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-9">Class 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#ismart-level-1">Level 1</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-2">Level 2</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-3">Level 3</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-4">Level 4</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-5">Level 5</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-6">Level 6</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-7">Level 7</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-8">Level 8</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-9">Level 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#iwhizz-class-1">Class 1</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-2">Class 2</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-3">Class 3</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-4">Class 4</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-5">Class 5</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-6">Class 6</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-7">Class 7</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-8">Class 8</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-9">Class 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#young-wizard-1">Level 1</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-2">Level 2</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-3">Level 3</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-4">Level 4</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-5">Level 5</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#app2016-ppt">PowerPoint</a></li>
+                            <li><a href="{% url 'products' %}#app2016-excel">Excel</a></li>
+                            <li><a href="{% url 'products' %}#app2016-word">Word</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
             <li class="dropdown">

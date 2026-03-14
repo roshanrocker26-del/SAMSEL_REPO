@@ -24,7 +24,71 @@
         <ul class="top-menu">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
-            <li><a href="{% url 'products' %}">Products</a></li>
+            <li class="dropdown">
+                <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="{% url 'products' %}#ibot-series">i-Bot Series <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#ibot-class-1">Class 1</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-2">Class 2</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-3">Class 3</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-4">Class 4</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-5">Class 5</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-6">Class 6</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-7">Class 7</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-8">Class 8</a></li>
+                            <li><a href="{% url 'products' %}#ibot-class-9">Class 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#ismart-level-1">Level 1</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-2">Level 2</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-3">Level 3</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-4">Level 4</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-5">Level 5</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-6">Level 6</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-7">Level 7</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-8">Level 8</a></li>
+                            <li><a href="{% url 'products' %}#ismart-level-9">Level 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#iwhizz-class-1">Class 1</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-2">Class 2</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-3">Class 3</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-4">Class 4</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-5">Class 5</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-6">Class 6</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-7">Class 7</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-8">Class 8</a></li>
+                            <li><a href="{% url 'products' %}#iwhizz-class-9">Class 9</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#young-wizard-1">Level 1</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-2">Level 2</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-3">Level 3</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-4">Level 4</a></li>
+                            <li><a href="{% url 'products' %}#young-wizard-5">Level 5</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span class="side-arrow">▶</span></a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'products' %}#app2016-ppt">PowerPoint</a></li>
+                            <li><a href="{% url 'products' %}#app2016-excel">Excel</a></li>
+                            <li><a href="{% url 'products' %}#app2016-word">Word</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
             <li class="dropdown">
@@ -73,7 +137,7 @@
                 <h1 class="series-title">IBOT SERIES</h1>
                 <div class="premium-bookshelf">
                     <!-- Book 1 -->
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="ibot-class-1">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot1.jpg' %}" alt="IBOT Class 1">
@@ -86,7 +150,7 @@
                         </div>
                     </div>
                     <!-- Book 2 -->
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="ibot-class-2">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot2.jpg' %}" alt="IBOT Class 2">
@@ -99,7 +163,7 @@
                         </div>
                     </div>
                     <!-- Book 3 -->
-                    <div class="premium-book-card delay3">
+                    <div class="premium-book-card delay3" id="ibot-class-3">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot3.jpg' %}" alt="IBOT Class 3">
@@ -112,7 +176,7 @@
                         </div>
                     </div>
                     <!-- Book 4 -->
-                    <div class="premium-book-card delay4">
+                    <div class="premium-book-card delay4" id="ibot-class-4">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot4.jpg' %}" alt="IBOT Class 4">
@@ -125,7 +189,7 @@
                         </div>
                     </div>
                     <!-- Book 5 -->
-                    <div class="premium-book-card delay5">
+                    <div class="premium-book-card delay5" id="ibot-class-5">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot5.jpg' %}" alt="IBOT Class 5">
@@ -138,7 +202,7 @@
                         </div>
                     </div>
                     <!-- Book 6 -->
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="ibot-class-6">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot6.jpg' %}" alt="IBOT Class 6">
@@ -151,7 +215,7 @@
                         </div>
                     </div>
                     <!-- Book 7 -->
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="ibot-class-7">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot7.jpg' %}" alt="IBOT Class 7">
@@ -163,7 +227,7 @@
                         </div>
                     </div>
                     <!-- Book 8 -->
-                    <div class="premium-book-card delay3">
+                    <div class="premium-book-card delay3" id="ibot-class-8">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot8.jpg' %}" alt="IBOT Class 8">
@@ -175,7 +239,7 @@
                         </div>
                     </div>
                     <!-- Book 9 -->
-                    <div class="premium-book-card delay4">
+                    <div class="premium-book-card delay4" id="ibot-class-9">
                         <div class="book-flipper">
                             <div class="book-front">
                                 <img src="{% static 'images/ibot9.jpg' %}" alt="IBOT Class 9">
@@ -201,7 +265,7 @@
                 </div>
                 <div class="premium-bookshelf">
                     <!-- Books 1-9 -->
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="ismart-level-1">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/low 1 - Copy.png' %}" alt="ISMART 1">
                             </div>
@@ -211,7 +275,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="ismart-level-2">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/low 2.png' %}" alt="ISMART 2"></div>
                             <div class="book-back">
@@ -220,7 +284,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay3">
+                    <div class="premium-book-card delay3" id="ismart-level-3">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/low 3.png' %}" alt="ISMART 3"></div>
                             <div class="book-back">
@@ -229,7 +293,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay4">
+                    <div class="premium-book-card delay4" id="ismart-level-4">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/low 4.png' %}" alt="ISMART 4"></div>
                             <div class="book-back">
@@ -238,7 +302,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay5">
+                    <div class="premium-book-card delay5" id="ismart-level-5">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/low 5.png' %}" alt="ISMART 5"></div>
                             <div class="book-back">
@@ -247,7 +311,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="ismart-level-6">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/high 6.png' %}" alt="ISMART 6"></div>
                             <div class="book-back">
@@ -256,7 +320,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="ismart-level-7">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/high 7.png' %}" alt="ISMART 7"></div>
                             <div class="book-back">
@@ -265,7 +329,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay3">
+                    <div class="premium-book-card delay3" id="ismart-level-8">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/high 8.png' %}" alt="ISMART 8"></div>
                             <div class="book-back">
@@ -274,7 +338,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay4">
+                    <div class="premium-book-card delay4" id="ismart-level-9">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/high 9.png' %}" alt="ISMART 9"></div>
                             <div class="book-back">
@@ -293,7 +357,7 @@
                 <h1 class="series-title">I-WHIZZ SERIES</h1>
                 <div class="premium-bookshelf">
                     <!-- Books 1-9 -->
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="iwhizz-class-1">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz1.jpg' %}" alt="i-Whizz 1"></div>
                             <div class="book-back">
@@ -302,7 +366,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="iwhizz-class-2">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz2.jpg' %}" alt="i-Whizz 2"></div>
                             <div class="book-back">
@@ -311,7 +375,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay3">
+                    <div class="premium-book-card delay3" id="iwhizz-class-3">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz3.jpg' %}" alt="i-Whizz 3"></div>
                             <div class="book-back">
@@ -320,7 +384,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay4">
+                    <div class="premium-book-card delay4" id="iwhizz-class-4">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz4.jpg' %}" alt="i-Whizz 4"></div>
                             <div class="book-back">
@@ -329,7 +393,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay5">
+                    <div class="premium-book-card delay5" id="iwhizz-class-5">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz5.jpg' %}" alt="i-Whizz 5"></div>
                             <div class="book-back">
@@ -338,7 +402,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="iwhizz-class-6">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz 6"></div>
                             <div class="book-back">
@@ -347,7 +411,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="iwhizz-class-7">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz7.jpg' %}" alt="i-Whizz 7"></div>
                             <div class="book-back">
@@ -356,7 +420,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay3">
+                    <div class="premium-book-card delay3" id="iwhizz-class-8">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz8.jpg' %}" alt="i-Whizz 8"></div>
                             <div class="book-back">
@@ -365,7 +429,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay4">
+                    <div class="premium-book-card delay4" id="iwhizz-class-9">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/iwhizz9.jpg' %}" alt="i-Whizz 9"></div>
                             <div class="book-back">
@@ -385,7 +449,7 @@
             <div class="series-container">
                 <h1 class="series-title">YOUNG WIZARD SERIES</h1>
                 <div class="premium-bookshelf">
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="young-wizard-1">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/young1.jpg' %}" alt="Young Wizard 1">
                             </div>
@@ -395,7 +459,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="young-wizard-2">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/young2.jpg' %}" alt="Young Wizard 2">
                             </div>
@@ -405,7 +469,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay3">
+                    <div class="premium-book-card delay3" id="young-wizard-3">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/young3.jpg' %}" alt="Young Wizard 3">
                             </div>
@@ -415,7 +479,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay4">
+                    <div class="premium-book-card delay4" id="young-wizard-4">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/young4.jpg' %}" alt="Young Wizard 4">
                             </div>
@@ -425,7 +489,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay5">
+                    <div class="premium-book-card delay5" id="young-wizard-5">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/young5.jpg' %}" alt="Young Wizard 5">
                             </div>
@@ -449,7 +513,7 @@
                     <img src="{% static 'images/icon6.png' %}" alt="Decoration">
                 </div>
                 <div class="premium-bookshelf">
-                    <div class="premium-book-card delay1">
+                    <div class="premium-book-card delay1" id="little-wizard-1">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/Kids level 1 wrapper.jpg' %}"
                                     alt="Little Wizard 1"></div>
@@ -459,7 +523,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="premium-book-card delay2">
+                    <div class="premium-book-card delay2" id="little-wizard-2">
                         <div class="book-flipper">
                             <div class="book-front"><img src="{% static 'images/Kids level 2 wrapper.jpg' %}"
                                     alt="Little Wizard 2"></div>
@@ -478,7 +542,7 @@
                     <h1 class="series-title">TAMIL WRITING BOOKS</h1>
                     <div class="premium-bookshelf">
                         <!-- Book 1 -->
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="tamil-level-1">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/tamil1.jpg' %}"
                                         alt="Tamil Writing Level 1"></div>
@@ -489,7 +553,7 @@
                             </div>
                         </div>
                         <!-- Book 2 -->
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="tamil-level-2">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/tamil2.jpg' %}"
                                         alt="Tamil Writing Level 2"></div>
@@ -500,7 +564,7 @@
                             </div>
                         </div>
                         <!-- Book 3 -->
-                        <div class="premium-book-card delay3">
+                        <div class="premium-book-card delay3" id="tamil-level-3">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/tamil3.jpg' %}"
                                         alt="Tamil Writing Level 3"></div>
@@ -511,7 +575,7 @@
                             </div>
                         </div>
                         <!-- Book 4 -->
-                        <div class="premium-book-card delay4">
+                        <div class="premium-book-card delay4" id="tamil-level-4">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/tamil4.jpg' %}"
                                         alt="Tamil Writing Level 4"></div>
@@ -522,7 +586,7 @@
                             </div>
                         </div>
                         <!-- Book 5 -->
-                        <div class="premium-book-card delay5">
+                        <div class="premium-book-card delay5" id="tamil-level-5">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/tamil5.jpg' %}"
                                         alt="Tamil Writing Level 5"></div>
@@ -533,7 +597,7 @@
                             </div>
                         </div>
                         <!-- Book 6 -->
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="tamil-level-6">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/tamil6.jpg' %}"
                                         alt="Tamil Writing Level 6"></div>
@@ -545,7 +609,7 @@
                             </div>
                         </div>
                         <!-- Book 7 -->
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="tamil-level-7">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/tamil7.jpg' %}"
                                         alt="Tamil Writing Level 7"></div>
@@ -569,7 +633,7 @@
                     </div>
                     <div class="premium-bookshelf">
                         <!-- LKG -->
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="cursive-lkg">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/cursive-lkg.jpg' %}"
                                         alt="Cursive LKG"></div>
@@ -580,7 +644,7 @@
                             </div>
                         </div>
                         <!-- UKG -->
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="cursive-ukg">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/cursive-ukg.jpg' %}"
                                         alt="Cursive UKG"></div>
@@ -591,7 +655,7 @@
                             </div>
                         </div>
                         <!-- Level 1 -->
-                        <div class="premium-book-card delay3">
+                        <div class="premium-book-card delay3" id="cursive-level-1">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Level 1.jpg' %}"
                                         alt="Cursive Level 1"></div>
@@ -602,7 +666,7 @@
                             </div>
                         </div>
                         <!-- Level 2 -->
-                        <div class="premium-book-card delay4">
+                        <div class="premium-book-card delay4" id="cursive-level-2">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Level 2.jpg' %}"
                                         alt="Cursive Level 2"></div>
@@ -613,7 +677,7 @@
                             </div>
                         </div>
                         <!-- Level 3 -->
-                        <div class="premium-book-card delay5">
+                        <div class="premium-book-card delay5" id="cursive-level-3">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Level 3.jpg' %}"
                                         alt="Cursive Level 3"></div>
@@ -624,7 +688,7 @@
                             </div>
                         </div>
                         <!-- Level 4 -->
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="cursive-level-4">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Level 4.jpg' %}"
                                         alt="Cursive Level 4"></div>
@@ -635,7 +699,7 @@
                             </div>
                         </div>
                         <!-- Level 5 -->
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="cursive-level-5">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Level 5.jpg' %}"
                                         alt="Cursive Level 5"></div>
@@ -660,7 +724,7 @@
                         <img src="{% static 'images/icon4.png' %}" alt="Decoration">
                     </div>
                     <div class="premium-bookshelf">
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="app2016-ppt">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/2016 ppt.png' %}"
                                         alt="PowerPoint 2016">
@@ -671,7 +735,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="app2016-excel">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/2016 excel.png' %}"
                                         alt="Excel 2016">
@@ -682,7 +746,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay3">
+                        <div class="premium-book-card delay3" id="app2016-word">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/2016 word.png' %}" alt="Word 2016">
                                 </div>
@@ -702,7 +766,7 @@
                 <div class="series-container">
                     <h1 class="series-title">APPLICATION SERIES 2007</h1>
                     <div class="premium-bookshelf">
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="app2007-level-1">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/App1.jpg' %}" alt="App Series 1">
                                 </div>
@@ -712,7 +776,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="app2007-level-2">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/App2.jpg' %}" alt="App Series 2">
                                 </div>
@@ -722,7 +786,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay3">
+                        <div class="premium-book-card delay3" id="app2007-level-3">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/App3.jpg' %}" alt="App Series 3">
                                 </div>
@@ -732,7 +796,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay4">
+                        <div class="premium-book-card delay4" id="app2007-level-4">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/App4.jpg' %}" alt="App Series 4">
                                 </div>
@@ -742,7 +806,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay5">
+                        <div class="premium-book-card delay5" id="app2007-level-5">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/App5.jpg' %}" alt="App Series 5">
                                 </div>
@@ -764,7 +828,7 @@
                 <div class="series-container">
                     <h1 class="series-title">PROGRAMMING SERIES</h1>
                     <div class="premium-bookshelf">
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="programming-level-1">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Pro1 New.jpg' %}"
                                         alt="Programming 1">
@@ -775,7 +839,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="programming-level-2">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Pro2.jpg' %}" alt="Programming 2">
                                 </div>
@@ -785,7 +849,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay3">
+                        <div class="premium-book-card delay3" id="programming-level-3">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Pro3.jpg' %}" alt="Programming 3">
                                 </div>
@@ -795,7 +859,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay4">
+                        <div class="premium-book-card delay4" id="programming-level-4">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/Pro4 New.jpg' %}"
                                         alt="Programming 4">
@@ -816,7 +880,7 @@
                 <div class="series-container">
                     <h1 class="series-title">MY COMPUTER SERIES</h1>
                     <div class="premium-bookshelf">
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="mycomputer-level-1">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/my1.jpg' %}" alt="My Computer 1">
                                 </div>
@@ -826,7 +890,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="mycomputer-level-2">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/my2.jpg' %}" alt="My Computer 2">
                                 </div>
@@ -836,7 +900,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay3">
+                        <div class="premium-book-card delay3" id="mycomputer-level-3">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/my3.jpg' %}" alt="My Computer 3">
                                 </div>
@@ -846,7 +910,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay4">
+                        <div class="premium-book-card delay4" id="mycomputer-level-4">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/my4.jpg' %}" alt="My Computer 4">
                                 </div>
@@ -856,7 +920,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay5">
+                        <div class="premium-book-card delay5" id="mycomputer-level-5">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/my5.jpg' %}" alt="My Computer 5">
                                 </div>
@@ -879,7 +943,7 @@
                         <img src="{% static 'images/icon5.png' %}" alt="Decoration">
                     </div>
                     <div class="premium-bookshelf">
-                        <div class="premium-book-card delay1">
+                        <div class="premium-book-card delay1" id="ict-level-6">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/ict6.jpg' %}" alt="ICT 6"></div>
                                 <div class="book-back">
@@ -888,7 +952,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay2">
+                        <div class="premium-book-card delay2" id="ict-level-7">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/ict7.jpg' %}" alt="ICT 7"></div>
                                 <div class="book-back">
@@ -897,7 +961,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay3">
+                        <div class="premium-book-card delay3" id="ict-level-8">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/ict8.jpg' %}" alt="ICT 8"></div>
                                 <div class="book-back">
@@ -906,7 +970,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="premium-book-card delay4">
+                        <div class="premium-book-card delay4" id="ict-level-9">
                             <div class="book-flipper">
                                 <div class="book-front"><img src="{% static 'images/ict9.jpg' %}" alt="ICT 9"></div>
                                 <div class="book-back">

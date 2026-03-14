@@ -26,7 +26,7 @@
     /* Animation */
     --transition-fast: 200ms ease;
     --transition-normal: 300ms ease;
-    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 600ms cubic-bezier(0.23, 1, 0.32, 1); /* Smoother premium exit/entry */
 }
 
 * {
@@ -124,7 +124,7 @@ body {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 100px;
     align-items: center;
 }
 
@@ -145,7 +145,135 @@ body {
     color: var(--accent);
 }
 
+/* =========================================
+   HERO SLIDER
+ ========================================= */
+.hero-slider {
+    position: relative;
+    height: 85vh; /* Large impactful hero height */
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hero-banner.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Gradient Overlay for better text readability */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 3rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1); /* Premium glassmorphism */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.3s;
+}
+
+.hero-banner.active .hero-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero-tagline {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-action {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Slider Controls */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--accent);
+    transform: scale(1.2);
+}
+
+/* Redefine old sections to fit new layout if needed */
+.features-grid {
+    margin-top: -60px; /* Overlap features slightly onto hero for depth */
+    position: relative;
+    z-index: 20;
+}
+
 /* Dropdown */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -164,25 +292,64 @@ body {
     z-index: 9999;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover>.dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
+.dropdown-menu li {
+    position: relative;
+    list-style: none;
+}
+
 .dropdown-menu li a {
     padding: 12px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: #ffffff;
+    white-space: nowrap;
 }
 
-.dropdown-menu li:last-child a {
+.dropdown-menu li:last-child>a {
     border-bottom: none;
 }
 
 .dropdown-menu li a:hover {
     background: rgba(255, 255, 255, 0.1);
+}
+
+/* Submenu (Level 2) */
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    /* Position to the right */
+    background: var(--primary);
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all var(--transition-normal);
+    z-index: 10000;
+}
+
+.dropdown-menu li:hover>.submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.side-arrow {
+    font-size: 0.8em;
+    margin-left: 10px;
+    opacity: 0.7;
 }
 
 /* MAIN HEADER */
@@ -284,161 +451,6 @@ body {
 /* =========================================
    HERO SECTION (HOME)
 ========================================= */
-.hero-section {
-    padding: 6rem 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Paper Plane Animation Container */
-.paper-plane-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.6;
-    pointer-events: none;
-}
-
-.plane-svg {
-    width: 100%;
-    height: 100%;
-}
-
-.infinity-path {
-    fill: none;
-    stroke: var(--primary);
-    stroke-width: 2;
-    stroke-dasharray: 6, 6;
-    stroke-linecap: round;
-    opacity: 0.3;
-    stroke-dashoffset: 2000;
-    animation: drawPath 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.plane-group {
-    color: var(--primary);
-    offset-path: path("M400,200 C475,50 700,50 700,200 C700,350 475,350 400,200 C325,50 100,50 100,200 C100,350 325,350 400,200");
-    offset-rotate: auto 90deg;
-    animation:
-        planeEntrance 2s ease-out forwards,
-        flyInfinity 8s cubic-bezier(0.4, 0, 0.2, 1) 2s infinite,
-        planeLanding 3s ease-in 18s forwards;
-    /* Example sequence */
-    /* Simplified logic for a continuous "premium" feel */
-    animation: flyLoop 12s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes drawPath {
-    0% {
-        stroke-dashoffset: 2000;
-    }
-
-    20% {
-        stroke-dashoffset: 2000;
-    }
-
-    /* Wait for entrance */
-    80% {
-        stroke-dashoffset: 0;
-    }
-
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes flyLoop {
-    0% {
-        offset-distance: 0%;
-        opacity: 0;
-        transform: scale(0.5) translateX(200px);
-    }
-
-    10% {
-        opacity: 1;
-        transform: scale(1) translateX(0);
-    }
-
-    80% {
-        offset-distance: 100%;
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-
-    90% {
-        opacity: 1;
-    }
-
-    100% {
-        offset-distance: 100%;
-        opacity: 0;
-        transform: scale(0.8) translateY(100px) rotate(20deg);
-    }
-}
-
-.hero-tagline {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--primary);
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
-    letter-spacing: -0.02em;
-}
-
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 2rem;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.btn-primary {
-    background: linear-gradient(to right, var(--primary), var(--primary-light));
-    color: #fff;
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: 600;
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    color: #fff;
-}
-
-.btn-secondary {
-    background: #fff;
-    color: var(--primary);
-    padding: 14px 32px;
-    border-radius: 30px;
-    font-weight: 600;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    color: var(--primary);
-}
 
 /* =========================================
    SHARED COMPONENTS (Cards, Layouts)
@@ -553,29 +565,29 @@ body {
 /* Floating Animation */
 @keyframes floatUpDown {
     0% {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 
     50% {
-        transform: translateY(-15px);
+        transform: translate3d(0, -15px, 0);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
 @keyframes floatDownUp {
     0% {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 
     50% {
-        transform: translateY(15px);
+        transform: translate3d(0, 15px, 0);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -609,41 +621,85 @@ body {
 
 .book-card {
     background: transparent;
-    perspective: 1000px;
+    perspective: 1200px; /* Increased for deeper 3D feel */
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.book-cover {
+.book-card:hover {
+    transform: scale(1.03); /* Subtle interactive pop */
+    z-index: 10;
+}
+
+.book-inner {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    text-align: center;
+    transition: transform var(--transition-slow);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.book-card:hover .book-inner {
+    transform: rotateY(-180deg) translate3d(0, 0, 10px); /* Hardware accelerated flip */
+}
+
+.book-front,
+.book-back {
+    position: absolute;
     width: 100%;
-    max-width: 200px;
-    aspect-ratio: 2 / 3;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     border-radius: 4px 8px 8px 4px;
     box-shadow:
         inset 4px 0 10px rgba(0, 0, 0, 0.1),
         inset -1px 0 2px rgba(255, 255, 255, 0.3),
         5px 5px 15px rgba(0, 0, 0, 0.15);
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    transform-origin: left center;
-    position: relative;
-    overflow: hidden;
-    height: 200px;
 }
 
-.book-card:hover .book-cover {
-    transform: translateY(-10px) rotateY(-5deg);
-    box-shadow:
-        inset 4px 0 10px rgba(0, 0, 0, 0.1),
-        inset -1px 0 2px rgba(255, 255, 255, 0.3),
-        15px 15px 25px rgba(0, 0, 0, 0.2);
+.book-front {
+    background-color: #fff;
 }
 
-.book-cover img {
+.book-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px 8px 8px 4px;
+}
+
+.book-back {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.book-back .book-title {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.book-back p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
 }
 
 .book-info {
@@ -1000,6 +1056,82 @@ body {
     transition-delay: 2.7s;
 }
 
+.reveal-up.is-visible .map-point.guntur {
+    transition-delay: 2.8s;
+}
+
+.reveal-up.is-visible .map-point.nellore {
+    transition-delay: 2.9s;
+}
+
+.reveal-up.is-visible .map-point.kurnool {
+    transition-delay: 3.0s;
+}
+
+.reveal-up.is-visible .map-point.rajahmundry {
+    transition-delay: 3.1s;
+}
+
+.reveal-up.is-visible .map-point.salem {
+    transition-delay: 3.2s;
+}
+
+.reveal-up.is-visible .map-point.tirunelveli {
+    transition-delay: 3.3s;
+}
+
+.reveal-up.is-visible .map-point.erode {
+    transition-delay: 3.4s;
+}
+
+.reveal-up.is-visible .map-point.vellore {
+    transition-delay: 3.5s;
+}
+
+.reveal-up.is-visible .map-point.hubballi {
+    transition-delay: 3.6s;
+}
+
+.reveal-up.is-visible .map-point.belagavi {
+    transition-delay: 3.7s;
+}
+
+.reveal-up.is-visible .map-point.davanagere {
+    transition-delay: 3.8s;
+}
+
+.reveal-up.is-visible .map-point.kalaburagi {
+    transition-delay: 3.9s;
+}
+
+.reveal-up.is-visible .map-point.tirupati {
+    transition-delay: 4.0s;
+}
+
+.reveal-up.is-visible .map-point.anantapur {
+    transition-delay: 4.1s;
+}
+
+.reveal-up.is-visible .map-point.kadapa {
+    transition-delay: 4.2s;
+}
+
+.reveal-up.is-visible .map-point.ongole {
+    transition-delay: 4.3s;
+}
+
+.reveal-up.is-visible .map-point.eluru {
+    transition-delay: 4.4s;
+}
+
+.reveal-up.is-visible .map-point.warangal {
+    transition-delay: 4.5s;
+}
+
+.reveal-up.is-visible .map-point.nizamabad {
+    transition-delay: 4.6s;
+}
+
 .dot {
     width: 20px;
     height: 20px;
@@ -1181,6 +1313,106 @@ body {
 .mysuru {
     top: 62.67%;
     left: 27.59%;
+}
+
+/* AP Extra Cities */
+.guntur {
+    top: 31.8%;
+    left: 60.5%;
+}
+
+.nellore {
+    top: 48.5%;
+    left: 55.2%;
+}
+
+.kurnool {
+    top: 39.2%;
+    left: 42.8%;
+}
+
+.rajahmundry {
+    top: 26.5%;
+    left: 71.2%;
+}
+
+/* TN Extra Cities */
+.salem {
+    top: 67.5%;
+    left: 41.2%;
+}
+
+.tirunelveli {
+    top: 86.8%;
+    left: 38.5%;
+}
+
+.erode {
+    top: 68.2%;
+    left: 36.5%;
+}
+
+.vellore {
+    top: 58.8%;
+    left: 48.2%;
+}
+
+/* KA Extra Cities */
+.hubballi {
+    top: 41.5%;
+    left: 17.2%;
+}
+
+.belagavi {
+    top: 36.8%;
+    left: 12.5%;
+}
+
+.davanagere {
+    top: 48.2%;
+    left: 25.5%;
+}
+
+.kalaburagi {
+    top: 23.5%;
+    left: 28.2%;
+}
+
+/* AP Density Points */
+.tirupati {
+    top: 54.0%;
+    left: 49.5%;
+}
+
+.anantapur {
+    top: 46.2%;
+    left: 36.8%;
+}
+
+.kadapa {
+    top: 49.5%;
+    left: 43.2%;
+}
+
+.ongole {
+    top: 41.5%;
+    left: 58.8%;
+}
+
+.eluru {
+    top: 30.2%;
+    left: 64.5%;
+}
+
+/* TS Density Points */
+.warangal {
+    top: 22.8%;
+    left: 49.2%;
+}
+
+.nizamabad {
+    top: 18.5%;
+    left: 37.5%;
 }
 
 /* =========================================
