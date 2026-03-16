@@ -121,11 +121,296 @@
     </nav>
 
     <style>
-        .hero-banner-1 { background-image: url('{% static "images/banners/banner1.png" %}'); }
-        .hero-banner-2 { background-image: url('{% static "images/banners/banner2.png" %}'); }
-        .hero-banner-3 { background-image: url('{% static "images/banners/banner3.png" %}'); }
-        .hero-banner-4 { background-image: url('{% static "images/banners/banner4.png" %}'); }
+        /* =============================================
+           PREMIUM LANDING HERO
+        ============================================= */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
 
+        .hero-landing {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: url('{% static "images/landing_bg.png" %}') center/cover no-repeat;
+        }
+
+        /* Deep gradient overlay for premium feel */
+        .hero-landing::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(10, 30, 60, 0.88) 0%,
+                rgba(13, 59, 102, 0.75) 50%,
+                rgba(5, 20, 45, 0.90) 100%
+            );
+            z-index: 1;
+        }
+
+        /* Animated radial glow in the center */
+        .hero-landing::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(255,215,0,0.07) 0%, transparent 65%);
+            z-index: 2;
+            animation: glowPulse 5s ease-in-out infinite;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Particle canvas */
+        #hero-particles {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* All hero content sits above overlays */
+        .hero-inner {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        /* Eyebrow tag */
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+
+        /* Main headline */
+        .hero-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.55s forwards;
+        }
+
+        .hero-headline .accent-word {
+            background: linear-gradient(90deg, var(--accent), #ffb347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        /* Underline animation on accent word */
+        .hero-headline .accent-word::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), #ffb347);
+            border-radius: 2px;
+            animation: lineGrow 1s cubic-bezier(0.23, 1, 0.32, 1) 1.4s forwards;
+        }
+
+        @keyframes lineGrow {
+            to { width: 100%; }
+        }
+
+        /* Subtitle */
+        .hero-para {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.78);
+            max-width: 660px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            font-weight: 300;
+            opacity: 0;
+            transform: translateY(25px);
+            animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.75s forwards;
+        }
+
+        /* CTA buttons row */
+        .hero-cta-row {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(25px);
+            animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.95s forwards;
+        }
+
+        .btn-hero-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent), #e6a800);
+            color: #0d3b66;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 16px 36px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.35);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 16px 40px rgba(255, 215, 0, 0.5);
+            color: #0d3b66;
+        }
+
+        .btn-hero-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 15px 34px;
+            border-radius: 50px;
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-hero-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.75);
+            transform: translateY(-3px);
+            color: #fff;
+        }
+
+        /* Floating mini-badges */
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+            opacity: 0;
+            animation: fadeSlideUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) 1.2s forwards;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            padding: 10px 20px;
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+        }
+
+        .hero-badge .badge-icon {
+            font-size: 1rem;
+        }
+
+        /* Scroll indicator */
+        .hero-scroll-cue {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            animation: fadeSlideUp 0.9s ease 1.5s forwards;
+        }
+
+        .hero-scroll-cue span {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .scroll-bar {
+            width: 1.5px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-bar::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            border-radius: 2px;
+            animation: scrollDown 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollDown {
+            0% { top: -100%; }
+            100% { top: 200%; }
+        }
+
+        /* Shared fade-up keyframe */
+        @keyframes fadeSlideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stats grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -134,124 +419,115 @@
         }
 
         @media (max-width: 1024px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 600px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+            .stats-grid { grid-template-columns: 1fr; }
+            .hero-cta-row { flex-direction: column; align-items: center; }
         }
     </style>
-    <section class="hero-slider">
-        <!-- Banner 1: Shaping Digital Minds -->
-        <div class="hero-banner hero-banner-1 active">
-            <div class="hero-content">
-                <h1 class="hero-tagline">Shaping <span class="brand-text" style="color: var(--accent);">Digital
-                        Minds</span></h1>
-                <p class="hero-subtitle">
-                    Pioneering digital-first education for over 25 years with curriculum-aligned excellence.
-                </p>
-                <div class="hero-action">
-                    <a href="{% url 'products' %}" class="btn-primary">Explore Series</a>
-                    <a href="#demo" class="btn-outline" style="border-color: #fff; color: #fff;">Request Demo</a>
-                </div>
+
+    <!-- ============================================
+         PREMIUM LANDING HERO
+    ============================================= -->
+    <section class="hero-landing" id="hero-landing">
+        <!-- Particle Canvas -->
+        <canvas id="hero-particles"></canvas>
+
+        <div class="hero-inner">
+            <!-- Eyebrow -->
+            <div class="hero-eyebrow">Est. 2001 &nbsp;·&nbsp; India's Digital Education Leader</div>
+
+            <!-- Main Headline -->
+            <h1 class="hero-headline">
+                Crafting <span class="accent-word">Tomorrow's</span><br>Digital Scholars
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="hero-para">
+                SAMSEL Publications delivers curriculum-aligned, technology-forward learning resources
+                trusted by 2,500+ schools across India — from foundational coding to advanced AI.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta-row">
+                <a href="{% url 'products' %}" class="btn-hero-primary">
+                    Explore Our Series &nbsp;→
+                </a>
+                <a href="{% url 'about' %}" class="btn-hero-outline">
+                    Our Story
+                </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="hero-badges">
+                <span class="hero-badge"><span class="badge-icon">🏫</span> 2,500+ Partner Schools</span>
+                <span class="hero-badge"><span class="badge-icon">📚</span> 50+ Curated Titles</span>
+                <span class="hero-badge"><span class="badge-icon">🎓</span> NEP 2020 Aligned</span>
             </div>
         </div>
 
-        <!-- Banner 2: Innovation -->
-        <div class="hero-banner hero-banner-2">
-            <div class="hero-content">
-                <h1 class="hero-tagline">Innovation in <span class="brand-text"
-                        style="color: var(--accent);">Pedagogy</span></h1>
-                <p class="hero-subtitle">
-                    Seamlessly merging traditional textbook wisdom with futuristic digital learning tools.
-                </p>
-                <div class="hero-action">
-                    <a href="{% url 'about' %}" class="btn-primary">Our Vision</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Banner 3: Collaboration -->
-        <div class="hero-banner hero-banner-3">
-            <div class="hero-content">
-                <h1 class="hero-tagline">Empowering <span class="brand-text" style="color: var(--accent);">Modern
-                        Learning</span></h1>
-                <p class="hero-subtitle">
-                    Fostering collaborative environments where teachers and students thrive together.
-                </p>
-                <div class="hero-action">
-                    <a href="{% url 'contact' %}" class="btn-primary">Partner With Us</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Banner 4: Next-Gen -->
-        <div class="hero-banner hero-banner-4">
-            <div class="hero-content">
-                <h1 class="hero-tagline">Next-Gen <span class="brand-text"
-                        style="color: var(--accent);">Curriculum</span></h1>
-                <p class="hero-subtitle">
-                    State-of-the-art computer science series designed for the thinkers of tomorrow.
-                </p>
-                <div class="hero-action">
-                    <a href="{% url 'products' %}" class="btn-primary">View Products</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <div class="slider-dots">
-            <div class="dot active" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
+        <!-- Scroll Cue -->
+        <div class="hero-scroll-cue">
+            <span>Scroll</span>
+            <div class="scroll-bar"></div>
         </div>
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const banners = document.querySelectorAll('.hero-banner');
-            const dots = document.querySelectorAll('.dot');
-            let current = 0;
-            let timer;
+        /* ---- Lightweight particle system ---- */
+        (function () {
+            const canvas = document.getElementById('hero-particles');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            let W, H;
 
-            function showBanner(index) {
-                banners.forEach(b => b.classList.remove('active'));
-                dots.forEach(d => d.classList.remove('active'));
-
-                banners[index].classList.add('active');
-                dots[index].classList.add('active');
-                current = index;
+            function resize() {
+                W = canvas.width = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
             }
 
-            function nextBanner() {
-                let next = (current + 1) % banners.length;
-                showBanner(next);
+            function createParticle() {
+                return {
+                    x: Math.random() * W,
+                    y: Math.random() * H,
+                    r: Math.random() * 1.8 + 0.6,
+                    dx: (Math.random() - 0.5) * 0.3,
+                    dy: -Math.random() * 0.5 - 0.2,
+                    alpha: Math.random() * 0.5 + 0.15
+                };
             }
 
-            function startTimer() {
-                timer = setInterval(nextBanner, 6000); // Change banner every 6 seconds
+            function initParticles(n) {
+                particles = Array.from({ length: n }, createParticle);
             }
 
-            function resetTimer() {
-                clearInterval(timer);
-                startTimer();
-            }
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                particles.forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 215, 0, ${p.alpha})`;
+                    ctx.fill();
 
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    showBanner(index);
-                    resetTimer();
+                    p.x += p.dx;
+                    p.y += p.dy;
+
+                    if (p.y < -5) { p.y = H + 5; p.x = Math.random() * W; }
+                    if (p.x < -5 || p.x > W + 5) { p.x = Math.random() * W; }
                 });
-            });
+                requestAnimationFrame(draw);
+            }
 
-            startTimer();
-        });
+            window.addEventListener('resize', () => { resize(); initParticles(120); });
+            resize();
+            initParticles(120);
+            draw();
+        })();
     </script>
+
+
 
     <!-- TRUST STRIP -->
     <section class="container reveal-up delay-100">
@@ -874,24 +1150,13 @@
                 <div class="stat-number"><span class="count" data-target="16">0</span></div>
                 <div class="stat-label">Geographic Distributions</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="100">0</span>%</div>
-                <div class="stat-label">NEP 2020 Aligned</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="500">0</span>+</div>
-                <div class="stat-label">Teacher Handbooks</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="10">0</span>M+</div>
-                <div class="stat-label">Digital Learners</div>
-            </div>
+
         </div>
     </section>
 
     <!-- OUR JOURNEY / TIMELINE -->
     <section style="margin: 6rem 0;">
-        <h2 class="section-title reveal-up">Our Journey</h2>
+        <h2 class="section-title reveal-up">Our Inception Since Start</h2>
         <div class="timeline">
 
             <div class="timeline-item reveal-up">
@@ -942,8 +1207,9 @@
         <h2 class="section-title reveal-up">Trusted by Premier Institutions</h2>
         <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;"
             class="reveal-up delay-100">
-            Schools across India have proudly adopted <span class="brand-text">SAMSEL</span> publications for their
-            uncompromising quality.
+            It’s a proud moment to disclose that both recently established and the most
+            reputable institutions have partnered and subscribed to our tech-savvy academic curriculum courses for
+            empowering digital minds nationwide.
         </p>
 
         <div class="boards-grid">
@@ -980,18 +1246,19 @@
                 <p>Vidya Mandir Senior</p>
             </div>
         </div>
+    </section>
 
-        <!-- FOOTER -->
-        <footer class="main-footer">
-            <div class="footer-content">
-                <h3 class="footer-logo"><span class="brand-text">SAMSEL</span> <span
-                        class="brand-secondary">Publications</span></h3>
-                <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
-                        class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
-                    2001.
-                </p>
-            </div>
-        </footer>
+    <!-- FOOTER -->
+    <footer class="main-footer" style="margin-top: 8rem;">
+        <div class="footer-content">
+            <h3 class="footer-logo"><span class="brand-text">SAMSEL</span> <span
+                    class="brand-secondary">Publications</span></h3>
+            <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
+                    class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
+                2001.
+            </p>
+        </div>
+    </footer>
 
         <!-- GLOBAL JS -->
         <script src="{% static 'js/global.js' %}"></script>
