@@ -128,15 +128,17 @@
 
         .hero-landing {
             position: relative;
-            min-height: 100vh;
+            min-height: 120vh; /* Increased to accommodate pillars */
             display: flex;
+            flex-direction: column; /* Stack content and pillars */
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Start from top */
+            padding-top: 100px;
             overflow: hidden;
             background: url('{% static "images/landing_bg.png" %}') center/cover no-repeat;
         }
 
-        /* Deep gradient overlay for premium feel */
+        /* Deep gradient overlay for premium feel/legibility */
         .hero-landing::before {
             content: '';
             position: absolute;
@@ -434,6 +436,71 @@
             }
         }
 
+        /* Pillars Integration inside Hero */
+        .hero-landing .sl-pillars {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 20;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 4rem; /* Space from hero content */
+            margin-bottom: 6rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-landing .sl-pillars { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 1024px) and (min-width: 901px) {
+            .hero-landing .sl-pillars { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .hero-landing .sl-pillar {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 2.4rem 2rem;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(40px);
+            text-align: left;
+        }
+
+        .hero-landing .sl-pillar.sl-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-landing .sl-pillar:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .hero-landing .sl-pillar-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            display: block;
+        }
+
+        .hero-landing .sl-pillar h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-landing .sl-pillar p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         /* Stats grid */
         .stats-grid {
             display: grid;
@@ -496,7 +563,58 @@
             <span>Scroll</span>
             <div class="scroll-bar"></div>
         </div>
+
+        <!-- Pillars moved inside Hero Section -->
+        <div class="sl-pillars" id="sl-pillars">
+
+            <div class="sl-pillar">
+                <div class="sl-pillar-icon">🏫</div>
+                <h3>Computer Literacy at Schools</h3>
+                <p>We implement structured computer literacy programs at schools, ensuring an effective and progressive
+                    learning scope across all grades and cadres.</p>
+            </div>
+
+            <div class="sl-pillar">
+                <div class="sl-pillar-icon">📐</div>
+                <h3>Curriculum That Excels</h3>
+                <p>Specialised in conceptualising the latest Windows academic curriculum, covering diversified
+                    application
+                    packages in line with modern programming languages.</p>
+            </div>
+
+            <div class="sl-pillar">
+                <div class="sl-pillar-icon">🎓</div>
+                <h3>Empowering Educators</h3>
+                <p>We equip educators with tools and resources to inspire — turning classrooms into innovation hubs and
+                    helping teachers deliver digital excellence with confidence.</p>
+            </div>
+
+            <div class="sl-pillar">
+                <div class="sl-pillar-icon">💡</div>
+                <h3>Digital Excellence</h3>
+                <p>Our emphasis on digital excellence ensures every student gains practical, future-ready skills — from
+                    foundational IT concepts to advanced programming logic.</p>
+            </div>
+
+            <div class="sl-pillar">
+                <div class="sl-pillar-icon">🔬</div>
+                <h3>Breaking Complexities</h3>
+                <p>We excel at transforming complex technology topics into simple, engaging standards — making advanced
+                    concepts accessible and enjoyable for every learner.</p>
+            </div>
+
+            <div class="sl-pillar">
+                <div class="sl-pillar-icon">🌐</div>
+                <h3>Leading E-Learning Enterprise</h3>
+                <p>As a pioneering academic e-learning enterprise since 2001, we deliver IT-specific knowledge for
+                    students
+                    in grades across India, trusted for over two decades.</p>
+            </div>
+
+        </div>
     </section>
+
+
 
     <script>
         /* ---- Lightweight particle system ---- */
@@ -549,7 +667,25 @@
             draw();
         })();
     </script>
+    <script>
+        /* ---- Reveal logic for pillars inside Hero ---- */
+        (function() {
+            const pillars = document.querySelectorAll('.hero-landing .sl-pillar');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('sl-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
 
+            pillars.forEach((p, i) => {
+                p.style.transitionDelay = (0.1 * i) + 's';
+                observer.observe(p);
+            });
+        })();
+    </script>
 
 
     <!-- TRUST STRIP -->
