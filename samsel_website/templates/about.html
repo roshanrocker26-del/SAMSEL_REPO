@@ -151,9 +151,11 @@
             .reviews-section {
                 padding: 60px 15px;
             }
+
             .reviews-header h2 {
                 font-size: 2.2rem;
             }
+
             .review-card {
                 padding: 30px 20px;
             }
@@ -186,7 +188,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#ismart-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#ismart-level-2">Level 2</a></li>
@@ -200,7 +203,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#iwhizz-class-1">Class 1</a></li>
                             <li><a href="{% url 'products' %}#iwhizz-class-2">Class 2</a></li>
@@ -214,7 +218,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#young-wizard-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#young-wizard-2">Level 2</a></li>
@@ -224,7 +229,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#app2016-ppt">PowerPoint</a></li>
                             <li><a href="{% url 'products' %}#app2016-excel">Excel</a></li>
@@ -319,117 +325,6 @@
             </div>
         </section>
 
-        <!-- STATS / IMPACT -->
-        <section class="stats-grid reveal-up delay-200" id="counter-section">
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="25">0</span>+</div>
-                <div class="stat-label">Years of Heritage</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="2500">0</span>+</div>
-                <div class="stat-label">Schools Trust Us</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="10">0</span></div>
-                <div class="stat-label">Distinct Series</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="200">0</span>+</div>
-                <div class="stat-label">Concept Videos</div>
-            </div>
-        </section>
-
-        <!-- OUR JOURNEY / TIMELINE -->
-        <section style="margin: 6rem 0;">
-            <h2 class="section-title reveal-up">Our Journey</h2>
-            <div class="timeline">
-
-                <div class="timeline-item reveal-up">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2001</div>
-                        <h3>The Beginning</h3>
-                        <p>Founded as a unit of USS Unique Software Solutions to provide high-quality IT curriculum to
-                            local schools in Chennai.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal-up delay-100">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2010</div>
-                        <h3>Regional Expansion</h3>
-                        <p>Expanded our footprint across South India, reaching over 500 schools and introducing our
-                            flagship "i-Smart" series.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal-up delay-200">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2018</div>
-                        <h3>Digital Transformation</h3>
-                        <p>Introduced QR-coded interactive video lessons, integrating practical demonstrations to bridge
-                            the gap between theory and practice.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal-up delay-300">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">Present</div>
-                        <h3>Pioneering EdTech</h3>
-                        <p>Serving 2500+ schools nationwide, constantly innovating with AI, Robotics, and NEP
-                            2020-aligned experiential learning frameworks.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- TRUSTED SCHOOLS -->
-        <section style="margin: 8rem 0;">
-            <h2 class="section-title reveal-up">Trusted by Premier Institutions</h2>
-            <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;"
-                class="reveal-up delay-100">
-                Schools across India have proudly adopted <span class="brand-text">SAMSEL</span> publications for their
-                uncompromising quality.
-            </p>
-
-            <div class="boards-grid">
-                <div class="board-card reveal-up delay-100">
-                    <img src="{% static 'images/sch1.png' %}" alt="School 1">
-                    <p>Kaligi Ranganathan Montford</p>
-                </div>
-                <div class="board-card reveal-up delay-200">
-                    <img src="{% static 'images/sch2.png' %}" alt="School 2">
-                    <p>Bethel Matriculation Higher Secondary School</p>
-                </div>
-                <div class="board-card reveal-up delay-300">
-                    <img src="{% static 'images/sch5.png' %}" alt="School 3">
-                    <p>St. Joseph’s Matriculation Higher Secondary School</p>
-                </div>
-                <div class="board-card reveal-up delay-400">
-                    <img src="{% static 'images/sch4.png' %}" alt="School 4">
-                    <p>DAV School</p>
-                </div>
-                <div class="board-card reveal-up delay-100">
-                    <img src="{% static 'images/sch3.png' %}" alt="School 5">
-                    <p>GFC Global School</p>
-                </div>
-                <div class="board-card reveal-up delay-200">
-                    <img src="{% static 'images/sch6.png' %}" alt="School 6">
-                    <p>Seetha Kingston House Matriculation Higher Secondary School</p>
-                </div>
-                <div class="board-card reveal-up delay-300">
-                    <img src="{% static 'images/sch7.png' %}" alt="School 7">
-                    <p>Maharishi Vidya Mandir Senior Secondary School</p>
-                </div>
-                <div class="board-card reveal-up delay-400">
-                    <img src="{% static 'images/sch8.png' %}" alt="School 8">
-                    <p>Vidya Mandir Senior</p>
-                </div>
-            </div>
         <!-- VOICES OF TRUST: REVIEWS -->
         <section class="reviews-section reveal-up">
             <div class="reviews-container">
@@ -437,12 +332,13 @@
                     <h2>Voices of Trust</h2>
                     <p class="reviews-subtitle">What educators and partners say about our digital-first curriculum.</p>
                 </div>
-                
+
                 <div class="reviews-grid">
                     <!-- Review 1 -->
                     <div class="review-card">
                         <p class="review-content">
-                            The i-Smart series is brilliantly structured. The technical depth provided in the chapters on advanced computing is unmatched, making it a favorite for our tech-savvy students.
+                            The i-Smart series is brilliantly structured. The technical depth provided in the chapters
+                            on advanced computing is unmatched, making it a favorite for our tech-savvy students.
                         </p>
                         <span class="reviewer-name">Hari Krishnan AS</span>
                     </div>
@@ -450,7 +346,8 @@
                     <!-- Review 2 -->
                     <div class="review-card">
                         <p class="review-content">
-                            i-Bot has completely transformed how our students perceive robotics. The engagement levels are through the roof, and the hands-on approach is exactly what modern education needs.
+                            i-Bot has completely transformed how our students perceive robotics. The engagement levels
+                            are through the roof, and the hands-on approach is exactly what modern education needs.
                         </p>
                         <span class="reviewer-name">Raji KMW</span>
                     </div>
@@ -458,7 +355,8 @@
                     <!-- Review 3 -->
                     <div class="review-card">
                         <p class="review-content">
-                            i-Whizz makes coding feel like play. The way it breaks down complex programming logic into accessible, fun activities is incredible and highly rewarding.
+                            i-Whizz makes coding feel like play. The way it breaks down complex programming logic into
+                            accessible, fun activities is incredible and highly rewarding.
                         </p>
                         <span class="reviewer-name">Rohit Valecha</span>
                     </div>
@@ -466,7 +364,8 @@
                     <!-- Review 4 -->
                     <div class="review-card">
                         <p class="review-content">
-                            Young Wizard is a masterpiece for early childhood learning. It introduces foundational concepts with such clarity that even our youngest learners are excited about technology.
+                            Young Wizard is a masterpiece for early childhood learning. It introduces foundational
+                            concepts with such clarity that even our youngest learners are excited about technology.
                         </p>
                         <span class="reviewer-name">Sasi Kumar Perumal</span>
                     </div>
@@ -474,7 +373,8 @@
                     <!-- Review 5 -->
                     <div class="review-card">
                         <p class="review-content">
-                            The Application series bridges the gap between theory and real-world skills perfectly. It's refreshing to see a curriculum that focuses so heavily on practical coding techniques.
+                            The Application series bridges the gap between theory and real-world skills perfectly. It's
+                            refreshing to see a curriculum that focuses so heavily on practical coding techniques.
                         </p>
                         <span class="reviewer-name">Ajeetha Selvam</span>
                     </div>
@@ -482,7 +382,8 @@
                     <!-- Review 6 -->
                     <div class="review-card">
                         <p class="review-content">
-                            The QR-linked video demonstrations are a game-changer. Students can visualize practical concepts instantly, which has significantly improved their conceptual understanding.
+                            The QR-linked video demonstrations are a game-changer. Students can visualize practical
+                            concepts instantly, which has significantly improved their conceptual understanding.
                         </p>
                         <span class="reviewer-name">Ravi Kumar</span>
                     </div>
@@ -490,7 +391,8 @@
                     <!-- Review 7 -->
                     <div class="review-card">
                         <p class="review-content">
-                            Samsel's alignment with NEP 2020 is impeccable. The curriculum is forward-thinking and perfectly suited for schools looking to implement the latest educational standards.
+                            Samsel's alignment with NEP 2020 is impeccable. The curriculum is forward-thinking and
+                            perfectly suited for schools looking to implement the latest educational standards.
                         </p>
                         <span class="reviewer-name">Rajesh</span>
                     </div>
@@ -559,18 +461,18 @@
         // REVIEW BLUR INTERACTION
         document.addEventListener("DOMContentLoaded", () => {
             const cards = document.querySelectorAll(".review-card");
-            
+
             cards.forEach(card => {
                 card.addEventListener("click", (e) => {
                     e.stopPropagation();
                     const isActive = card.classList.contains("active");
-                    
+
                     // Reset all
                     cards.forEach(c => {
                         c.classList.remove("active");
                         c.classList.remove("blurred");
                     });
-                    
+
                     if (!isActive) {
                         card.classList.add("active");
                         cards.forEach(c => {
@@ -579,7 +481,7 @@
                     }
                 });
             });
-            
+
             // Clicking outside resets the blur
             document.addEventListener("click", () => {
                 cards.forEach(c => {

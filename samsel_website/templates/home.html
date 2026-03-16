@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Replace individual CSS with global UI framework -->
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 </head>
 
 <body>
@@ -124,12 +125,32 @@
         .hero-banner-2 { background-image: url('{% static "images/banners/banner2.png" %}'); }
         .hero-banner-3 { background-image: url('{% static "images/banners/banner3.png" %}'); }
         .hero-banner-4 { background-image: url('{% static "images/banners/banner4.png" %}'); }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin: 6rem 0;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
     <section class="hero-slider">
         <!-- Banner 1: Shaping Digital Minds -->
         <div class="hero-banner hero-banner-1 active">
             <div class="hero-content">
-                <h1 class="hero-tagline">Shaping <span class="brand-text" style="color: var(--accent);">Digital Minds</span></h1>
+                <h1 class="hero-tagline">Shaping <span class="brand-text" style="color: var(--accent);">Digital
+                        Minds</span></h1>
                 <p class="hero-subtitle">
                     Pioneering digital-first education for over 25 years with curriculum-aligned excellence.
                 </p>
@@ -143,7 +164,8 @@
         <!-- Banner 2: Innovation -->
         <div class="hero-banner hero-banner-2">
             <div class="hero-content">
-                <h1 class="hero-tagline">Innovation in <span class="brand-text" style="color: var(--accent);">Pedagogy</span></h1>
+                <h1 class="hero-tagline">Innovation in <span class="brand-text"
+                        style="color: var(--accent);">Pedagogy</span></h1>
                 <p class="hero-subtitle">
                     Seamlessly merging traditional textbook wisdom with futuristic digital learning tools.
                 </p>
@@ -156,7 +178,8 @@
         <!-- Banner 3: Collaboration -->
         <div class="hero-banner hero-banner-3">
             <div class="hero-content">
-                <h1 class="hero-tagline">Empowering <span class="brand-text" style="color: var(--accent);">Modern Learning</span></h1>
+                <h1 class="hero-tagline">Empowering <span class="brand-text" style="color: var(--accent);">Modern
+                        Learning</span></h1>
                 <p class="hero-subtitle">
                     Fostering collaborative environments where teachers and students thrive together.
                 </p>
@@ -169,7 +192,8 @@
         <!-- Banner 4: Next-Gen -->
         <div class="hero-banner hero-banner-4">
             <div class="hero-content">
-                <h1 class="hero-tagline">Next-Gen <span class="brand-text" style="color: var(--accent);">Curriculum</span></h1>
+                <h1 class="hero-tagline">Next-Gen <span class="brand-text"
+                        style="color: var(--accent);">Curriculum</span></h1>
                 <p class="hero-subtitle">
                     State-of-the-art computer science series designed for the thinkers of tomorrow.
                 </p>
@@ -189,7 +213,7 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const banners = document.querySelectorAll('.hero-banner');
             const dots = document.querySelectorAll('.dot');
             let current = 0;
@@ -198,7 +222,7 @@
             function showBanner(index) {
                 banners.forEach(b => b.classList.remove('active'));
                 dots.forEach(d => d.classList.remove('active'));
-                
+
                 banners[index].classList.add('active');
                 dots[index].classList.add('active');
                 current = index;
@@ -823,20 +847,194 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <h3 class="footer-logo"><span class="brand-text">SAMSEL</span> <span
-                    class="brand-secondary">Publications</span></h3>
-            <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
-                    class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
-                2001.
-            </p>
+    <!-- STATS / IMPACT -->
+    <section class="container reveal-up delay-200" id="counter-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="25">0</span>+</div>
+                <div class="stat-label">Years of Heritage</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="2500">0</span>+</div>
+                <div class="stat-label">Schools Trust Us</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="10">0</span></div>
+                <div class="stat-label">Distinct Series</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="200">0</span>+</div>
+                <div class="stat-label">Concept Videos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="50">0</span>+</div>
+                <div class="stat-label">Course Titles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="16">0</span></div>
+                <div class="stat-label">Geographic Distributions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="100">0</span>%</div>
+                <div class="stat-label">NEP 2020 Aligned</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="500">0</span>+</div>
+                <div class="stat-label">Teacher Handbooks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="10">0</span>M+</div>
+                <div class="stat-label">Digital Learners</div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- GLOBAL JS -->
-    <script src="{% static 'js/global.js' %}"></script>
+    <!-- OUR JOURNEY / TIMELINE -->
+    <section style="margin: 6rem 0;">
+        <h2 class="section-title reveal-up">Our Journey</h2>
+        <div class="timeline">
+
+            <div class="timeline-item reveal-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2001</div>
+                    <h3>The Beginning</h3>
+                    <p>Founded as a unit of USS Unique Software Solutions to provide high-quality IT curriculum to
+                        local schools in Chennai.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2010</div>
+                    <h3>Regional Expansion</h3>
+                    <p>Expanded our footprint across South India, reaching over 500 schools and introducing our
+                        flagship "i-Smart" series.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2018</div>
+                    <h3>Digital Transformation</h3>
+                    <p>Introduced QR-coded interactive video lessons, integrating practical demonstrations to bridge
+                        the gap between theory and practice.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-300">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Present</div>
+                    <h3>Pioneering EdTech</h3>
+                    <p>Serving 2500+ schools nationwide, constantly innovating with AI, Robotics, and NEP
+                        2020-aligned experiential learning frameworks.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRUSTED SCHOOLS -->
+    <section style="margin: 8rem 0;">
+        <h2 class="section-title reveal-up">Trusted by Premier Institutions</h2>
+        <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;"
+            class="reveal-up delay-100">
+            Schools across India have proudly adopted <span class="brand-text">SAMSEL</span> publications for their
+            uncompromising quality.
+        </p>
+
+        <div class="boards-grid">
+            <div class="board-card reveal-up delay-100">
+                <img src="{% static 'images/sch1.png' %}" alt="School 1">
+                <p>Kaligi Ranganathan Montford</p>
+            </div>
+            <div class="board-card reveal-up delay-200">
+                <img src="{% static 'images/sch2.png' %}" alt="School 2">
+                <p>Bethel Matriculation Higher Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-300">
+                <img src="{% static 'images/sch5.png' %}" alt="School 3">
+                <p>St. Joseph’s Matriculation Higher Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-400">
+                <img src="{% static 'images/sch4.png' %}" alt="School 4">
+                <p>DAV School</p>
+            </div>
+            <div class="board-card reveal-up delay-100">
+                <img src="{% static 'images/sch3.png' %}" alt="School 5">
+                <p>GFC Global School</p>
+            </div>
+            <div class="board-card reveal-up delay-200">
+                <img src="{% static 'images/sch6.png' %}" alt="School 6">
+                <p>Seetha Kingston House Matriculation Higher Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-300">
+                <img src="{% static 'images/sch7.png' %}" alt="School 7">
+                <p>Maharishi Vidya Mandir Senior Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-400">
+                <img src="{% static 'images/sch8.png' %}" alt="School 8">
+                <p>Vidya Mandir Senior</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <h3 class="footer-logo"><span class="brand-text">SAMSEL</span> <span
+                        class="brand-secondary">Publications</span></h3>
+                <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
+                        class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
+                    2001.
+                </p>
+            </div>
+        </footer>
+
+        <!-- GLOBAL JS -->
+        <script src="{% static 'js/global.js' %}"></script>
+
+        <!-- COUNTER ANIMATION SCRIPT -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const counters = document.querySelectorAll(".count");
+                const speed = 60; // Animation speed
+
+                const startCounters = () => {
+                    counters.forEach(counter => {
+                        const updateCount = () => {
+                            const target = +counter.getAttribute("data-target");
+                            const count = +counter.innerText;
+                            const inc = target / speed;
+
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc);
+                                setTimeout(updateCount, 30);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCount();
+                    });
+                };
+
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            startCounters();
+                            obs.unobserve(entry.target); // Run only once
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                const counterSection = document.getElementById("counter-section");
+                if (counterSection) {
+                    observer.observe(counterSection);
+                }
+            });
+        </script>
 </body>
 
 </html>
