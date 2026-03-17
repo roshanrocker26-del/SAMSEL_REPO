@@ -153,6 +153,32 @@
     font-size: 18px;
 }
 
+/* Inquiry Button */
+.header-action .inquiry-btn {
+    background-color: #e91e63;
+    /* Red button */
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.header-action .inquiry-btn:hover {
+    background-color: #c2185b;
+    transform: translateY(-2px);
+}
+
+.header-action .inquiry-btn .icon {
+    font-size: 18px;
+}
+
 /* FOOTER */
 footer {
     background: linear-gradient(135deg,
