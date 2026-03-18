@@ -165,6 +165,26 @@
 
 <body>
 
+    <!-- MAIN HEADER (From global UI) -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- LOGO (LEFT) -->
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <span class="logo-main">SAMSEL</span>
+                    <span class="logo-sub">Publications</span>
+                </a>
+            </div>
+
+            <!-- BUTTON (RIGHT) -->
+            <div class="header-action">
+                <a href="{% url 'home' %}#demo" class="demo-btn">
+                    REQUEST DEMO <span class="icon"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
     <!-- TOP NAVBAR (Centered) -->
     <nav class="top-navbar">
         <ul class="top-menu">
@@ -250,32 +270,14 @@
         </ul>
     </nav>
 
-    <!-- MAIN HEADER (From global UI) -->
-    <header class="main-header">
-        <div class="header-container">
-            <!-- LOGO (LEFT) -->
-            <div class="logo">
-                <a href="{% url 'home' %}">
-                    <span class="logo-main">SAMSEL</span>
-                    <span class="logo-sub">Publications</span>
-                </a>
-            </div>
-
-            <!-- BUTTON (RIGHT) -->
-            <div class="header-action">
-                <a href="{% url 'home' %}#demo" class="demo-btn">
-                    REQUEST DEMO <span class="icon"></span>
-                </a>
-            </div>
-        </div>
-    </header>
-
     <!-- HERO SECTION -->
     <section class="about-hero">
         <h1 class="about-hero-title">Who We Are</h1>
         <p class="about-hero-subtitle">
-            Crafting Tomorrow’s Coders with Unwavering Quality since 2001. We empower schools with digital-first
-            resources.
+            SAMSEL Publications has been a unit of the USS (Unique Software Solutions) entity since 2001.
+            We pioneer as a leading academic e-learning enterprise, offering IT specific knowledge base for students
+            across grades,emphasizing digital excellence.
+
         </p>
     </section>
 

@@ -26,7 +26,10 @@
             </div>
 
             <!-- BUTTON (RIGHT) -->
-            <div class="header-action">
+            <div class="header-action" style="display: flex; gap: 15px;">
+                <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
+                    WHAT'S YOUR QUERY <span class="icon"></span>
+                </a>
                 <a href="#demo" class="demo-btn">
                     REQUEST DEMO <span class="icon"></span>
                 </a>
@@ -558,7 +561,7 @@
             <!-- CTA Buttons -->
             <div class="hero-cta-row">
                 <a href="{% url 'products' %}" class="btn-hero-primary">
-                    Explore Our Series &nbsp;→
+                    Core Creatives &nbsp;→
                 </a>
                 <a href="{% url 'about' %}" class="btn-hero-outline">
                     Our Story
@@ -696,26 +699,7 @@
     </script>
 
 
-    <!-- TRUST STRIP -->
-    <section class="container reveal-up delay-100">
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>25+ Years</h3>
-                <p>Of academic excellence and educational heritage.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏫</div>
-                <h3>2500+ Schools</h3>
-                <p>Trusted by premier institutions across the nation.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3>Modern Pedagogy</h3>
-                <p>Curriculum-aligned with NEP 2020 standards.</p>
-            </div>
-        </div>
-    </section>
+
 
     <!-- INTRODUCTION / SHOWCASE -->
     <section class="container reveal-up delay-200">
@@ -969,11 +953,13 @@
 
     <!-- DISTRIBUTION MAP -->
     <section class="container reveal-up" style="padding: 6rem 20px;">
-        <h2 class="section-title" style="font-size: 3.5rem;">Widespread Distribution</h2>
+        <h2 class="section-title" style="font-size: 3.5rem;">Our Regional Digital Presence</h2>
         <p
             style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 4rem; font-size: 1.25rem;">
-            Empowering education across South India. Our textbooks are trusted by premier institutions in Tamil Nadu,
-            Kerala, Karnataka, Andhra Pradesh, and Telangana, shaping the minds of tomorrow.
+            Empowering limitless learning without boundaries across borders. Advancing a digital-first e-learning
+            experience across South India.
+            Trusted by top institutions in Tamil Nadu, Kerala, Karnataka, Andhra Pradesh, and Telangana. Our textbooks
+            inspire and shape future-ready minds.
         </p>
 
         <div class="map-container">
@@ -1161,6 +1147,168 @@
         </div>
     </section>
 
+
+
+    <!-- DEMO REQUEST -->
+    <section id="demo" class="container reveal-up delay-100">
+        <div class="demo-card"
+            style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 4rem; display: flex; gap: 4rem; align-items: center; box-shadow: var(--shadow-md);">
+            <div class="demo-content" style="flex: 1;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Redefine Digital Learning With <span
+                        class="brand-text">SAMSEL</span>
+                </h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Book a personalized demo with us and discover how SAMSEL’s digital-first approach is redefining the
+                    classroom experience.
+                </p>
+                <form class="demo-form" method="post" action="{% url 'request_demo' %}"
+                    style="display: flex; flex-direction: column; gap: 1rem;">
+                    {% csrf_token %}
+                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name"
+                        required>
+                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name"
+                        required>
+                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number"
+                        required>
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                    <textarea name="message" class="form-control" rows="3" placeholder="Your Query / Requirement"
+                        required></textarea>
+                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 1rem;">Submit
+                        Your Details</button>
+                </form>
+            </div>
+            <div class="demo-visual" style="flex: 1; text-align: center;">
+                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual" style="max-width: 300px; margin: auto;">
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS / IMPACT -->
+    <section class="container reveal-up delay-200" id="counter-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="25">0</span>+</div>
+                <div class="stat-label">Years of Heritage</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="2500">0</span>+</div>
+                <div class="stat-label">Schools Trust Us</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="12">0</span></div>
+                <div class="stat-label">Distinct Series</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="200">0</span>+</div>
+                <div class="stat-label">Concept Videos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="50">0</span>+</div>
+                <div class="stat-label">Course Titles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number"><span class="count" data-target="30">0</span></div>
+                <div class="stat-label">Geographic Distributions</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR JOURNEY / TIMELINE -->
+    <section style="margin: 6rem 0;">
+        <h2 class="section-title reveal-up">Our Inception Since Start</h2>
+        <div class="timeline">
+
+            <div class="timeline-item reveal-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2001</div>
+                    <h3>The Beginning</h3>
+                    <p>Founded as a unit of USS Unique Software Solutions to provide high-quality IT curriculum to
+                        local schools in Chennai.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2010</div>
+                    <h3>Regional Expansion</h3>
+                    <p>Expanded our footprint across South India, reaching over 500 schools and introducing our
+                        flagship "i-Smart" series.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2018</div>
+                    <h3>Digital Transformation</h3>
+                    <p>Introduced QR-coded interactive video lessons, integrating practical demonstrations to bridge
+                        the gap between theory and practice.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-300">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Present</div>
+                    <h3>Pioneering EdTech</h3>
+                    <p>Serving 2500+ schools nationwide, constantly innovating with AI, Robotics, and NEP
+                        2020-aligned experiential learning frameworks.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRUSTED SCHOOLS -->
+    <section style="margin: 8rem 0;">
+        <h2 class="section-title reveal-up">Trusted by Premier Institutions</h2>
+        <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;"
+            class="reveal-up delay-100">
+            It’s a proud moment to disclose that both recently established and the most reputable institutions have
+            partnered and subscribed to our tech-savvy academic curriculum courses for empowering digital minds
+            nationwide.
+
+        </p>
+
+        <div class="boards-grid">
+            <div class="board-card reveal-up delay-100">
+                <img src="{% static 'images/sch1.png' %}" alt="School 1">
+                <p>Kaligi Ranganathan Montford</p>
+            </div>
+            <div class="board-card reveal-up delay-200">
+                <img src="{% static 'images/sch2.png' %}" alt="School 2">
+                <p>Bethel Matriculation Higher Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-300">
+                <img src="{% static 'images/sch5.png' %}" alt="School 3">
+                <p>St. Joseph’s Matriculation Higher Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-400">
+                <img src="{% static 'images/sch4.png' %}" alt="School 4">
+                <p>DAV School</p>
+            </div>
+            <div class="board-card reveal-up delay-100">
+                <img src="{% static 'images/sch3.png' %}" alt="School 5">
+                <p>GFC Global School</p>
+            </div>
+            <div class="board-card reveal-up delay-200">
+                <img src="{% static 'images/sch6.png' %}" alt="School 6">
+                <p>Seetha Kingston House Matriculation Higher Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-300">
+                <img src="{% static 'images/sch7.png' %}" alt="School 7">
+                <p>Maharishi Vidya Mandir Senior Secondary School</p>
+            </div>
+            <div class="board-card reveal-up delay-400">
+                <img src="{% static 'images/sch8.png' %}" alt="School 8">
+                <p>Vidya Mandir Senior</p>
+            </div>
+        </div>
+    </section>
+
     <!-- EDUCATION BOARDS SLIDER -->
     <section class="boards-slider-container">
         <div class="boards-track">
@@ -1257,172 +1405,16 @@
         </div>
     </section>
 
-    <!-- DEMO REQUEST -->
-    <section id="demo" class="container reveal-up delay-100">
-        <div class="demo-card"
-            style="background: var(--card-bg); border-radius: var(--radius-lg); padding: 4rem; display: flex; gap: 4rem; align-items: center; box-shadow: var(--shadow-md);">
-            <div class="demo-content" style="flex: 1;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Experience <span class="brand-text">SAMSEL</span>
-                </h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
-                    Book a personalized demo for your school or institution and explore our digital-first teaching
-                    approach.
-                </p>
-                <form class="demo-form" method="post" action="{% url 'request_demo' %}"
-                    style="display: flex; flex-direction: column; gap: 1rem;">
-                    {% csrf_token %}
-                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name"
-                        required>
-                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name"
-                        required>
-                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number"
-                        required>
-                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-                    <textarea name="message" class="form-control" rows="3" placeholder="Your Query / Requirement"
-                        required></textarea>
-                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 1rem;">Request
-                        Demo</button>
-                </form>
-            </div>
-            <div class="demo-visual" style="flex: 1; text-align: center;">
-                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual" style="max-width: 300px; margin: auto;">
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS / IMPACT -->
-    <section class="container reveal-up delay-200" id="counter-section">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="25">0</span>+</div>
-                <div class="stat-label">Years of Heritage</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="2500">0</span>+</div>
-                <div class="stat-label">Schools Trust Us</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="12">0</span></div>
-                <div class="stat-label">Distinct Series</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="200">0</span>+</div>
-                <div class="stat-label">Concept Videos</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="50">0</span>+</div>
-                <div class="stat-label">Course Titles</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number"><span class="count" data-target="30">0</span></div>
-                <div class="stat-label">Geographic Distributions</div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- OUR JOURNEY / TIMELINE -->
-    <section style="margin: 6rem 0;">
-        <h2 class="section-title reveal-up">Our Inception Since Start</h2>
-        <div class="timeline">
-
-            <div class="timeline-item reveal-up">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-year">2001</div>
-                    <h3>The Beginning</h3>
-                    <p>Founded as a unit of USS Unique Software Solutions to provide high-quality IT curriculum to
-                        local schools in Chennai.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal-up delay-100">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-year">2010</div>
-                    <h3>Regional Expansion</h3>
-                    <p>Expanded our footprint across South India, reaching over 500 schools and introducing our
-                        flagship "i-Smart" series.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal-up delay-200">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-year">2018</div>
-                    <h3>Digital Transformation</h3>
-                    <p>Introduced QR-coded interactive video lessons, integrating practical demonstrations to bridge
-                        the gap between theory and practice.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item reveal-up delay-300">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-year">Present</div>
-                    <h3>Pioneering EdTech</h3>
-                    <p>Serving 2500+ schools nationwide, constantly innovating with AI, Robotics, and NEP
-                        2020-aligned experiential learning frameworks.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- TRUSTED SCHOOLS -->
-    <section style="margin: 8rem 0;">
-        <h2 class="section-title reveal-up">Trusted by Premier Institutions</h2>
-        <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;"
-            class="reveal-up delay-100">
-            It’s a proud moment to disclose that both recently established and the most
-            reputable institutions have partnered and subscribed to our tech-savvy academic curriculum courses for
-            empowering digital minds nationwide.
-        </p>
-
-        <div class="boards-grid">
-            <div class="board-card reveal-up delay-100">
-                <img src="{% static 'images/sch1.png' %}" alt="School 1">
-                <p>Kaligi Ranganathan Montford</p>
-            </div>
-            <div class="board-card reveal-up delay-200">
-                <img src="{% static 'images/sch2.png' %}" alt="School 2">
-                <p>Bethel Matriculation Higher Secondary School</p>
-            </div>
-            <div class="board-card reveal-up delay-300">
-                <img src="{% static 'images/sch5.png' %}" alt="School 3">
-                <p>St. Joseph’s Matriculation Higher Secondary School</p>
-            </div>
-            <div class="board-card reveal-up delay-400">
-                <img src="{% static 'images/sch4.png' %}" alt="School 4">
-                <p>DAV School</p>
-            </div>
-            <div class="board-card reveal-up delay-100">
-                <img src="{% static 'images/sch3.png' %}" alt="School 5">
-                <p>GFC Global School</p>
-            </div>
-            <div class="board-card reveal-up delay-200">
-                <img src="{% static 'images/sch6.png' %}" alt="School 6">
-                <p>Seetha Kingston House Matriculation Higher Secondary School</p>
-            </div>
-            <div class="board-card reveal-up delay-300">
-                <img src="{% static 'images/sch7.png' %}" alt="School 7">
-                <p>Maharishi Vidya Mandir Senior Secondary School</p>
-            </div>
-            <div class="board-card reveal-up delay-400">
-                <img src="{% static 'images/sch8.png' %}" alt="School 8">
-                <p>Vidya Mandir Senior</p>
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="main-footer" style="margin-top: 8rem;">
         <div class="footer-content">
-            <h3 class="footer-logo"><span class="brand-text">SAMSEL</span> <span
-                    class="brand-secondary">Publications</span></h3>
-            <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
-                    class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
-                2001.
+            <h3 class="footer-logo">
+                <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
+                        class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
+                    2001.
+                </p>
+            </h3>
+            <p class="brand-text">SAMSEL <span class="brand-secondary">Publications</span>
             </p>
         </div>
     </footer>

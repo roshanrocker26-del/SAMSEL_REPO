@@ -12,6 +12,26 @@
 
 <body>
 
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- LOGO (LEFT) -->
+            <div class="logo">
+                <a href="{% url 'home' %}">
+                    <span class="logo-main">SAMSEL</span>
+                    <span class="logo-sub">Publications</span>
+                </a>
+            </div>
+
+            <!-- BUTTON (RIGHT) -->
+            <div class="header-action">
+                <a href="{% url 'home' %}#demo" class="demo-btn">
+                    REQUEST DEMO <span class="icon"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
     <!-- TOP NAVBAR (Centered) -->
     <nav class="top-navbar">
         <ul class="top-menu">
@@ -92,26 +112,6 @@
             </li>
         </ul>
     </nav>
-
-    <!-- MAIN HEADER -->
-    <header class="main-header">
-        <div class="header-container">
-            <!-- LOGO (LEFT) -->
-            <div class="logo">
-                <a href="{% url 'home' %}">
-                    <span class="logo-main">SAMSEL</span>
-                    <span class="logo-sub">Publications</span>
-                </a>
-            </div>
-
-            <!-- BUTTON (RIGHT) -->
-            <div class="header-action">
-                <a href="{% url 'home' %}#demo" class="demo-btn">
-                    REQUEST DEMO <span class="icon"></span>
-                </a>
-            </div>
-        </div>
-    </header>
     <!-- HERO -->
     <section class="contact-hero reveal-up">
         <h1 style="margin-top:2rem;">Contact Us</h1>
