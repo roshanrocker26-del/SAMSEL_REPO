@@ -9,155 +9,205 @@
     <!-- Using the global UI framework -->
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <!-- Swiper.js for premium slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        /* REVIEW SECTION STYLES */
+        /* PREMIUM TESTIMONIALS STYLES */
         .reviews-section {
-            padding: 100px 20px;
-            background: rgba(13, 59, 102, 0.01);
+            padding: 120px 0;
+            background: #ffffff;
             position: relative;
             overflow: hidden;
-            border-top: 1px solid rgba(0, 0, 0, 0.03);
-            margin-top: 4rem;
         }
 
         .reviews-container {
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            perspective: 1000px;
-        }
-
-        .review-card {
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-            cursor: pointer;
-            border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow: hidden;
-        }
-
-        .review-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--accent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .review-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-            border-color: rgba(13, 59, 102, 0.1);
-        }
-
-        .review-card:hover::before {
-            opacity: 1;
-        }
-
-        .review-card.blurred {
-            filter: blur(12px);
-            opacity: 0.3;
-            transform: scale(0.92);
-            pointer-events: none;
-        }
-
-        .review-card.active {
-            transform: scale(1.04);
-            box-shadow: 0 30px 60px rgba(13, 59, 102, 0.12);
-            border-color: var(--primary);
-            z-index: 10;
-        }
-
-        .review-card.active::before {
-            opacity: 1;
-            background: var(--primary);
-        }
-
-        .review-content {
-            font-style: italic;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 25px;
-            position: relative;
-            font-size: 1.05rem;
-        }
-
-        .review-content::before {
-            content: '“';
-            font-size: 5rem;
-            position: absolute;
-            top: -30px;
-            left: -10px;
-            color: var(--primary);
-            opacity: 0.06;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .reviewer-name {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.15rem;
-            margin-top: auto;
-            position: relative;
-            padding-left: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .reviewer-name::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 12px;
-            height: 2px;
-            background: var(--accent);
         }
 
         .reviews-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 8rem;
+            font-weight: 800;
+            color: rgba(13, 59, 102, 0.03);
+            /* Primary blue with low opacity */
+            white-space: nowrap;
+            z-index: 1;
+            pointer-events: none;
+            text-transform: uppercase;
+            letter-spacing: 10px;
         }
 
         .reviews-header h2 {
+            position: relative;
+            z-index: 2;
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            color: #0d3b66;
+            /* Matching website primary deep blue */
+            margin: 0;
+            font-weight: 700;
         }
 
         .reviews-subtitle {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            color: #e91e63;
+            /* Matching brand pink/magenta */
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Swiper Customization */
+        .swiper-testimonials {
+            padding: 50px 0 100px !important;
+        }
+
+        .swiper-slide {
+            width: 450px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0.4;
+            filter: blur(4px);
+            transform: scale(0.85);
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+            filter: blur(0);
+            transform: scale(1.1);
+            z-index: 10;
+        }
+
+        .review-card {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .swiper-slide-active .review-card {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .reviewer-profile {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .reviewer-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .reviewer-info h4 {
+            font-size: 1.25rem;
+            color: #0d3b66;
+            /* Primary deep blue */
+            margin: 0 0 5px;
+            font-weight: 700;
+        }
+
+        .reviewer-info p {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0 0 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .review-content {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Navigation & Pagination */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #1a1a1a !important;
+            background: #fff;
+            width: 50px !important;
+            height: 50px !important;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 1.2rem !important;
+            font-weight: 800;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: #e91e63;
+            color: #fff !important;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            background: #ccc !important;
+            opacity: 1 !important;
+            margin: 0 6px !important;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #e91e63 !important;
+            width: 30px !important;
+            border-radius: 5px !important;
         }
 
         @media (max-width: 768px) {
-            .reviews-section {
-                padding: 60px 15px;
+            .bg-text {
+                font-size: 4rem;
             }
 
             .reviews-header h2 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+
+            .swiper-slide {
+                width: 300px;
             }
 
             .review-card {
-                padding: 30px 20px;
+                padding: 40px 25px;
+            }
+
+            .review-content {
+                font-size: 1rem;
             }
         }
     </style>
@@ -274,7 +324,7 @@
     <section class="about-hero">
         <h1 class="about-hero-title">Who We Are</h1>
         <p class="about-hero-subtitle">
-            SAMSEL Publications has been a unit of the USS (Unique Software Solutions) entity since 2001.
+            SAMSEL Publications has been a unit of the USS <br>(Unique Software Solutions) entity since 2001.<br>
             We pioneer as a leading academic e-learning enterprise, offering IT specific knowledge base for students
             across grades,emphasizing digital excellence.
 
@@ -290,17 +340,15 @@
                 <img src="{% static 'images/img5.jpg' %}" alt="Samsel Publications Office">
             </div>
             <div class="about-text-content">
-                <h2>Our Mission</h2>
+                <h2>Our Insightful Experiences</h2>
                 <p>
-                    <span class="brand-text">SAMSEL</span> <span class="brand-secondary">PUBLICATIONS</span>, a unit of
-                    <strong>USS Unique Software Solutions</strong>,
-                    Chennai, is a reputed educational publishing house. For over two decades, we have been at the
-                    forefront of delivering high-quality, curriculum-aligned academic resources to schools across India.
+                    We strongly believe that modern education should thrive and evolve with the latest technological
+                    advancements, guided by a practical frontier exposure towards every possible step we climb through.
                 </p>
                 <p>
-                    We believe that education should evolve with technology. Our mission is to bridge the gap between
-                    traditional learning and modern technological demands, providing students with the tools they need
-                    to thrive in a digital world.
+                    It’s our approachable, possible intent to bridge the gap between traditional academics and upgraded,
+                    digital-first, tech-savvy enhancements, equipping the students with the evolving tools required for
+                    their promising careers.
                 </p>
             </div>
         </section>
@@ -327,77 +375,146 @@
             </div>
         </section>
 
-        <!-- VOICES OF TRUST: REVIEWS -->
+        <!-- VOICES OF TRUST: PREMIUM SLIDER -->
         <section class="reviews-section reveal-up">
             <div class="reviews-container">
                 <div class="reviews-header">
                     <h2>Voices of Trust</h2>
-                    <p class="reviews-subtitle">What educators and partners say about our digital-first curriculum.</p>
                 </div>
 
-                <div class="reviews-grid">
-                    <!-- Review 1 -->
-                    <div class="review-card">
-                        <p class="review-content">
-                            The i-Smart series is brilliantly structured. The technical depth provided in the chapters
-                            on advanced computing is unmatched, making it a favorite for our tech-savvy students.
-                        </p>
-                        <span class="reviewer-name">Hari Krishnan AS</span>
+                <div class="swiper swiper-testimonials">
+                    <div class="swiper-wrapper">
+                        <!-- Review 1 -->
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="reviewer-profile">
+                                    <img src="{% static 'images/profile.png' %}" alt="Hari Krishnan AS">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Hari Krishnan AS</h4>
+                                </div>
+                                <p class="review-content">
+                                    "The i-Smart series is brilliantly structured. The technical depth provided in the
+                                    chapters
+                                    on advanced computing is unmatched, making it a favorite for our tech-savvy
+                                    students."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="reviewer-profile">
+                                    <img src="{% static 'images/profile.png' %}" alt="Raji KMW">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Raji KMW</h4>
+                                </div>
+                                <p class="review-content">
+                                    "i-Bot has completely transformed how our students perceive robotics. The engagement
+                                    levels
+                                    are through the roof, and the hands-on approach is exactly what modern education
+                                    needs."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="reviewer-profile">
+                                    <img src="{% static 'images/profile.png' %}" alt="Rohit Valecha">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Rohit Valecha</h4>
+                                </div>
+                                <p class="review-content">
+                                    "i-Whizz makes coding feel like play. The way it breaks down complex programming
+                                    logic into
+                                    accessible, fun activities is incredible and highly rewarding."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 4 -->
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="reviewer-profile">
+                                    <img src="{% static 'images/profile.png' %}" alt="Sasi Kumar Perumal">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Sasi Kumar Perumal</h4>
+                                </div>
+                                <p class="review-content">
+                                    "Young Wizard is a masterpiece for early childhood learning. It introduces
+                                    foundational
+                                    concepts with such clarity that even our youngest learners are excited about
+                                    technology."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 5 -->
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="reviewer-profile">
+                                    <img src="{% static 'images/profile.png' %}" alt="Ajeetha Selvam">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Ajeetha Selvam</h4>
+                                </div>
+                                <p class="review-content">
+                                    "The Application series bridges the gap between theory and real-world skills
+                                    perfectly. It's
+                                    refreshing to see a curriculum that focuses so heavily on practical coding
+                                    techniques."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 6 -->
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="reviewer-profile">
+                                    <img src="{% static 'images/profile.png' %}" alt="Ravi Kumar">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Ravi Kumar</h4>
+                                </div>
+                                <p class="review-content">
+                                    "The QR-linked video demonstrations are a game-changer. Students can visualize
+                                    practical
+                                    concepts instantly, which has significantly improved their conceptual
+                                    understanding."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Review 7 -->
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="reviewer-profile">
+                                    <img src="{% static 'images/profile.png' %}" alt="Rajesh">
+                                </div>
+                                <div class="reviewer-info">
+                                    <h4>Rajesh</h4>
+                                </div>
+                                <p class="review-content">
+                                    "Samsel's alignment with NEP 2020 is impeccable. The curriculum is forward-thinking
+                                    and
+                                    perfectly suited for schools looking to implement the latest educational standards."
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Review 2 -->
-                    <div class="review-card">
-                        <p class="review-content">
-                            i-Bot has completely transformed how our students perceive robotics. The engagement levels
-                            are through the roof, and the hands-on approach is exactly what modern education needs.
-                        </p>
-                        <span class="reviewer-name">Raji KMW</span>
-                    </div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
 
-                    <!-- Review 3 -->
-                    <div class="review-card">
-                        <p class="review-content">
-                            i-Whizz makes coding feel like play. The way it breaks down complex programming logic into
-                            accessible, fun activities is incredible and highly rewarding.
-                        </p>
-                        <span class="reviewer-name">Rohit Valecha</span>
-                    </div>
-
-                    <!-- Review 4 -->
-                    <div class="review-card">
-                        <p class="review-content">
-                            Young Wizard is a masterpiece for early childhood learning. It introduces foundational
-                            concepts with such clarity that even our youngest learners are excited about technology.
-                        </p>
-                        <span class="reviewer-name">Sasi Kumar Perumal</span>
-                    </div>
-
-                    <!-- Review 5 -->
-                    <div class="review-card">
-                        <p class="review-content">
-                            The Application series bridges the gap between theory and real-world skills perfectly. It's
-                            refreshing to see a curriculum that focuses so heavily on practical coding techniques.
-                        </p>
-                        <span class="reviewer-name">Ajeetha Selvam</span>
-                    </div>
-
-                    <!-- Review 6 -->
-                    <div class="review-card">
-                        <p class="review-content">
-                            The QR-linked video demonstrations are a game-changer. Students can visualize practical
-                            concepts instantly, which has significantly improved their conceptual understanding.
-                        </p>
-                        <span class="reviewer-name">Ravi Kumar</span>
-                    </div>
-
-                    <!-- Review 7 -->
-                    <div class="review-card">
-                        <p class="review-content">
-                            Samsel's alignment with NEP 2020 is impeccable. The curriculum is forward-thinking and
-                            perfectly suited for schools looking to implement the latest educational standards.
-                        </p>
-                        <span class="reviewer-name">Rajesh</span>
-                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
@@ -459,37 +576,40 @@
                 observer.observe(counterSection);
             }
         });
+    </script>
 
-        // REVIEW BLUR INTERACTION
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- INITIALIZE SWIPER -->
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const cards = document.querySelectorAll(".review-card");
-
-            cards.forEach(card => {
-                card.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    const isActive = card.classList.contains("active");
-
-                    // Reset all
-                    cards.forEach(c => {
-                        c.classList.remove("active");
-                        c.classList.remove("blurred");
-                    });
-
-                    if (!isActive) {
-                        card.classList.add("active");
-                        cards.forEach(c => {
-                            if (c !== card) c.classList.add("blurred");
-                        });
+            const swiper = new Swiper('.swiper-testimonials', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 30,
+                loop: true,
+                grabCursor: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    320: {
+                        spaceBetween: 20
+                    },
+                    768: {
+                        spaceBetween: 30
                     }
-                });
-            });
-
-            // Clicking outside resets the blur
-            document.addEventListener("click", () => {
-                cards.forEach(c => {
-                    c.classList.remove("active");
-                    c.classList.remove("blurred");
-                });
+                }
             });
         });
     </script>
