@@ -117,8 +117,13 @@ body {
     width: 100%;
     padding: 10px 0;
     position: sticky;
-    top: 72px;
+    top: 70px;
     z-index: 999;
+    transition: top var(--transition-normal);
+}
+
+.top-navbar.scrolled {
+    top: 61px;
 }
 
 .top-menu {
@@ -467,6 +472,29 @@ body {
 }
 
 .inquiry-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: #fff;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
     color: #fff;
