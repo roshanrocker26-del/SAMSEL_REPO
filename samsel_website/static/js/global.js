@@ -2,13 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1. NAVBAR SCROLL EFFECT
     const mainHeader = document.querySelector('.main-header');
-    if (mainHeader) {
+    const topNavbar = document.querySelector('.top-navbar');
+    if (mainHeader || topNavbar) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                mainHeader.classList.add('scrolled');
-            } else {
-                mainHeader.classList.remove('scrolled');
-            }
+            const isScrolled = window.scrollY > 50;
+            if (mainHeader) mainHeader.classList.toggle('scrolled', isScrolled);
+            if (topNavbar) topNavbar.classList.toggle('scrolled', isScrolled);
         });
     }
 

@@ -554,8 +554,12 @@
 
             <!-- Subtitle -->
             <p class="hero-para">
-                SAMSEL Publications delivers curriculum-aligned, technology-forward learning resources
-                trusted by 2,500+ schools across India — from foundational coding to advanced AI.
+                We at SAMSEL excel in implementing computer literacy programs in schools, ensuring effective learning
+                across all grades and cadres.<br>
+
+                Our conceptualizations blend the latest Windows academic curriculum, covering diversified application
+                packages in line with programming languages and breaking down complexities into simplified standards.
+
             </p>
 
             <!-- CTA Buttons -->
@@ -569,11 +573,7 @@
             </div>
         </div>
 
-        <!-- Scroll Cue -->
-        <div class="hero-scroll-cue">
-            <span>Scroll</span>
-            <div class="scroll-bar"></div>
-        </div>
+
 
         <!-- Pillars moved inside Hero Section -->
         <div class="sl-pillars" id="sl-pillars">
@@ -710,242 +710,494 @@
                     style="border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
             </div>
             <div class="showcase-content" style="flex: 1;">
-                <span
-                    style="background: rgba(13,59,102,0.1); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Board
-                    Exam Ready</span>
-                <h2 style="margin-top: 1rem; font-size: 2.5rem;">Countdown is ON!</h2>
-                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
-                    Start your Personalized Practice Today!<br>
-                    <span class="brand-text">SAMSEL</span> – Your Trusted Learning Partner
+
+                <h2 style="margin-top: 1rem; font-size: 2.5rem;">Value Proposition - Built for Modern Classrooms</h2>
+                <p>
+                <h3>Simple. Structured. Effective.</h3>
                 </p>
                 <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
                     <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
-                            style="color: var(--primary);">✓</span> Curriculum-aligned questions</li>
+                            style="color: var(--primary);">✓</span>
+                        Adopt SAMSEL Content: Schools integrate our
+                        textbooks and resources into their curriculum.
+
+                    </li>
                     <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
-                            style="color: var(--primary);">✓</span> Personalized practice tests</li>
+                            style="color: var(--primary);">✓</span> Enable Digital Learning: Students access
+                        personalized practice and assessments.
+                    </li>
                     <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
-                            style="color: var(--primary);">✓</span> Instant evaluation & feedback</li>
+                            style="color: var(--primary);">✓</span> Track & Improve Performance: Teachers and students
+                        receive actionable insights for continuous improvement</li>
                 </ul>
                 <a href="{% url 'products' %}" class="btn-primary">Know More</a>
             </div>
         </div>
     </section>
 
-    <!-- OUR SERIES (Redesigned Grid) -->
-    <section class="container reveal-up">
+    <!-- PREMIUM SERIES SLIDER CSS -->
+    <style>
+        .series-slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            margin: 4rem 0;
+            overflow: hidden;
+            background: #020817;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .series-slides-container {
+            display: flex;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .series-slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            /* Push content to top */
+            justify-content: space-between;
+            padding: 80px 10% 120px;
+            /* Top padding for content, Bottom padding for button area */
+            position: relative;
+            background: radial-gradient(circle at center, #021a4d 0%, #000 100%);
+            overflow: hidden;
+            transition: background 1.5s ease;
+        }
+
+        /* Subtle background zoom on active slide */
+        .active-slide {
+            background-size: 110%;
+        }
+
+        /* Ambient Glow & Spotlight */
+        .slide-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: 1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .slide-glow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+            filter: blur(30px);
+            z-index: 2;
+        }
+
+        .slide-spotlight {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(ellipse at top, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .slide-image-wrapper {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 2rem;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.8s ease 0.2s;
+            perspective: 1000px;
+            flex: 0 0 45%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .slide-image-wrapper img {
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 60px var(--glow-color);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+
+        .slide-image-wrapper img:hover {
+            transform: translateY(-10px) rotateX(5deg) scale(1.05);
+        }
+
+        .slide-content {
+            position: static;
+            /* Allows child absolute elements to be relative to .series-slide */
+            z-index: 10;
+            max-width: 600px;
+            opacity: 0;
+            flex: 1;
+            text-align: left;
+            padding-left: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: all 0.8s ease;
+        }
+
+        .series-slide .btn-hero-primary {
+            position: relative !important;
+            margin-top: 2rem !important;
+            z-index: 50 !important;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s !important;
+            display: inline-flex !important;
+        }
+
+        .active-slide .btn-hero-primary {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .active-slide .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .active-slide .slide-image-wrapper {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+        }
+
+        .slide-tagline {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .slide-title {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide-title .accent-word {
+            color: var(--glow-color);
+            /* Overridden inline */
+            text-shadow: 0 0 20px var(--glow-color);
+        }
+
+        .slide-desc {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s ease;
+        }
+
+        .slider-arrow:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-prev {
+            left: 20px;
+        }
+
+        .arrow-next {
+            right: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .slide-title {
+                font-size: 2.5rem;
+            }
+
+            .slide-desc {
+                font-size: 1rem;
+            }
+
+            .slide-image-wrapper img {
+                max-height: 250px;
+            }
+
+            .series-slider-wrapper {
+                height: 650px;
+            }
+
+            .slider-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+
+    <!-- OUR SERIES (Premium Redesigned Slider) -->
+    <section class="container reveal-up" style="margin-top: 6rem;">
         <h2 class="section-title">Our Featured Series</h2>
-        <div class="bookshelf-grid">
-            <!-- IBOT Series -->
-            <a href="{% url 'products' %}#ibot-series" class="book-card float delay1">
-                <div class="book-inner">
-                    <div class="book-front">
+
+        <div class="series-slider-wrapper">
+            <!-- AI ORIENTED BACKGROUND -->
+            <canvas id="ai-slider-canvas"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.6;"></canvas>
+
+            <div class="series-slides-container" id="series-slider">
+                <!-- Slide 1: i-Bot -->
+                <div class="series-slide active-slide" style="--glow-color: rgba(255, 215, 0, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
                         <img src="{% static 'images/ibot6.jpg' %}" alt="i-Bot Series">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">i-Bot Series</h3>
-                        <p>Exploring the world of Robotics and Artificial Intelligence.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Innovation & Future</span>
+                        <h2 class="slide-title">i-Bot <span class="accent-word" style="color: #ffd700;">Series</span>
+                        </h2>
+                        <p class="slide-desc">Exploring the cutting-edge world of Robotics and Artificial Intelligence.
+                            Designed to spark curiosity and build future-ready skills.</p>
+                        <a href="{% url 'products' %}#ibot-series" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">i-Bot Series</h3>
-                    <span class="book-series">Robotics & AI</span>
-                </div>
-            </a>
 
-
-            <!-- ISMART Series -->
-            <a href="{% url 'products' %}#ismart-series" class="book-card float delay3">
-                <div class="book-inner">
-                    <div class="book-front">
+                <!-- Slide 2: i-Smart -->
+                <div class="series-slide" style="--glow-color: rgba(0, 150, 255, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
                         <img src="{% static 'images/low 4.png' %}" alt="i-Smart Series">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">i-Smart Series</h3>
-                        <p>Mastering the core fundamentals of Information Technology.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Core Fundamentals</span>
+                        <h2 class="slide-title">i-Smart <span class="accent-word" style="color: #0096ff;">Series</span>
+                        </h2>
+                        <p class="slide-desc">Mastering the core fundamentals of Information Technology with structured,
+                            easy-to-follow curriculum for all levels.</p>
+                        <a href="{% url 'products' %}#ismart-series" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">i-Smart Series</h3>
-                    <span class="book-series">Core IT</span>
-                </div>
-            </a>
 
-
-            <!-- IWHIZZ Series -->
-            <a href="{% url 'products' %}#iwhizz-series" class="book-card float delay2">
-                <div class="book-inner">
-                    <div class="book-front">
+                <!-- Slide 3: i-Whizz -->
+                <div class="series-slide" style="--glow-color: rgba(255, 50, 50, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
                         <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">i-Whizz Series</h3>
-                        <p>Advanced Computer Science concepts for modern learners.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Advanced Science</span>
+                        <h2 class="slide-title">i-Whizz <span class="accent-word" style="color: #ff3232;">Series</span>
+                        </h2>
+                        <p class="slide-desc">High-level Computer Science concepts simplified for modern learners.
+                            Bridging the gap between theory and practical excellence.</p>
+                        <a href="{% url 'products' %}#iwhizz-series" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">i-Whizz Series</h3>
-                    <span class="book-series">Computer Science</span>
-                </div>
-            </a>
 
+                <!-- Slide 4: Young Wizard -->
+                <div class="series-slide" style="--glow-color: rgba(150, 50, 255, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
+                        <img src="{% static 'images/young5.jpg' %}" alt="Young Wizard Series">
+                    </div>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Magical Computing</span>
+                        <h2 class="slide-title">Young Wizard <span class="accent-word"
+                                style="color: #9632ff;">Series</span></h2>
+                        <p class="slide-desc">A magical journey into the world of creative technology. Transforming
+                            complex IT tasks into fun, engaging puzzles.</p>
+                        <a href="{% url 'products' %}#young-wizard-series" class="btn-hero-primary">Know More
+                            &nbsp;→</a>
+                    </div>
+                </div>
 
-            <!-- Young Wizard Series -->
-            <a href="{% url 'products' %}#youngwizard-series" class="book-card float delay2">
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="{% static 'images/young1.jpg' %}" alt="Young Wizard Series">
+                <!-- Slide 5: Little Wizard -->
+                <div class="series-slide" style="--glow-color: rgba(0, 255, 255, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
+                        <img src="{% static 'images/Kids level 2 wrapper.jpg' %}" alt="Little Wizard Series">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">Young Wizard</h3>
-                        <p>Foundational computer skills for early budding wizards.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Early Steps</span>
+                        <h2 class="slide-title">Little Wizard <span class="accent-word"
+                                style="color: #00ffff;">Series</span></h2>
+                        <p class="slide-desc">The perfect introduction for our youngest learners. Colorful, intuitive,
+                            and designed for early cognitive growth.</p>
+                        <a href="{% url 'products' %}#little-wizard-series" class="btn-hero-primary">Know More
+                            &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">Young Wizard</h3>
-                    <span class="book-series">Early Learning</span>
-                </div>
-            </a>
 
+                <!-- Slide 6: App 2016 -->
+                <div class="series-slide" style="--glow-color: rgba(200, 200, 255, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
+                        <img src="{% static 'images/2016 word.png' %}" alt="App 2016 Series">
+                    </div>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Modern Tools</span>
+                        <h2 class="slide-title">App 2016 <span class="accent-word" style="color: #c8c8ff;">Series</span>
+                        </h2>
+                        <p class="slide-desc">Empowering students with the latest Office suite skills. Professional
+                            document creation, data analysis, and presentations.</p>
+                        <a href="{% url 'products' %}#app2016-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                    </div>
+                </div>
 
-            <!-- Little Wizard Series -->
-            <a href="{% url 'products' %}#littlewizard-series" class="book-card float delay2">
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="{% static 'images/Kids level 1 wrapper.jpg' %}" alt="Young Learners Series">
+                <!-- Slide 7: App 2007 -->
+                <div class="series-slide" style="--glow-color: rgba(0, 128, 128, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
+                        <img src="{% static 'images/App1.jpg' %}" alt="App 2007 Series">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">Little Wizard</h3>
-                        <p>Fun and interactive introduction to tech for young minds.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Classic Suite</span>
+                        <h2 class="slide-title">App 2007 <span class="accent-word" style="color: #008080;">Series</span>
+                        </h2>
+                        <p class="slide-desc">Building foundation skills in Office 2007 applications. Essential for
+                            understanding core software functionality.</p>
+                        <a href="{% url 'products' %}#app2007-series" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">Little Wizard</h3>
-                    <span class="book-series">Early Learning</span>
-                </div>
-            </a>
 
-
-            <!-- Tamil Writing Books -->
-            <a href="{% url 'products' %}#tamilwriting-books" class="book-card float delay3">
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="{% static 'images/tamil1.jpg' %}" alt="Tamil Writing Books">
-                    </div>
-                    <div class="book-back">
-                        <h3 class="book-title">Tamil Writing</h3>
-                        <p>Perfecting Tamil handwriting through guided practice.</p>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Tamil Writing Books</h3>
-                    <span class="book-series">Practice Writing</span>
-                </div>
-            </a>
-
-
-            <!-- Cursive Writing Books -->
-            <a href="{% url 'products' %}#cursive-writing-books" class="book-card float delay3">
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="{% static 'images/Level 1.jpg' %}" alt="Cursive Writing Books">
-                    </div>
-                    <div class="book-back">
-                        <h3 class="book-title">Cursive Writing</h3>
-                        <p>Elegant cursive writing skills for better penmanship.</p>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Cursive Writing Books</h3>
-                    <span class="book-series">Better Handwriting</span>
-                </div>
-            </a>
-
-            <!-- APP 2016 Series -->
-            <a href="{% url 'products' %}#app2016-series" class="book-card float delay4">
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="{% static 'images/2016 ppt.png' %}" alt="Application Series 2016">
-                    </div>
-                    <div class="book-back">
-                        <h3 class="book-title">App Series 2016</h3>
-                        <p>Comprehensive guide to Microsoft Office 2016 tools.</p>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">App Series 2016</h3>
-                    <span class="book-series">Office Productivity</span>
-                </div>
-            </a>
-
-            <!-- APP 2007 Series -->
-            <a href="{% url 'products' %}#app2007-series" class="book-card float delay4">
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="{% static 'images/App3.jpg' %}" alt="Application Series 2007">
-                    </div>
-                    <div class="book-back">
-                        <h3 class="book-title">App Series 2007</h3>
-                        <p>Learning the essentials of Office 2007 productivity.</p>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">App Series 2007</h3>
-                    <span class="book-series">Office Productivity</span>
-                </div>
-            </a>
-
-            <!-- Programming Series -->
-            <a href="{% url 'products' %}#programming-series" class="book-card float delay5">
-                <div class="book-inner">
-                    <div class="book-front">
+                <!-- Slide 8: Programming -->
+                <div class="series-slide" style="--glow-color: rgba(50, 255, 100, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
                         <img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming Series">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">Programming</h3>
-                        <p>Building strong logic and coding skills for the future.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Logic & Code</span>
+                        <h2 class="slide-title">Programming <span class="accent-word"
+                                style="color: #32ff64;">Series</span></h2>
+                        <p class="slide-desc">Building strong computational logic and coding proficiency. From basic
+                            algorithms to complex programming structures.</p>
+                        <a href="{% url 'products' %}#programming-series" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">Programming</h3>
-                    <span class="book-series">Coding & Logic</span>
+
+                <!-- Slide 9: Right-Click -->
+                <div class="series-slide" style="--glow-color: rgba(175, 255, 0, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
+                        <img src="{% static 'images/ict6.jpg' %}" alt="Right-Click Series">
+                    </div>
+                    <div class="slide-content">
+                        <span class="slide-tagline">ICT Masterclass</span>
+                        <h2 class="slide-title">Right-Click <span class="accent-word"
+                                style="color: #afff00;">Series</span></h2>
+                        <p class="slide-desc">The ultimate ICT matrix for modern education. Integrating networks and
+                            data communication into easy-to-learn modules.</p>
+                        <a href="{% url 'products' %}#right-click-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                    </div>
                 </div>
-            </a>
 
-
-            <!-- My Computer Series -->
-            <a href="{% url 'products' %}#mycomputer-series" class="book-card float delay3">
-                <div class="book-inner">
-                    <div class="book-front">
+                <!-- Slide 10: My Computer -->
+                <div class="series-slide" style="--glow-color: rgba(75, 0, 130, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
                         <img src="{% static 'images/my1.jpg' %}" alt="My Computer Series">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">My Computer</h3>
-                        <p>General knowledge and basic computer operations simplified.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">First Steps</span>
+                        <h2 class="slide-title">My Computer <span class="accent-word"
+                                style="color: #4b0082;">Series</span></h2>
+                        <p class="slide-desc">Navigating your first PC with confidence. Detailed exploration of
+                            operating systems and system maintenance.</p>
+                        <a href="{% url 'products' %}#my-computer-series" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">My Computer</h3>
-                    <span class="book-series">General Knowledge</span>
-                </div>
-            </a>
 
+                <!-- Slide 11: English Cursive -->
+                <div class="series-slide" style="--glow-color: rgba(255, 50, 150, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
+                        <img src="{% static 'images/cursive-ukg.jpg' %}" alt="Cursive Writing">
+                    </div>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Elegant Penmanship</span>
+                        <h2 class="slide-title">Cursive Writing <span class="accent-word"
+                                style="color: #ff3296;">Books</span></h2>
+                        <p class="slide-desc">Building fluid handwriting and fine motor skills. From connecting loops to
+                            professional cursive excellence.</p>
+                        <a href="{% url 'products' %}#cursive-writing-books" class="btn-hero-primary">Know More
+                            &nbsp;→</a>
+                    </div>
+                </div>
 
-            <!-- Right-Click Series -->
-            <a href="{% url 'products' %}#right-click-series" class="book-card float delay2">
-                <div class="book-inner">
-                    <div class="book-front">
-                        <img src="{% static 'images/ict8.jpg' %}" alt="Right-Click Series">
+                <!-- Slide 12: Tamil -->
+                <div class="series-slide" style="--glow-color: rgba(255, 120, 0, 0.6);">
+                    <div class="slide-spotlight"></div>
+                    <div class="slide-image-wrapper">
+                        <div class="slide-glow"></div>
+                        <img src="{% static 'images/tamil1.jpg' %}" alt="Tamil Writing">
                     </div>
-                    <div class="book-back">
-                        <h3 class="book-title">Right-Click</h3>
-                        <p>Empowering students with essential Computer Science knowledge.</p>
+                    <div class="slide-content">
+                        <span class="slide-tagline">Cultural Heritage</span>
+                        <h2 class="slide-title">Tamil Writing <span class="accent-word"
+                                style="color: #ff7800;">Books</span></h2>
+                        <p class="slide-desc">Mastering the art of Tamil penmanship. Structured practice from basic
+                            strokes to advanced artistic script styles.</p>
+                        <a href="{% url 'products' %}#tamil-writing-books" class="btn-hero-primary">Know More
+                            &nbsp;→</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">Right-Click</h3>
-                    <span class="book-series">Computer Science</span>
-                </div>
-            </a>
+            </div>
+
+            <!-- Navigation -->
+            <div class="slider-arrow arrow-prev" onclick="moveSlide(-1)">❮</div>
+            <div class="slider-arrow arrow-next" onclick="moveSlide(1)">❯</div>
         </div>
     </section>
 
@@ -957,7 +1209,7 @@
         <p
             style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 4rem; font-size: 1.25rem;">
             Empowering limitless learning without boundaries across borders. Advancing a digital-first e-learning
-            experience across South India.
+            experience across South India.<br>
             Trusted by top institutions in Tamil Nadu, Kerala, Karnataka, Andhra Pradesh, and Telangana. Our textbooks
             inspire and shape future-ready minds.
         </p>
@@ -1127,10 +1379,7 @@
                     <div class="glow"></div>
                     <div class="dot"></div>
                 </div>
-                <div class="map-point ongole" data-tooltip="Ongole, AP">
-                    <div class="glow"></div>
-                    <div class="dot"></div>
-                </div>
+
                 <div class="map-point eluru" data-tooltip="Eluru, AP">
                     <div class="glow"></div>
                     <div class="dot"></div>
@@ -1407,19 +1656,144 @@
 
     <!-- FOOTER -->
     <footer class="main-footer" style="margin-top: 8rem;">
-        <div class="footer-content">
-            <h3 class="footer-logo"><span <p class="footer-text">© 2026 <span class="brand-text">SAMSEL</span> <span
-                        class="brand-secondary">PUBLICATIONS</span>. All Rights Reserved.<br>Shaping Digital Minds since
-                    2001.
-                    </p>
-            </h3>
-            <p class="brand-text">SAMSEL</span> <span class="brand-secondary">Publications</span>
+        <div class="footer-content"
+            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <p class="footer-text" style="margin: 0;">Shaping Digital Minds since 2001.</p>
+            <p class="footer-text" style="margin: 0;">
+                &copy; 2026 <span class="brand-text">SAMSEL</span>
+                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
             </p>
+            <h3 class="footer-logo" style="margin: 0;">
+                <span class="brand-text">SAMSEL</span>
+                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
+            </h3>
         </div>
     </footer>
 
     <!-- GLOBAL JS -->
     <script src="{% static 'js/global.js' %}"></script>
+
+    <!-- AI ANIMATION BACKGROUND SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const canvas = document.getElementById('ai-slider-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const wrapper = canvas.parentElement;
+
+            let particles = [];
+            let width, height;
+
+            function initCanvas() {
+                width = wrapper.offsetWidth;
+                height = wrapper.offsetHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.size = Math.random() * 2 + 1;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+                }
+                draw() {
+                    ctx.fillStyle = 'rgba(100, 200, 255, 0.5)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function createParticles() {
+                particles = [];
+                const count = Math.floor((width * height) / 15000);
+                for (let i = 0; i < count; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 150) {
+                            ctx.strokeStyle = `rgba(100, 200, 255, ${0.2 * (1 - dist / 150)})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                connectParticles();
+                requestAnimationFrame(animate);
+            }
+
+            initCanvas();
+            createParticles();
+            animate();
+
+            window.addEventListener('resize', () => {
+                initCanvas();
+                createParticles();
+            });
+        });
+    </script>
+
+    <!-- PREMIUM SERIES SLIDER LOGIC -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.series-slide');
+        const totalSlides = slides.length;
+
+        function updateSlider() {
+            const container = document.getElementById('series-slider');
+            if (!container) return;
+
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active-slide');
+                } else {
+                    slide.classList.remove('active-slide');
+                }
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        // Auto-play
+        setInterval(() => {
+            if (document.getElementById('series-slider')) {
+                moveSlide(1);
+            }
+        }, 8000);
+    </script>
+
 
     <!-- COUNTER ANIMATION SCRIPT -->
     <script>
