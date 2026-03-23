@@ -36,4 +36,8 @@ urlpatterns = [
     path("generate-paper/", views.generate_paper, name="generate_paper"),
     path("download-paper/", download_paper_pdf, name="download_paper_pdf"),
     path('school-logout/', views.school_logout, name='school_logout'),
+
+    # Product Detail Pages
+    path('products/<slug:series_slug>/', views.series_detail, name='series_detail'),
+    path('products/<slug:series_slug>/<slug:book_slug>/', views.book_detail, name='book_detail'),
 ]

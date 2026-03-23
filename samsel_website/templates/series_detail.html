@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SAMSEL | {{ series.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+    <style>
+        :root {
+            --accent-color: #A360F3;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            overflow-x: hidden;
+        }
+
+        .details-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(rgba(163, 96, 243, 0.1), transparent);
+            position: relative;
+        }
+
+        .series-main-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            color: #111827;
+            margin-bottom: 20px;
+            view-transition-name: series-title-{{ series_slug }};
+            letter-spacing: -1px;
+        }
+
+        .series-description {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .book-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            animation: slideUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .book-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(163, 96, 243, 0.15);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .book-cover-container {
+            width: 100%;
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .book-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            view-transition-name: book-image-{{ series_slug }}-card;
+        }
+
+        .book-item:hover .book-cover {
+            transform: scale(1.1);
+        }
+
+        .book-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .book-info p {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #111827;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .back-nav:hover {
+            transform: translateX(-5px);
+            background: #111827;
+            color: white;
+        }
+
+        /* Staggered entry */
+        .book-item {
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        ::view-transition-old(series-title),
+        ::view-transition-new(series-title) {
+            animation-duration: 0.5s;
+        }
+    </style>
+    <script>
+        // Enable cross-document view transitions
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) return;
+            document.documentElement.classList.add('view-transition');
+        });
+    </script>
+</head>
+<body>
+
+    <a href="{% url 'products' %}" class="back-nav">
+        <span>←</span> Back to Products
+    </a>
+
+    <header class="details-hero">
+        <h1 class="series-main-title" style="view-transition-name: series-title;">{{ series.title }}</h1>
+        <p class="series-description">{{ series.description }}</p>
+    </header>
+
+    <main class="books-grid">
+        {% for book_slug, book in series.books.items %}
+        <a href="{% url 'book_detail' series_slug=series_slug book_slug=book_slug %}" class="book-item" style="animation-delay: {{ forloop.counter0|add:"0.1" }}s;">
+            <div class="book-cover-container">
+                <img src="{% static book.image %}" alt="{{ book.title }}" class="book-cover" style="view-transition-name: book-image-{{ series_slug }}-{{ book_slug }};">
+            </div>
+            <div class="book-info">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.desc }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </main>
+
+    <footer class="main-footer" style="background: #111827; color: white; padding: 40px 20px; text-align: center;">
+        <p>&copy; 2026 SAMSEL Publications. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.book-item').forEach(item => observer.observe(item));
+    </script>
+</body>
+</html>

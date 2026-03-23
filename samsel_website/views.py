@@ -126,6 +126,180 @@ def contact(request):
 def products(request):
     return render(request, 'products.html')
 
+# --- Product Data ---
+BOOKS_DATA = {
+    'ibot-series': {
+        'title': 'IBOT SERIES',
+        'description': 'Our cutting-edge robotics and AI curriculum for modern schools.',
+        'books': {
+            'class-1': {'title': 'IBOT Class 1', 'image': 'images/ibot1.jpg', 'desc': 'Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.'},
+            'class-2': {'title': 'IBOT Class 2', 'image': 'images/ibot2.jpg', 'desc': 'Building on basics, exploring input/output devices, and intermediate creative projects.'},
+            'class-3': {'title': 'IBOT Class 3', 'image': 'images/ibot3.jpg', 'desc': 'Understanding OS environments, word processing, and an introduction to computational thinking.'},
+            'class-4': {'title': 'IBOT Class 4', 'image': 'images/ibot4.jpg', 'desc': 'Advanced word processing, safe internet browsing, and block-based programming exercises.'},
+            'class-5': {'title': 'IBOT Class 5', 'image': 'images/ibot5.jpg', 'desc': 'Presentations, spreadsheets basics, and developing algorithms using visual coding tools.'},
+            'class-6': {'title': 'IBOT Class 6', 'image': 'images/ibot6.jpg', 'desc': 'Deep dive into robotics principles, electronics basics, and intro to Python syntax.'},
+            'class-7': {'title': 'IBOT Class 7', 'image': 'images/ibot7.jpg', 'desc': 'AI concepts, intermediate Python programming, and hardware integration projects.'},
+            'class-8': {'title': 'IBOT Class 8', 'image': 'images/ibot8.jpg', 'desc': 'Advanced robotics, IoT fundamentals, and machine learning basics.'},
+            'class-9': {'title': 'IBOT Class 9', 'image': 'images/ibot9.jpg', 'desc': 'Comprehensive IT matrix, app development, and specialized AI/ML problem solving.'},
+        }
+    },
+    'ismart-series': {
+        'title': 'ISMART SERIES',
+        'description': 'A comprehensive digital literacy program for all levels.',
+        'books': {
+            'level-1': {'title': 'ISMART Level 1', 'image': 'images/low 1 - Copy.png', 'desc': 'Foundations of smart learning and digital literacy.'},
+            'level-2': {'title': 'ISMART Level 2', 'image': 'images/low 2.png', 'desc': 'Interactive exercises building core IT competencies.'},
+            'level-3': {'title': 'ISMART Level 3', 'image': 'images/low 3.png', 'desc': 'Exploring creative software and basic problem solving.'},
+            'level-4': {'title': 'ISMART Level 4', 'image': 'images/low 4.png', 'desc': 'Introduction to connected devices and cyber safety.'},
+            'level-5': {'title': 'ISMART Level 5', 'image': 'images/low 5.png', 'desc': 'Advanced office tools and beginner coding loops.'},
+            'level-6': {'title': 'ISMART Level 6', 'image': 'images/high 6.png', 'desc': 'Structuring ideas and intermediate algorithmic logic.'},
+            'level-7': {'title': 'ISMART Level 7', 'image': 'images/high 7.png', 'desc': 'Web technologies and introductory networking.'},
+            'level-8': {'title': 'ISMART Level 8', 'image': 'images/high 8.png', 'desc': 'Data handling, analysis, and programming constructs.'},
+            'level-9': {'title': 'ISMART Level 9', 'image': 'images/high 9.png', 'desc': 'Comprehensive system design and applied technology projects.'},
+        }
+    },
+    'iwhizz-series': {
+        'title': 'I-WHIZZ SERIES',
+        'description': 'A versatile computing series focusing on practical application and logic.',
+        'books': {
+            'class-1': {'title': 'i-Whizz Class 1', 'image': 'images/iwhizz1.jpg', 'desc': 'Early steps into the world of tech and logic.'},
+            'class-2': {'title': 'i-Whizz Class 2', 'image': 'images/iwhizz2.jpg', 'desc': 'Building foundational computer operation skills.'},
+            'class-3': {'title': 'i-Whizz Class 3', 'image': 'images/iwhizz3.jpg', 'desc': 'Logical puzzles and introducing digital creativity.'},
+            'class-4': {'title': 'i-Whizz Class 4', 'image': 'images/iwhizz4.jpg', 'desc': 'Word processing and exploring the internet safely.'},
+            'class-5': {'title': 'i-Whizz Class 5', 'image': 'images/iwhizz5.jpg', 'desc': 'Presentation tools and beginning programming principles.'},
+            'class-6': {'title': 'i-Whizz Class 6', 'image': 'images/iwhizz6.jpg', 'desc': 'Deeper dive into software apps and coding techniques.'},
+            'class-7': {'title': 'i-Whizz Class 7', 'image': 'images/iwhizz7.jpg', 'desc': 'Advanced digital tools and structured logic building.'},
+            'class-8': {'title': 'i-Whizz Class 8', 'image': 'images/iwhizz8.jpg', 'desc': 'Web design basics and advanced conceptual frameworks.'},
+            'class-9': {'title': 'i-Whizz Class 9', 'image': 'images/iwhizz9.jpg', 'desc': 'Comprehensive studies in modern computing architectures.'},
+        }
+    },
+    'young-wizard-series': {
+        'title': 'YOUNG WIZARD SERIES',
+        'description': 'Magical computing foundations for young curious minds.',
+        'books': {
+            'level-1': {'title': 'Young Wizard Level 1', 'image': 'images/young1.jpg', 'desc': 'Magical introduction to computers.'},
+            'level-2': {'title': 'Young Wizard Level 2', 'image': 'images/young2.jpg', 'desc': 'Exploring creative tech tools.'},
+            'level-3': {'title': 'Young Wizard Level 3', 'image': 'images/young3.jpg', 'desc': 'Building logic through fun exercises.'},
+            'level-4': {'title': 'Young Wizard Level 4', 'image': 'images/young4.jpg', 'desc': 'Intermediate magical computing tasks.'},
+            'level-5': {'title': 'Young Wizard Level 5', 'image': 'images/young5.jpg', 'desc': 'Advanced puzzles and digital mastery.'},
+        }
+    },
+    'little-wizard-series': {
+        'title': 'LITTLE WIZARD SERIES',
+        'description': 'Early childhood computing basics for LKG and UKG.',
+        'books': {
+            'level-1': {'title': 'Little Wizard Level 1', 'image': 'images/Kids level 1 wrapper.jpg', 'desc': 'Colorful shapes and mouse control.'},
+            'level-2': {'title': 'Little Wizard Level 2', 'image': 'images/Kids level 2 wrapper.jpg', 'desc': 'Typing games and early logic.'},
+        }
+    },
+    'app2016-series': {
+        'title': 'APPLICATION SERIES 2016',
+        'description': 'Mastering modern office applications with the 2016 suite.',
+        'books': {
+            'ppt': {'title': 'PowerPoint 2016', 'image': 'images/2016 ppt.png', 'desc': 'Create stunning presentations with modern tools.'},
+            'excel': {'title': 'Excel 2016', 'image': 'images/2016 excel.png', 'desc': 'Data analysis, charting, and advanced functions.'},
+            'word': {'title': 'Word 2016', 'image': 'images/2016 word.png', 'desc': 'Professional document creation and formatting.'},
+        }
+    },
+    'app2007-series': {
+        'title': 'APPLICATION SERIES 2007',
+        'description': 'Comprehensive guide to the classic Office 2007 suite.',
+        'books': {
+            'level-1': {'title': 'App Series 2007 Level 1', 'image': 'images/App1.jpg', 'desc': 'Foundations of Office 2007 applications.'},
+            'level-2': {'title': 'App Series 2007 Level 2', 'image': 'images/App2.jpg', 'desc': 'Intermediate skills in Word and Excel formatting.'},
+            'level-3': {'title': 'App Series 2007 Level 3', 'image': 'images/App3.jpg', 'desc': 'Advanced presentations and formulas.'},
+            'level-4': {'title': 'App Series 2007 Level 4', 'image': 'images/App4.jpg', 'desc': 'Database management introduction.'},
+            'level-5': {'title': 'App Series 2007 Level 5', 'image': 'images/App5.jpg', 'desc': 'Mastering the Office 2007 suite.'},
+        }
+    },
+    'programming-series': {
+        'title': 'PROGRAMMING SERIES',
+        'description': 'Step-by-step programming curriculum from basics to advanced OOP.',
+        'books': {
+            'level-1': {'title': 'Programming Level 1', 'image': 'images/Pro1 New.jpg', 'desc': 'The fundamentals of coding and syntax.'},
+            'level-2': {'title': 'Programming Level 2', 'image': 'images/Pro2.jpg', 'desc': 'Data structures and algorithms introduction.'},
+            'level-3': {'title': 'Programming Level 3', 'image': 'images/Pro3.jpg', 'desc': 'Object-oriented concepts and design.'},
+            'level-4': {'title': 'Programming Level 4', 'image': 'images/Pro4 New.jpg', 'desc': 'Advanced applied programming techniques.'},
+        }
+    },
+    'my-computer-series': {
+        'title': 'MY COMPUTER SERIES',
+        'description': 'Foundational computer knowledge and system maintenance.',
+        'books': {
+            'level-1': {'title': 'My Computer Level 1', 'image': 'images/my1.jpg', 'desc': 'Exploring your first PC.'},
+            'level-2': {'title': 'My Computer Level 2', 'image': 'images/my2.jpg', 'desc': 'Handling files and folders safely.'},
+            'level-3': {'title': 'My Computer Level 3', 'image': 'images/my3.jpg', 'desc': 'Navigating operating systems.'},
+            'level-4': {'title': 'My Computer Level 4', 'image': 'images/my4.jpg', 'desc': 'Settings, customization, and tools.'},
+            'level-5': {'title': 'My Computer Level 5', 'image': 'images/my5.jpg', 'desc': 'System maintenance and troubleshooting.'},
+        }
+    },
+    'right-click-series': {
+        'title': 'RIGHT-CLICK SERIES (i-ICT)',
+        'description': 'Information and Communication Technology for secondary levels.',
+        'books': {
+            'level-6': {'title': 'i-ICT Level 6', 'image': 'images/ict6.jpg', 'desc': 'Information and Communication Tech basics.'},
+            'level-7': {'title': 'i-ICT Level 7', 'image': 'images/ict7.jpg', 'desc': 'Networks and data communication.'},
+            'level-8': {'title': 'i-ICT Level 8', 'image': 'images/ict8.jpg', 'desc': 'Applied IT systems in the real world.'},
+            'level-9': {'title': 'i-ICT Level 9', 'image': 'images/ict9.jpg', 'desc': 'Comprehensive technology integration.'},
+        }
+    },
+    'cursive-writing-books': {
+        'title': 'ENGLISH CURSIVE WRITING',
+        'description': 'Master the art of elegant penmanship with our structured cursive writing series.',
+        'books': {
+            'lkg': {'title': 'Cursive Writing LKG', 'image': 'images/cursive-lkg.jpg', 'desc': 'Introduction to strokes and basic patterns.'},
+            'ukg': {'title': 'Cursive Writing UKG', 'image': 'images/cursive-ukg.jpg', 'desc': 'Building letter forms and simple connections.'},
+            'level-1': {'title': 'Cursive Writing Level 1', 'image': 'images/cursive1.jpg', 'desc': 'Fluid word formation and sentence structure.'},
+            'level-2': {'title': 'Cursive Writing Level 2', 'image': 'images/cursive2.jpg', 'desc': 'Advanced penmanship and consistent spacing.'},
+            'level-3': {'title': 'Cursive Writing Level 3', 'image': 'images/cursive3.jpg', 'desc': 'Perfecting the elegant cursive script.'},
+            'level-4': {'title': 'Cursive Writing Level 4', 'image': 'images/cursive4.jpg', 'desc': 'Creative writing in professional cursive.'},
+            'level-5': {'title': 'Cursive Writing Level 5', 'image': 'images/cursive5.jpg', 'desc': 'Mastery of decorative and formal penmanship.'},
+        }
+    },
+    'tamil-writing-books': {
+        'title': 'TAMIL COPY WRITING',
+        'description': 'A beautiful journey into Tamil calligraphy and structured writing practice.',
+        'books': {
+            'level-1': {'title': 'Tamil Writing Level 1', 'image': 'images/tamil1.jpg', 'desc': 'Basic Tamil characters and stroke techniques.'},
+            'level-2': {'title': 'Tamil Writing Level 2', 'image': 'images/tamil2.jpg', 'desc': 'Building words and understanding letter structures.'},
+            'level-3': {'title': 'Tamil Writing Level 3', 'image': 'images/tamil3.jpg', 'desc': 'Intermediate word formation and sentence patterns.'},
+            'level-4': {'title': 'Tamil Writing Level 4', 'image': 'images/tamil4.jpg', 'desc': 'Enhancing writing speed and letter consistency.'},
+            'level-5': {'title': 'Tamil Writing Level 5', 'image': 'images/tamil5.jpg', 'desc': 'Advanced copy writing and literary phrases.'},
+            'level-6': {'title': 'Tamil Writing Level 6', 'image': 'images/tamil6.jpg', 'desc': 'Perfecting the flow of Tamil script.'},
+            'level-7': {'title': 'Tamil Writing Level 7', 'image': 'images/tamil7.jpg', 'desc': 'Mastery of formal Tamil calligraphy.'},
+        }
+    }
+}
+
+def series_detail(request, series_slug):
+    series = BOOKS_DATA.get(series_slug)
+    if not series:
+        return redirect('products')
+    
+    context = {
+        'series_slug': series_slug,
+        'series': series,
+    }
+    return render(request, 'series_detail.html', context)
+
+def book_detail(request, series_slug, book_slug):
+    series = BOOKS_DATA.get(series_slug)
+    if not series:
+        return redirect('products')
+    
+    book = series['books'].get(book_slug)
+    if not book:
+        return redirect('series_detail', series_slug=series_slug)
+    
+    context = {
+        'series_slug': series_slug,
+        'series': series,
+        'book_slug': book_slug,
+        'book': book,
+    }
+    return render(request, 'book_detail.html', context)
+
+
 def admin_login(request):
     if request.method == "POST":
         username = request.POST.get("username")

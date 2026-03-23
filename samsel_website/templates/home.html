@@ -629,8 +629,8 @@
 
             <!-- CTA Buttons -->
             <div class="hero-cta-row">
-                <a href="{% url 'products' %}" class="btn-hero-primary">
-                    Core Creatives &nbsp;→
+                <a href="#showcase-section" class="btn-hero-primary">
+                    Know More &nbsp;→
                 </a>
                 <a href="{% url 'about' %}" class="btn-hero-outline">
                     Our Story
@@ -767,7 +767,7 @@
 
 
     <!-- INTRODUCTION / SHOWCASE -->
-    <section class="container reveal-up delay-200">
+    <section id="showcase-section" class="container reveal-up delay-200">
         <div class="showcase-card"
             style="display: flex; gap: 4rem; align-items: center; background: var(--card-bg); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
             <div class="showcase-image" style="flex: 1;">
@@ -1056,15 +1056,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/ibot6.jpg' %}" alt="i-Bot Series">
+                        <a href="{% url 'series_detail' series_slug='ibot-series' %}">
+                            <img src="{% static 'images/ibot6.jpg' %}" alt="i-Bot Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Innovation & Future</span>
-                        <h2 class="slide-title">i-Bot <span class="accent-word" style="color: #ffd700;">Series</span>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='ibot-series' %}" style="text-decoration: none; color: inherit;">
+                                i-Bot <span class="accent-word" style="color: #ffd700;">Series</span>
+                            </a>
                         </h2>
                         <p class="slide-desc">Exploring the cutting-edge world of Robotics and Artificial Intelligence.
                             Designed to spark curiosity and build future-ready skills.</p>
-                        <a href="{% url 'products' %}#ibot-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='ibot-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1073,15 +1078,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/low 4.png' %}" alt="i-Smart Series">
+                        <a href="{% url 'series_detail' series_slug='ismart-series' %}">
+                            <img src="{% static 'images/low 4.png' %}" alt="i-Smart Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Core Fundamentals</span>
-                        <h2 class="slide-title">i-Smart <span class="accent-word" style="color: #0096ff;">Series</span>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='ismart-series' %}" style="text-decoration: none; color: inherit;">
+                                i-Smart <span class="accent-word" style="color: #0096ff;">Series</span>
+                            </a>
                         </h2>
                         <p class="slide-desc">Mastering the core fundamentals of Information Technology with structured,
                             easy-to-follow curriculum for all levels.</p>
-                        <a href="{% url 'products' %}#ismart-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='ismart-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1090,15 +1100,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
+                        <a href="{% url 'series_detail' series_slug='iwhizz-series' %}">
+                            <img src="{% static 'images/iwhizz6.jpg' %}" alt="i-Whizz Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Advanced Science</span>
-                        <h2 class="slide-title">i-Whizz <span class="accent-word" style="color: #ff3232;">Series</span>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='iwhizz-series' %}" style="text-decoration: none; color: inherit;">
+                                i-Whizz <span class="accent-word" style="color: #ff3232;">Series</span>
+                            </a>
                         </h2>
                         <p class="slide-desc">High-level Computer Science concepts simplified for modern learners.
                             Bridging the gap between theory and practical excellence.</p>
-                        <a href="{% url 'products' %}#iwhizz-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='iwhizz-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1107,16 +1122,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/young5.jpg' %}" alt="Young Wizard Series">
+                        <a href="{% url 'series_detail' series_slug='young-wizard-series' %}">
+                            <img src="{% static 'images/young5.jpg' %}" alt="Young Wizard Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Magical Computing</span>
-                        <h2 class="slide-title">Young Wizard <span class="accent-word"
-                                style="color: #9632ff;">Series</span></h2>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='young-wizard-series' %}" style="text-decoration: none; color: inherit;">
+                                Young Wizard <span class="accent-word" style="color: #9632ff;">Series</span>
+                            </a>
+                        </h2>
                         <p class="slide-desc">A magical journey into the world of creative technology. Transforming
                             complex IT tasks into fun, engaging puzzles.</p>
-                        <a href="{% url 'products' %}#young-wizard-series" class="btn-hero-primary">Know More
-                            &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='young-wizard-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1125,16 +1144,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/Kids level 2 wrapper.jpg' %}" alt="Little Wizard Series">
+                        <a href="{% url 'series_detail' series_slug='little-wizard-series' %}">
+                            <img src="{% static 'images/Kids level 2 wrapper.jpg' %}" alt="Little Wizard Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Early Steps</span>
-                        <h2 class="slide-title">Little Wizard <span class="accent-word"
-                                style="color: #00ffff;">Series</span></h2>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='little-wizard-series' %}" style="text-decoration: none; color: inherit;">
+                                Little Wizard <span class="accent-word" style="color: #00ffff;">Series</span>
+                            </a>
+                        </h2>
                         <p class="slide-desc">The perfect introduction for our youngest learners. Colorful, intuitive,
                             and designed for early cognitive growth.</p>
-                        <a href="{% url 'products' %}#little-wizard-series" class="btn-hero-primary">Know More
-                            &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='little-wizard-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1143,15 +1166,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/2016 word.png' %}" alt="App 2016 Series">
+                        <a href="{% url 'series_detail' series_slug='app2016-series' %}">
+                            <img src="{% static 'images/2016 word.png' %}" alt="App 2016 Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Modern Tools</span>
-                        <h2 class="slide-title">App 2016 <span class="accent-word" style="color: #c8c8ff;">Series</span>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='app2016-series' %}" style="text-decoration: none; color: inherit;">
+                                App 2016 <span class="accent-word" style="color: #c8c8ff;">Series</span>
+                            </a>
                         </h2>
                         <p class="slide-desc">Empowering students with the latest Office suite skills. Professional
                             document creation, data analysis, and presentations.</p>
-                        <a href="{% url 'products' %}#app2016-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='app2016-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1160,15 +1188,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/App1.jpg' %}" alt="App 2007 Series">
+                        <a href="{% url 'series_detail' series_slug='app2007-series' %}">
+                            <img src="{% static 'images/App1.jpg' %}" alt="App 2007 Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Classic Suite</span>
-                        <h2 class="slide-title">App 2007 <span class="accent-word" style="color: #008080;">Series</span>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='app2007-series' %}" style="text-decoration: none; color: inherit;">
+                                App 2007 <span class="accent-word" style="color: #008080;">Series</span>
+                            </a>
                         </h2>
                         <p class="slide-desc">Building foundation skills in Office 2007 applications. Essential for
                             understanding core software functionality.</p>
-                        <a href="{% url 'products' %}#app2007-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='app2007-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1177,15 +1210,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming Series">
+                        <a href="{% url 'series_detail' series_slug='programming-series' %}">
+                            <img src="{% static 'images/Pro1 New.jpg' %}" alt="Programming Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Logic & Code</span>
-                        <h2 class="slide-title">Programming <span class="accent-word"
-                                style="color: #32ff64;">Series</span></h2>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='programming-series' %}" style="text-decoration: none; color: inherit;">
+                                Programming <span class="accent-word" style="color: #32ff64;">Series</span>
+                            </a>
+                        </h2>
                         <p class="slide-desc">Building strong computational logic and coding proficiency. From basic
                             algorithms to complex programming structures.</p>
-                        <a href="{% url 'products' %}#programming-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='programming-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1194,15 +1232,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/ict6.jpg' %}" alt="Right-Click Series">
+                        <a href="{% url 'series_detail' series_slug='right-click-series' %}">
+                            <img src="{% static 'images/ict6.jpg' %}" alt="Right-Click Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">ICT Masterclass</span>
-                        <h2 class="slide-title">Right-Click <span class="accent-word"
-                                style="color: #afff00;">Series</span></h2>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='right-click-series' %}" style="text-decoration: none; color: inherit;">
+                                Right-Click <span class="accent-word" style="color: #afff00;">Series</span>
+                            </a>
+                        </h2>
                         <p class="slide-desc">The ultimate ICT matrix for modern education. Integrating networks and
                             data communication into easy-to-learn modules.</p>
-                        <a href="{% url 'products' %}#right-click-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='right-click-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1211,15 +1254,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/my1.jpg' %}" alt="My Computer Series">
+                        <a href="{% url 'series_detail' series_slug='my-computer-series' %}">
+                            <img src="{% static 'images/my1.jpg' %}" alt="My Computer Series">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">First Steps</span>
-                        <h2 class="slide-title">My Computer <span class="accent-word"
-                                style="color: #4b0082;">Series</span></h2>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='my-computer-series' %}" style="text-decoration: none; color: inherit;">
+                                My Computer <span class="accent-word" style="color: #4b0082;">Series</span>
+                            </a>
+                        </h2>
                         <p class="slide-desc">Navigating your first PC with confidence. Detailed exploration of
                             operating systems and system maintenance.</p>
-                        <a href="{% url 'products' %}#my-computer-series" class="btn-hero-primary">Know More &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='my-computer-series' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1228,16 +1276,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/cursive-ukg.jpg' %}" alt="Cursive Writing">
+                        <a href="{% url 'series_detail' series_slug='cursive-writing-books' %}">
+                            <img src="{% static 'images/cursive-ukg.jpg' %}" alt="Cursive Writing">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Elegant Penmanship</span>
-                        <h2 class="slide-title">Cursive Writing <span class="accent-word"
-                                style="color: #ff3296;">Books</span></h2>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='cursive-writing-books' %}" style="text-decoration: none; color: inherit;">
+                                Cursive Writing <span class="accent-word" style="color: #ff3296;">Books</span>
+                            </a>
+                        </h2>
                         <p class="slide-desc">Building fluid handwriting and fine motor skills. From connecting loops to
                             professional cursive excellence.</p>
-                        <a href="{% url 'products' %}#cursive-writing-books" class="btn-hero-primary">Know More
-                            &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='cursive-writing-books' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
 
@@ -1246,16 +1298,20 @@
                     <div class="slide-spotlight"></div>
                     <div class="slide-image-wrapper">
                         <div class="slide-glow"></div>
-                        <img src="{% static 'images/tamil1.jpg' %}" alt="Tamil Writing">
+                        <a href="{% url 'series_detail' series_slug='tamil-writing-books' %}">
+                            <img src="{% static 'images/tamil1.jpg' %}" alt="Tamil Writing">
+                        </a>
                     </div>
                     <div class="slide-content">
                         <span class="slide-tagline">Cultural Heritage</span>
-                        <h2 class="slide-title">Tamil Writing <span class="accent-word"
-                                style="color: #ff7800;">Books</span></h2>
+                        <h2 class="slide-title">
+                            <a href="{% url 'series_detail' series_slug='tamil-writing-books' %}" style="text-decoration: none; color: inherit;">
+                                Tamil Writing <span class="accent-word" style="color: #ff7800;">Books</span>
+                            </a>
+                        </h2>
                         <p class="slide-desc">Mastering the art of Tamil penmanship. Structured practice from basic
                             strokes to advanced artistic script styles.</p>
-                        <a href="{% url 'products' %}#tamil-writing-books" class="btn-hero-primary">Know More
-                            &nbsp;→</a>
+                        <a href="{% url 'series_detail' series_slug='tamil-writing-books' %}" class="btn-hero-primary">Know More &nbsp;→</a>
                     </div>
                 </div>
             </div>
