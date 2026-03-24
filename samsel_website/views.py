@@ -37,6 +37,15 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def our_story(request):
+    return render(request, 'our_story.html')
+
+def request_demo_page(request):
+    return render(request, 'request_demo.html')
+
+def reviews_page(request):
+    return render(request, 'reviews.html')
+
 from .models import School, Purchase
 
 def school_login(request):

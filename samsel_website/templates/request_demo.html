@@ -4,10 +4,62 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SAMSEL PUBLICATIONS</title>
+    <title>Request Demo | SAMSEL PUBLICATIONS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styl.css' %}">
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <style>
+        .demo-page-hero {
+            position: relative;
+            padding: 160px 20px 80px;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(22, 91, 158, 0.8) 100%),
+                url('{% static "images/landing_bg.png" %}') center/cover fixed;
+            margin-bottom: 40px;
+        }
+
+        .demo-page-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .demo-page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .demo-wrapper {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 4rem;
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 900px) {
+            .demo-wrapper {
+                flex-direction: column;
+                padding: 2.5rem;
+                gap: 2.5rem;
+            }
+            .demo-page-hero {
+                padding: 120px 20px 60px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -15,15 +67,13 @@
     <!-- MAIN HEADER -->
     <header class="main-header">
         <div class="header-container">
-            <!-- LOGO (LEFT) -->
             <div class="logo">
-                <a href="{% url 'home' %}">
+                <a href="/">
                     <span class="logo-main">SAMSEL</span>
                     <span class="logo-sub">Publications</span>
                 </a>
             </div>
 
-            <!-- BUTTON (RIGHT) -->
             <div class="header-action" style="display: flex; gap: 15px;">
                 <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
                     WHAT'S YOUR QUERY <span class="icon"></span>
@@ -35,7 +85,7 @@
         </div>
     </header>
 
-    <!-- TOP NAVBAR (Centered) -->
+    <!-- TOP NAVBAR -->
     <nav class="top-navbar">
         <ul class="top-menu">
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -175,8 +225,7 @@
                 </ul>
             </li>
             <li><a href="{% url 'reviews_page' %}">Client Testimonials</a></li>
-            <li><a href="{% url 'contact' %}" class="active">Contact Us</a></li>
-
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
             <li class="dropdown">
                 <a href="#">Login <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu">
@@ -185,92 +234,43 @@
             </li>
         </ul>
     </nav>
-    <!-- HERO -->
-    <section class="contact-hero reveal-up">
-        <h1 style="margin-top:2rem;">Contact Us</h1>
-        <p>We’re here to help you with all your publishing needs</p>
+
+    <section class="demo-page-hero">
+        <h1>Transform Your School Today</h1>
+        <p>Experience the future of digital education. Request a personalized demonstration of our curriculum and tools.</p>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section reveal-up">
-        <div class="contact-wrapper">
-            <!-- LEFT INFO -->
-            <div class="contact-info-container reveal-up delay-100">
-                <h2><span class="brand-text">SAMSEL</span> <span class="brand-secondary">Publications</span></h2>
-
-                <div class="info-card reveal-up delay-200">
-                    <div class="info-icon">📍</div>
-                    <div class="info-details">
-                        <h4>Address</h4>
-                        <p>Near, 44, Taylors Rd,<br>Telecom Quarters, Kilpauk,<br>Chennai, Tamil Nadu 600010</p>
-                    </div>
-                </div>
-
-                <div class="info-card reveal-up delay-300">
-                    <div class="info-icon">📞</div>
-                    <div class="info-details">
-                        <h4>Phone</h4>
-                        <p>044 2647 4736</p>
-                        <p>044 2645 4598</p>
-                        <p>044 4285 7186</p>
-                    </div>
-                </div>
-
-                <div class="info-card reveal-up delay-400">
-                    <div class="info-icon">✉️</div>
-                    <div class="info-details">
-                        <h4>Email</h4>
-                        <p>info@samselpublications.com</p>
-                    </div>
-                </div>
-
-                <div class="info-card reveal-up delay-500">
-                    <div class="info-icon">⏰</div>
-                    <div class="info-details">
-                        <h4>Working Hours</h4>
-                        <p>Monday – Friday<br>9:00 AM – 6:00 PM</p>
-                    </div>
-                </div>
-
-                <!-- GOOGLE MAP -->
-                <div class="map-card reveal-up delay-600">
-                    <iframe src="https://www.google.com/maps?q=44%20Taylors%20Road%20Kilpauk%20Chennai&output=embed"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- RIGHT FORM -->
-            <div class="contact-form-container reveal-up delay-300">
-                <h3>Send us a Message</h3>
-                <form class="premium-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Phone Number">
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="premium-submit-btn">Send Message</button>
+    <div class="demo-container">
+        <div class="demo-wrapper">
+            <div class="demo-content" style="flex: 1;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Request a <span class="brand-text">Demo</span></h2>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
+                    Our experts will walk you through our digital-first approach and show you how SAMSEL can redefine the learning experience in your classrooms.
+                </p>
+                <form class="demo-form" method="post" action="{% url 'request_demo' %}"
+                    style="display: flex; flex-direction: column; gap: 1.2rem;">
+                    {% csrf_token %}
+                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name" required>
+                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name" required>
+                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number" required>
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                    <textarea name="message" class="form-control" rows="4" placeholder="Your Query / Requirement" required></textarea>
+                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 1rem; padding: 15px 40px; font-size: 1.1rem;">
+                        Submit Your Details
+                    </button>
                 </form>
             </div>
+            <div class="demo-visual" style="flex: 1; text-align: center;">
+                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual" style="max-width: 350px; width: 100%; margin: auto;">
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="main-footer" style="margin-top: 8rem;">
-        <div class="footer-content"
-            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-            <p class="footer-text" style="margin: 0;">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text" style="margin: 0;">
-                &copy; 2026 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
-            </p>
-            <h3 class="footer-logo" style="margin: 0;">
-                <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
-            </h3>
-        </div>
+    <footer style="background:var(--primary); color:#fff; padding: 60px 20px; text-align:center;">
+        <p>&copy; 2024 SAMSEL PUBLICATIONS. All rights reserved.</p>
     </footer>
-    <script src="{% static 'js/global.js' %}"></script>
 
+    <script src="{% static 'js/global.js' %}"></script>
 </body>
 
 </html>

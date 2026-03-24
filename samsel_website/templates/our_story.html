@@ -4,10 +4,56 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SAMSEL PUBLICATIONS</title>
+    <title>Our Story | SAMSEL PUBLICATIONS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styl.css' %}">
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <style>
+        .story-hero {
+            position: relative;
+            padding: 160px 20px 100px;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(22, 91, 158, 0.8) 100%),
+                url('{% static "images/landing_bg.png" %}') center/cover fixed;
+            margin-bottom: 60px;
+            overflow: hidden;
+        }
+
+        .story-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--bg-main);
+            transform: skewY(-2deg);
+            z-index: 1;
+        }
+
+        .story-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .story-hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,15 +61,13 @@
     <!-- MAIN HEADER -->
     <header class="main-header">
         <div class="header-container">
-            <!-- LOGO (LEFT) -->
             <div class="logo">
-                <a href="{% url 'home' %}">
+                <a href="/">
                     <span class="logo-main">SAMSEL</span>
                     <span class="logo-sub">Publications</span>
                 </a>
             </div>
 
-            <!-- BUTTON (RIGHT) -->
             <div class="header-action" style="display: flex; gap: 15px;">
                 <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
                     WHAT'S YOUR QUERY <span class="icon"></span>
@@ -35,7 +79,7 @@
         </div>
     </header>
 
-    <!-- TOP NAVBAR (Centered) -->
+    <!-- TOP NAVBAR -->
     <nav class="top-navbar">
         <ul class="top-menu">
             <li><a href="{% url 'home' %}">Home</a></li>
@@ -175,8 +219,7 @@
                 </ul>
             </li>
             <li><a href="{% url 'reviews_page' %}">Client Testimonials</a></li>
-            <li><a href="{% url 'contact' %}" class="active">Contact Us</a></li>
-
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
             <li class="dropdown">
                 <a href="#">Login <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu">
@@ -185,92 +228,82 @@
             </li>
         </ul>
     </nav>
-    <!-- HERO -->
-    <section class="contact-hero reveal-up">
-        <h1 style="margin-top:2rem;">Contact Us</h1>
-        <p>We’re here to help you with all your publishing needs</p>
-    </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact-section reveal-up">
-        <div class="contact-wrapper">
-            <!-- LEFT INFO -->
-            <div class="contact-info-container reveal-up delay-100">
-                <h2><span class="brand-text">SAMSEL</span> <span class="brand-secondary">Publications</span></h2>
-
-                <div class="info-card reveal-up delay-200">
-                    <div class="info-icon">📍</div>
-                    <div class="info-details">
-                        <h4>Address</h4>
-                        <p>Near, 44, Taylors Rd,<br>Telecom Quarters, Kilpauk,<br>Chennai, Tamil Nadu 600010</p>
-                    </div>
-                </div>
-
-                <div class="info-card reveal-up delay-300">
-                    <div class="info-icon">📞</div>
-                    <div class="info-details">
-                        <h4>Phone</h4>
-                        <p>044 2647 4736</p>
-                        <p>044 2645 4598</p>
-                        <p>044 4285 7186</p>
-                    </div>
-                </div>
-
-                <div class="info-card reveal-up delay-400">
-                    <div class="info-icon">✉️</div>
-                    <div class="info-details">
-                        <h4>Email</h4>
-                        <p>info@samselpublications.com</p>
-                    </div>
-                </div>
-
-                <div class="info-card reveal-up delay-500">
-                    <div class="info-icon">⏰</div>
-                    <div class="info-details">
-                        <h4>Working Hours</h4>
-                        <p>Monday – Friday<br>9:00 AM – 6:00 PM</p>
-                    </div>
-                </div>
-
-                <!-- GOOGLE MAP -->
-                <div class="map-card reveal-up delay-600">
-                    <iframe src="https://www.google.com/maps?q=44%20Taylors%20Road%20Kilpauk%20Chennai&output=embed"
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- RIGHT FORM -->
-            <div class="contact-form-container reveal-up delay-300">
-                <h3>Send us a Message</h3>
-                <form class="premium-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Phone Number">
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="premium-submit-btn">Send Message</button>
-                </form>
-            </div>
+    <section class="story-hero">
+        <div class="story-hero-content">
+            <h1>Our Journey</h1>
+            <p>From a small unit in Chennai to an enterprise empowering schools nationwide. Here is the story of how we started and where we are today.</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="main-footer" style="margin-top: 8rem;">
-        <div class="footer-content"
-            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-            <p class="footer-text" style="margin: 0;">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text" style="margin: 0;">
-                &copy; 2026 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
-            </p>
-            <h3 class="footer-logo" style="margin: 0;">
-                <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
-            </h3>
+    <!-- OUR JOURNEY / TIMELINE -->
+    <section class="container" style="margin: 4rem auto 8rem;">
+        <h2 class="section-title reveal-up" style="font-size: 3rem; margin-bottom: 4rem;">Our Inception Since Start</h2>
+        <div class="timeline">
+
+            <div class="timeline-item reveal-up">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2001</div>
+                    <h3>The Beginning</h3>
+                    <p>Founded as a unit of USS Unique Software Solutions to provide high-quality IT curriculum to local schools in Chennai.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2010</div>
+                    <h3>Regional Expansion</h3>
+                    <p>Expanded our footprint across South India, reaching over 500 schools and introducing our flagship "i-Smart" series.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">2018</div>
+                    <h3>Digital Transformation</h3>
+                    <p>Introduced QR-coded interactive video lessons, integrating practical demonstrations to bridge the gap between theory and practice.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-up delay-300">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-year">Present</div>
+                    <h3>Pioneering EdTech</h3>
+                    <p>Serving 2500+ schools nationwide, constantly innovating with AI, Robotics, and NEP 2020-aligned experiential learning frameworks.</p>
+                </div>
+            </div>
+
         </div>
+    </section>
+
+    <footer style="background:var(--primary); color:#fff; padding: 60px 20px; text-align:center;">
+        <p>&copy; 2024 SAMSEL PUBLICATIONS. All rights reserved.</p>
     </footer>
-    <script src="{% static 'js/global.js' %}"></script>
 
+    <script>
+        // Basic reveal logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('sl-visible');
+                    // Add generic visible class if reveal-up uses something else
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

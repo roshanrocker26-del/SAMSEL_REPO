@@ -31,8 +31,11 @@
             </div>
 
             <!-- BUTTON (RIGHT) -->
-            <div class="header-action">
-                <a href="#demo" class="demo-btn">
+            <div class="header-action" style="display: flex; gap: 15px;">
+                <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
+                    WHAT'S YOUR QUERY <span class="icon"></span>
+                </a>
+                <a href="{% url 'request_demo_page' %}" class="demo-btn">
                     REQUEST DEMO <span class="icon"></span>
                 </a>
             </div>
@@ -45,7 +48,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li class="dropdown">
-                <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
+                <a href="{% url 'products' %}" class="active">Products <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu wide-dropdown">
                     <li>
                         <a href="{% url 'products' %}#ibot-series">i-Bot Series <span class="side-arrow">▶</span></a>
@@ -178,6 +181,7 @@
                     </li>
                 </ul>
             </li>
+            <li><a href="{% url 'reviews_page' %}">Client Testimonials</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
             <li class="dropdown">

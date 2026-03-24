@@ -4,240 +4,150 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>About Us | SAMSEL PUBLICATIONS</title>
+    <title>Success Stories | SAMSEL PUBLICATIONS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Using the global UI framework -->
     <link rel="stylesheet" href="{% static 'css/global.css' %}">
-    <link rel="stylesheet" href="{% static 'css/about.css' %}">
-    <!-- Swiper.js for premium slider -->
+    <!-- Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        /* PREMIUM TESTIMONIALS STYLES */
-        .reviews-section {
-            padding: 120px 0;
-            background: #ffffff;
+        .reviews-hero {
             position: relative;
-            overflow: hidden;
-        }
-
-        .reviews-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .reviews-header {
+            padding: 160px 20px 80px;
             text-align: center;
-            margin-bottom: 80px;
-            position: relative;
+            color: #fff;
+            background: linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(22, 91, 158, 0.8) 100%),
+                url('{% static "images/landing_bg.png" %}') center/cover fixed;
+            margin-bottom: 60px;
         }
 
-        .bg-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 8rem;
-            font-weight: 800;
-            color: rgba(13, 59, 102, 0.03);
-            /* Primary blue with low opacity */
-            white-space: nowrap;
-            z-index: 1;
-            pointer-events: none;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-        }
-
-        .reviews-header h2 {
-            position: relative;
-            z-index: 2;
+        .reviews-hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: #0d3b66;
-            /* Matching website primary deep blue */
-            margin: 0;
-            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
         }
 
-        .reviews-subtitle {
+        .reviews-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .reviews-slider-container {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
             position: relative;
-            z-index: 2;
-            color: #e91e63;
-            /* Matching brand pink/magenta */
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            display: block;
         }
 
-        /* Swiper Customization */
-        .swiper-testimonials {
-            padding: 50px 0 100px !important;
+        .swiper-reviews {
+            padding: 40px 0 80px;
         }
 
-        .swiper-slide {
-            width: 500px;
-            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0; 
-            filter: blur(15px);
-            transform: scale(0.6);
-            pointer-events: none;
-            cursor: pointer;
-        }
-
-        /* Allow pointer events for slides near the active one to enable "clicking to pop" */
-        .swiper-slide-next, .swiper-slide-prev {
-            pointer-events: auto;
-            opacity: 0.05; /* Barely visible but clickable */
-        }
-
-        .swiper-slide-active {
-            opacity: 1 !important;
-            filter: blur(0) !important;
-            transform: scale(1) !important;
-            z-index: 10;
-            pointer-events: auto;
-        }
-
-        /* Show a hint of the next/prev slides if they are near? No, user said "rest should not been seen" */
-        
-        .review-card {
-            background: #ffffff;
-            padding: 60px 50px;
-            border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            height: 100%;
+        .review-slide-content {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            border: 1px solid rgba(13, 59, 102, 0.05);
-            transition: all 0.5s ease;
-            position: relative;
+            gap: 4rem;
+            background: var(--card-bg);
+            padding: 4rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: transform 0.5s ease;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .review-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 40px;
-            font-size: 8rem;
-            font-family: serif;
-            color: rgba(13, 59, 102, 0.05);
-            line-height: 1;
+        /* Alternating Layout Styles */
+        .swiper-slide:nth-child(even) .review-slide-content {
+            flex-direction: row-reverse;
+            text-align: right;
         }
 
-        .review-stars {
-            color: #ffc107;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            letter-spacing: 3px;
-        }
-
-        .gender-icon {
-            display: none; /* Removed from old position */
-        }
-
-        .reviewer-profile {
-            width: 120px;
-            height: 120px;
+        .reviewer-circle {
+            flex: 0 0 220px;
+            height: 220px;
             border-radius: 50%;
-            margin-bottom: 25px;
+            overflow: hidden;
+            border: 8px solid #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             position: relative;
-            border: 4px solid #fff;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Ensure image stays circular */
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .reviewer-profile img {
+        .reviewer-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.6s ease;
         }
 
-        .reviewer-info h4 {
-            font-size: 1.4rem;
-            color: #0d3b66;
-            margin: 0 0 5px;
-            font-weight: 700;
+        .review-text-column {
+            flex: 1;
         }
 
-        .reviewer-info p {
-            font-size: 0.9rem;
-            color: #888;
-            margin: 0 0 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .review-content {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.7;
-            margin: 0;
+        .review-quote {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 2rem;
             font-style: italic;
+            position: relative;
         }
 
-        /* Navigation & Pagination */
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: #1a1a1a !important;
+        .review-stars {
+            color: #ffd700;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+        }
+
+        .reviewer-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        /* Swiper Navigation Customization */
+        .swiper-button-next, .swiper-button-prev {
+            width: 60px;
+            height: 60px;
             background: #fff;
-            width: 50px !important;
-            height: 50px !important;
             border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
 
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 1.2rem !important;
-            font-weight: 800;
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background: #e91e63;
-            color: #fff !important;
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: scale(1.1);
         }
 
-        .swiper-pagination-bullet {
-            width: 10px !important;
-            height: 10px !important;
-            background: #ccc !important;
-            opacity: 1 !important;
-            margin: 0 6px !important;
-            transition: all 0.3s ease;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: #e91e63 !important;
-            width: 30px !important;
-            border-radius: 5px !important;
-        }
-
-        @media (max-width: 768px) {
-            .bg-text {
-                font-size: 4rem;
+        @media (max-width: 900px) {
+            .review-slide-content {
+                flex-direction: column !important;
+                padding: 3rem 2rem;
+                text-align: center !important;
+                gap: 2rem;
             }
-
-            .reviews-header h2 {
-                font-size: 2.5rem;
+            .reviewer-circle {
+                flex: 0 0 160px;
+                height: 160px;
             }
-
-            .swiper-slide {
-                width: 300px;
-            }
-
-            .review-card {
-                padding: 40px 25px;
-            }
-
-            .review-content {
-                font-size: 1rem;
+            .review-quote {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -245,18 +155,16 @@
 
 <body>
 
-    <!-- MAIN HEADER (From global UI) -->
+    <!-- MAIN HEADER -->
     <header class="main-header">
         <div class="header-container">
-            <!-- LOGO (LEFT) -->
             <div class="logo">
-                <a href="{% url 'home' %}">
+                <a href="/">
                     <span class="logo-main">SAMSEL</span>
                     <span class="logo-sub">Publications</span>
                 </a>
             </div>
 
-            <!-- BUTTON (RIGHT) -->
             <div class="header-action" style="display: flex; gap: 15px;">
                 <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
                     WHAT'S YOUR QUERY <span class="icon"></span>
@@ -268,11 +176,11 @@
         </div>
     </header>
 
-    <!-- TOP NAVBAR (Centered) -->
+    <!-- TOP NAVBAR -->
     <nav class="top-navbar">
         <ul class="top-menu">
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'about' %}" class="active">About Us</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
             <li class="dropdown">
                 <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu wide-dropdown">
@@ -407,9 +315,8 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="{% url 'reviews_page' %}">Client Testimonials</a></li>
+            <li><a href="{% url 'reviews_page' %}" class="active">Client Testimonials</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
-
             <li class="dropdown">
                 <a href="#">Login <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu">
@@ -419,125 +326,163 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="about-hero">
-        <h1 class="about-hero-title">Who We Are</h1>
-        <p class="about-hero-subtitle">
-            SAMSEL Publications has been a unit of the USS <br>(Unique Software Solutions) entity since 2001.<br>
-            We pioneer as a leading academic e-learning enterprise, offering IT specific knowledge base for students
-            across grades,emphasizing digital excellence.
-
-        </p>
+    <section class="reviews-hero">
+        <h1>Voices of Trust</h1>
+        <p>Discover how SAMSEL is transforming computer education across India through the words of our valued partners and educators.</p>
     </section>
 
-    <!-- MAIN CONTENT -->
-    <div class="container" style="padding-top: 0;">
+    <div class="reviews-slider-container">
+        <div class="swiper swiper-reviews">
+            <div class="swiper-wrapper">
+                
+                <!-- Review 1 -->
+                <div class="swiper-slide">
+                    <div class="review-slide-content reveal-up">
+                        <div class="reviewer-circle">
+                            <img src="{% static 'images/male_pro.png' %}" alt="Hari Krishnan AS">
+                        </div>
+                        <div class="review-text-column">
+                            <div class="review-stars">★★★★☆</div>
+                            <p class="review-quote">"The i-Smart series is brilliantly structured. The technical depth provided in the chapters on advanced computing is unmatched, making it a favorite for our tech-savvy students."</p>
+                            <h4 class="reviewer-name">Hari Krishnan AS</h4>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- SECTION 1: OUR MISSION -->
-        <section class="about-split-section reveal-up">
-            <div class="about-image-wrapper">
-                <img src="{% static 'images/img5.jpg' %}" alt="Samsel Publications Office">
-            </div>
-            <div class="about-text-content">
-                <h2>Our Insightful Experiences</h2>
-                <p>
-                    We strongly believe that modern education should thrive and evolve with the latest technological
-                    advancements, guided by a practical frontier exposure towards every possible step we climb through.
-                </p>
-                <p>
-                    It’s our approachable, possible intent to bridge the gap between traditional academics and upgraded,
-                    digital-first, tech-savvy enhancements, equipping the students with the evolving tools required for
-                    their promising careers.
-                </p>
-            </div>
-        </section>
+                <!-- Review 2 -->
+                <div class="swiper-slide">
+                    <div class="review-slide-content reveal-up">
+                        <div class="reviewer-circle">
+                            <img src="{% static 'images/female_pro.png' %}" alt="Raji KMW">
+                        </div>
+                        <div class="review-text-column">
+                            <div class="review-stars">★★★★☆</div>
+                            <p class="review-quote">"i-Bot has completely transformed how our students perceive robotics. The engagement levels are through the roof, and the hands-on approach is exactly what modern education needs."</p>
+                            <h4 class="reviewer-name">Raji KMW</h4>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- SECTION 2: WHAT WE OFFER (Reverse Layout) -->
-        <section class="about-split-section reverse reveal-up delay-100">
-            <div class="about-image-wrapper">
-                <img src="{% static 'images/img3.jpg' %}" alt="Samsel Books Collection">
-            </div>
-            <div class="about-text-content">
-                <h2>What We Offer</h2>
-                <p>
-                    Our comprehensive catalogue is continually updated to reflect the latest in technology and
-                    educational standards, including NEP 2020. We offer a rich ecosystem of physical and digital
-                    learning materials.
-                </p>
-                <ul>
-                    <li><strong>50+ Titles</strong> across 12 specialized series</li>
-                    <li>Covering AI, Robotics, Cyber Security, & Coding</li>
-                    <li>QR-linked Interactive Practical Video Demonstrations</li>
-                    <li>Teacher Support Manuals & Evaluation Tools</li>
-                    <li>Strict alignment with CBSE, ICSE & State Boards</li>
-                </ul>
-            </div>
-        </section>
+                <!-- Review 3 -->
+                <div class="swiper-slide">
+                    <div class="review-slide-content reveal-up">
+                        <div class="reviewer-circle">
+                            <img src="{% static 'images/male_pro.png' %}" alt="Rohit Valecha">
+                        </div>
+                        <div class="review-text-column">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-quote">"i-Whizz makes coding feel like play. The way it breaks down complex programming logic into accessible, fun activities is incredible and highly rewarding."</p>
+                            <h4 class="reviewer-name">Rohit Valecha</h4>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Review 4 -->
+                <div class="swiper-slide">
+                    <div class="review-slide-content reveal-up">
+                        <div class="reviewer-circle">
+                            <img src="{% static 'images/male_pro.png' %}" alt="Sasi Kumar Perumal">
+                        </div>
+                        <div class="review-text-column">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-quote">"Young Wizard is a masterpiece for early childhood learning. It introduces foundational concepts with such clarity that even our youngest learners are excited about technology."</p>
+                            <h4 class="reviewer-name">Sasi Kumar Perumal</h4>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Review 5 -->
+                <div class="swiper-slide">
+                    <div class="review-slide-content reveal-up">
+                        <div class="reviewer-circle">
+                            <img src="{% static 'images/female_pro.png' %}" alt="Ajeetha Selvam">
+                        </div>
+                        <div class="review-text-column">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-quote">"The Application series bridges the gap between theory and real-world skills perfectly. It's refreshing to see a curriculum that focuses so heavily on practical coding techniques."</p>
+                            <h4 class="reviewer-name">Ajeetha Selvam</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="swiper-slide">
+                    <div class="review-slide-content reveal-up">
+                        <div class="reviewer-circle">
+                            <img src="{% static 'images/male_pro.png' %}" alt="Ravi Kumar">
+                        </div>
+                        <div class="review-text-column">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-quote">"The QR-linked video demonstrations are a game-changer. Students can visualize practical concepts instantly, which has significantly improved their conceptual understanding."</p>
+                            <h4 class="reviewer-name">Ravi Kumar</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="swiper-slide">
+                    <div class="review-slide-content reveal-up">
+                        <div class="reviewer-circle">
+                            <img src="{% static 'images/male_pro.png' %}" alt="Rajesh">
+                        </div>
+                        <div class="review-text-column">
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-quote">"Samsel's alignment with NEP 2020 is impeccable. The curriculum is forward-thinking and perfectly suited for schools looking to implement the latest educational standards."</p>
+                            <h4 class="reviewer-name">Rajesh</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="main-footer" style="margin-top: 8rem;">
-        <div class="footer-content"
-            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-            <p class="footer-text" style="margin: 0;">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text" style="margin: 0;">
-                &copy; 2026 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
-            </p>
-            <h3 class="footer-logo" style="margin: 0;">
-                <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
-            </h3>
+    <footer class="main-footer">
+        <div class="footer-content" style="text-align: center; padding: 40px 20px;">
+            <p>&copy; 2024 SAMSEL PUBLICATIONS. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- GLOBAL JS FOR SCROLL REVEAL & HEADER -->
     <script src="{% static 'js/global.js' %}"></script>
-    <script src="{% static 'js/scroll.js' %}"></script>
-
-    <!-- COUNTER ANIMATION SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const counters = document.querySelectorAll(".count");
-            const speed = 100; // The lower the slower
-
-            const startCounters = () => {
-                counters.forEach(counter => {
-                    const updateCount = () => {
-                        const target = +counter.getAttribute("data-target");
-                        const count = +counter.innerText;
-                        const inc = target / speed;
-
-                        if (count < target) {
-                            counter.innerText = Math.ceil(count + inc);
-                            setTimeout(updateCount, 20);
-                        } else {
-                            counter.innerText = target;
-                        }
-                    };
-                    updateCount();
-                });
-            };
-
-            // Intersection Observer to trigger counting when visible
-            const observer = new IntersectionObserver((entries, obs) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startCounters();
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            const counterSection = document.getElementById("counter-section");
-            if (counterSection) {
-                observer.observe(counterSection);
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper('.swiper-reviews', {
+                effect: 'creative',
+                creativeEffect: {
+                    prev: {
+                        shadow: true,
+                        translate: [0, 0, -400],
+                    },
+                    next: {
+                        translate: ['100%', 0, 0],
+                    },
+                },
+                speed: 800,
+                grabCursor: true,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                }
+            });
         });
     </script>
-
 </body>
 
 </html>
