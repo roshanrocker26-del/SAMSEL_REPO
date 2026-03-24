@@ -50,7 +50,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='School',
             fields=[
-                ('school_name', models.CharField(max_length=150)),
+                 ('school_name', models.CharField(max_length=150)),
                 ('school_id', models.CharField(max_length=50, primary_key=True, serialize=False)),
                 ('contact', models.CharField(blank=True, max_length=15, null=True)),
                 ('password_hash', models.CharField(max_length=200)),

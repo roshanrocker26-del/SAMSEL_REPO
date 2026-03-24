@@ -15,34 +15,23 @@ body {
 }
 
 /* ================= HERO SECTION ================= */
-.products-hero {
-  margin: 100px 20px 20px 20px;
-  /* Push below navbar */
-  padding: 80px 40px;
-  background: linear-gradient(135deg, #ad80d9 0%, #cbb4d4 60%, #ad80d9 100%);
-  border-radius: 30px;
+.hero-section {
+  padding: 120px 20px 60px;
   text-align: center;
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.12),
-    0 0 25px rgba(233, 30, 99, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  position: relative;
-  overflow: hidden;
-  animation: fadeIn 0.8s ease;
+  background: #ffffff;
 }
 
-.hero-title {
+.hero-tagline {
   font-size: 48px;
-  color: #4a3a55;
+  color: #1a365d; /* Dark blue as seen in screenshot */
   font-weight: 800;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-subtitle {
-  font-size: 20px;
-  color: #333;
-  max-width: 600px;
+  font-size: 18px;
+  color: #64748b;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -50,68 +39,52 @@ body {
 /* ================= PREMIUM BOOKSHELF & SHELF VISUAL ================= */
 .premium-bookshelf {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 70px 30px;
-  /* Increased row gap to accommodate the visible shelf */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 40px;
   max-width: 1200px;
   margin: 40px auto;
-  padding: 40px 20px;
+  padding: 20px;
+}
+
+.series-title {
+  text-align: center;
+  font-size: 36px;
+  color: #334155;
+  font-weight: 800;
+  margin: 60px 0 40px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.series-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #A360F3; /* Purple underline */
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
 .premium-book-card {
   perspective: 1200px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
-  padding-bottom: 12px;
-  animation: shelfEnter 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: fadeIn 0.8s ease backwards;
 }
 
 /* Entrance Animation */
-@keyframes shelfEnter {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Premium Visible Shelf */
-.premium-book-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 145%;
-  /* Shelf extends slightly beyond the book */
-  height: 16px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.1) 100%);
-  border-top: 2px solid rgba(255, 255, 255, 1);
-  border-radius: 50% / 12px;
-  /* Elliptical perspective */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), inset 0 2px 8px rgba(255, 255, 255, 0.9);
-  z-index: 1;
-}
-
-/* Under-Shelf Glow */
+/* Removed Shelf Visuals for Minimalist Look */
+.premium-book-card::after,
 .premium-book-card::before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
-  height: 25px;
-  background: radial-gradient(ellipse at center, rgba(163, 96, 243, 0.35) 0%, transparent 70%);
-  z-index: 0;
-  opacity: 0.6;
-  transition: opacity 0.5s ease;
+  display: none;
 }
 
 .premium-book-card:hover::before {

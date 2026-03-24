@@ -52,6 +52,8 @@
     margin: 0 auto;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.95);
+    text-align: justify;
+    text-align-last: center;
     animation: fadeInUp 1s ease 0.3s backwards;
 }
 
@@ -140,6 +142,38 @@
     box-shadow: var(--shadow-hover);
 }
 
+/* Feature Premium Extension */
+.feature-premium {
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    padding: 5rem 4rem;
+}
+
+.feature-premium .about-image-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.feature-premium .about-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 40px;
+    bottom: 40px;
+    background: var(--accent-light);
+    border-radius: var(--radius-lg);
+    z-index: 0;
+    opacity: 0.3;
+}
+
+.feature-premium .about-image-wrapper img {
+    position: relative;
+    z-index: 1;
+    border: 8px solid #fff;
+}
+
 .about-text-content {
     flex: 1;
 }
@@ -205,6 +239,50 @@
 .about-text-content ul li:hover::before {
     background: var(--primary);
     color: #fff;
+}
+
+/* Premium List Styles */
+.premium-list {
+    perspective: 1000px;
+}
+
+.premium-item {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal-up.is-visible .premium-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.premium-item:nth-child(1) { transition-delay: 0.1s; }
+.premium-item:nth-child(2) { transition-delay: 0.2s; }
+.premium-item:nth-child(3) { transition-delay: 0.3s; }
+.premium-item:nth-child(4) { transition-delay: 0.4s; }
+
+.premium-item strong {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-right: 5px;
+}
+
+.premium-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.premium-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 /* TIMELINE OVERRIDES (Enhancement of global timeline) */
@@ -403,5 +481,169 @@
 
     .about-hero {
         padding: 120px 20px 80px;
+    }
+}
+
+/* =========================================
+   FOCUS & APPROACH SECTIONS (Standardized)
+========================================= */
+.focus-btn-primary {
+    display: inline-block;
+    padding: 12px 35px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 59, 102, 0.2);
+}
+
+.focus-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(13, 59, 102, 0.3);
+    background: var(--accent);
+}
+
+/* =========================================
+   APPROACH SHOWCASE (Paper Planes & Slide-in)
+========================================= */
+.approach-showcase {
+    background: #fdfdfd;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.approach-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.approach-header h2 {
+    font-size: 3rem;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.approach-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.approach-card {
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    height: 100%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+}
+
+.approach-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(13, 59, 102, 0.1);
+}
+
+.approach-icon {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.approach-card p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-main);
+}
+
+/* Paper Planes Orbital Animation */
+.planes-decorator {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.paper-plane {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+}
+
+.plane-1 {
+    top: 20%;
+    left: 10%;
+    animation: planeOrbit1 15s linear infinite;
+}
+
+.plane-2 {
+    bottom: 25%;
+    right: 15%;
+    animation: planeOrbit2 20s linear infinite reverse;
+}
+
+.plane-3 {
+    top: 50%;
+    left: 80%;
+    animation: planeOrbit3 12s linear infinite;
+}
+
+@keyframes planeOrbit1 {
+    0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+@keyframes planeOrbit2 {
+    0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+@keyframes planeOrbit3 {
+    0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+/* Slide-in Animations */
+.approach-item {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.approach-item.slide-left { transform: translateX(-100px); }
+.approach-item.slide-right { transform: translateX(100px); }
+
+.approach-showcase.is-visible .approach-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.approach-showcase.is-visible .approach-item.slide-right {
+    transition-delay: 0.2s;
+}
+
+@media (max-width: 900px) {
+    .approach-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
     }
 }
