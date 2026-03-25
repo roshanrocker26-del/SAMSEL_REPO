@@ -12,68 +12,85 @@
     <style>
         .reviews-hero {
             position: relative;
-            padding: 160px 20px 80px;
+            padding: 80px 20px 40px;
             text-align: center;
-            color: #fff;
-            background: linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(22, 91, 158, 0.8) 100%),
-                url('{% static "images/landing_bg.png" %}') center/cover fixed;
-            margin-bottom: 60px;
+            color: #0d3b66;
+            background: transparent;
+            margin-bottom: 40px;
         }
+
 
         .reviews-hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             margin-bottom: 1rem;
+            color: #0d3b66;
         }
 
         .reviews-hero p {
             font-size: 1.25rem;
             max-width: 800px;
             margin: 0 auto;
-            opacity: 0.95;
-            font-weight: 300;
+            opacity: 0.8;
+            font-weight: 400;
+            color: #374151;
         }
 
-        .reviews-slider-container {
-            max-width: 1200px;
-            margin: 0 auto 100px;
+        .reviews-list-container {
+            max-width: 1000px;
+            margin: 0 auto 80px;
             padding: 0 20px;
-            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            overflow-x: hidden;
         }
 
-        .swiper-reviews {
-            padding: 40px 0 80px;
-        }
-
-        .review-slide-content {
+        .review-card-wrapper {
             display: flex;
             align-items: center;
-            gap: 4rem;
-            background: var(--card-bg);
-            padding: 4rem;
-            border-radius: 40px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            gap: 2rem;
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0, 0, 0, 0.03);
-            transition: transform 0.5s ease;
-            max-width: 1000px;
-            margin: 0 auto;
+            width: 85%;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* Alternating Layout Styles */
-        .swiper-slide:nth-child(even) .review-slide-content {
+        /* Alternate left and right */
+        .review-card-wrapper:nth-child(odd) {
+            align-self: flex-start;
+            transform: translateX(-100px);
+            border-bottom-left-radius: 60px;
+            border-top-right-radius: 60px;
+        }
+
+        .review-card-wrapper:nth-child(even) {
+            align-self: flex-end;
             flex-direction: row-reverse;
             text-align: right;
+            transform: translateX(100px);
+            border-bottom-right-radius: 60px;
+            border-top-left-radius: 60px;
+        }
+
+        .review-card-wrapper.is-visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .reviewer-circle {
-            flex: 0 0 220px;
-            height: 220px;
+            flex: 0 0 140px;
+            height: 140px;
             border-radius: 50%;
             overflow: hidden;
-            border: 8px solid #fff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 5px solid #fff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             position: relative;
-            background: var(--primary-light);
+            background: var(--primary-light, #f0f8ff);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -85,69 +102,61 @@
             object-fit: cover;
             transition: transform 0.6s ease;
         }
+        
+        .reviewer-circle:hover img {
+            transform: scale(1.1);
+        }
 
         .review-text-column {
             flex: 1;
         }
 
         .review-quote {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            color: var(--text-main);
-            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--text-main, #4b5563);
+            margin-bottom: 1.5rem;
             font-style: italic;
             position: relative;
         }
 
         .review-stars {
-            color: #ffd700;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            letter-spacing: 3px;
+            color: #fbbf24;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
         }
 
         .reviewer-name {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--primary, #0d3b66);
             margin-bottom: 0.2rem;
+            font-family: 'Playfair Display', serif;
         }
 
-        /* Swiper Navigation Customization */
-        .swiper-button-next, .swiper-button-prev {
-            width: 60px;
-            height: 60px;
-            background: #fff;
-            border-radius: 50%;
-            color: var(--primary);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .swiper-button-next:hover, .swiper-button-prev:hover {
-            background: var(--primary);
-            color: #fff;
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 900px) {
-            .review-slide-content {
+        @media (max-width: 768px) {
+            .review-card-wrapper {
                 flex-direction: column !important;
-                padding: 3rem 2rem;
                 text-align: center !important;
-                gap: 2rem;
+                width: 100%;
+                gap: 1.5rem;
+                padding: 2rem;
+                border-radius: 20px !important;
             }
             .reviewer-circle {
-                flex: 0 0 160px;
-                height: 160px;
+                flex: 0 0 120px;
+                height: 120px;
             }
             .review-quote {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+            .review-card-wrapper:nth-child(odd),
+            .review-card-wrapper:nth-child(even) {
+                transform: translateY(50px);
+            }
+            .review-card-wrapper.is-visible {
+                transform: translateY(0);
             }
         }
     </style>
@@ -328,158 +337,130 @@
 
     <section class="reviews-hero">
         <h1>Voices of Trust</h1>
-        <p>Discover how SAMSEL is transforming computer education across India through the words of our valued partners and educators.</p>
+        <p>Discover how <span class="brand-text">SAMSEL</span> is transforming computer education across India through the words of our valued partners and educators.</p>
     </section>
 
-    <div class="reviews-slider-container">
-        <div class="swiper swiper-reviews">
-            <div class="swiper-wrapper">
-                
-                <!-- Review 1 -->
-                <div class="swiper-slide">
-                    <div class="review-slide-content reveal-up">
-                        <div class="reviewer-circle">
-                            <img src="{% static 'images/male_pro.png' %}" alt="Hari Krishnan AS">
-                        </div>
-                        <div class="review-text-column">
-                            <div class="review-stars">★★★★☆</div>
-                            <p class="review-quote">"The i-Smart series is brilliantly structured. The technical depth provided in the chapters on advanced computing is unmatched, making it a favorite for our tech-savvy students."</p>
-                            <h4 class="reviewer-name">Hari Krishnan AS</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="swiper-slide">
-                    <div class="review-slide-content reveal-up">
-                        <div class="reviewer-circle">
-                            <img src="{% static 'images/female_pro.png' %}" alt="Raji KMW">
-                        </div>
-                        <div class="review-text-column">
-                            <div class="review-stars">★★★★☆</div>
-                            <p class="review-quote">"i-Bot has completely transformed how our students perceive robotics. The engagement levels are through the roof, and the hands-on approach is exactly what modern education needs."</p>
-                            <h4 class="reviewer-name">Raji KMW</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="swiper-slide">
-                    <div class="review-slide-content reveal-up">
-                        <div class="reviewer-circle">
-                            <img src="{% static 'images/male_pro.png' %}" alt="Rohit Valecha">
-                        </div>
-                        <div class="review-text-column">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-quote">"i-Whizz makes coding feel like play. The way it breaks down complex programming logic into accessible, fun activities is incredible and highly rewarding."</p>
-                            <h4 class="reviewer-name">Rohit Valecha</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 4 -->
-                <div class="swiper-slide">
-                    <div class="review-slide-content reveal-up">
-                        <div class="reviewer-circle">
-                            <img src="{% static 'images/male_pro.png' %}" alt="Sasi Kumar Perumal">
-                        </div>
-                        <div class="review-text-column">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-quote">"Young Wizard is a masterpiece for early childhood learning. It introduces foundational concepts with such clarity that even our youngest learners are excited about technology."</p>
-                            <h4 class="reviewer-name">Sasi Kumar Perumal</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 5 -->
-                <div class="swiper-slide">
-                    <div class="review-slide-content reveal-up">
-                        <div class="reviewer-circle">
-                            <img src="{% static 'images/female_pro.png' %}" alt="Ajeetha Selvam">
-                        </div>
-                        <div class="review-text-column">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-quote">"The Application series bridges the gap between theory and real-world skills perfectly. It's refreshing to see a curriculum that focuses so heavily on practical coding techniques."</p>
-                            <h4 class="reviewer-name">Ajeetha Selvam</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 6 -->
-                <div class="swiper-slide">
-                    <div class="review-slide-content reveal-up">
-                        <div class="reviewer-circle">
-                            <img src="{% static 'images/male_pro.png' %}" alt="Ravi Kumar">
-                        </div>
-                        <div class="review-text-column">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-quote">"The QR-linked video demonstrations are a game-changer. Students can visualize practical concepts instantly, which has significantly improved their conceptual understanding."</p>
-                            <h4 class="reviewer-name">Ravi Kumar</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 7 -->
-                <div class="swiper-slide">
-                    <div class="review-slide-content reveal-up">
-                        <div class="reviewer-circle">
-                            <img src="{% static 'images/male_pro.png' %}" alt="Rajesh">
-                        </div>
-                        <div class="review-text-column">
-                            <div class="review-stars">★★★★★</div>
-                            <p class="review-quote">"Samsel's alignment with NEP 2020 is impeccable. The curriculum is forward-thinking and perfectly suited for schools looking to implement the latest educational standards."</p>
-                            <h4 class="reviewer-name">Rajesh</h4>
-                        </div>
-                    </div>
-                </div>
-
+    <div class="reviews-list-container">
+        <!-- Review 1 -->
+        <div class="review-card-wrapper">
+            <div class="reviewer-circle">
+                <img src="{% static 'images/male_pro.png' %}" alt="Hari Krishnan AS">
             </div>
-            
-            <!-- Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            
-            <!-- Pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="review-text-column">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-quote">"The i-Smart series is brilliantly structured. The technical depth provided in the chapters on advanced computing is unmatched, making it a favorite for our tech-savvy students."</p>
+                <h4 class="reviewer-name">Hari Krishnan AS</h4>
+            </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card-wrapper">
+            <div class="reviewer-circle">
+                <img src="{% static 'images/female_pro.png' %}" alt="Raji KMW">
+            </div>
+            <div class="review-text-column">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-quote">"i-Bot has completely transformed how our students perceive robotics. The engagement levels are through the roof, and the hands-on approach is exactly what modern education needs."</p>
+                <h4 class="reviewer-name">Raji KMW</h4>
+            </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card-wrapper">
+            <div class="reviewer-circle">
+                <img src="{% static 'images/male_pro.png' %}" alt="Rohit Valecha">
+            </div>
+            <div class="review-text-column">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"i-Whizz makes coding feel like play. The way it breaks down complex programming logic into accessible, fun activities is incredible and highly rewarding."</p>
+                <h4 class="reviewer-name">Rohit Valecha</h4>
+            </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="review-card-wrapper">
+            <div class="reviewer-circle">
+                <img src="{% static 'images/male_pro.png' %}" alt="Sasi Kumar Perumal">
+            </div>
+            <div class="review-text-column">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"Young Wizard is a masterpiece for early childhood learning. It introduces foundational concepts with such clarity that even our youngest learners are excited about technology."</p>
+                <h4 class="reviewer-name">Sasi Kumar Perumal</h4>
+            </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="review-card-wrapper">
+            <div class="reviewer-circle">
+                <img src="{% static 'images/female_pro.png' %}" alt="Ajeetha Selvam">
+            </div>
+            <div class="review-text-column">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"The Application series bridges the gap between theory and real-world skills perfectly. It's refreshing to see a curriculum that focuses so heavily on practical coding techniques."</p>
+                <h4 class="reviewer-name">Ajeetha Selvam</h4>
+            </div>
+        </div>
+
+        <!-- Review 6 -->
+        <div class="review-card-wrapper">
+            <div class="reviewer-circle">
+                <img src="{% static 'images/male_pro.png' %}" alt="Ravi Kumar">
+            </div>
+            <div class="review-text-column">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"The QR-linked video demonstrations are a game-changer. Students can visualize practical concepts instantly, which has significantly improved their conceptual understanding."</p>
+                <h4 class="reviewer-name">Ravi Kumar</h4>
+            </div>
+        </div>
+
+        <!-- Review 7 -->
+        <div class="review-card-wrapper">
+            <div class="reviewer-circle">
+                <img src="{% static 'images/male_pro.png' %}" alt="Rajesh">
+            </div>
+            <div class="review-text-column">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote">"Samsel's alignment with NEP 2020 is impeccable. The curriculum is forward-thinking and perfectly suited for schools looking to implement the latest educational standards."</p>
+                <h4 class="reviewer-name">Rajesh</h4>
+            </div>
         </div>
     </div>
 
     <footer class="main-footer">
-        <div class="footer-content" style="text-align: center; padding: 40px 20px;">
-            <p>&copy; 2024 SAMSEL PUBLICATIONS. All rights reserved.</p>
+        <div class="footer-content">
+            <p class="footer-text">Shaping Digital Minds since 2001.</p>
+            <p class="footer-text">
+                &copy; 2026 <span class="brand-text">SAMSEL</span>
+                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
+            </p>
+            <h3 class="footer-logo">
+                <span class="brand-text">SAMSEL</span>
+                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
+            </h3>
         </div>
     </footer>
 
+
     <script src="{% static 'js/global.js' %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const swiper = new Swiper('.swiper-reviews', {
-                effect: 'creative',
-                creativeEffect: {
-                    prev: {
-                        shadow: true,
-                        translate: [0, 0, -400],
-                    },
-                    next: {
-                        translate: ['100%', 0, 0],
-                    },
-                },
-                speed: 800,
-                grabCursor: true,
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                }
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.review-card-wrapper').forEach(card => {
+                observer.observe(card);
             });
         });
     </script>

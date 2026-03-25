@@ -764,45 +764,72 @@
         })();
     </script>
 
+    <!-- VALUE PROPOSITION — ZIGZAG LAYOUT -->
+    <section id="showcase-section" class="vp-section reveal-up delay-200">
+        <div class="vp-header">
+            <h2 class="vp-title">Value Proposition - Built for Modern Classrooms</h2>
+            <p class="vp-subtitle"><strong>Simple. Structured. Effective.</strong></p>
+        </div>
 
-
-
-    <!-- INTRODUCTION / SHOWCASE -->
-    <section id="showcase-section" class="container reveal-up delay-200">
-        <div class="showcase-card"
-            style="display: flex; gap: 4rem; align-items: center; background: var(--card-bg); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
-            <div class="showcase-image" style="flex: 1;">
-                <img src="{% static 'images/img11.png' %}" alt="Student Learning"
-                    style="border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+        <!-- Row 1: Image LEFT, Text RIGHT -->
+        <div class="vp-row">
+            <div class="vp-img-wrap">
+                <img src="{% static 'images/vp_adopt.png' %}" alt="Adopt SAMSEL Content">
             </div>
-            <div class="showcase-content" style="flex: 1;">
+            <div class="vp-text-wrap">
+                <span class="vp-check">✓</span>
+                <div>
+                    <p class="vp-point"><strong>Adopt SAMSEL Content:</strong> Schools integrate our textbooks and resources into their curriculum.</p>
+                </div>
+            </div>
+        </div>
 
-                <h2 style="margin-top: 1rem; font-size: 2.5rem;">Value Proposition - Built for Modern Classrooms</h2>
-                <p>
-                <h3>Simple. Structured. Effective.</h3>
-                </p>
-                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
-                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
-                            style="color: var(--primary);">✓</span>
-                        Adopt SAMSEL Content: Schools integrate our
-                        textbooks and resources into their curriculum.
+        <!-- Row 2: Text LEFT, Image RIGHT -->
+        <div class="vp-row vp-row-reverse">
+            <div class="vp-img-wrap">
+                <img src="{% static 'images/vp_digital.png' %}" alt="Enable Digital Learning">
+            </div>
+            <div class="vp-text-wrap">
+                <span class="vp-check">✓</span>
+                <div>
+                    <p class="vp-point"><strong>Enable Digital Learning:</strong> Students access personalized practice and assessments.</p>
+                </div>
+            </div>
+        </div>
 
-                    </li>
-                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
-                            style="color: var(--primary);">✓</span> Enable Digital Learning: Students access
-                        personalized practice and assessments.
-                    </li>
-                    <li style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;"><span
-                            style="color: var(--primary);">✓</span> Track & Improve Performance: Teachers and students
-                        receive actionable insights for continuous improvement</li>
-                </ul>
-                <a href="{% url 'products' %}" class="btn-primary">Know More</a>
+        <!-- Row 3: Image LEFT, Text RIGHT -->
+        <div class="vp-row">
+            <div class="vp-img-wrap">
+                <img src="{% static 'images/vp_track.png' %}" alt="Track Performance">
+            </div>
+            <div class="vp-text-wrap">
+                <span class="vp-check">✓</span>
+                <div>
+                    <p class="vp-point"><strong>Track &amp; Improve Performance:</strong> Teachers and students receive actionable insights for continuous improvement.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <style>
+        .vp-section { max-width: 1100px; margin: 60px auto; padding: 0 24px; }
+        .vp-header { text-align: center; margin-bottom: 52px; }
+        .vp-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: #0d3b66; line-height: 1.2; margin-bottom: 12px; }
+        .vp-subtitle { font-size: 1.1rem; color: #1565a8; }
+        .vp-row { display: flex; align-items: center; gap: 52px; margin-bottom: 48px; }
+        .vp-row-reverse { flex-direction: row-reverse; }
+        .vp-img-wrap { flex: 1.1; }
+        .vp-img-wrap img { width: 100%; border-radius: 18px; box-shadow: 0 8px 30px rgba(13,59,102,0.1); object-fit: cover; max-height: 280px; }
+        .vp-text-wrap { flex: 1; display: flex; align-items: flex-start; gap: 16px; }
+        .vp-check { font-size: 1.3rem; font-weight: 800; color: #0d3b66; flex-shrink: 0; margin-top: 2px; }
+        .vp-point { font-size: 1.05rem; color: #374151; line-height: 1.7; }
+        .vp-point strong { color: #0d3b66; }
+        @media (max-width: 768px) { .vp-row, .vp-row-reverse { flex-direction: column; gap: 24px; } }
+    </style>
+
     <!-- PREMIUM SERIES SLIDER CSS -->
     <style>
+
         .series-slider-wrapper {
             position: relative;
             width: 100%;
@@ -1696,21 +1723,20 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="main-footer" style="margin-top: 8rem;">
-        <div class="footer-content"
-            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-            <p class="footer-text" style="margin: 0;">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text" style="margin: 0;">
-                @ 2026 <span class="brand-text">SAMSEL</span>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-text">Shaping Digital Minds since 2001.</p>
+            <p class="footer-text">
+                &copy; 2026 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
             </p>
-            <h3 class="footer-logo" style="margin: 0;">
+            <h3 class="footer-logo">
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
         </div>
     </footer>
+
 
     <!-- GLOBAL JS -->
     <script src="{% static 'js/global.js' %}"></script>

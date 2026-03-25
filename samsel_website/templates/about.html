@@ -80,7 +80,7 @@
         .swiper-slide {
             width: 500px;
             transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-            opacity: 0; 
+            opacity: 0;
             filter: blur(15px);
             transform: scale(0.6);
             pointer-events: none;
@@ -88,9 +88,11 @@
         }
 
         /* Allow pointer events for slides near the active one to enable "clicking to pop" */
-        .swiper-slide-next, .swiper-slide-prev {
+        .swiper-slide-next,
+        .swiper-slide-prev {
             pointer-events: auto;
-            opacity: 0.05; /* Barely visible but clickable */
+            opacity: 0.05;
+            /* Barely visible but clickable */
         }
 
         .swiper-slide-active {
@@ -102,7 +104,7 @@
         }
 
         /* Show a hint of the next/prev slides if they are near? No, user said "rest should not been seen" */
-        
+
         .review-card {
             background: #ffffff;
             padding: 60px 50px;
@@ -137,7 +139,8 @@
         }
 
         .gender-icon {
-            display: none; /* Removed from old position */
+            display: none;
+            /* Removed from old position */
         }
 
         .reviewer-profile {
@@ -148,7 +151,8 @@
             position: relative;
             border: 4px solid #fff;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Ensure image stays circular */
+            overflow: hidden;
+            /* Ensure image stays circular */
         }
 
         .reviewer-profile img {
@@ -236,11 +240,201 @@
                 padding: 40px 25px;
             }
 
+
             .review-content {
                 font-size: 1rem;
             }
         }
+
+        /* ---- WHAT SETS APART - BLOCKER STYLE ---- */
+        .samsel-apart-section {
+            padding: 60px 0 40px;
+            background: #ffffff;
+        }
+
+        .samsel-apart-inner {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .samsel-apart-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0d3b66;
+            margin-bottom: 8px;
+            position: relative;
+            padding-bottom: 14px;
+        }
+
+        .samsel-apart-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #e2b04a;
+            border-radius: 2px;
+        }
+
+        .samsel-apart-sub {
+            color: #555;
+            font-size: 1rem;
+            margin: 14px 0 28px;
+            line-height: 1.6;
+        }
+
+        .apart-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .apart-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: #f8fafc;
+            border-left: 4px solid #0d3b66;
+            border-radius: 8px;
+            padding: 16px 20px;
+            transition: background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .apart-block:hover {
+            background: #eef4ff;
+            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.08);
+        }
+
+        .apart-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: #0d3b66;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 1px;
+        }
+
+        .apart-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .apart-text strong {
+            color: #0d3b66;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .apart-text span {
+            color: #555;
+            font-size: 0.93rem;
+            line-height: 1.5;
+        }
+
+        /* ---- PREMIUM ADD-ONS CARD GRID ---- */
+        .premium-addons-section {
+            padding: 60px 40px 50px;
+            background: linear-gradient(135deg, #e8f4ff 0%, #f0f8ff 100%);
+        }
+
+        .premium-addons-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0d3b66;
+            margin-bottom: 44px;
+            letter-spacing: -0.5px;
+        }
+
+        .premium-addons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .addon-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 36px 24px 28px;
+            text-align: center;
+            box-shadow: 0 2px 14px rgba(13, 59, 102, 0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .addon-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(13, 59, 102, 0.13);
+        }
+
+        .addon-icon-wrap {
+            width: 110px;
+            height: 110px;
+            background: #deeeff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            overflow: hidden;
+            padding: 14px;
+        }
+
+        .addon-icon-wrap svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .addon-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1a6399;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .addon-divider {
+            width: 50px;
+            border: none;
+            border-top: 1.5px solid #d0dff0;
+            margin: 14px auto 12px;
+        }
+
+        .addon-desc {
+            font-size: 0.87rem;
+            color: #6b7280;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .premium-addons-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .premium-addons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
+
+
 </head>
 
 <body>
@@ -291,7 +485,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#ismart-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#ismart-level-2">Level 2</a></li>
@@ -305,7 +500,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#iwhizz-class-1">Class 1</a></li>
                             <li><a href="{% url 'products' %}#iwhizz-class-2">Class 2</a></li>
@@ -319,7 +515,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#young-wizard-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#young-wizard-2">Level 2</a></li>
@@ -329,14 +526,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#little-wizard-series">Little Wizard <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#little-wizard-series">Little Wizard <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#little-wizard-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#little-wizard-2">Level 2</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#app2016-ppt">PowerPoint</a></li>
                             <li><a href="{% url 'products' %}#app2016-excel">Excel</a></li>
@@ -344,7 +543,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#app2007-series">Application 2007 <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#app2007-series">Application 2007 <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#app2007-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#app2007-level-2">Level 2</a></li>
@@ -354,7 +554,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#programming-series">Programming Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#programming-series">Programming Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#programming-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#programming-level-2">Level 2</a></li>
@@ -363,7 +564,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#my-computer-series">My Computer <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#my-computer-series">My Computer <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#mycomputer-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#mycomputer-level-2">Level 2</a></li>
@@ -373,7 +575,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#right-click-series">Right-Click <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#right-click-series">Right-Click <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#ict-level-6">Level 6</a></li>
                             <li><a href="{% url 'products' %}#ict-level-7">Level 7</a></li>
@@ -382,7 +585,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#cursive-writing-books">English Cursive Writing <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#cursive-writing-books">English Cursive Writing <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#cursive-lkg">LKG</a></li>
                             <li><a href="{% url 'products' %}#cursive-ukg">UKG</a></li>
@@ -394,7 +598,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#tamil-writing-books">Tamil Copy Writing <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#tamil-writing-books">Tamil Copy Writing <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#tamil-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#tamil-level-2">Level 2</a></li>
@@ -423,7 +628,9 @@
     <section class="about-hero">
         <h1 class="about-hero-title">Who We Are</h1>
         <p class="about-hero-subtitle">
-            SAMSEL Publications has been a unit of the USS (Unique Software Solutions) entity since 2001. We pioneer as a leading academic e-learning enterprise, offering IT specific knowledge base for students across grades, emphasizing digital excellence.
+            <span class="brand-text">SAMSEL</span> <span class="brand-secondary">Publications</span> has been a unit of the USS (Unique Software Solutions) entity since 2001. We pioneer as
+            a leading academic e-learning enterprise, offering IT specific knowledge base for students across grades,
+            emphasizing digital excellence.
         </p>
     </section>
 
@@ -433,10 +640,10 @@
         <!-- SECTION 1: OUR MISSION -->
         <section class="about-split-section reveal-up">
             <div class="about-image-wrapper">
-                <img src="{% static 'images/img5.jpg' %}" alt="Samsel Publications Office">
+                <img src="{% static 'images/INSIG.jpeg' %}" alt="Samsel Publications Office">
             </div>
             <div class="about-text-content">
-                <h2>Our Insightful Experiences</h2>
+                <h2 style="position: relative; border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 8px;">Our Insightful Experiences</h2>
                 <p>
                     We strongly believe that modern education should thrive and evolve with the latest technological
                     advancements, guided by a practical frontier exposure towards every possible step we climb through.
@@ -449,65 +656,173 @@
             </div>
         </section>
 
-        <!-- SECTION 2: WHAT WE OFFER (Reverse Layout) -->
-        <section class="about-split-section reverse reveal-up delay-100">
-            <div class="about-image-wrapper">
-                <img src="{% static 'images/img3.jpg' %}" alt="Samsel Books Collection">
-            </div>
-            <div class="about-text-content">
-                <h2>Our Premium Add-Ons
-                </h2>
 
-                <ul>
-                    <li> Curriculum-oriented worksheets</li>
-                    <li>Interactive user engagements through book-back practice exercises for primary grades</li>
-                    <li>Enhanced online examination software applications</li>
-                    <li>Voice-enabled e-book software with video support</li>
-                    <li>Terminal question papers</li>
-                    <li>Teacher's key book</li>
-                </ul>
+        <!-- SECTION 2: OUR PREMIUM ADD-ONS (Card Grid) -->
+        <section class="premium-addons-section reveal-up">
+            <h2 class="premium-addons-title" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; left: 50%; transform: translateX(-50%); border-bottom: 4px solid var(--accent); width: fit-content; padding-bottom: 8px;">Our Premium Add-Ons</h2>
+            <div class="premium-addons-grid">
+
+                <!-- Card 1 -->
+                <div class="addon-card">
+                    <div class="addon-icon-wrap">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18" y="10" width="36" height="46" rx="4" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
+                            <line x1="26" y1="22" x2="46" y2="22" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="26" y1="30" x2="46" y2="30" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="26" y1="38" x2="38" y2="38" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="54" cy="52" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"/>
+                            <line x1="50" y1="52" x2="58" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="54" y1="48" x2="54" y2="56" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Curriculum-oriented<br>worksheets</h3>
+                    <hr class="addon-divider">
+                    <p class="addon-desc">Interactive user engagements through book-back practice exercises for primary grades</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="addon-card">
+                    <div class="addon-icon-wrap">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="14" width="46" height="36" rx="5" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
+                            <rect x="20" y="22" width="22" height="14" rx="2" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+                            <rect x="22" y="24" width="10" height="4" rx="1" fill="#fbbf24"/>
+                            <rect x="22" y="30" width="14" height="2" rx="1" fill="#93c5fd"/>
+                            <path d="M48 30 Q60 28 58 42 Q56 50 48 52" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <circle cx="56" cy="46" r="4" fill="#f97316" opacity="0.8"/>
+                            <path d="M54 46 L56 48 L59 43" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Interactive user<br>engagements</h3>
+                    <hr class="addon-divider">
+                    <p class="addon-desc">Through book-back practice exercises for primary grades</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="addon-card">
+                    <div class="addon-icon-wrap">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="14" y="34" width="38" height="24" rx="3" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
+                            <line x1="33" y1="58" x2="33" y2="64" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+                            <line x1="26" y1="64" x2="40" y2="64" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+                            <rect x="20" y="39" width="26" height="14" rx="2" fill="white"/>
+                            <circle cx="50" cy="28" r="13" fill="#1e3a5f"/>
+                            <path d="M44 28 L48 22 L56 28 L48 34 Z" fill="#fbbf24"/>
+                            <circle cx="63" cy="38" r="8" fill="white" stroke="#3b82f6" stroke-width="2"/>
+                            <path d="M60 38 L62 40 L66 35" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Enhanced online<br>examination</h3>
+                    <hr class="addon-divider">
+                    <p class="addon-desc">Software applications</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="addon-card">
+                    <div class="addon-icon-wrap">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 24 Q20 12 40 12 Q60 12 60 24 L60 60 Q60 66 54 66 L26 66 Q20 66 20 60 Z" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
+                            <path d="M20 24 Q40 30 60 24" stroke="#3b82f6" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="48" r="8" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+                            <polygon points="27,44 27,52 35,48" fill="#3b82f6"/>
+                            <circle cx="56" cy="18" r="7" fill="#f97316"/>
+                            <path d="M53 18 L55 20 L59 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Voice-enabled<br>e-book</h3>
+                    <hr class="addon-divider">
+                    <p class="addon-desc">Software with video support</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="addon-card">
+                    <div class="addon-icon-wrap">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="16" y="10" width="40" height="54" rx="4" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
+                            <line x1="24" y1="24" x2="48" y2="24" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="24" y1="32" x2="48" y2="32" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="22" y="40" width="8" height="8" rx="1" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+                            <path d="M24 44 L25.5 45.5 L28 43" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="34" y1="44" x2="46" y2="44" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="22" y="52" width="8" height="5" rx="1" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
+                            <line x1="34" y1="54" x2="42" y2="54" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="56" cy="18" r="9" fill="#fbbf24"/>
+                            <text x="52" y="22" fill="white" font-size="10" font-weight="bold">?</text>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Terminal<br>question papers</h3>
+                    <hr class="addon-divider">
+                    <p class="addon-desc"></p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="addon-card">
+                    <div class="addon-icon-wrap">
+                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="16" y="12" width="40" height="56" rx="5" fill="#1e3a5f"/>
+                            <rect x="20" y="16" width="32" height="48" rx="3" fill="#2563eb"/>
+                            <circle cx="36" cy="36" r="10" fill="#fbbf24"/>
+                            <circle cx="33" cy="33" r="3" fill="#1e3a5f"/>
+                            <circle cx="39" cy="33" r="3" fill="#1e3a5f"/>
+                            <path d="M31 40 Q36 44 41 40" stroke="#1e3a5f" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="32" y="50" width="8" height="8" rx="1" fill="#fbbf24"/>
+                            <line x1="36" y1="50" x2="36" y2="58" stroke="#1e3a5f" stroke-width="1"/>
+                            <path d="M14 52 Q16 66 20 64" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="addon-title">Teacher's<br>key book</h3>
+                    <hr class="addon-divider">
+                    <p class="addon-desc"></p>
+                </div>
+
             </div>
         </section>
 
-        <!-- SECTION 3: WHAT SETS APART SAMSEL FROM THE REST -->
-        <section class="about-split-section feature-premium reveal-up">
-            <div class="about-image-wrapper">
-                <img src="{% static 'images/banner7.jpg.jpeg' %}" alt="Samsel Publications Premium Feature">
-            </div>
-            <div class="about-text-content">
-                <h2>What Sets Apart SAMSEL From The Rest</h2>
-                <p>SAMSEL helps students prepare effectively for board exams through structured practice and instant insights.</p>
 
-                <ul class="premium-list">
-                    <li class="premium-item">
-                        <div class="premium-content">
-                            <strong>Curriculum-Aligned Questions:</strong> 
+
+
+        <!-- SECTION 3: WHAT SETS APART SAMSEL FROM THE REST -->
+        <section class="samsel-apart-section reveal-up">
+            <div class="samsel-apart-inner">
+                <h2 class="samsel-apart-title" style="position: relative; border-bottom: 4px solid var(--accent); display: inline-block; left: 50%; transform: translateX(-50%); padding-bottom: 8px;">What Sets Apart <span class="brand-text">SAMSEL</span> From The Rest</h2>
+                <p class="samsel-apart-sub"><span class="brand-text">SAMSEL</span> helps students prepare effectively for board exams through structured
+                    practice and instant insights.</p>
+
+                <div class="apart-blocks">
+                    <div class="apart-block">
+                        <span class="apart-icon">✓</span>
+                        <div class="apart-text">
+                            <strong>Curriculum-Aligned Questions:</strong>
                             <span>Practice questions carefully mapped to the latest board syllabus.</span>
                         </div>
-                    </li>
-                    <li class="premium-item">
-                        <div class="premium-content">
-                            <strong>Personalized Practice Tests:</strong> 
-                            <span>Adaptive tests that focus on each student’s strengths and improvement areas.</span>
+                    </div>
+                    <div class="apart-block">
+                        <span class="apart-icon">✓</span>
+                        <div class="apart-text">
+                            <strong>Personalized Practice Tests:</strong>
+                            <span>Adaptive tests that focus on each student's strengths and improvement areas.</span>
                         </div>
-                    </li>
-                    <li class="premium-item">
-                        <div class="premium-content">
-                            <strong>Instant Evaluation & Feedback:</strong> 
+                    </div>
+                    <div class="apart-block">
+                        <span class="apart-icon">✓</span>
+                        <div class="apart-text">
+                            <strong>Instant Evaluation &amp; Feedback:</strong>
                             <span>Get immediate results with insights to improve performance.</span>
                         </div>
-                    </li>
-                    <li class="premium-item">
-                        <div class="premium-content">
-                            <strong>Smart Performance Tracking:</strong> 
+                    </div>
+                    <div class="apart-block">
+                        <span class="apart-icon">✓</span>
+                        <div class="apart-text">
+                            <strong>Smart Performance Tracking:</strong>
                             <span>Monitor progress and identify areas that need attention.</span>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- SECTION 4: BUILT FOR STUDENTS, TRUSTED BY EDUCATORS -->
+
         <section class="approach-showcase reveal-up">
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="approach-header">
@@ -518,8 +833,8 @@
                         <div class="approach-card">
                             <div class="approach-icon">🎓</div>
                             <p>
-                                SAMSEL combines expert-designed academic content with digital-first learning tools, 
-                                enabling students to practice <strong>anytime, anywhere</strong>, 
+                                <span class="brand-text">SAMSEL</span> combines expert-designed academic content with digital-first learning tools,
+                                enabling students to practice <strong>anytime, anywhere</strong>,
                                 while teachers gain sensibilities of meaningfulness over student performance.
                             </p>
                         </div>
@@ -528,8 +843,10 @@
                         <div class="approach-card">
                             <div class="approach-icon">💡</div>
                             <p>
-                                Our LMS platform supports students in building <strong>confidence, accuracy, and exam readiness</strong>. 
-                                Do not wait until the last minute. Join thousands of students preparing smarter with SAMSEL.
+                                Our LMS platform supports students in building <strong>confidence, accuracy, and exam
+                                    readiness</strong>.
+                                Do not wait until the last minute. Join thousands of students preparing smarter with
+                                SAMSEL.
                             </p>
                         </div>
                     </div>
@@ -538,7 +855,8 @@
         </section>
 
         <!-- SECTION 5: OUR RESULT-DRIVEN APPROACH -->
-        <section class="approach-showcase reveal-up" style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.05);">
+        <section class="approach-showcase reveal-up"
+            style="background: #ffffff; border-top: 1px solid rgba(0,0,0,0.05);">
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="approach-header">
                     <h2>Our Result-Driven Approach</h2>
@@ -547,13 +865,17 @@
                     <div class="approach-item slide-left">
                         <div class="approach-card">
                             <div class="approach-icon">🎯</div>
-                            <p>Our greatness stems from a <strong>systematically designed curriculum</strong> spanning over academic experience, thereby assessing students’ cognitive learning capabilities across diversified grades.</p>
+                            <p>Our greatness stems from a <strong>systematically designed curriculum</strong> spanning
+                                over academic experience, thereby assessing students’ cognitive learning capabilities
+                                across diversified grades.</p>
                         </div>
                     </div>
                     <div class="approach-item slide-right">
                         <div class="approach-card">
                             <div class="approach-icon">✨</div>
-                            <p>Backed by a <strong>committed, expert, and innovative team</strong> of faculty and editorial board members, we deliver high-quality academic excellence over decades of continued service.</p>
+                            <p>Backed by a <strong>committed, expert, and innovative team</strong> of faculty and
+                                editorial board members, we deliver high-quality academic excellence over decades of
+                                continued service.</p>
                         </div>
                     </div>
                 </div>
@@ -562,21 +884,20 @@
 
     </div>
 
-    <!-- FOOTER -->
-    <footer class="main-footer" style="margin-top: 8rem;">
-        <div class="footer-content"
-            style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-            <p class="footer-text" style="margin: 0;">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text" style="margin: 0;">
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="footer-text">Shaping Digital Minds since 2001.</p>
+            <p class="footer-text">
                 &copy; 2026 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
             </p>
-            <h3 class="footer-logo" style="margin: 0;">
+            <h3 class="footer-logo">
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
         </div>
     </footer>
+
 
     <!-- GLOBAL JS FOR SCROLL REVEAL & HEADER -->
     <script src="{% static 'js/global.js' %}"></script>

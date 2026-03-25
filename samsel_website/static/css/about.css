@@ -4,16 +4,18 @@
 
 .about-hero {
     position: relative;
-    padding: 140px 20px 100px;
+    padding: 90px 20px 80px;
     text-align: center;
     color: #fff;
-    background: linear-gradient(135deg, rgba(13, 59, 102, 0.85) 0%, rgba(22, 91, 158, 0.85) 100%),
+    background: linear-gradient(150deg, #0d3b66 0%, #1565a8 60%, #1a7bbf 100%),
         url('../images/image10.png') center/cover fixed;
-    border-radius: 0 0 40px 40px;
+    background-blend-mode: multiply;
+    border-radius: 0 0 32px 32px;
     margin-bottom: 60px;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 32px rgba(13, 59, 102, 0.18);
     overflow: hidden;
 }
+
 
 .about-hero::after {
     content: '';
@@ -34,28 +36,30 @@
 
 .about-hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 5.5rem;
+    font-size: 3.8rem;
     font-weight: 800;
     color: #ffffff;
-    background: linear-gradient(to right, #ffffff 0%, #ffd700 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
-    animation: fadeInDown 1s ease;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+    animation: fadeInDown 0.9s ease;
+    position: relative;
+    display: inline-block;
 }
 
+
 .about-hero-subtitle {
-    font-size: 1.6rem;
-    max-width: 800px;
-    margin: 0 auto;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.95);
-    text-align: justify;
-    text-align-last: center;
-    animation: fadeInUp 1s ease 0.3s backwards;
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin: 18px auto 0;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.75;
+    text-align: center;
+    letter-spacing: 0.01em;
+    animation: fadeInUp 0.9s ease 0.25s backwards;
 }
+
 
 @keyframes fadeInDown {
     from {
@@ -183,17 +187,6 @@
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
-}
-
-.about-text-content h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 50%;
-    height: 3px;
-    background: var(--accent);
-    border-radius: 2px;
 }
 
 .about-text-content p {
@@ -472,17 +465,18 @@
     }
 
     .about-hero-title {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
 
     .about-hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .about-hero {
-        padding: 120px 20px 80px;
+        padding: 80px 20px 60px;
     }
 }
+
 
 /* =========================================
    FOCUS & APPROACH SECTIONS (Standardized)
@@ -525,18 +519,6 @@
     color: var(--primary);
     position: relative;
     display: inline-block;
-}
-
-.approach-header h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 2px;
 }
 
 .approach-grid {
