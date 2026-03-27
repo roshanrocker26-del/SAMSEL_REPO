@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>SAMSEL | {{ book.title }}</title>
@@ -11,6 +12,7 @@
         @view-transition {
             navigation: auto;
         }
+
         :root {
             --accent-color: #A360F3;
             --secondary-color: #4F46E5;
@@ -43,6 +45,7 @@
             width: 100%;
             border-radius: 20px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
             view-transition-name: book-image-{{ series_slug }}-{{ book_slug }};
             transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -56,8 +59,15 @@
         }
 
         @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .series-tag {
@@ -95,7 +105,7 @@
             background: white;
             padding: 10px 20px;
             border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             text-decoration: none;
             color: #111827;
             font-weight: 600;
@@ -114,20 +124,24 @@
                 grid-template-columns: 1fr;
                 margin-top: 80px;
             }
+
             .book-visual {
                 position: static;
                 max-width: 400px;
                 margin: 0 auto;
             }
+
             .book-title {
                 text-align: center;
             }
+
             .book-summary {
                 text-align: center;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- MAIN HEADER -->
@@ -176,7 +190,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#ismart-series">i-Smart Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#ismart-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#ismart-level-2">Level 2</a></li>
@@ -190,7 +205,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#iwhizz-series">i-Whizz Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#iwhizz-class-1">Class 1</a></li>
                             <li><a href="{% url 'products' %}#iwhizz-class-2">Class 2</a></li>
@@ -204,7 +220,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#young-wizard-series">Young Wizard <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#young-wizard-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#young-wizard-2">Level 2</a></li>
@@ -214,14 +231,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#little-wizard-series">Little Wizard <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#little-wizard-series">Little Wizard <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#little-wizard-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#little-wizard-2">Level 2</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#app2016-series">Application 2016 <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#app2016-ppt">PowerPoint</a></li>
                             <li><a href="{% url 'products' %}#app2016-excel">Excel</a></li>
@@ -229,7 +248,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#app2007-series">Application 2007 <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#app2007-series">Application 2007 <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#app2007-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#app2007-level-2">Level 2</a></li>
@@ -239,7 +259,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#programming-series">Programming Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#programming-series">Programming Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#programming-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#programming-level-2">Level 2</a></li>
@@ -248,7 +269,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#my-computer-series">My Computer <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#my-computer-series">My Computer <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#mycomputer-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#mycomputer-level-2">Level 2</a></li>
@@ -258,7 +280,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#right-click-series">Right-Click <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#right-click-series">Right-Click <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#ict-level-6">Level 6</a></li>
                             <li><a href="{% url 'products' %}#ict-level-7">Level 7</a></li>
@@ -267,7 +290,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#cursive-writing-books">English Cursive Writing <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#cursive-writing-books">English Cursive Writing <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#cursive-lkg">LKG</a></li>
                             <li><a href="{% url 'products' %}#cursive-ukg">UKG</a></li>
@@ -279,7 +303,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'products' %}#tamil-writing-books">Tamil Copy Writing <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'products' %}#tamil-writing-books">Tamil Copy Writing <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
                             <li><a href="{% url 'products' %}#tamil-level-1">Level 1</a></li>
                             <li><a href="{% url 'products' %}#tamil-level-2">Level 2</a></li>
@@ -320,9 +345,8 @@
             <h1 class="book-title">{{ book.title }}</h1>
             <p class="book-summary">
                 {{ book.desc }}
-                This comprehensive volume is designed to provide students with a robust foundation in modern technology,
-                blending theoretical knowledge with practical, hands-on activities.
-                Aligned with the latest curriculum standards, it prepares learners for the digital future.
+                <br><br>
+                {{ series.description }}
             </p>
         </div>
     </main>
@@ -342,4 +366,5 @@
     </footer>
 
 </body>
+
 </html>

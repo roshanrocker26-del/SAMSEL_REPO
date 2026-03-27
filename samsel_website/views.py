@@ -139,7 +139,7 @@ def products(request):
 BOOKS_DATA = {
     'ibot-series': {
         'title': 'IBOT SERIES',
-        'description': 'Our cutting-edge robotics and AI curriculum for modern schools.',
+        'description': "Shaping Future Innovators in AI and Robotics. A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming. Covering the latest AI and robotics syllabus, the series also introduces core programming concepts in C, C++, HTML5, and Python, building a strong technical foundation for learners. For higher classes, students explore advanced topics such as cybersecurity, emerging technologies, wireless networking, and IoT, helping them stay aligned with the evolving digital world. At the primary level, the series focuses on strengthening logical thinking through algorithms, flowcharts, and hands-on coding using ScratchJr and Scratch 3.0. With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages.",
         'books': {
             'class-1': {'title': 'IBOT Class 1', 'image': 'images/ibot1.jpg', 'desc': 'Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.'},
             'class-2': {'title': 'IBOT Class 2', 'image': 'images/ibot2.jpg', 'desc': 'Building on basics, exploring input/output devices, and intermediate creative projects.'},
@@ -154,7 +154,7 @@ BOOKS_DATA = {
     },
     'ismart-series': {
         'title': 'ISMART SERIES',
-        'description': 'A comprehensive digital literacy program for all levels.',
+        'description': "A comprehensive digital literacy program designed to bridge the gap between traditional learning and modern technology. The i-Smart series provides students with a solid foundation in essential IT skills, from basic computer operations to advanced system design and web technologies. Each level is carefully structured to build core competencies through interactive exercises, creative software exploration, and structured logic development, ensuring students are well-equipped for the digital challenges of the 21st century.",
         'books': {
             'level-1': {'title': 'ISMART Level 1', 'image': 'images/low 1 - Copy.png', 'desc': 'Foundations of smart learning and digital literacy.'},
             'level-2': {'title': 'ISMART Level 2', 'image': 'images/low 2.png', 'desc': 'Interactive exercises building core IT competencies.'},
@@ -169,7 +169,7 @@ BOOKS_DATA = {
     },
     'iwhizz-series': {
         'title': 'I-WHIZZ SERIES',
-        'description': 'A versatile computing series focusing on practical application and logic.',
+        'description': "A versatile and practical computing series that focuses on the real-world application of technology and logical thinking. The i-Whizz series empowers students to master software applications, explore the digital world safely, and develop strong analytical skills. From early steps in tech to comprehensive studies in modern computing architectures, this series provides a seamless learning path that emphasizes hands-on experience and structured logic building.",
         'books': {
             'class-1': {'title': 'i-Whizz Class 1', 'image': 'images/iwhizz1.jpg', 'desc': 'Early steps into the world of tech and logic.'},
             'class-2': {'title': 'i-Whizz Class 2', 'image': 'images/iwhizz2.jpg', 'desc': 'Building foundational computer operation skills.'},
