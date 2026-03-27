@@ -140,6 +140,13 @@ BOOKS_DATA = {
     'ibot-series': {
         'title': 'IBOT SERIES',
         'description': "Shaping Future Innovators in AI and Robotics. A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming. Covering the latest AI and robotics syllabus, the series also introduces core programming concepts in C, C++, HTML5, and Python, building a strong technical foundation for learners. For higher classes, students explore advanced topics such as cybersecurity, emerging technologies, wireless networking, and IoT, helping them stay aligned with the evolving digital world. At the primary level, the series focuses on strengthening logical thinking through algorithms, flowcharts, and hands-on coding using ScratchJr and Scratch 3.0. With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages.",
+        'bullets': [
+            "Shaping Future Innovators in AI and Robotics. A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming.",
+            "Covering the latest AI and robotics syllabus, the series also introduces core programming concepts in C, C++, HTML5, and Python, building a strong technical foundation for learners.",
+            "For higher classes, students explore advanced topics such as cybersecurity, emerging technologies, wireless networking, and IoT, helping them stay aligned with the evolving digital world.",
+            "At the primary level, the series focuses on strengthening logical thinking through algorithms, flowcharts, and hands-on coding using ScratchJr and Scratch 3.0.",
+            "With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages."
+        ],
         'books': {
             'class-1': {'title': 'IBOT Class 1', 'image': 'images/ibot1.jpg', 'desc': 'Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.'},
             'class-2': {'title': 'IBOT Class 2', 'image': 'images/ibot2.jpg', 'desc': 'Building on basics, exploring input/output devices, and intermediate creative projects.'},
@@ -154,7 +161,8 @@ BOOKS_DATA = {
     },
     'ismart-series': {
         'title': 'ISMART SERIES',
-        'description': "A comprehensive digital literacy program designed to bridge the gap between traditional learning and modern technology. The i-Smart series provides students with a solid foundation in essential IT skills, from basic computer operations to advanced system design and web technologies. Each level is carefully structured to build core competencies through interactive exercises, creative software exploration, and structured logic development, ensuring students are well-equipped for the digital challenges of the 21st century.",
+        'tagline': "Smart Learning for a Digital Generation",
+        'description': "The i-Smart Series is a thoughtfully designed collection of 9 course titles that introduces students to a modern, tech-driven, and academic curriculum.\n\nAt the primary level, learners build strong fundamentals through topics such as Windows 10, MS Paint, Logo Programming, and Microsoft Office tools (Word, PowerPoint, and Excel 2010).\n\nAs students progress to higher grades, the series expands into advanced concepts, including HTML, C++ programming, JavaScript, MySQL, and Python, equipping them with essential coding and digital skills.\n\nWhat sets the i-Smart Series apart is its learner-friendly approach, featuring “Hint” sections and interactive “Do You Know?” and “Do It Yourself (DIY)” activities designed to reinforce understanding through practical application.\n\nWith a structured and progressive learning path, the i-Smart Series empowers students to build confidence, think logically, and stay ahead in today’s digital world.",
         'books': {
             'level-1': {'title': 'ISMART Level 1', 'image': 'images/low 1 - Copy.png', 'desc': 'Foundations of smart learning and digital literacy.'},
             'level-2': {'title': 'ISMART Level 2', 'image': 'images/low 2.png', 'desc': 'Interactive exercises building core IT competencies.'},
