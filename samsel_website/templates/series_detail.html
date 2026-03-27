@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -419,7 +419,7 @@
                 <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
                     WHAT'S YOUR QUERY <span class="icon"></span>
                 </a>
-                <a href="#demo" class="demo-btn">
+                <a href="{% url 'request_demo_page' %}" class="demo-btn">
                     REQUEST DEMO <span class="icon"></span>
                 </a>
             </div>
@@ -587,14 +587,20 @@
         {% endif %}
 
         <div class="series-description">
-            {% if series_slug == 'ismart-series' %}
+            {% if series.bullets %}
+                <ul style="text-align: justify; list-style-position: outside; padding-left: 1.5rem; font-size: 1.1rem; color: #4b5563; line-height: 1.8; margin: 0 auto; max-width: 900px;">
+                    {% for bullet in series.bullets %}
+                        <li style="margin-bottom: 12px; display: list-item;">{{ bullet }}</li>
+                    {% endfor %}
+                </ul>
+            {% elif series_slug == 'ismart-series' %}
                 {{ series.description|linebreaks }}
             {% else %}
-                <p>{{ series.description }}</p>
+                <p style="text-align: justify;">{{ series.description }}</p>
             {% endif %}
         </div>
 
-        {% if series_slug == 'ismart-series' %}
+        {% if series_slug == 'ismart-series' or series_slug == 'ibot-series' %}
         <div class="learning-highlights">
             <div class="highlight-card" style="animation-delay: 0.6s">
                 <span class="highlight-title">💡 Hint Sections</span>
@@ -612,8 +618,8 @@
         {% endif %}
     </header>
 
-    {% if series_slug == 'ismart-series' %}
-    <!-- 3D Coverflow Carousel for i-Smart -->
+    {% if series_slug == 'ismart-series' or series_slug == 'ibot-series' %}
+    <!-- 3D Coverflow Carousel for i-Smart and i-Bot -->
     <section class="carousel-section" id="ismart-carousel">
         <div class="carousel-track-wrapper">
             <div class="carousel-track" id="carouselTrack">
