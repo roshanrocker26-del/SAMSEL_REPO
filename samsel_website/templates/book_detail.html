@@ -46,7 +46,6 @@
             border-radius: 20px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-            view-transition-name: book-image-{{ series_slug }}-{{ book_slug }};
             transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
@@ -337,7 +336,7 @@
 
     <main class="book-container">
         <div class="book-visual">
-            <img src="{% static book.image %}" alt="{{ book.title }}" class="book-image-large">
+            <img src="{% static book.image %}" alt="{{ book.title }}" class="book-image-large" data-vt-name="book-image-{{ series_slug }}-{{ book_slug }}">
         </div>
 
         <div class="book-content">
@@ -365,6 +364,12 @@
         </div>
     </footer>
 
+    <script>
+        // Apply dynamic styles from data attributes to avoid IDE CSS parser errors
+        document.querySelectorAll('[data-vt-name]').forEach(el => {
+            el.style.viewTransitionName = el.dataset.vtName;
+        });
+    </script>
 </body>
 
 </html>
