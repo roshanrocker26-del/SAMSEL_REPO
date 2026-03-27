@@ -28,7 +28,7 @@
 
         .book-container {
             max-width: 1100px;
-            margin: 60px auto 100px;
+            margin: 20px auto 100px;
             padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -150,14 +150,17 @@
             <!-- LOGO (LEFT) -->
             <div class="logo">
                 <a href="/">
-                    <span class="logo-main">SAMSEL</span>
-                    <span class="logo-sub">Publications</span>
+                    <div class="logo-text-group">
+                        <span class="logo-main">SAMSEL</span>
+                        <span class="logo-sub">Publications</span>
+                    </div>
+                    <div class="logo-tagline">Shaping Digital Minds since 2001</div>
                 </a>
             </div>
 
             <!-- BUTTON (RIGHT) -->
             <div class="header-action" style="display: flex; gap: 15px;">
-                <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
+                <a href="{% url 'contact' %}" class="inquiry-btn">
                     WHAT'S YOUR QUERY <span class="icon"></span>
                 </a>
                 <a href="{% url 'request_demo_page' %}" class="demo-btn">
@@ -173,7 +176,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li class="dropdown">
-                <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
+                <a href="{% url 'products' %}" class="active">Products <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu wide-dropdown">
                     <li>
                         <a href="{% url 'products' %}#ibot-series">i-Bot Series <span class="side-arrow">▶</span></a>
@@ -352,16 +355,12 @@
     </main>
 
     <footer class="main-footer">
-        <div class="footer-content">
-            <p class="footer-text">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text">
-                &copy; 2026 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
-            </p>
-            <h3 class="footer-logo">
+        <div class="footer-content" style="text-align: center; padding: 40px 20px;">
+            <h3 class="footer-logo" style="margin-bottom: 10px;">
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
+            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 SAMSEL Publications. All Rights Reserved.</p>
         </div>
     </footer>
 

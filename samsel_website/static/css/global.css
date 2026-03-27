@@ -90,6 +90,7 @@ p {
    FADE IN PAGE TRANSITION
 ========================================= */
 body {
+    padding-top: 140px; /* Space for fixed header (90px) and navbar (50px) */
     opacity: 0;
     animation: fadeInBody 0.3s ease forwards;
 }
@@ -107,14 +108,14 @@ body {
     background-color: var(--primary);
     width: 100%;
     padding: 10px 0;
-    position: sticky;
-    top: 70px;
+    position: fixed;
+    top: 92px !important; /* Fixed below header */
     z-index: 999;
-    transition: top var(--transition-normal);
+    transition: all var(--transition-normal);
 }
 
 .top-navbar.scrolled {
-    top: 61px;
+    top: 72px !important; /* Adjusted for shrunk header */
 }
 
 .top-menu {
@@ -422,16 +423,17 @@ body {
     -webkit-backdrop-filter: blur(10px);
     width: 100%;
     padding: 15px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
-    transition: box-shadow var(--transition-normal), padding var(--transition-normal);
+    transition: all var(--transition-normal);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .main-header.scrolled {
     box-shadow: var(--shadow-md);
-    padding: 10px 0;
+    padding: 6px 0;
 }
 
 .header-container {
@@ -446,11 +448,27 @@ body {
 /* Logo (EXACT KEEP) */
 .logo a {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    line-height: 1;
+    transition: transform var(--transition-normal);
+}
+
+.logo-text-group {
+    display: flex;
     flex-direction: row;
     align-items: center;
     gap: 12px;
-    line-height: 1;
-    transition: transform var(--transition-normal);
+}
+
+.logo-tagline {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-left: 2px;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .logo a:hover {
