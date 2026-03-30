@@ -14,7 +14,7 @@
             text-align: center;
             color: #fff;
             background: linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(22, 91, 158, 0.8) 100%),
-                url('{% static "images/landing_bg.png" %}') center/cover fixed;
+            url('{% static "images/landing_bg.png" %}') center/cover fixed;
             margin-bottom: 40px;
         }
 
@@ -23,7 +23,7 @@
             font-size: clamp(2.5rem, 6vw, 4rem);
             margin-bottom: 1rem;
             color: #ffffff !important;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .demo-page-hero p {
@@ -33,7 +33,7 @@
             opacity: 0.95;
             font-weight: 300;
             color: #ffffff !important;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
         }
 
         .demo-container {
@@ -50,7 +50,7 @@
             gap: 4rem;
             align-items: center;
             box-shadow: var(--shadow-md);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         @media (max-width: 900px) {
@@ -59,6 +59,7 @@
                 padding: 2.5rem;
                 gap: 2.5rem;
             }
+
             .demo-page-hero {
                 padding: 120px 20px 60px;
             }
@@ -101,132 +102,212 @@
                 <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu wide-dropdown">
                     <li>
-                        <a href="{% url 'series_detail' series_slug='ibot-series' %}">i-Bot Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='ibot-series' %}">i-Bot Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-1' %}">Class 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-2' %}">Class 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-3' %}">Class 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-4' %}">Class 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-5' %}">Class 5</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-6' %}">Class 6</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-7' %}">Class 7</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-8' %}">Class 8</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-9' %}">Class 9</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-1' %}">Class
+                                    1</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-2' %}">Class
+                                    2</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-3' %}">Class
+                                    3</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-4' %}">Class
+                                    4</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-5' %}">Class
+                                    5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-6' %}">Class
+                                    6</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-7' %}">Class
+                                    7</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-8' %}">Class
+                                    8</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ibot-series' book_slug='class-9' %}">Class
+                                    9</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='ismart-series' %}">i-Smart Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='ismart-series' %}">i-Smart Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-5' %}">Level 5</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-6' %}">Level 6</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-7' %}">Level 7</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-8' %}">Level 8</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-9' %}">Level 9</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-1' %}">Level
+                                    1</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-2' %}">Level
+                                    2</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-3' %}">Level
+                                    3</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-4' %}">Level
+                                    4</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-5' %}">Level
+                                    5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-6' %}">Level
+                                    6</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-7' %}">Level
+                                    7</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-8' %}">Level
+                                    8</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='ismart-series' book_slug='level-9' %}">Level
+                                    9</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='iwhizz-series' %}">i-Whizz Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='iwhizz-series' %}">i-Whizz Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-1' %}">Class 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-2' %}">Class 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-3' %}">Class 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-4' %}">Class 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-5' %}">Class 5</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-6' %}">Class 6</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-7' %}">Class 7</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-8' %}">Class 8</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-9' %}">Class 9</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-1' %}">Class
+                                    1</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-2' %}">Class
+                                    2</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-3' %}">Class
+                                    3</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-4' %}">Class
+                                    4</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-5' %}">Class
+                                    5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-6' %}">Class
+                                    6</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-7' %}">Class
+                                    7</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-8' %}">Class
+                                    8</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='iwhizz-series' book_slug='class-9' %}">Class
+                                    9</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='young-wizard-series' %}">Young Wizard <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='young-wizard-series' %}">Young Wizard <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-5' %}">Level 5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-1' %}">Level
+                                    1</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-2' %}">Level
+                                    2</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-3' %}">Level
+                                    3</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-4' %}">Level
+                                    4</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='young-wizard-series' book_slug='level-5' %}">Level
+                                    5</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='little-wizard-series' %}">Little Wizard <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='little-wizard-series' %}">Little Wizard <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='little-wizard-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='little-wizard-series' book_slug='level-2' %}">Level 2</a></li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='little-wizard-series' book_slug='level-1' %}">Level
+                                    1</a></li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='little-wizard-series' book_slug='level-2' %}">Level
+                                    2</a></li>
                         </ul>
                     </li>
-                    <li>
+                                        <li>
                         <a href="{% url 'series_detail' series_slug='app2016-series' %}">Application 2016 <span class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='excel' %}">Excel</a></li>
                             <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='word' %}">Word</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='excel' %}">Excel</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a></li>
                         </ul>
                     </li>
-                    <li>
+                                        <li>
                         <a href="{% url 'series_detail' series_slug='app2007-series' %}">Application 2007 <span class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-5' %}">Level 5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='office-2007' %}">Office 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='word-2007' %}">Word 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='excel-2007' %}">Excel 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='ppt-2007' %}">PowerPoint 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='access-2007' %}">Access 2007</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='programming-series' %}">Programming Series <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='programming-series' %}">Programming Series <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-4' %}">Level 4</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-1' %}">Level
+                                    1</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-2' %}">Level
+                                    2</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-3' %}">Level
+                                    3</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-4' %}">Level
+                                    4</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='my-computer-series' %}">My Computer <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='my-computer-series' %}">My Computer <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-5' %}">Level 5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-1' %}">Level
+                                    1</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-2' %}">Level
+                                    2</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-3' %}">Level
+                                    3</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-4' %}">Level
+                                    4</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='my-computer-series' book_slug='level-5' %}">Level
+                                    5</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='right-click-series' %}">Right-Click <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='right-click-series' %}">Right-Click <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-6' %}">Level 6</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-7' %}">Level 7</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-8' %}">Level 8</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-9' %}">Level 9</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-6' %}">Level
+                                    6</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-7' %}">Level
+                                    7</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-8' %}">Level
+                                    8</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='right-click-series' book_slug='level-9' %}">Level
+                                    9</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='cursive-writing-books' %}">English Cursive Writing <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='cursive-writing-books' %}">English Cursive Writing
+                            <span class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='lkg' %}">LKG</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='ukg' %}">UKG</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-5' %}">Level 5</a></li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='lkg' %}">LKG</a>
+                            </li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='ukg' %}">UKG</a>
+                            </li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-1' %}">Level
+                                    1</a></li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-2' %}">Level
+                                    2</a></li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-3' %}">Level
+                                    3</a></li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-4' %}">Level
+                                    4</a></li>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='cursive-writing-books' book_slug='level-5' %}">Level
+                                    5</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'series_detail' series_slug='tamil-writing-books' %}">Tamil Copy Writing <span class="side-arrow">▶</span></a>
+                        <a href="{% url 'series_detail' series_slug='tamil-writing-books' %}">Tamil Copy Writing <span
+                                class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-5' %}">Level 5</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-6' %}">Level 6</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-7' %}">Level 7</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-1' %}">Level
+                                    1</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-2' %}">Level
+                                    2</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-3' %}">Level
+                                    3</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-4' %}">Level
+                                    4</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-5' %}">Level
+                                    5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-6' %}">Level
+                                    6</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-7' %}">Level
+                                    7</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -243,35 +324,110 @@
     </nav>
 
     <section class="demo-page-hero">
-        <h1>Transform Your School Today</h1>
-        <p>Experience the future of digital education. Request a personalized demonstration of our curriculum and tools.</p>
+        <h1 class="premium-headline">Transform Your <span class="accent-word">School</span> Today</h1>
+        <p>Experience the future of digital education. Request a personalized demonstration of our curriculum and tools.
+        </p>
     </section>
 
+    <!-- ... (form content) ... -->
     <div class="demo-container">
         <div class="demo-wrapper">
             <div class="demo-content" style="flex: 1;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Request a <span class="brand-text">Demo</span></h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Request a Demo</h2>
                 <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">
-                    Our experts will walk you through our digital-first approach and show you how <span class="brand-text">SAMSEL</span> can redefine the learning experience in your classrooms.
+                    Our experts will walk you through our digital-first approach and show you how <span
+                        class="brand-text">SAMSEL</span> can redefine the learning experience in your classrooms.
                 </p>
                 <form class="demo-form" method="post" action="{% url 'request_demo' %}"
                     style="display: flex; flex-direction: column; gap: 1.2rem;">
                     {% csrf_token %}
-                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name" required>
-                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name" required>
-                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number" required>
+                    <input type="text" name="contact_name" class="form-control" placeholder="Contact Person Name"
+                        required>
+                    <input type="text" name="organization" class="form-control" placeholder="School / Organization Name"
+                        required>
+                    <input type="tel" name="phone" class="form-control" pattern="[0-9]{10}" placeholder="Phone Number"
+                        required>
                     <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-                    <textarea name="message" class="form-control" rows="4" placeholder="Your Query / Requirement" required></textarea>
-                    <button type="submit" class="btn-primary" style="align-self: flex-start; margin-top: 1rem; padding: 15px 40px; font-size: 1.1rem;">
+                    <textarea name="message" class="form-control" rows="4" placeholder="Your Query / Requirement"
+                        required></textarea>
+                    <button type="submit" class="btn-primary"
+                        style="align-self: flex-start; margin-top: 1rem; padding: 15px 40px; font-size: 1.1rem;">
                         Submit Your Details
                     </button>
                 </form>
             </div>
             <div class="demo-visual" style="flex: 1; text-align: center;">
-                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual" style="max-width: 350px; width: 100%; margin: auto;">
+                <img src="{% static 'images/icon22.gif' %}" alt="Demo Visual"
+                    style="max-width: 350px; width: 100%; margin: auto;">
             </div>
         </div>
     </div>
+
+    <!-- EDUCATION BOARDS SLIDER -->
+    <section class="boards-slider-container">
+        <div class="boards-track">
+            <!-- Set 1 -->
+            <div class="board-set">
+                <div class="board-item">
+                    <img src="{% static 'images/boards/cbse.png' %}" alt="CBSE">
+                    <span>CBSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/tn.png' %}" alt="TN Board">
+                    <span>TN BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KERALA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>AP BOARD</span>
+                </div>
+            </div>
+            <!-- Set 2 -->
+            <div class="board-set">
+                <div class="board-item">
+                    <img src="{% static 'images/boards/cbse.png' %}" alt="CBSE">
+                    <span>CBSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/tn.png' %}" alt="TN Board">
+                    <span>TN BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KERALA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>AP BOARD</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="main-footer">
         <div class="footer-content" style="text-align: center; padding: 40px 20px;">
@@ -279,7 +435,8 @@
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
-            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
+            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span
+                    class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 

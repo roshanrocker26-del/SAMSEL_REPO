@@ -261,9 +261,7 @@ body {
    OUR SERIES SECTION (REPLACES SERVICES)
    ================================ */
 
-/* ================================
-   OUR SERIES SECTION (REPLACES SERVICES)
-   ================================ */
+
 
 .our-series-section {
   /* Exact hero-cover gradient requested by user */
@@ -759,7 +757,7 @@ body {
 
 .hero-glass {
   max-width: 1200px;
-  height: 520px;
+  min-height: 520px;
   margin: auto;
   position: relative;
   border-radius: 28px;

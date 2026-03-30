@@ -38,7 +38,7 @@
         }
 
         .series-main-title {
-            font-size: clamp(3rem, 8vw, 5rem);
+            font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
             color: #111827;
             margin-bottom: 24px;
@@ -496,22 +496,22 @@
                             <li><a href="{% url 'book_detail' series_slug='little-wizard-series' book_slug='level-2' %}">Level 2</a></li>
                         </ul>
                     </li>
-                    <li>
+                                        <li>
                         <a href="{% url 'series_detail' series_slug='app2016-series' %}">Application 2016 <span class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='excel' %}">Excel</a></li>
                             <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='word' %}">Word</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='excel' %}">Excel</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a></li>
                         </ul>
                     </li>
-                    <li>
+                                        <li>
                         <a href="{% url 'series_detail' series_slug='app2007-series' %}">Application 2007 <span class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-5' %}">Level 5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='office-2007' %}">Office 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='word-2007' %}">Word 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='excel-2007' %}">Excel 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='ppt-2007' %}">PowerPoint 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='access-2007' %}">Access 2007</a></li>
                         </ul>
                     </li>
                     <li>
@@ -583,7 +583,7 @@
         <a href="{% url 'products' %}" class="back-nav">
             <span>←</span> Back to Products
         </a>
-        <h1 class="series-main-title" data-vt-name="series-title-{{ series_slug }}">{{ series.title }}</h1>
+        <h1 class="premium-headline" style="color: var(--primary) !important; font-size: 2.5rem !important;" data-vt-name="series-title-{{ series_slug }}">{{ series.title }}</h1>
         
         {% if series.tagline %}
         <span class="series-tagline">{{ series.tagline }}</span>
@@ -642,6 +642,72 @@
             <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
             <div class="carousel-dots" id="carouselDots"></div>
             <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+        </div>
+    </section>
+
+    <!-- BOARDS SLIDER -->
+    <section class="boards-slider-container">
+        <div class="boards-track">
+            <!-- Set 1 -->
+            <div class="board-set">
+                <div class="board-item">
+                    <img src="{% static 'images/boards/cbse.png' %}" alt="CBSE">
+                    <span>CBSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/tn.png' %}" alt="TN Board">
+                    <span>TN BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Kerala Board">
+                    <span>KERALA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="KA Board">
+                    <span>KA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="AP Board">
+                    <span>AP BOARD</span>
+                </div>
+            </div>
+            <!-- Set 2 -->
+            <div class="board-set">
+                <div class="board-item">
+                    <img src="{% static 'images/boards/cbse.png' %}" alt="CBSE">
+                    <span>CBSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/tn.png' %}" alt="TN Board">
+                    <span>TN BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Kerala Board">
+                    <span>KERALA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="KA Board">
+                    <span>KA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="AP Board">
+                    <span>AP BOARD</span>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -255,22 +255,22 @@
                             <li><a href="{% url 'book_detail' series_slug='little-wizard-series' book_slug='level-2' %}">Level 2</a></li>
                         </ul>
                     </li>
-                    <li>
+                                        <li>
                         <a href="{% url 'series_detail' series_slug='app2016-series' %}">Application 2016 <span class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='excel' %}">Excel</a></li>
                             <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='word' %}">Word</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='excel' %}">Excel</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a></li>
                         </ul>
                     </li>
-                    <li>
+                                        <li>
                         <a href="{% url 'series_detail' series_slug='app2007-series' %}">Application 2007 <span class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-1' %}">Level 1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-2' %}">Level 2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-3' %}">Level 3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-4' %}">Level 4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-5' %}">Level 5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='office-2007' %}">Office 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='word-2007' %}">Word 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='excel-2007' %}">Excel 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='ppt-2007' %}">PowerPoint 2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='access-2007' %}">Access 2007</a></li>
                         </ul>
                     </li>
                     <li>
@@ -339,7 +339,7 @@
     </nav>
 
     <section class="reviews-hero">
-        <h1>Voices of Trust</h1>
+        <h1 class="premium-headline">Voices of <span class="accent-word">Trust</span></h1>
         <p>Discover how <span class="brand-text">SAMSEL</span> is transforming computer education across India through the words of our valued partners and educators.</p>
     </section>
 
@@ -428,6 +428,72 @@
             </div>
         </div>
     </div>
+
+    <!-- EDUCATION BOARDS SLIDER -->
+    <section class="boards-slider-container">
+        <div class="boards-track">
+            <!-- Set 1 -->
+            <div class="board-set">
+                <div class="board-item">
+                    <img src="{% static 'images/boards/cbse.png' %}" alt="CBSE">
+                    <span>CBSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/tn.png' %}" alt="TN Board">
+                    <span>TN BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KERALA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>AP BOARD</span>
+                </div>
+            </div>
+            <!-- Set 2 for infinite loop -->
+            <div class="board-set">
+                <div class="board-item">
+                    <img src="{% static 'images/boards/cbse.png' %}" alt="CBSE">
+                    <span>CBSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/tn.png' %}" alt="TN Board">
+                    <span>TN BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/ICSE2.png' %}" alt="ICSE">
+                    <span>ICSE</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/kerala.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KERALA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/karnataka.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>KA BOARD</span>
+                </div>
+                <div class="board-item">
+                    <img src="{% static 'images/boards/AP.png' %}"
+                        style="border-radius:50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" alt="Mock Board">
+                    <span>AP BOARD</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="main-footer">
         <div class="footer-content" style="text-align: center; padding: 40px 20px;">
