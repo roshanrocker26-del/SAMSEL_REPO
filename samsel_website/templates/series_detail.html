@@ -20,7 +20,7 @@
         }
 
         .details-hero {
-            padding: 100px 20px 80px;
+            padding: 40px 20px 60px;
             text-align: center;
             background: radial-gradient(at 0% 0%, rgba(163, 96, 243, 0.15) 0px, transparent 50%),
                         radial-gradient(at 100% 0%, rgba(79, 70, 229, 0.1) 0px, transparent 50%);
@@ -409,14 +409,17 @@
             <!-- LOGO (LEFT) -->
             <div class="logo">
                 <a href="/">
-                    <span class="logo-main">SAMSEL</span>
-                    <span class="logo-sub">Publications</span>
+                    <div class="logo-text-group">
+                        <span class="logo-main">SAMSEL</span>
+                        <span class="logo-sub">Publications</span>
+                    </div>
+                    <div class="logo-tagline">Shaping Digital Minds since 2001</div>
                 </a>
             </div>
 
             <!-- BUTTON (RIGHT) -->
             <div class="header-action" style="display: flex; gap: 15px;">
-                <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
+                <a href="{% url 'contact' %}" class="inquiry-btn">
                     WHAT'S YOUR QUERY <span class="icon"></span>
                 </a>
                 <a href="{% url 'request_demo_page' %}" class="demo-btn">
@@ -432,7 +435,7 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'about' %}">About Us</a></li>
             <li class="dropdown">
-                <a href="{% url 'products' %}">Products <span class="arrow">▾</span></a>
+                <a href="{% url 'products' %}" class="active">Products <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu wide-dropdown">
                     <li>
                         <a href="{% url 'series_detail' series_slug='ibot-series' %}">i-Bot Series <span class="side-arrow">▶</span></a>
@@ -593,10 +596,10 @@
                         <li style="margin-bottom: 12px; display: list-item;">{{ bullet }}</li>
                     {% endfor %}
                 </ul>
-            {% elif series_slug == 'ismart-series' %}
-                {{ series.description|linebreaks }}
             {% else %}
-                <p style="text-align: justify;">{{ series.description }}</p>
+                <div style="text-align: justify;">
+                    {{ series.description|linebreaks }}
+                </div>
             {% endif %}
         </div>
 
@@ -618,8 +621,7 @@
         {% endif %}
     </header>
 
-    {% if series_slug == 'ismart-series' or series_slug == 'ibot-series' %}
-    <!-- 3D Coverflow Carousel for i-Smart and i-Bot -->
+    <!-- 3D Coverflow Carousel for all books -->
     <section class="carousel-section" id="ismart-carousel">
         <div class="carousel-track-wrapper">
             <div class="carousel-track" id="carouselTrack">
@@ -643,34 +645,13 @@
         </div>
     </section>
 
-    {% else %}
-    <!-- Standard grid for all other series -->
-    <main class="books-grid">
-        {% for book_slug, book in series.books.items %}
-        <a href="{% url 'book_detail' series_slug=series_slug book_slug=book_slug %}" class="book-item" data-delay="{{ forloop.counter0 }}00ms">
-            <div class="book-cover-container">
-                <img src="{% static book.image %}" alt="{{ book.title }}" class="book-cover" data-vt-name="book-image-{{ series_slug }}-{{ book_slug }}">
-            </div>
-            <div class="book-info">
-                <h3>{{ book.title }}</h3>
-                <p>{{ book.desc }}</p>
-            </div>
-        </a>
-        {% endfor %}
-    </main>
-    {% endif %}
-
     <footer class="main-footer">
-        <div class="footer-content">
-            <p class="footer-text">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text">
-                &copy; 2026 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
-            </p>
-            <h3 class="footer-logo">
+        <div class="footer-content" style="text-align: center; padding: 40px 20px;">
+            <h3 class="footer-logo" style="margin-bottom: 10px;">
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
+            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 

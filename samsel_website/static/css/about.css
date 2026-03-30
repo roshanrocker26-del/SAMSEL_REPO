@@ -89,7 +89,7 @@
 .about-split-section {
     display: flex;
     gap: 4rem;
-    align-items: center;
+    align-items: flex-start;
     background: var(--card-bg);
     padding: 4rem;
     border-radius: var(--radius-lg);

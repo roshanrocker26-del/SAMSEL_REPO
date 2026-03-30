@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -444,15 +444,18 @@
         <div class="header-container">
             <!-- LOGO (LEFT) -->
             <div class="logo">
-                <a href="{% url 'home' %}">
-                    <span class="logo-main">SAMSEL</span>
-                    <span class="logo-sub">Publications</span>
+                <a href="/">
+                    <div class="logo-text-group">
+                        <span class="logo-main">SAMSEL</span>
+                        <span class="logo-sub">Publications</span>
+                    </div>
+                    <div class="logo-tagline">Shaping Digital Minds since 2001</div>
                 </a>
             </div>
 
             <!-- BUTTON (RIGHT) -->
             <div class="header-action" style="display: flex; gap: 15px;">
-                <a href="{% url 'contact' %}" class="inquiry-btn" target="_blank">
+                <a href="{% url 'contact' %}" class="inquiry-btn">
                     WHAT'S YOUR QUERY <span class="icon"></span>
                 </a>
                 <a href="{% url 'request_demo_page' %}" class="demo-btn">
@@ -628,7 +631,8 @@
     <section class="about-hero">
         <h1 class="about-hero-title">Who We Are</h1>
         <p class="about-hero-subtitle">
-            <span class="brand-text">SAMSEL</span> <span class="brand-secondary">Publications</span> has been a unit of the USS (Unique Software Solutions) entity since 2001. We pioneer as
+            <span class="brand-text">SAMSEL</span> <span class="brand-secondary">Publications</span> has been a unit of
+            the USS (Unique Software Solutions) entity since 2001. We pioneer as
             a leading academic e-learning enterprise, offering IT specific knowledge base for students across grades,
             emphasizing digital excellence.
         </p>
@@ -637,13 +641,15 @@
     <!-- MAIN CONTENT -->
     <div class="container" style="padding-top: 0;">
 
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+            <h2 style="position: relative; border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 8px; font-size: 2.5rem; color: var(--primary);">Our Insightful Experiences</h2>
+        </div>
         <!-- SECTION 1: OUR MISSION -->
-        <section class="about-split-section reveal-up">
+        <section class="about-split-section reveal-up" style="margin-top: 0;">
             <div class="about-image-wrapper">
                 <img src="{% static 'images/INSIG.jpeg' %}" alt="Samsel Publications Office">
             </div>
             <div class="about-text-content">
-                <h2 style="position: relative; border-bottom: 4px solid var(--accent); display: inline-block; padding-bottom: 8px;">Our Insightful Experiences</h2>
                 <p>
                     We strongly believe that modern education should thrive and evolve with the latest technological
                     advancements, guided by a practical frontier exposure towards every possible step we climb through.
@@ -659,38 +665,51 @@
 
         <!-- SECTION 2: OUR PREMIUM ADD-ONS (Card Grid) -->
         <section class="premium-addons-section reveal-up">
-            <h2 class="premium-addons-title" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; left: 50%; transform: translateX(-50%); border-bottom: 4px solid var(--accent); width: fit-content; padding-bottom: 8px;">Our Premium Add-Ons</h2>
+            <h2 class="premium-addons-title"
+                style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; left: 50%; transform: translateX(-50%); border-bottom: 4px solid var(--accent); width: fit-content; padding-bottom: 8px;">
+                Our Premium Add-Ons</h2>
             <div class="premium-addons-grid">
 
                 <!-- Card 1 -->
                 <div class="addon-card">
                     <div class="addon-icon-wrap">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="18" y="10" width="36" height="46" rx="4" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
-                            <line x1="26" y1="22" x2="46" y2="22" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="26" y1="30" x2="46" y2="30" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="26" y1="38" x2="38" y2="38" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="54" cy="52" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"/>
-                            <line x1="50" y1="52" x2="58" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="54" y1="48" x2="54" y2="56" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                            <rect x="18" y="10" width="36" height="46" rx="4" fill="#deeeff" stroke="#3b82f6"
+                                stroke-width="2.5" />
+                            <line x1="26" y1="22" x2="46" y2="22" stroke="#3b82f6" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="26" y1="30" x2="46" y2="30" stroke="#3b82f6" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="26" y1="38" x2="38" y2="38" stroke="#3b82f6" stroke-width="2"
+                                stroke-linecap="round" />
+                            <circle cx="54" cy="52" r="12" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5" />
+                            <line x1="50" y1="52" x2="58" y2="52" stroke="white" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <line x1="54" y1="48" x2="54" y2="56" stroke="white" stroke-width="2.5"
+                                stroke-linecap="round" />
                         </svg>
                     </div>
                     <h3 class="addon-title">Curriculum-oriented<br>worksheets</h3>
                     <hr class="addon-divider">
-                    <p class="addon-desc">Interactive user engagements through book-back practice exercises for primary grades</p>
+                    <p class="addon-desc">Interactive user engagements through book-back practice exercises for primary
+                        grades</p>
                 </div>
 
                 <!-- Card 2 -->
                 <div class="addon-card">
                     <div class="addon-icon-wrap">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="14" width="46" height="36" rx="5" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
-                            <rect x="20" y="22" width="22" height="14" rx="2" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-                            <rect x="22" y="24" width="10" height="4" rx="1" fill="#fbbf24"/>
-                            <rect x="22" y="30" width="14" height="2" rx="1" fill="#93c5fd"/>
-                            <path d="M48 30 Q60 28 58 42 Q56 50 48 52" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round"/>
-                            <circle cx="56" cy="46" r="4" fill="#f97316" opacity="0.8"/>
-                            <path d="M54 46 L56 48 L59 43" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="12" y="14" width="46" height="36" rx="5" fill="#deeeff" stroke="#3b82f6"
+                                stroke-width="2.5" />
+                            <rect x="20" y="22" width="22" height="14" rx="2" fill="white" stroke="#3b82f6"
+                                stroke-width="1.5" />
+                            <rect x="22" y="24" width="10" height="4" rx="1" fill="#fbbf24" />
+                            <rect x="22" y="30" width="14" height="2" rx="1" fill="#93c5fd" />
+                            <path d="M48 30 Q60 28 58 42 Q56 50 48 52" stroke="#3b82f6" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+                            <circle cx="56" cy="46" r="4" fill="#f97316" opacity="0.8" />
+                            <path d="M54 46 L56 48 L59 43" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                     <h3 class="addon-title">Interactive user<br>engagements</h3>
@@ -702,14 +721,18 @@
                 <div class="addon-card">
                     <div class="addon-icon-wrap">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="14" y="34" width="38" height="24" rx="3" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
-                            <line x1="33" y1="58" x2="33" y2="64" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="26" y1="64" x2="40" y2="64" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
-                            <rect x="20" y="39" width="26" height="14" rx="2" fill="white"/>
-                            <circle cx="50" cy="28" r="13" fill="#1e3a5f"/>
-                            <path d="M44 28 L48 22 L56 28 L48 34 Z" fill="#fbbf24"/>
-                            <circle cx="63" cy="38" r="8" fill="white" stroke="#3b82f6" stroke-width="2"/>
-                            <path d="M60 38 L62 40 L66 35" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="14" y="34" width="38" height="24" rx="3" fill="#deeeff" stroke="#3b82f6"
+                                stroke-width="2.5" />
+                            <line x1="33" y1="58" x2="33" y2="64" stroke="#3b82f6" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <line x1="26" y1="64" x2="40" y2="64" stroke="#3b82f6" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <rect x="20" y="39" width="26" height="14" rx="2" fill="white" />
+                            <circle cx="50" cy="28" r="13" fill="#1e3a5f" />
+                            <path d="M44 28 L48 22 L56 28 L48 34 Z" fill="#fbbf24" />
+                            <circle cx="63" cy="38" r="8" fill="white" stroke="#3b82f6" stroke-width="2" />
+                            <path d="M60 38 L62 40 L66 35" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                     <h3 class="addon-title">Enhanced online<br>examination</h3>
@@ -721,12 +744,14 @@
                 <div class="addon-card">
                     <div class="addon-icon-wrap">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 24 Q20 12 40 12 Q60 12 60 24 L60 60 Q60 66 54 66 L26 66 Q20 66 20 60 Z" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
-                            <path d="M20 24 Q40 30 60 24" stroke="#3b82f6" stroke-width="2" fill="none"/>
-                            <circle cx="30" cy="48" r="8" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-                            <polygon points="27,44 27,52 35,48" fill="#3b82f6"/>
-                            <circle cx="56" cy="18" r="7" fill="#f97316"/>
-                            <path d="M53 18 L55 20 L59 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 24 Q20 12 40 12 Q60 12 60 24 L60 60 Q60 66 54 66 L26 66 Q20 66 20 60 Z"
+                                fill="#deeeff" stroke="#3b82f6" stroke-width="2.5" />
+                            <path d="M20 24 Q40 30 60 24" stroke="#3b82f6" stroke-width="2" fill="none" />
+                            <circle cx="30" cy="48" r="8" fill="white" stroke="#3b82f6" stroke-width="1.5" />
+                            <polygon points="27,44 27,52 35,48" fill="#3b82f6" />
+                            <circle cx="56" cy="18" r="7" fill="#f97316" />
+                            <path d="M53 18 L55 20 L59 15" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                     <h3 class="addon-title">Voice-enabled<br>e-book</h3>
@@ -738,15 +763,23 @@
                 <div class="addon-card">
                     <div class="addon-icon-wrap">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="16" y="10" width="40" height="54" rx="4" fill="#deeeff" stroke="#3b82f6" stroke-width="2.5"/>
-                            <line x1="24" y1="24" x2="48" y2="24" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="24" y1="32" x2="48" y2="32" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            <rect x="22" y="40" width="8" height="8" rx="1" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-                            <path d="M24 44 L25.5 45.5 L28 43" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="34" y1="44" x2="46" y2="44" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            <rect x="22" y="52" width="8" height="5" rx="1" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-                            <line x1="34" y1="54" x2="42" y2="54" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="56" cy="18" r="9" fill="#fbbf24"/>
+                            <rect x="16" y="10" width="40" height="54" rx="4" fill="#deeeff" stroke="#3b82f6"
+                                stroke-width="2.5" />
+                            <line x1="24" y1="24" x2="48" y2="24" stroke="#3b82f6" stroke-width="2"
+                                stroke-linecap="round" />
+                            <line x1="24" y1="32" x2="48" y2="32" stroke="#3b82f6" stroke-width="2"
+                                stroke-linecap="round" />
+                            <rect x="22" y="40" width="8" height="8" rx="1" fill="white" stroke="#3b82f6"
+                                stroke-width="1.5" />
+                            <path d="M24 44 L25.5 45.5 L28 43" stroke="#3b82f6" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <line x1="34" y1="44" x2="46" y2="44" stroke="#3b82f6" stroke-width="2"
+                                stroke-linecap="round" />
+                            <rect x="22" y="52" width="8" height="5" rx="1" fill="white" stroke="#3b82f6"
+                                stroke-width="1.5" />
+                            <line x1="34" y1="54" x2="42" y2="54" stroke="#3b82f6" stroke-width="2"
+                                stroke-linecap="round" />
+                            <circle cx="56" cy="18" r="9" fill="#fbbf24" />
                             <text x="52" y="22" fill="white" font-size="10" font-weight="bold">?</text>
                         </svg>
                     </div>
@@ -759,15 +792,16 @@
                 <div class="addon-card">
                     <div class="addon-icon-wrap">
                         <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="16" y="12" width="40" height="56" rx="5" fill="#1e3a5f"/>
-                            <rect x="20" y="16" width="32" height="48" rx="3" fill="#2563eb"/>
-                            <circle cx="36" cy="36" r="10" fill="#fbbf24"/>
-                            <circle cx="33" cy="33" r="3" fill="#1e3a5f"/>
-                            <circle cx="39" cy="33" r="3" fill="#1e3a5f"/>
-                            <path d="M31 40 Q36 44 41 40" stroke="#1e3a5f" stroke-width="2" fill="none" stroke-linecap="round"/>
-                            <rect x="32" y="50" width="8" height="8" rx="1" fill="#fbbf24"/>
-                            <line x1="36" y1="50" x2="36" y2="58" stroke="#1e3a5f" stroke-width="1"/>
-                            <path d="M14 52 Q16 66 20 64" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+                            <rect x="16" y="12" width="40" height="56" rx="5" fill="#1e3a5f" />
+                            <rect x="20" y="16" width="32" height="48" rx="3" fill="#2563eb" />
+                            <circle cx="36" cy="36" r="10" fill="#fbbf24" />
+                            <circle cx="33" cy="33" r="3" fill="#1e3a5f" />
+                            <circle cx="39" cy="33" r="3" fill="#1e3a5f" />
+                            <path d="M31 40 Q36 44 41 40" stroke="#1e3a5f" stroke-width="2" fill="none"
+                                stroke-linecap="round" />
+                            <rect x="32" y="50" width="8" height="8" rx="1" fill="#fbbf24" />
+                            <line x1="36" y1="50" x2="36" y2="58" stroke="#1e3a5f" stroke-width="1" />
+                            <path d="M14 52 Q16 66 20 64" stroke="#e11d48" stroke-width="3" stroke-linecap="round" />
                         </svg>
                     </div>
                     <h3 class="addon-title">Teacher's<br>key book</h3>
@@ -784,8 +818,11 @@
         <!-- SECTION 3: WHAT SETS APART SAMSEL FROM THE REST -->
         <section class="samsel-apart-section reveal-up">
             <div class="samsel-apart-inner">
-                <h2 class="samsel-apart-title" style="position: relative; border-bottom: 4px solid var(--accent); display: inline-block; left: 50%; transform: translateX(-50%); padding-bottom: 8px;">What Sets Apart <span class="brand-text">SAMSEL</span> From The Rest</h2>
-                <p class="samsel-apart-sub"><span class="brand-text">SAMSEL</span> helps students prepare effectively for board exams through structured
+                <h2 class="samsel-apart-title"
+                    style="position: relative; border-bottom: 4px solid var(--accent); display: inline-block; left: 50%; transform: translateX(-50%); padding-bottom: 8px;">
+                    What Sets Apart <span class="brand-text">SAMSEL</span> From The Rest</h2>
+                <p class="samsel-apart-sub"><span class="brand-text">SAMSEL</span> helps students prepare effectively
+                    for board exams through structured
                     practice and instant insights.</p>
 
                 <div class="apart-blocks">
@@ -826,14 +863,15 @@
         <section class="approach-showcase reveal-up">
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="approach-header">
-                    <h2>Built for Students, <br><span style="color: var(--accent);">Trusted by Educators</span></h2>
+                    <h2>Built for Students, <span style="color: var(--accent);">Trusted by Educators</span></h2>
                 </div>
                 <div class="approach-grid">
                     <div class="approach-item slide-left">
                         <div class="approach-card">
                             <div class="approach-icon">🎓</div>
                             <p>
-                                <span class="brand-text">SAMSEL</span> combines expert-designed academic content with digital-first learning tools,
+                                <span class="brand-text">SAMSEL</span> combines expert-designed academic content with
+                                digital-first learning tools,
                                 enabling students to practice <strong>anytime, anywhere</strong>,
                                 while teachers gain sensibilities of meaningfulness over student performance.
                             </p>
@@ -982,16 +1020,12 @@
 
 
     <footer class="main-footer">
-        <div class="footer-content">
-            <p class="footer-text">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text">
-                &copy; 2026 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
-            </p>
-            <h3 class="footer-logo">
+        <div class="footer-content" style="text-align: center; padding: 40px 20px;">
+            <h3 class="footer-logo" style="margin-bottom: 10px;">
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
+            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 
