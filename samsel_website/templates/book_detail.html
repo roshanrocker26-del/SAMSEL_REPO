@@ -343,7 +343,28 @@
         </div>
 
         <div class="book-content">
-            <span class="series-tag">{{ series.title }}</span>
+            <div class="series-logo-wrapper" style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+                <span class="series-tag" style="margin-bottom: 0;">{{ series.title }}</span>
+                {% if series_slug == 'ismart-series' %}
+                    <img src="{% static 'images/iSmart Logo.png' %}" alt="i-Smart Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'iwhizz-series' %}
+                    <img src="{% static 'images/iWhizz Logo.png' %}" alt="i-Whizz Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'ibot-series' %}
+                    <img src="{% static 'images/ibotlogo.png' %}" alt="i-Bot Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'my-computer-series' %}
+                    <img src="{% static 'images/MyComputer Series (Grade).jpg' %}" alt="My Computer Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'app2007-series' or series_slug == 'app2016-series' %}
+                    <img src="{% static 'images/NEW APPLICATION SERIES.png' %}" alt="Application Series Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'right-click-series' %}
+                    <img src="{% static 'images/Right Click Series (ICT).png' %}" alt="Right Click Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'little-wizard-series' %}
+                    <img src="{% static 'images/little wizard series.png' %}" alt="Little Wizard Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'cursive-writing-books' %}
+                    <img src="{% static 'images/cursive writing.png' %}" alt="Cursive Writing Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% elif series_slug == 'young-wizard-series' %}
+                    <img src="{% static 'images/younglogo.jpg' %}" alt="Young Wizard Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                {% endif %}
+            </div>
             <h1 class="book-title">{{ book.title }}</h1>
             <div class="book-summary">
                 {% if book.details %}
