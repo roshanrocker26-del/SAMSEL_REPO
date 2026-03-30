@@ -148,142 +148,201 @@ BOOKS_DATA = {
             "With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages."
         ],
         'books': {
-            'class-1': {'title': 'IBOT Class 1', 'image': 'images/ibot1.jpg', 'desc': 'Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.'},
-            'class-2': {'title': 'IBOT Class 2', 'image': 'images/ibot2.jpg', 'desc': 'Building on basics, exploring input/output devices, and intermediate creative projects.'},
-            'class-3': {'title': 'IBOT Class 3', 'image': 'images/ibot3.jpg', 'desc': 'Understanding OS environments, word processing, and an introduction to computational thinking.'},
-            'class-4': {'title': 'IBOT Class 4', 'image': 'images/ibot4.jpg', 'desc': 'Advanced word processing, safe internet browsing, and block-based programming exercises.'},
-            'class-5': {'title': 'IBOT Class 5', 'image': 'images/ibot5.jpg', 'desc': 'Presentations, spreadsheets basics, and developing algorithms using visual coding tools.'},
-            'class-6': {'title': 'IBOT Class 6', 'image': 'images/ibot6.jpg', 'desc': 'Deep dive into robotics principles, electronics basics, and intro to Python syntax.'},
-            'class-7': {'title': 'IBOT Class 7', 'image': 'images/ibot7.jpg', 'desc': 'AI concepts, intermediate Python programming, and hardware integration projects.'},
-            'class-8': {'title': 'IBOT Class 8', 'image': 'images/ibot8.jpg', 'desc': 'Advanced robotics, IoT fundamentals, and machine learning basics.'},
-            'class-9': {'title': 'IBOT Class 9', 'image': 'images/ibot9.jpg', 'desc': 'Comprehensive IT matrix, app development, and specialized AI/ML problem solving.'},
+            'class-1': {'title': 'IBOT Class 1', 'image': 'images/ibot1.jpg', 'desc': 'Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.', 'details': ['Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.', 'Build a strong foundation in this topic, ideal for real-world application and academic excellence.']},
+            'class-2': {'title': 'IBOT Class 2', 'image': 'images/ibot2.jpg', 'desc': 'Building on basics, exploring input/output devices, and intermediate creative projects.', 'details': ['Building on basics, exploring input/output devices, and intermediate creative projects.', 'Empower students with practical skills in this topic, designed to foster creativity and logical thinking.']},
+            'class-3': {'title': 'IBOT Class 3', 'image': 'images/ibot3.jpg', 'desc': 'Understanding OS environments, word processing, and an introduction to computational thinking.', 'details': ['Understanding OS environments, word processing, and an introduction to computational thinking.', 'Empower students with practical skills in this topic, perfect for building modern digital fluency.']},
+            'class-4': {'title': 'IBOT Class 4', 'image': 'images/ibot4.jpg', 'desc': 'Advanced word processing, safe internet browsing, and block-based programming exercises.', 'details': ['Advanced word processing, safe internet browsing, and block-based programming exercises.', 'Empower students with practical skills in this topic, equipping students with tools for future success.']},
+            'class-5': {'title': 'IBOT Class 5', 'image': 'images/ibot5.jpg', 'desc': 'Presentations, spreadsheets basics, and developing algorithms using visual coding tools.', 'details': ['Presentations, spreadsheets basics, and developing algorithms using visual coding tools.', 'Interactive, hands-on activities covering this topic, encouraging problem-solving and critical reasoning.']},
+            'class-6': {'title': 'IBOT Class 6', 'image': 'images/ibot6.jpg', 'desc': 'Deep dive into robotics principles, electronics basics, and intro to Python syntax.', 'details': ['Deep dive into robotics principles, electronics basics, and intro to Python syntax.', 'Step-by-step guidance on this topic, equipping students with tools for future success.']},
+            'class-7': {'title': 'IBOT Class 7', 'image': 'images/ibot7.jpg', 'desc': 'AI concepts, intermediate Python programming, and hardware integration projects.', 'details': ['AI concepts, intermediate Python programming, and hardware integration projects.', 'Comprehensive coverage of this topic, designed to foster creativity and logical thinking.']},
+            'class-8': {'title': 'IBOT Class 8', 'image': 'images/ibot8.jpg', 'desc': 'Advanced robotics, IoT fundamentals, and machine learning basics.', 'details': ['Advanced robotics, IoT fundamentals, and machine learning basics.', 'Engaging lessons tailored for this topic, encouraging problem-solving and critical reasoning.']},
+            'class-9': {'title': 'IBOT Class 9', 'image': 'images/ibot9.jpg', 'desc': 'Comprehensive IT matrix, app development, and specialized AI/ML problem solving.', 'details': ['Comprehensive IT matrix, app development, and specialized AI/ML problem solving.', 'Build a strong foundation in this topic, creating an enjoyable and engaging learning environment.']},
         }
     },
     'ismart-series': {
-        'title': 'ISMART SERIES',
-        'tagline': "Smart Learning for a Digital Generation",
-        'description': "The i-Smart Series is a thoughtfully designed collection of 9 course titles that introduces students to a modern, tech-driven, and academic curriculum.\n\nAt the primary level, learners build strong fundamentals through topics such as Windows 10, MS Paint, Logo Programming, and Microsoft Office tools (Word, PowerPoint, and Excel 2010).\n\nAs students progress to higher grades, the series expands into advanced concepts, including HTML, C++ programming, JavaScript, MySQL, and Python, equipping them with essential coding and digital skills.\n\nWhat sets the i-Smart Series apart is its learner-friendly approach, featuring “Hint” sections and interactive “Do You Know?” and “Do It Yourself (DIY)” activities designed to reinforce understanding through practical application.\n\nWith a structured and progressive learning path, the i-Smart Series empowers students to build confidence, think logically, and stay ahead in today’s digital world.",
+        'title': 'THE I-SMART SERIES',
+        'tagline': 'Smart Learning for a Digital Generation',
+        'description': 'The i-Smart Series is a thoughtfully designed collection of 9 course titles that introduces students to a modern, tech-driven, and academic curriculum.\n\nAt the primary level, learners build strong fundamentals through topics such as Windows 10, MS Paint, Logo Programming, and Microsoft Office tools (Word, PowerPoint, and Excel 2010).\n\nAs students progress to higher grades, the series expands into advanced concepts, including HTML, C++ programming, JavaScript, MySQL, and Python, equipping them with essential coding and digital skills.\n\nWhat sets the i-Smart Series apart is its learner-friendly approach, featuring "Hint" sections and interactive "Do You Know?" and "Do It Yourself (DIY)" activities designed to reinforce understanding through practical application.\n\nWith a structured and progressive learning path, the i-Smart Series empowers students to build confidence, think logically, and stay ahead in today’s digital world.',
+        'bullets': [
+            'The i-Smart Series is a thoughtfully designed collection of 9 course titles that introduces students to a modern, tech-driven, and academic curriculum.',
+            'At the primary level, learners build strong fundamentals through topics such as Windows 10, MS Paint, Logo Programming, and Microsoft Office tools (Word, PowerPoint, and Excel 2010).',
+            'As students progress to higher grades, the series expands into advanced concepts, including HTML, C++ programming, JavaScript, MySQL, and Python, equipping them with essential coding and digital skills.',
+            'What sets the i-Smart Series apart is its learner-friendly approach, featuring "Hint" sections and interactive "Do You Know?" and "Do It Yourself (DIY)" activities designed to reinforce understanding through practical application.',
+            'With a structured and progressive learning path, the i-Smart Series empowers students to build confidence, think logically, and stay ahead in today’s digital world.'
+        ],
         'books': {
-            'level-1': {'title': 'ISMART Level 1', 'image': 'images/low 1 - Copy.png', 'desc': 'Foundations of smart learning and digital literacy.'},
-            'level-2': {'title': 'ISMART Level 2', 'image': 'images/low 2.png', 'desc': 'Interactive exercises building core IT competencies.'},
-            'level-3': {'title': 'ISMART Level 3', 'image': 'images/low 3.png', 'desc': 'Exploring creative software and basic problem solving.'},
-            'level-4': {'title': 'ISMART Level 4', 'image': 'images/low 4.png', 'desc': 'Introduction to connected devices and cyber safety.'},
-            'level-5': {'title': 'ISMART Level 5', 'image': 'images/low 5.png', 'desc': 'Advanced office tools and beginner coding loops.'},
-            'level-6': {'title': 'ISMART Level 6', 'image': 'images/high 6.png', 'desc': 'Structuring ideas and intermediate algorithmic logic.'},
-            'level-7': {'title': 'ISMART Level 7', 'image': 'images/high 7.png', 'desc': 'Web technologies and introductory networking.'},
-            'level-8': {'title': 'ISMART Level 8', 'image': 'images/high 8.png', 'desc': 'Data handling, analysis, and programming constructs.'},
-            'level-9': {'title': 'ISMART Level 9', 'image': 'images/high 9.png', 'desc': 'Comprehensive system design and applied technology projects.'},
+            'level-1': {'title': 'ISMART Level 1', 'image': 'images/low 1 - Copy.png', 'desc': 'Foundations of smart learning and digital literacy.', 'details': ['Foundations of smart learning and digital literacy.', 'A fun, comprehensive approach to this topic, helping learners grasp complex topics with ease.']},
+            'level-2': {'title': 'ISMART Level 2', 'image': 'images/low 2.png', 'desc': 'Interactive exercises building core IT competencies.', 'details': ['Interactive exercises building core IT competencies.', 'Dive deep into this topic, perfect for building modern digital fluency.']},
+            'level-3': {'title': 'ISMART Level 3', 'image': 'images/low 3.png', 'desc': 'Exploring creative software and basic problem solving.', 'details': ['Exploring creative software and basic problem solving.', 'Step-by-step guidance on this topic, perfect for building modern digital fluency.']},
+            'level-4': {'title': 'ISMART Level 4', 'image': 'images/low 4.png', 'desc': 'Introduction to connected devices and cyber safety.', 'details': ['Introduction to connected devices and cyber safety.', 'Master the essentials of this topic, creating an enjoyable and engaging learning environment.']},
+            'level-5': {'title': 'ISMART Level 5', 'image': 'images/low 5.png', 'desc': 'Advanced office tools and beginner coding loops.', 'details': ['Advanced office tools and beginner coding loops.', 'A fun, comprehensive approach to this topic, designed to foster creativity and logical thinking.']},
+            'level-6': {'title': 'ISMART Level 6', 'image': 'images/high 6.png', 'desc': 'Structuring ideas and intermediate algorithmic logic.', 'details': ['Structuring ideas and intermediate algorithmic logic.', 'Empower students with practical skills in this topic, ideal for real-world application and academic excellence.']},
+            'level-7': {'title': 'ISMART Level 7', 'image': 'images/high 7.png', 'desc': 'Web technologies and introductory networking.', 'details': ['Web technologies and introductory networking.', 'Step-by-step guidance on this topic, designed to foster creativity and logical thinking.']},
+            'level-8': {'title': 'ISMART Level 8', 'image': 'images/high 8.png', 'desc': 'Data handling, analysis, and programming constructs.', 'details': ['Data handling, analysis, and programming constructs.', 'Comprehensive coverage of this topic, encouraging problem-solving and critical reasoning.']},
+            'level-9': {'title': 'ISMART Level 9', 'image': 'images/high 9.png', 'desc': 'Comprehensive system design and applied technology projects.', 'details': ['Comprehensive system design and applied technology projects.', 'Dive deep into this topic, perfect for building modern digital fluency.']},
         }
     },
     'iwhizz-series': {
-        'title': 'I-WHIZZ SERIES',
-        'description': "A versatile and practical computing series that focuses on the real-world application of technology and logical thinking. The i-Whizz series empowers students to master software applications, explore the digital world safely, and develop strong analytical skills. From early steps in tech to comprehensive studies in modern computing architectures, this series provides a seamless learning path that emphasizes hands-on experience and structured logic building.",
+        'title': 'THE I-WHIZZ SERIES',
+        'tagline': 'Accelerating Skills for a Tech-Driven World',
+        'description': 'The i-Whizz Series features a collection of 9 courses, designed to build strong technical foundations across different grade levels.\n\nStudents begin with essential concepts such as computer fundamentals, Windows 7 OS, and the Office 2007 Suite, gaining a solid understanding of everyday digital tools.\n\nAs they progress, learners explore creative and technical skills through hands-on exposure to Photoshop, along with foundational programming in C and HTML.\n\nWith a structured, level-based approach, the i-Whizz Series helps students gradually develop practical knowledge, technical confidence, and the skills needed to thrive in a digital-first environment.',
+        'bullets': [
+            'The i-Whizz Series features a collection of 9 courses, designed to build strong technical foundations across different grade levels.',
+            'Students begin with essential concepts such as computer fundamentals, Windows 7 OS, and the Office 2007 Suite, gaining a solid understanding of everyday digital tools.',
+            'As they progress, learners explore creative and technical skills through hands-on exposure to Photoshop, along with foundational programming in C and HTML.',
+            'With a structured, level-based approach, the i-Whizz Series helps students gradually develop practical knowledge, technical confidence, and the skills needed to thrive in a digital-first environment.'
+        ],
         'books': {
-            'class-1': {'title': 'i-Whizz Class 1', 'image': 'images/iwhizz1.jpg', 'desc': 'Early steps into the world of tech and logic.'},
-            'class-2': {'title': 'i-Whizz Class 2', 'image': 'images/iwhizz2.jpg', 'desc': 'Building foundational computer operation skills.'},
-            'class-3': {'title': 'i-Whizz Class 3', 'image': 'images/iwhizz3.jpg', 'desc': 'Logical puzzles and introducing digital creativity.'},
-            'class-4': {'title': 'i-Whizz Class 4', 'image': 'images/iwhizz4.jpg', 'desc': 'Word processing and exploring the internet safely.'},
-            'class-5': {'title': 'i-Whizz Class 5', 'image': 'images/iwhizz5.jpg', 'desc': 'Presentation tools and beginning programming principles.'},
-            'class-6': {'title': 'i-Whizz Class 6', 'image': 'images/iwhizz6.jpg', 'desc': 'Deeper dive into software apps and coding techniques.'},
-            'class-7': {'title': 'i-Whizz Class 7', 'image': 'images/iwhizz7.jpg', 'desc': 'Advanced digital tools and structured logic building.'},
-            'class-8': {'title': 'i-Whizz Class 8', 'image': 'images/iwhizz8.jpg', 'desc': 'Web design basics and advanced conceptual frameworks.'},
-            'class-9': {'title': 'i-Whizz Class 9', 'image': 'images/iwhizz9.jpg', 'desc': 'Comprehensive studies in modern computing architectures.'},
+            'class-1': {'title': 'i-Whizz Class 1', 'image': 'images/iwhizz1.jpg', 'desc': 'Early steps into the world of tech and logic.', 'details': ['Early steps into the world of tech and logic.', 'A fun, comprehensive approach to this topic, designed to foster creativity and logical thinking.']},
+            'class-2': {'title': 'i-Whizz Class 2', 'image': 'images/iwhizz2.jpg', 'desc': 'Building foundational computer operation skills.', 'details': ['Building foundational computer operation skills.', 'Step-by-step guidance on this topic, equipping students with tools for future success.']},
+            'class-3': {'title': 'i-Whizz Class 3', 'image': 'images/iwhizz3.jpg', 'desc': 'Logical puzzles and introducing digital creativity.', 'details': ['Logical puzzles and introducing digital creativity.', 'Master the essentials of this topic, equipping students with tools for future success.']},
+            'class-4': {'title': 'i-Whizz Class 4', 'image': 'images/iwhizz4.jpg', 'desc': 'Word processing and exploring the internet safely.', 'details': ['Word processing and exploring the internet safely.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'class-5': {'title': 'i-Whizz Class 5', 'image': 'images/iwhizz5.jpg', 'desc': 'Presentation tools and beginning programming principles.', 'details': ['Presentation tools and beginning programming principles.', 'Build a strong foundation in this topic, designed to foster creativity and logical thinking.']},
+            'class-6': {'title': 'i-Whizz Class 6', 'image': 'images/iwhizz6.jpg', 'desc': 'Deeper dive into software apps and coding techniques.', 'details': ['Deeper dive into software apps and coding techniques.', 'Empower students with practical skills in this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'class-7': {'title': 'i-Whizz Class 7', 'image': 'images/iwhizz7.jpg', 'desc': 'Advanced digital tools and structured logic building.', 'details': ['Advanced digital tools and structured logic building.', 'Interactive, hands-on activities covering this topic, ideal for real-world application and academic excellence.']},
+            'class-8': {'title': 'i-Whizz Class 8', 'image': 'images/iwhizz8.jpg', 'desc': 'Web design basics and advanced conceptual frameworks.', 'details': ['Web design basics and advanced conceptual frameworks.', 'Interactive, hands-on activities covering this topic, perfect for building modern digital fluency.']},
+            'class-9': {'title': 'i-Whizz Class 9', 'image': 'images/iwhizz9.jpg', 'desc': 'Comprehensive studies in modern computing architectures.', 'details': ['Comprehensive studies in modern computing architectures.', 'Step-by-step guidance on this topic, equipping students with tools for future success.']},
         }
     },
     'young-wizard-series': {
-        'title': 'YOUNG WIZARD SERIES',
-        'description': 'Magical computing foundations for young curious minds.',
+        'title': 'THE YOUNG WIZARD SERIES',
+        'tagline': 'Where Young Minds Learn, Create, and Explore',
+        'description': 'The Young Wizard Series is a vibrant collection of 5 course titles, specially designed for primary learners across Levels 1 to 5.\n\nWith its colorful, activity-based approach, the series makes learning fun and engaging while building strong digital foundations. Students are introduced to essential concepts such as the Windows 7 operating system, MS Word 2007, and Paint, along with basic graphical and animation skills.\n\nAs learners progress, they gain hands-on experience in working across platforms, exploring multimedia tools, internet browsing, and creative applications like SwishMax and Macromedia Flash.\n\nBlending creativity with technology, the Young Wizard Series offers a well-rounded digital-first learning experience, helping young minds develop confidence, curiosity, and essential computer skills from an early age.',
+        'bullets': [
+            'The Young Wizard Series is a vibrant collection of 5 course titles, specially designed for primary learners across Levels 1 to 5.',
+            'With its colorful, activity-based approach, the series makes learning fun and engaging while building strong digital foundations. Students are introduced to essential concepts such as the Windows 7 operating system, MS Word 2007, and Paint, along with basic graphical and animation skills.',
+            'As learners progress, they gain hands-on experience in working across platforms, exploring multimedia tools, internet browsing, and creative applications like SwishMax and Macromedia Flash.',
+            'Blending creativity with technology, the Young Wizard Series offers a well-rounded digital-first learning experience, helping young minds develop confidence, curiosity, and essential computer skills from an early age.'
+        ],
         'books': {
-            'level-1': {'title': 'Young Wizard Level 1', 'image': 'images/young1.jpg', 'desc': 'Magical introduction to computers.'},
-            'level-2': {'title': 'Young Wizard Level 2', 'image': 'images/young2.jpg', 'desc': 'Exploring creative tech tools.'},
-            'level-3': {'title': 'Young Wizard Level 3', 'image': 'images/young3.jpg', 'desc': 'Building logic through fun exercises.'},
-            'level-4': {'title': 'Young Wizard Level 4', 'image': 'images/young4.jpg', 'desc': 'Intermediate magical computing tasks.'},
-            'level-5': {'title': 'Young Wizard Level 5', 'image': 'images/young5.jpg', 'desc': 'Advanced puzzles and digital mastery.'},
+            'level-1': {'title': 'Young Wizard Level 1', 'image': 'images/young1.jpg', 'desc': 'Magical introduction to computers.', 'details': ['Magical introduction to computers.', 'Master the essentials of this topic, equipping students with tools for future success.']},
+            'level-2': {'title': 'Young Wizard Level 2', 'image': 'images/young2.jpg', 'desc': 'Exploring creative tech tools.', 'details': ['Exploring creative tech tools.', 'Build a strong foundation in this topic, helping learners grasp complex topics with ease.']},
+            'level-3': {'title': 'Young Wizard Level 3', 'image': 'images/young3.jpg', 'desc': 'Building logic through fun exercises.', 'details': ['Building logic through fun exercises.', 'A fun, comprehensive approach to this topic, ideal for real-world application and academic excellence.']},
+            'level-4': {'title': 'Young Wizard Level 4', 'image': 'images/young4.jpg', 'desc': 'Intermediate magical computing tasks.', 'details': ['Intermediate magical computing tasks.', 'Engaging lessons tailored for this topic, encouraging problem-solving and critical reasoning.']},
+            'level-5': {'title': 'Young Wizard Level 5', 'image': 'images/young5.jpg', 'desc': 'Advanced puzzles and digital mastery.', 'details': ['Advanced puzzles and digital mastery.', 'Comprehensive coverage of this topic, creating an enjoyable and engaging learning environment.']},
         }
     },
     'little-wizard-series': {
-        'title': 'LITTLE WIZARD SERIES',
-        'description': 'Early childhood computing basics for LKG and UKG.',
+        'title': 'THE LITTLE WIZARD SERIES',
+        'tagline': 'First Steps into the Digital World.',
+        'description': 'The Little Wizard Series has been specially designed for early learners, featuring 2 course levels tailored for KG students.\n\nCreated to support teachers, students, and parents, the series delivers an interactive, fun, and engaging digital-first learning experience. With a focus on simple concepts and hands-on activities, it introduces young minds to the basics of technology in an enjoyable and accessible way.\n\nBlending learning with play, the Little Wizard Series offers a well-rounded foundation through practical exposure and engaging content, helping children take their first confident steps into the digital world.',
+        'bullets': [
+            'The Little Wizard Series has been specially designed for early learners, featuring 2 course levels tailored for KG students.',
+            'Created to support teachers, students, and parents, the series delivers an interactive, fun, and engaging digital-first learning experience. With a focus on simple concepts and hands-on activities, it introduces young minds to the basics of technology in an enjoyable and accessible way.',
+            'Blending learning with play, the Little Wizard Series offers a well-rounded foundation through practical exposure and engaging content, helping children take their first confident steps into the digital world.'
+        ],
         'books': {
-            'level-1': {'title': 'Little Wizard Level 1', 'image': 'images/Kids level 1 wrapper.jpg', 'desc': 'Colorful shapes and mouse control.'},
-            'level-2': {'title': 'Little Wizard Level 2', 'image': 'images/Kids level 2 wrapper.jpg', 'desc': 'Typing games and early logic.'},
+            'level-1': {'title': 'Little Wizard Level 1', 'image': 'images/Kids level 1 wrapper.jpg', 'desc': 'Colorful shapes and mouse control.', 'details': ['Colorful shapes and mouse control.', 'Interactive, hands-on activities covering this topic, creating an enjoyable and engaging learning environment.']},
+            'level-2': {'title': 'Little Wizard Level 2', 'image': 'images/Kids level 2 wrapper.jpg', 'desc': 'Typing games and early logic.', 'details': ['Typing games and early logic.', 'Interactive, hands-on activities covering this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
         }
     },
     'app2016-series': {
-        'title': 'APPLICATION SERIES 2016',
-        'description': 'Mastering modern office applications with the 2016 suite.',
+        'title': 'THE APPLICATION SERIES 2016',
+        'tagline': 'From Basics to Brilliance in Office Tools. Learn. Apply. Excel.',
+        'description': 'Designed to build practical digital skills, the Application Series 2016 offers an in-depth understanding of widely used application tools such as Microsoft Word, Excel, and PowerPoint 2016.\n\nEach application is explored individually through real-world illustrations and hands-on practice activities, making it easier for learners to grasp concepts and apply them confidently.\n\nThe series also provides strong conceptual coverage of MS Office tools, including Word, Excel, PowerPoint, and Access (2007 editions), ensuring a well-rounded foundation in productivity software.\n\nWith a structured and practical approach, this series helps learners develop both technical proficiency and real-world application skills essential for academic and professional success.',
+        'bullets': [
+            'Designed to build practical digital skills, the Application Series 2016 offers an in-depth understanding of widely used application tools such as Microsoft Word, Excel, and PowerPoint 2016.',
+            'Each application is explored individually through real-world illustrations and hands-on practice activities, making it easier for learners to grasp concepts and apply them confidently.',
+            'The series also provides strong conceptual coverage of MS Office tools, including Word, Excel, PowerPoint, and Access (2007 editions), ensuring a well-rounded foundation in productivity software.',
+            'With a structured and practical approach, this series helps learners develop both technical proficiency and real-world application skills essential for academic and professional success.'
+        ],
         'books': {
-            'ppt': {'title': 'PowerPoint 2016', 'image': 'images/2016 ppt.png', 'desc': 'Create stunning presentations with modern tools.'},
-            'excel': {'title': 'Excel 2016', 'image': 'images/2016 excel.png', 'desc': 'Data analysis, charting, and advanced functions.'},
-            'word': {'title': 'Word 2016', 'image': 'images/2016 word.png', 'desc': 'Professional document creation and formatting.'},
+            'ppt': {'title': 'PowerPoint 2016', 'image': 'images/2016 ppt.png', 'desc': 'Create stunning presentations with modern tools.', 'details': ['Create stunning presentations with modern tools.', 'A fun, comprehensive approach to this topic, ideal for real-world application and academic excellence.']},
+            'excel': {'title': 'Excel 2016', 'image': 'images/2016 excel.png', 'desc': 'Data analysis, charting, and advanced functions.', 'details': ['Data analysis, charting, and advanced functions.', 'A fun, comprehensive approach to this topic, equipping students with tools for future success.']},
+            'word': {'title': 'Word 2016', 'image': 'images/2016 word.png', 'desc': 'Professional document creation and formatting.', 'details': ['Professional document creation and formatting.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
         }
     },
     'app2007-series': {
         'title': 'APPLICATION SERIES 2007',
         'description': 'Comprehensive guide to the classic Office 2007 suite.',
         'books': {
-            'level-1': {'title': 'App Series 2007 Level 1', 'image': 'images/App1.jpg', 'desc': 'Foundations of Office 2007 applications.'},
-            'level-2': {'title': 'App Series 2007 Level 2', 'image': 'images/App2.jpg', 'desc': 'Intermediate skills in Word and Excel formatting.'},
-            'level-3': {'title': 'App Series 2007 Level 3', 'image': 'images/App3.jpg', 'desc': 'Advanced presentations and formulas.'},
-            'level-4': {'title': 'App Series 2007 Level 4', 'image': 'images/App4.jpg', 'desc': 'Database management introduction.'},
-            'level-5': {'title': 'App Series 2007 Level 5', 'image': 'images/App5.jpg', 'desc': 'Mastering the Office 2007 suite.'},
+            'level-1': {'title': 'App Series 2007 Level 1', 'image': 'images/App1.jpg', 'desc': 'Foundations of Office 2007 applications.', 'details': ['Foundations of Office 2007 applications.', 'Master the essentials of this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'level-2': {'title': 'App Series 2007 Level 2', 'image': 'images/App2.jpg', 'desc': 'Intermediate skills in Word and Excel formatting.', 'details': ['Intermediate skills in Word and Excel formatting.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'level-3': {'title': 'App Series 2007 Level 3', 'image': 'images/App3.jpg', 'desc': 'Advanced presentations and formulas.', 'details': ['Advanced presentations and formulas.', 'Master the essentials of this topic, ideal for real-world application and academic excellence.']},
+            'level-4': {'title': 'App Series 2007 Level 4', 'image': 'images/App4.jpg', 'desc': 'Database management introduction.', 'details': ['Database management introduction.', 'Unlock your potential with this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'level-5': {'title': 'App Series 2007 Level 5', 'image': 'images/App5.jpg', 'desc': 'Mastering the Office 2007 suite.', 'details': ['Mastering the Office 2007 suite.', 'Empower students with practical skills in this topic, designed to foster creativity and logical thinking.']},
         }
     },
     'programming-series': {
-        'title': 'PROGRAMMING SERIES',
-        'description': 'Step-by-step programming curriculum from basics to advanced OOP.',
+        'title': 'THE PROGRAM SERIES',
+        'tagline': 'Master the Code. Build the Future',
+        'description': 'The Program Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.\n\nCovering key languages and tools such as HTML, Macromedia Flash, Microsoft Visual Basic, C, and C++, each book emphasizes practical exercises and real-world applications to help learners understand and apply concepts effectively.\n\nWith a clear, practice-driven approach, the series enables students to develop coding confidence and problem-solving skills essential for today’s digital landscape.',
+        'bullets': [
+            'The Program Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.',
+            'Covering key languages and tools such as HTML, Macromedia Flash, Microsoft Visual Basic, C, and C++, each book emphasizes practical exercises and real-world applications to help learners understand and apply concepts effectively.',
+            'With a clear, practice-driven approach, the series enables students to develop coding confidence and problem-solving skills essential for today’s digital landscape.'
+        ],
         'books': {
-            'level-1': {'title': 'Programming Level 1', 'image': 'images/Pro1 New.jpg', 'desc': 'The fundamentals of coding and syntax.'},
-            'level-2': {'title': 'Programming Level 2', 'image': 'images/Pro2.jpg', 'desc': 'Data structures and algorithms introduction.'},
-            'level-3': {'title': 'Programming Level 3', 'image': 'images/Pro3.jpg', 'desc': 'Object-oriented concepts and design.'},
-            'level-4': {'title': 'Programming Level 4', 'image': 'images/Pro4 New.jpg', 'desc': 'Advanced applied programming techniques.'},
+            'level-1': {'title': 'Programming Level 1', 'image': 'images/Pro1 New.jpg', 'desc': 'The fundamentals of coding and syntax.', 'details': ['The fundamentals of coding and syntax.', 'Interactive, hands-on activities covering this topic, creating an enjoyable and engaging learning environment.']},
+            'level-2': {'title': 'Programming Level 2', 'image': 'images/Pro2.jpg', 'desc': 'Data structures and algorithms introduction.', 'details': ['Data structures and algorithms introduction.', 'A fun, comprehensive approach to this topic, designed to foster creativity and logical thinking.']},
+            'level-3': {'title': 'Programming Level 3', 'image': 'images/Pro3.jpg', 'desc': 'Object-oriented concepts and design.', 'details': ['Object-oriented concepts and design.', 'Engaging lessons tailored for this topic, encouraging problem-solving and critical reasoning.']},
+            'level-4': {'title': 'Programming Level 4', 'image': 'images/Pro4 New.jpg', 'desc': 'Advanced applied programming techniques.', 'details': ['Advanced applied programming techniques.', 'Build a strong foundation in this topic, helping learners grasp complex topics with ease.']},
         }
     },
     'my-computer-series': {
         'title': 'MY COMPUTER SERIES',
-        'description': 'Foundational computer knowledge and system maintenance.',
+        'tagline': 'Building Digital Foundations from Day One',
+        'description': 'The My Computer Series is a thoughtfully designed set of 5 course titles for primary learners, covering Grades 1 to 5.\n\nWith vibrant visuals and activity-based workbooks, this series makes early computer learning fun, interactive, and easy to understand. Students are introduced to essential digital concepts, including the Windows operating system (with versions like XP) and its everyday applications.\n\nLearners also gain hands-on experience with tools such as MS Paint and WordPad and basic web design skill sets, helping them build confidence in using computers from an early stage.\n\nOver a strong focus on foundational skills and practical learning, the My Computer Series sets the stage for a smooth and engaging digital learning journey.',
+        'bullets': [
+            'The My Computer Series is a thoughtfully designed set of 5 course titles for primary learners, covering Grades 1 to 5.',
+            'With vibrant visuals and activity-based workbooks, this series makes early computer learning fun, interactive, and easy to understand. Students are introduced to essential digital concepts, including the Windows operating system (with versions like XP) and its everyday applications.',
+            'Learners also gain hands-on experience with tools such as MS Paint and WordPad and basic web design skill sets, helping them build confidence in using computers from an early stage.',
+            'Over a strong focus on foundational skills and practical learning, the My Computer Series sets the stage for a smooth and engaging digital learning journey.'
+        ],
         'books': {
-            'level-1': {'title': 'My Computer Level 1', 'image': 'images/my1.jpg', 'desc': 'Exploring your first PC.'},
-            'level-2': {'title': 'My Computer Level 2', 'image': 'images/my2.jpg', 'desc': 'Handling files and folders safely.'},
-            'level-3': {'title': 'My Computer Level 3', 'image': 'images/my3.jpg', 'desc': 'Navigating operating systems.'},
-            'level-4': {'title': 'My Computer Level 4', 'image': 'images/my4.jpg', 'desc': 'Settings, customization, and tools.'},
-            'level-5': {'title': 'My Computer Level 5', 'image': 'images/my5.jpg', 'desc': 'System maintenance and troubleshooting.'},
+            'level-1': {'title': 'My Computer Level 1', 'image': 'images/my1.jpg', 'desc': 'Exploring your first PC.', 'details': ['Exploring your first PC.', 'Unlock your potential with this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'level-2': {'title': 'My Computer Level 2', 'image': 'images/my2.jpg', 'desc': 'Handling files and folders safely.', 'details': ['Handling files and folders safely.', 'Unlock your potential with this topic, creating an enjoyable and engaging learning environment.']},
+            'level-3': {'title': 'My Computer Level 3', 'image': 'images/my3.jpg', 'desc': 'Navigating operating systems.', 'details': ['Navigating operating systems.', 'Unlock your potential with this topic, encouraging problem-solving and critical reasoning.']},
+            'level-4': {'title': 'My Computer Level 4', 'image': 'images/my4.jpg', 'desc': 'Settings, customization, and tools.', 'details': ['Settings, customization, and tools.', 'Interactive, hands-on activities covering this topic, encouraging problem-solving and critical reasoning.']},
+            'level-5': {'title': 'My Computer Level 5', 'image': 'images/my5.jpg', 'desc': 'System maintenance and troubleshooting.', 'details': ['System maintenance and troubleshooting.', 'Master the essentials of this topic, ideal for real-world application and academic excellence.']},
         }
     },
     'right-click-series': {
-        'title': 'RIGHT-CLICK SERIES (i-ICT)',
-        'description': 'Information and Communication Technology for secondary levels.',
+        'title': 'THE RIGHT CLICK SERIES',
+        'tagline': 'Click into The World of ICT',
+        'description': 'The Right Click Series is designed to build strong foundations in Information and Communication Technology (ICT) for students from Grades 3 to 9.\n\nCovering the Windows operating system, essential application tools, and key programming concepts, the series introduces learners to basic programming, Visual fundamentals, and practical IT applications.\n\nWith a structured, curriculum-aligned approach, the Right Click Series helps students develop essential digital skills, logical thinking, and real-world computer proficiency, preparing them for today’s technology-driven environment.',
+        'bullets': [
+            'The Right Click Series is designed to build strong foundations in Information and Communication Technology (ICT) for students from Grades 3 to 9.',
+            'Covering the Windows operating system, essential application tools, and key programming concepts, the series introduces learners to basic programming, Visual fundamentals, and practical IT applications.',
+            'With a structured, curriculum-aligned approach, the Right Click Series helps students develop essential digital skills, logical thinking, and real-world computer proficiency, preparing them for today’s technology-driven environment.'
+        ],
         'books': {
-            'level-6': {'title': 'i-ICT Level 6', 'image': 'images/ict6.jpg', 'desc': 'Information and Communication Tech basics.'},
-            'level-7': {'title': 'i-ICT Level 7', 'image': 'images/ict7.jpg', 'desc': 'Networks and data communication.'},
-            'level-8': {'title': 'i-ICT Level 8', 'image': 'images/ict8.jpg', 'desc': 'Applied IT systems in the real world.'},
-            'level-9': {'title': 'i-ICT Level 9', 'image': 'images/ict9.jpg', 'desc': 'Comprehensive technology integration.'},
+            'level-6': {'title': 'i-ICT Level 6', 'image': 'images/ict6.jpg', 'desc': 'Information and Communication Tech basics.', 'details': ['Information and Communication Tech basics.', 'Step-by-step guidance on this topic, designed to foster creativity and logical thinking.']},
+            'level-7': {'title': 'i-ICT Level 7', 'image': 'images/ict7.jpg', 'desc': 'Networks and data communication.', 'details': ['Networks and data communication.', 'Interactive, hands-on activities covering this topic, ideal for real-world application and academic excellence.']},
+            'level-8': {'title': 'i-ICT Level 8', 'image': 'images/ict8.jpg', 'desc': 'Applied IT systems in the real world.', 'details': ['Applied IT systems in the real world.', 'Empower students with practical skills in this topic, encouraging problem-solving and critical reasoning.']},
+            'level-9': {'title': 'i-ICT Level 9', 'image': 'images/ict9.jpg', 'desc': 'Comprehensive technology integration.', 'details': ['Comprehensive technology integration.', 'Dive deep into this topic, designed to foster creativity and logical thinking.']},
         }
     },
     'cursive-writing-books': {
-        'title': 'ENGLISH CURSIVE WRITING',
-        'description': 'Master the art of elegant penmanship with our structured cursive writing series.',
+        'title': 'MY FIRST STROKE SERIES',
+        'tagline': 'Enriching Cursive Hands With Linguistic Differentiations. One Stroke at a Time.',
+        'description': 'My First Stroke Series is a thoughtfully designed collection of 7 cursive writing books in English and Tamil, crafted for learners from LKG to Grade 5.\n\nWith a step-by-step approach, the series helps students develop clear, neat, and confident handwriting. It covers everything from lowercase and uppercase letters to word formation and sentence writing, inclusive of Tamil letters, in both short and long forms.\n\nThrough guided practice and structured exercises, the series builds strong writing habits—making learning cursive both effective and enjoyable for young learners.',
+        'bullets': [
+            'My First Stroke Series is a thoughtfully designed collection of 7 cursive writing books in English and Tamil, crafted for learners from LKG to Grade 5.',
+            'With a step-by-step approach, the series helps students develop clear, neat, and confident handwriting. It covers everything from lowercase and uppercase letters to word formation and sentence writing, inclusive of Tamil letters, in both short and long forms.',
+            'Through guided practice and structured exercises, the series builds strong writing habits—making learning cursive both effective and enjoyable for young learners.'
+        ],
         'books': {
-            'lkg': {'title': 'Cursive Writing LKG', 'image': 'images/cursive-lkg.jpg', 'desc': 'Introduction to strokes and basic patterns.'},
-            'ukg': {'title': 'Cursive Writing UKG', 'image': 'images/cursive-ukg.jpg', 'desc': 'Building letter forms and simple connections.'},
-            'level-1': {'title': 'Cursive Writing Level 1', 'image': 'images/cursive1.jpg', 'desc': 'Fluid word formation and sentence structure.'},
-            'level-2': {'title': 'Cursive Writing Level 2', 'image': 'images/cursive2.jpg', 'desc': 'Advanced penmanship and consistent spacing.'},
-            'level-3': {'title': 'Cursive Writing Level 3', 'image': 'images/cursive3.jpg', 'desc': 'Perfecting the elegant cursive script.'},
-            'level-4': {'title': 'Cursive Writing Level 4', 'image': 'images/cursive4.jpg', 'desc': 'Creative writing in professional cursive.'},
-            'level-5': {'title': 'Cursive Writing Level 5', 'image': 'images/cursive5.jpg', 'desc': 'Mastery of decorative and formal penmanship.'},
+            'lkg': {'title': 'Cursive Writing LKG', 'image': 'images/cursive-lkg.jpg', 'desc': 'Introduction to strokes and basic patterns.', 'details': ['Introduction to strokes and basic patterns.', 'Build a strong foundation in this topic, equipping students with tools for future success.']},
+            'ukg': {'title': 'Cursive Writing UKG', 'image': 'images/cursive-ukg.jpg', 'desc': 'Building letter forms and simple connections.', 'details': ['Building letter forms and simple connections.', 'Engaging lessons tailored for this topic, designed to foster creativity and logical thinking.']},
+            'level-1': {'title': 'Cursive Writing Level 1', 'image': 'images/Level 1.jpg', 'desc': 'Fluid word formation and sentence structure.', 'details': ['Fluid word formation and sentence structure.', 'A fun, comprehensive approach to this topic, helping learners grasp complex topics with ease.']},
+            'level-2': {'title': 'Cursive Writing Level 2', 'image': 'images/Level 2.jpg', 'desc': 'Advanced penmanship and consistent spacing.', 'details': ['Advanced penmanship and consistent spacing.', 'Interactive, hands-on activities covering this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'level-3': {'title': 'Cursive Writing Level 3', 'image': 'images/Level 3.jpg', 'desc': 'Perfecting the elegant cursive script.', 'details': ['Perfecting the elegant cursive script.', 'A fun, comprehensive approach to this topic, creating an enjoyable and engaging learning environment.']},
+            'level-4': {'title': 'Cursive Writing Level 4', 'image': 'images/Level 4.jpg', 'desc': 'Creative writing in professional cursive.', 'details': ['Creative writing in professional cursive.', 'Build a strong foundation in this topic, perfect for building modern digital fluency.']},
+            'level-5': {'title': 'Cursive Writing Level 5', 'image': 'images/Level 5.jpg', 'desc': 'Mastery of decorative and formal penmanship.', 'details': ['Mastery of decorative and formal penmanship.', 'A fun, comprehensive approach to this topic, helping learners grasp complex topics with ease.']},
         }
     },
     'tamil-writing-books': {
         'title': 'TAMIL COPY WRITING',
         'description': 'A beautiful journey into Tamil calligraphy and structured writing practice.',
         'books': {
-            'level-1': {'title': 'Tamil Writing Level 1', 'image': 'images/tamil1.jpg', 'desc': 'Basic Tamil characters and stroke techniques.'},
-            'level-2': {'title': 'Tamil Writing Level 2', 'image': 'images/tamil2.jpg', 'desc': 'Building words and understanding letter structures.'},
-            'level-3': {'title': 'Tamil Writing Level 3', 'image': 'images/tamil3.jpg', 'desc': 'Intermediate word formation and sentence patterns.'},
-            'level-4': {'title': 'Tamil Writing Level 4', 'image': 'images/tamil4.jpg', 'desc': 'Enhancing writing speed and letter consistency.'},
-            'level-5': {'title': 'Tamil Writing Level 5', 'image': 'images/tamil5.jpg', 'desc': 'Advanced copy writing and literary phrases.'},
-            'level-6': {'title': 'Tamil Writing Level 6', 'image': 'images/tamil6.jpg', 'desc': 'Perfecting the flow of Tamil script.'},
-            'level-7': {'title': 'Tamil Writing Level 7', 'image': 'images/tamil7.jpg', 'desc': 'Mastery of formal Tamil calligraphy.'},
+            'level-1': {'title': 'Tamil Writing Level 1', 'image': 'images/tamil1.jpg', 'desc': 'Basic Tamil characters and stroke techniques.', 'details': ['Basic Tamil characters and stroke techniques.', 'Master the essentials of this topic, creating an enjoyable and engaging learning environment.']},
+            'level-2': {'title': 'Tamil Writing Level 2', 'image': 'images/tamil2.jpg', 'desc': 'Building words and understanding letter structures.', 'details': ['Building words and understanding letter structures.', 'Build a strong foundation in this topic, designed to foster creativity and logical thinking.']},
+            'level-3': {'title': 'Tamil Writing Level 3', 'image': 'images/tamil3.jpg', 'desc': 'Intermediate word formation and sentence patterns.', 'details': ['Intermediate word formation and sentence patterns.', 'Engaging lessons tailored for this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'level-4': {'title': 'Tamil Writing Level 4', 'image': 'images/tamil4.jpg', 'desc': 'Enhancing writing speed and letter consistency.', 'details': ['Enhancing writing speed and letter consistency.', 'Unlock your potential with this topic, encouraging problem-solving and critical reasoning.']},
+            'level-5': {'title': 'Tamil Writing Level 5', 'image': 'images/tamil5.jpg', 'desc': 'Advanced copy writing and literary phrases.', 'details': ['Advanced copy writing and literary phrases.', 'A fun, comprehensive approach to this topic, equipping students with tools for future success.']},
+            'level-6': {'title': 'Tamil Writing Level 6', 'image': 'images/tamil6.jpg', 'desc': 'Perfecting the flow of Tamil script.', 'details': ['Perfecting the flow of Tamil script.', 'A fun, comprehensive approach to this topic, encouraging problem-solving and critical reasoning.']},
+            'level-7': {'title': 'Tamil Writing Level 7', 'image': 'images/tamil7.jpg', 'desc': 'Mastery of formal Tamil calligraphy.', 'details': ['Mastery of formal Tamil calligraphy.', 'Engaging lessons tailored for this topic, ideal for real-world application and academic excellence.']},
         }
     }
 }

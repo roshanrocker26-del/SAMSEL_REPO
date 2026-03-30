@@ -345,9 +345,20 @@
         <div class="book-content">
             <span class="series-tag">{{ series.title }}</span>
             <h1 class="book-title">{{ book.title }}</h1>
-            <p class="book-summary">
-                {{ book.desc }}
-            </p>
+            <div class="book-summary">
+                {% if book.details %}
+                    <ul style="padding-left: 1.5rem; list-style-type: none;">
+                        {% for point in book.details %}
+                            <li style="margin-bottom: 12px; position: relative;">
+                                <span style="position: absolute; left: -1.5rem; color: var(--accent-color);">✓</span>
+                                {{ point }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>{{ book.desc }}</p>
+                {% endif %}
+            </div>
         </div>
     </main>
 
@@ -357,7 +368,7 @@
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
-            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 SAMSEL Publications. All Rights Reserved.</p>
+            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 

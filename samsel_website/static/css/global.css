@@ -109,13 +109,13 @@ body {
     width: 100%;
     padding: 10px 0;
     position: fixed;
-    top: 92px !important; /* Fixed below header */
+    top: 86px !important; /* Fixed below header (matches header height: 15+55+15+1=86) */
     z-index: 999;
     transition: all var(--transition-normal);
 }
 
 .top-navbar.scrolled {
-    top: 72px !important; /* Adjusted for shrunk header */
+    top: 68px !important; /* Adjusted for shrunk header (matches header height: 6+55+6+1=68) */
 }
 
 .top-menu {

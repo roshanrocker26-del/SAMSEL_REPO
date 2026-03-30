@@ -596,10 +596,10 @@
                         <li style="margin-bottom: 12px; display: list-item;">{{ bullet }}</li>
                     {% endfor %}
                 </ul>
-            {% elif series_slug == 'ismart-series' %}
-                {{ series.description|linebreaks }}
             {% else %}
-                <p style="text-align: justify;">{{ series.description }}</p>
+                <div style="text-align: justify;">
+                    {{ series.description|linebreaks }}
+                </div>
             {% endif %}
         </div>
 
@@ -621,8 +621,7 @@
         {% endif %}
     </header>
 
-    {% if series_slug == 'ismart-series' or series_slug == 'ibot-series' %}
-    <!-- 3D Coverflow Carousel for i-Smart and i-Bot -->
+    <!-- 3D Coverflow Carousel for all books -->
     <section class="carousel-section" id="ismart-carousel">
         <div class="carousel-track-wrapper">
             <div class="carousel-track" id="carouselTrack">
@@ -646,30 +645,13 @@
         </div>
     </section>
 
-    {% else %}
-    <!-- Standard grid for all other series -->
-    <main class="books-grid">
-        {% for book_slug, book in series.books.items %}
-        <a href="{% url 'book_detail' series_slug=series_slug book_slug=book_slug %}" class="book-item" data-delay="{{ forloop.counter0 }}00ms">
-            <div class="book-cover-container">
-                <img src="{% static book.image %}" alt="{{ book.title }}" class="book-cover" data-vt-name="book-image-{{ series_slug }}-{{ book_slug }}">
-            </div>
-            <div class="book-info">
-                <h3>{{ book.title }}</h3>
-                <p>{{ book.desc }}</p>
-            </div>
-        </a>
-        {% endfor %}
-    </main>
-    {% endif %}
-
     <footer class="main-footer">
         <div class="footer-content" style="text-align: center; padding: 40px 20px;">
             <h3 class="footer-logo" style="margin-bottom: 10px;">
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
-            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 SAMSEL Publications. All Rights Reserved.</p>
+            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 
