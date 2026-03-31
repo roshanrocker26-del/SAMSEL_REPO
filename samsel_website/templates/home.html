@@ -1,4 +1,4 @@
-﻿{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,8 +20,12 @@
             <!-- LOGO (LEFT) -->
             <div class="logo">
                 <a href="/">
-                    <span class="logo-main">SAMSEL</span>
-                    <span class="logo-sub">Publications</span>
+                    <div class="logo-text-group">
+                        <span class="logo-main">SAMSEL</span>
+                        <span class="logo-sub">Publications</span>
+                    </div>
+                    <div class="logo-tagline" style="font-family:Cinzel;font-size:14px;">Shaping Digital Minds since
+                        2001</div>
                 </a>
             </div>
 
@@ -149,13 +153,13 @@
                         <a href="{% url 'series_detail' series_slug='app2016-series' %}">Application 2016 <span
                                 class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a
-                                    href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a>
+                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='word' %}">Word</a>
                             </li>
                             <li><a
                                     href="{% url 'book_detail' series_slug='app2016-series' book_slug='excel' %}">Excel</a>
                             </li>
-                            <li><a href="{% url 'book_detail' series_slug='app2016-series' book_slug='word' %}">Word</a>
+                            <li><a
+                                    href="{% url 'book_detail' series_slug='app2016-series' book_slug='ppt' %}">PowerPoint</a>
                             </li>
                         </ul>
                     </li>
@@ -163,16 +167,16 @@
                         <a href="{% url 'series_detail' series_slug='app2007-series' %}">Application 2007 <span
                                 class="side-arrow">▶</span></a>
                         <ul class="submenu">
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-1' %}">Level
-                                    1</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-2' %}">Level
-                                    2</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-3' %}">Level
-                                    3</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-4' %}">Level
-                                    4</a></li>
-                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='level-5' %}">Level
-                                    5</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='office-2007' %}">Office
+                                    2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='word-2007' %}">Word
+                                    2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='excel-2007' %}">Excel
+                                    2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='ppt-2007' %}">PowerPoint
+                                    2007</a></li>
+                            <li><a href="{% url 'book_detail' series_slug='app2007-series' book_slug='access-2007' %}">Access
+                                    2007</a></li>
                         </ul>
                     </li>
                     <li>
@@ -271,7 +275,7 @@
             <li><a href="{% url 'reviews_page' %}">Client Testimonials</a></li>
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
-            <!-- Removed Student Login, kept only School Login dropdown -->
+
             <li class="dropdown">
                 <a href="#">Login <span class="arrow">▾</span></a>
                 <ul class="dropdown-menu">
@@ -705,14 +709,16 @@
 
         <div class="hero-inner">
 
-            <!-- Main Headline -->
             <h1 class="hero-headline">
-                Empowering <span class="accent-word">Educators</span><br>That Inspire
+                <span class="accent-word">Empowering</span><br>
+                <span class="accent-word">Educators</span><br>
+                That Inspire
             </h1>
 
             <!-- Subtitle -->
-            <p class="hero-para">
-                We at SAMSEL excel in implementing computer literacy programs in schools, ensuring effective learning
+            <p class="hero-para" style="text-align:left;">
+                We at <span class="brand-text">SAMSEL</span> excel in implementing computer literacy programs in
+                schools, ensuring effective learning
                 across all grades and cadres.<br>
 
                 Our conceptualizations blend the latest Windows academic curriculum, covering diversified application
@@ -739,14 +745,16 @@
             <div class="sl-pillar">
                 <div class="sl-pillar-icon">🏫</div>
                 <h3>Computer Literacy at Schools</h3>
-                <p>We implement structured computer literacy programs at schools, ensuring an effective and progressive
+                <p style="text-align: left;">We implement structured computer literacy programs at schools, ensuring
+                    an effective and progressive
                     learning scope across all grades and cadres.</p>
             </div>
 
             <div class="sl-pillar">
                 <div class="sl-pillar-icon">📐</div>
                 <h3>Curriculum That Excels</h3>
-                <p>Specialised in conceptualising the latest Windows academic curriculum, covering diversified
+                <p style="text-align: left;">Specialised in conceptualising the latest Windows academic curriculum,
+                    covering diversified
                     application
                     packages in line with modern programming languages.</p>
             </div>
@@ -754,28 +762,32 @@
             <div class="sl-pillar">
                 <div class="sl-pillar-icon">🎓</div>
                 <h3>Empowering Educators</h3>
-                <p>We equip educators with tools and resources to inspire — turning classrooms into innovation hubs and
+                <p style="text-align: left;">We equip educators with tools and resources to inspire turning
+                    classrooms into innovation hubs and
                     helping teachers deliver digital excellence with confidence.</p>
             </div>
 
             <div class="sl-pillar">
                 <div class="sl-pillar-icon">💡</div>
                 <h3>Digital Excellence</h3>
-                <p>Our emphasis on digital excellence ensures every student gains practical, future-ready skills — from
+                <p style="text-align: left;">Our emphasis on digital excellence ensures every student gains
+                    practical, future-ready skills from
                     foundational IT concepts to advanced programming logic.</p>
             </div>
 
             <div class="sl-pillar">
                 <div class="sl-pillar-icon">🔬</div>
                 <h3>Breaking Complexities</h3>
-                <p>We excel at transforming complex technology topics into simple, engaging standards — making advanced
+                <p style="text-align: left;">We excel at transforming complex technology topics into simple, engaging
+                    standards making advanced
                     concepts accessible and enjoyable for every learner.</p>
             </div>
 
             <div class="sl-pillar">
                 <div class="sl-pillar-icon">🌐</div>
                 <h3>Leading E-Learning Enterprise</h3>
-                <p>As a pioneering academic e-learning enterprise since 2001, we deliver IT-specific knowledge for
+                <p style="text-align: left;">As a pioneering academic e-learning enterprise since 2001, we deliver
+                    IT-specific knowledge for
                     students
                     in grades across India, trusted for over two decades.</p>
             </div>
@@ -859,7 +871,7 @@
     <!-- VALUE PROPOSITION — ZIGZAG LAYOUT -->
     <section id="showcase-section" class="vp-section reveal-up delay-200">
         <div class="vp-header">
-            <h2 class="vp-title">Value Proposition - Built for Modern Classrooms</h2>
+            <h2 class="vp-title" style="font-size: 3.5rem;">Value Proposition - Built for Modern Classrooms</h2>
             <p class="vp-subtitle"><strong>Simple. Structured. Effective.</strong></p>
         </div>
 
@@ -871,8 +883,9 @@
             <div class="vp-text-wrap">
                 <span class="vp-check">✓</span>
                 <div>
-                    <p class="vp-point"><strong>Adopt SAMSEL Content:</strong> Schools integrate our textbooks and
-                        resources into their curriculum.</p>
+                    <p class="vp-point" style="font-size: 1.5rem;"><strong>Adopt <span class="brand-text">SAMSEL</span>
+                            Content:</strong> Schools
+                        integrate our textbooks and resources into their curriculum.</p>
                 </div>
             </div>
         </div>
@@ -885,7 +898,8 @@
             <div class="vp-text-wrap">
                 <span class="vp-check">✓</span>
                 <div>
-                    <p class="vp-point"><strong>Enable Digital Learning:</strong> Students access personalized practice
+                    <p class="vp-point" style="font-size: 1.5rem;"><strong>Enable Digital Learning:</strong> Students
+                        access personalized practice
                         and assessments.</p>
                 </div>
             </div>
@@ -899,7 +913,8 @@
             <div class="vp-text-wrap">
                 <span class="vp-check">✓</span>
                 <div>
-                    <p class="vp-point"><strong>Track &amp; Improve Performance:</strong> Teachers and students receive
+                    <p class="vp-point" style="font-size: 1.5rem;"><strong>Track &amp; Improve Performance:</strong>
+                        Teachers and students receive
                         actionable insights for continuous improvement.</p>
                 </div>
             </div>
@@ -1232,7 +1247,7 @@
 
     <!-- OUR SERIES (Premium Redesigned Slider) -->
     <section class="container reveal-up" style="margin-top: 6rem;">
-        <h2 class="section-title">Our Featured Series</h2>
+        <h2 class="section-title" style="font-size: 3.5rem;">Our Featured Series</h2>
 
         <div class="series-slider-wrapper">
             <!-- AI ORIENTED BACKGROUND -->
@@ -1767,8 +1782,10 @@
 
     <!-- TRUSTED SCHOOLS -->
     <section style="margin: 8rem 0;">
-        <h2 class="section-title reveal-up">Trusted by Premier Institutions</h2>
-        <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;"
+        <h3 class="section-title reveal-up" style="font-size: 3rem;">
+            Trusted by Premier Institutions
+        </h3>
+        <p style="text-align: left; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem;"
             class="reveal-up delay-100">
             It’s a proud moment to disclose that both recently established and the most reputable institutions have
             partnered and subscribed to our tech-savvy academic curriculum courses for empowering digital minds
@@ -1911,14 +1928,12 @@
     <footer class="main-footer">
         <div class="footer-content">
             <p class="footer-text">Shaping Digital Minds since 2001.</p>
-            <p class="footer-text">
-                &copy; 2026 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>. All Rights Reserved.
-            </p>
             <h3 class="footer-logo">
                 <span class="brand-text">SAMSEL</span>
                 <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
             </h3>
+            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span
+                    class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 

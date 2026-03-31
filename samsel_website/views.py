@@ -139,9 +139,10 @@ def products(request):
 BOOKS_DATA = {
     'ibot-series': {
         'title': 'IBOT SERIES',
-        'description': "Shaping Future Innovators in AI and Robotics. A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming. Covering the latest AI and robotics syllabus, the series also introduces core programming concepts in C, C++, HTML5, and Python, building a strong technical foundation for learners. For higher classes, students explore advanced topics such as cybersecurity, emerging technologies, wireless networking, and IoT, helping them stay aligned with the evolving digital world. At the primary level, the series focuses on strengthening logical thinking through algorithms, flowcharts, and hands-on coding using ScratchJr and Scratch 3.0. With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages.",
+        'tagline': 'Shaping Future Innovators in AI and Robotics',
+        'description': "A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming. Covering the latest AI and robotics syllabus, the series also introduces core programming concepts in C, C++, HTML5, and Python, building a strong technical foundation for learners. For higher classes, students explore advanced topics such as cybersecurity, emerging technologies, wireless networking, and IoT, helping them stay aligned with the evolving digital world. At the primary level, the series focuses on strengthening logical thinking through algorithms, flowcharts, and hands-on coding using ScratchJr and Scratch 3.0. With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages.",
         'bullets': [
-            "Shaping Future Innovators in AI and Robotics. A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming.",
+            "A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming.",
             "Covering the latest AI and robotics syllabus, the series also introduces core programming concepts in C, C++, HTML5, and Python, building a strong technical foundation for learners.",
             "For higher classes, students explore advanced topics such as cybersecurity, emerging technologies, wireless networking, and IoT, helping them stay aligned with the evolving digital world.",
             "At the primary level, the series focuses on strengthening logical thinking through algorithms, flowcharts, and hands-on coding using ScratchJr and Scratch 3.0.",
@@ -160,7 +161,7 @@ BOOKS_DATA = {
         }
     },
     'ismart-series': {
-        'title': 'THE I-SMART SERIES',
+        'title': 'I-SMART SERIES',
         'tagline': 'Smart Learning for a Digital Generation',
         'description': 'The i-Smart Series is a thoughtfully designed collection of 9 course titles that introduces students to a modern, tech-driven, and academic curriculum.\n\nAt the primary level, learners build strong fundamentals through topics such as Windows 10, MS Paint, Logo Programming, and Microsoft Office tools (Word, PowerPoint, and Excel 2010).\n\nAs students progress to higher grades, the series expands into advanced concepts, including HTML, C++ programming, JavaScript, MySQL, and Python, equipping them with essential coding and digital skills.\n\nWhat sets the i-Smart Series apart is its learner-friendly approach, featuring "Hint" sections and interactive "Do You Know?" and "Do It Yourself (DIY)" activities designed to reinforce understanding through practical application.\n\nWith a structured and progressive learning path, the i-Smart Series empowers students to build confidence, think logically, and stay ahead in today’s digital world.',
         'bullets': [
@@ -171,19 +172,19 @@ BOOKS_DATA = {
             'With a structured and progressive learning path, the i-Smart Series empowers students to build confidence, think logically, and stay ahead in today’s digital world.'
         ],
         'books': {
-            'level-1': {'title': 'ISMART Level 1', 'image': 'images/low 1 - Copy.png', 'desc': 'Foundations of smart learning and digital literacy.', 'details': ['Foundations of smart learning and digital literacy.', 'A fun, comprehensive approach to this topic, helping learners grasp complex topics with ease.']},
-            'level-2': {'title': 'ISMART Level 2', 'image': 'images/low 2.png', 'desc': 'Interactive exercises building core IT competencies.', 'details': ['Interactive exercises building core IT competencies.', 'Dive deep into this topic, perfect for building modern digital fluency.']},
-            'level-3': {'title': 'ISMART Level 3', 'image': 'images/low 3.png', 'desc': 'Exploring creative software and basic problem solving.', 'details': ['Exploring creative software and basic problem solving.', 'Step-by-step guidance on this topic, perfect for building modern digital fluency.']},
-            'level-4': {'title': 'ISMART Level 4', 'image': 'images/low 4.png', 'desc': 'Introduction to connected devices and cyber safety.', 'details': ['Introduction to connected devices and cyber safety.', 'Master the essentials of this topic, creating an enjoyable and engaging learning environment.']},
-            'level-5': {'title': 'ISMART Level 5', 'image': 'images/low 5.png', 'desc': 'Advanced office tools and beginner coding loops.', 'details': ['Advanced office tools and beginner coding loops.', 'A fun, comprehensive approach to this topic, designed to foster creativity and logical thinking.']},
-            'level-6': {'title': 'ISMART Level 6', 'image': 'images/high 6.png', 'desc': 'Structuring ideas and intermediate algorithmic logic.', 'details': ['Structuring ideas and intermediate algorithmic logic.', 'Empower students with practical skills in this topic, ideal for real-world application and academic excellence.']},
-            'level-7': {'title': 'ISMART Level 7', 'image': 'images/high 7.png', 'desc': 'Web technologies and introductory networking.', 'details': ['Web technologies and introductory networking.', 'Step-by-step guidance on this topic, designed to foster creativity and logical thinking.']},
-            'level-8': {'title': 'ISMART Level 8', 'image': 'images/high 8.png', 'desc': 'Data handling, analysis, and programming constructs.', 'details': ['Data handling, analysis, and programming constructs.', 'Comprehensive coverage of this topic, encouraging problem-solving and critical reasoning.']},
-            'level-9': {'title': 'ISMART Level 9', 'image': 'images/high 9.png', 'desc': 'Comprehensive system design and applied technology projects.', 'details': ['Comprehensive system design and applied technology projects.', 'Dive deep into this topic, perfect for building modern digital fluency.']},
+            'level-1': {'title': 'ISMART Level 1', 'image': 'images/ism1.jpg', 'desc': 'Foundations of smart learning and digital literacy.', 'details': ['Foundations of smart learning and digital literacy.', 'A fun, comprehensive approach to this topic, helping learners grasp complex topics with ease.']},
+            'level-2': {'title': 'ISMART Level 2', 'image': 'images/ism2.jpg', 'desc': 'Interactive exercises building core IT competencies.', 'details': ['Interactive exercises building core IT competencies.', 'Dive deep into this topic, perfect for building modern digital fluency.']},
+            'level-3': {'title': 'ISMART Level 3', 'image': 'images/ism3.jpg', 'desc': 'Exploring creative software and basic problem solving.', 'details': ['Exploring creative software and basic problem solving.', 'Step-by-step guidance on this topic, perfect for building modern digital fluency.']},
+            'level-4': {'title': 'ISMART Level 4', 'image': 'images/ism4.jpg', 'desc': 'Introduction to connected devices and cyber safety.', 'details': ['Introduction to connected devices and cyber safety.', 'Master the essentials of this topic, creating an enjoyable and engaging learning environment.']},
+            'level-5': {'title': 'ISMART Level 5', 'image': 'images/ism5.jpg', 'desc': 'Advanced office tools and beginner coding loops.', 'details': ['Advanced office tools and beginner coding loops.', 'A fun, comprehensive approach to this topic, designed to foster creativity and logical thinking.']},
+            'level-6': {'title': 'ISMART Level 6', 'image': 'images/ism6.jpg', 'desc': 'Structuring ideas and intermediate algorithmic logic.', 'details': ['Structuring ideas and intermediate algorithmic logic.', 'Empower students with practical skills in this topic, ideal for real-world application and academic excellence.']},
+            'level-7': {'title': 'ISMART Level 7', 'image': 'images/ism7.jpg', 'desc': 'Web technologies and introductory networking.', 'details': ['Web technologies and introductory networking.', 'Step-by-step guidance on this topic, designed to foster creativity and logical thinking.']},
+            'level-8': {'title': 'ISMART Level 8', 'image': 'images/ism8.jpg', 'desc': 'Data handling, analysis, and programming constructs.', 'details': ['Data handling, analysis, and programming constructs.', 'Comprehensive coverage of this topic, encouraging problem-solving and critical reasoning.']},
+            'level-9': {'title': 'ISMART Level 9', 'image': 'images/ism9.jpg', 'desc': 'Comprehensive system design and applied technology projects.', 'details': ['Comprehensive system design and applied technology projects.', 'Dive deep into this topic, perfect for building modern digital fluency.']},
         }
     },
     'iwhizz-series': {
-        'title': 'THE I-WHIZZ SERIES',
+        'title': 'I-WHIZZ SERIES',
         'tagline': 'Accelerating Skills for a Tech-Driven World',
         'description': 'The i-Whizz Series features a collection of 9 courses, designed to build strong technical foundations across different grade levels.\n\nStudents begin with essential concepts such as computer fundamentals, Windows 7 OS, and the Office 2007 Suite, gaining a solid understanding of everyday digital tools.\n\nAs they progress, learners explore creative and technical skills through hands-on exposure to Photoshop, along with foundational programming in C and HTML.\n\nWith a structured, level-based approach, the i-Whizz Series helps students gradually develop practical knowledge, technical confidence, and the skills needed to thrive in a digital-first environment.',
         'bullets': [
@@ -205,7 +206,7 @@ BOOKS_DATA = {
         }
     },
     'young-wizard-series': {
-        'title': 'THE YOUNG WIZARD SERIES',
+        'title': 'YOUNG WIZARD SERIES',
         'tagline': 'Where Young Minds Learn, Create, and Explore',
         'description': 'The Young Wizard Series is a vibrant collection of 5 course titles, specially designed for primary learners across Levels 1 to 5.\n\nWith its colorful, activity-based approach, the series makes learning fun and engaging while building strong digital foundations. Students are introduced to essential concepts such as the Windows 7 operating system, MS Word 2007, and Paint, along with basic graphical and animation skills.\n\nAs learners progress, they gain hands-on experience in working across platforms, exploring multimedia tools, internet browsing, and creative applications like SwishMax and Macromedia Flash.\n\nBlending creativity with technology, the Young Wizard Series offers a well-rounded digital-first learning experience, helping young minds develop confidence, curiosity, and essential computer skills from an early age.',
         'bullets': [
@@ -223,7 +224,7 @@ BOOKS_DATA = {
         }
     },
     'little-wizard-series': {
-        'title': 'THE LITTLE WIZARD SERIES',
+        'title': 'LITTLE WIZARD SERIES',
         'tagline': 'First Steps into the Digital World.',
         'description': 'The Little Wizard Series has been specially designed for early learners, featuring 2 course levels tailored for KG students.\n\nCreated to support teachers, students, and parents, the series delivers an interactive, fun, and engaging digital-first learning experience. With a focus on simple concepts and hands-on activities, it introduces young minds to the basics of technology in an enjoyable and accessible way.\n\nBlending learning with play, the Little Wizard Series offers a well-rounded foundation through practical exposure and engaging content, helping children take their first confident steps into the digital world.',
         'bullets': [
@@ -237,7 +238,7 @@ BOOKS_DATA = {
         }
     },
     'app2016-series': {
-        'title': 'THE APPLICATION SERIES 2016',
+        'title': 'APPLICATION SERIES 2016',
         'tagline': 'From Basics to Brilliance in Office Tools. Learn. Apply. Excel.',
         'description': 'Designed to build practical digital skills, the Application Series 2016 offers an in-depth understanding of widely used application tools such as Microsoft Word, Excel, and PowerPoint 2016.\n\nEach application is explored individually through real-world illustrations and hands-on practice activities, making it easier for learners to grasp concepts and apply them confidently.\n\nThe series also provides strong conceptual coverage of MS Office tools, including Word, Excel, PowerPoint, and Access (2007 editions), ensuring a well-rounded foundation in productivity software.\n\nWith a structured and practical approach, this series helps learners develop both technical proficiency and real-world application skills essential for academic and professional success.',
         'bullets': [
@@ -247,24 +248,24 @@ BOOKS_DATA = {
             'With a structured and practical approach, this series helps learners develop both technical proficiency and real-world application skills essential for academic and professional success.'
         ],
         'books': {
-            'ppt': {'title': 'PowerPoint 2016', 'image': 'images/2016 ppt.png', 'desc': 'Create stunning presentations with modern tools.', 'details': ['Create stunning presentations with modern tools.', 'A fun, comprehensive approach to this topic, ideal for real-world application and academic excellence.']},
-            'excel': {'title': 'Excel 2016', 'image': 'images/2016 excel.png', 'desc': 'Data analysis, charting, and advanced functions.', 'details': ['Data analysis, charting, and advanced functions.', 'A fun, comprehensive approach to this topic, equipping students with tools for future success.']},
             'word': {'title': 'Word 2016', 'image': 'images/2016 word.png', 'desc': 'Professional document creation and formatting.', 'details': ['Professional document creation and formatting.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'excel': {'title': 'Excel 2016', 'image': 'images/2016 excel.png', 'desc': 'Data analysis, charting, and advanced functions.', 'details': ['Data analysis, charting, and advanced functions.', 'A fun, comprehensive approach to this topic, equipping students with tools for future success.']},
+            'ppt': {'title': 'PowerPoint 2016', 'image': 'images/2016 ppt.png', 'desc': 'Create stunning presentations with modern tools.', 'details': ['Create stunning presentations with modern tools.', 'A fun, comprehensive approach to this topic, ideal for real-world application and academic excellence.']},
         }
     },
     'app2007-series': {
         'title': 'APPLICATION SERIES 2007',
         'description': 'Comprehensive guide to the classic Office 2007 suite.',
         'books': {
-            'level-1': {'title': 'App Series 2007 Level 1', 'image': 'images/App1.jpg', 'desc': 'Foundations of Office 2007 applications.', 'details': ['Foundations of Office 2007 applications.', 'Master the essentials of this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
-            'level-2': {'title': 'App Series 2007 Level 2', 'image': 'images/App2.jpg', 'desc': 'Intermediate skills in Word and Excel formatting.', 'details': ['Intermediate skills in Word and Excel formatting.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
-            'level-3': {'title': 'App Series 2007 Level 3', 'image': 'images/App3.jpg', 'desc': 'Advanced presentations and formulas.', 'details': ['Advanced presentations and formulas.', 'Master the essentials of this topic, ideal for real-world application and academic excellence.']},
-            'level-4': {'title': 'App Series 2007 Level 4', 'image': 'images/App4.jpg', 'desc': 'Database management introduction.', 'details': ['Database management introduction.', 'Unlock your potential with this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
-            'level-5': {'title': 'App Series 2007 Level 5', 'image': 'images/App5.jpg', 'desc': 'Mastering the Office 2007 suite.', 'details': ['Mastering the Office 2007 suite.', 'Empower students with practical skills in this topic, designed to foster creativity and logical thinking.']},
+            'office-2007': {'title': 'Office 2007', 'image': 'images/App4.jpg', 'desc': 'Foundations of Office 2007 applications.', 'details': ['Foundations of Office 2007 applications.', 'Master the essentials of this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'word-2007': {'title': 'Word 2007', 'image': 'images/App1.jpg', 'desc': 'Intermediate skills in Word and formatting.', 'details': ['Intermediate skills in Word formatting.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'excel-2007': {'title': 'Excel 2007', 'image': 'images/App3.jpg', 'desc': 'Advanced formulas and spreadsheets.', 'details': ['Advanced formulas and spreadsheets.', 'Master the essentials of this topic, ideal for real-world application and academic excellence.']},
+            'ppt-2007': {'title': 'PowerPoint 2007', 'image': 'images/App5.jpg', 'desc': 'Creating dynamic presentations.', 'details': ['Creating dynamic presentations.', 'Unlock your potential with this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
+            'access-2007': {'title': 'Access 2007', 'image': 'images/App2.jpg', 'desc': 'Database management introduction.', 'details': ['Database management introduction.', 'Empower students with practical skills in this topic, designed to foster creativity and logical thinking.']},
         }
     },
     'programming-series': {
-        'title': 'THE PROGRAM SERIES',
+        'title': 'PROGRAM SERIES',
         'tagline': 'Master the Code. Build the Future',
         'description': 'The Program Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.\n\nCovering key languages and tools such as HTML, Macromedia Flash, Microsoft Visual Basic, C, and C++, each book emphasizes practical exercises and real-world applications to help learners understand and apply concepts effectively.\n\nWith a clear, practice-driven approach, the series enables students to develop coding confidence and problem-solving skills essential for today’s digital landscape.',
         'bullets': [
@@ -298,7 +299,7 @@ BOOKS_DATA = {
         }
     },
     'right-click-series': {
-        'title': 'THE RIGHT CLICK SERIES',
+        'title': 'RIGHT CLICK SERIES',
         'tagline': 'Click into The World of ICT',
         'description': 'The Right Click Series is designed to build strong foundations in Information and Communication Technology (ICT) for students from Grades 3 to 9.\n\nCovering the Windows operating system, essential application tools, and key programming concepts, the series introduces learners to basic programming, Visual fundamentals, and practical IT applications.\n\nWith a structured, curriculum-aligned approach, the Right Click Series helps students develop essential digital skills, logical thinking, and real-world computer proficiency, preparing them for today’s technology-driven environment.',
         'bullets': [
