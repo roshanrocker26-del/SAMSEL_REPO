@@ -583,7 +583,14 @@
         <a href="{% url 'products' %}" class="back-nav">
             <span>←</span> Back to Products
         </a>
-        <h1 class="premium-headline" data-vt-name="series-title-{{ series_slug }}">{{ series.title }}</h1>
+        <div class="series-title-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 24px; animation: fadeInDown 0.8s ease-out;">
+            {% if series.logo %}
+            <div class="series-logo-container" style="flex-shrink: 0;">
+                <img src="{% static series.logo %}" alt="{{ series.title }} Logo" style="height: 50px; max-width: 140px; object-fit: contain; filter: drop-shadow(0 5px 12px rgba(0,0,0,0.05));">
+            </div>
+            {% endif %}
+            <h1 class="premium-headline" data-vt-name="series-title-{{ series_slug }}" style="margin-bottom: 0;">{{ series.title }}</h1>
+        </div>
         
         {% if series.tagline %}
         <span class="series-tagline">{{ series.tagline }}</span>

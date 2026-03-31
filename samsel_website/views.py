@@ -137,7 +137,8 @@ def products(request):
 # --- Product Data ---
 BOOKS_DATA = {
     'ibot-series': {
-        'title': 'IBOT SERIES',
+        'title': 'I-BOT SERIES',
+        'logo': 'images/ibotlogo.png',
         'tagline': 'Shaping Future Innovators in AI and Robotics',
         'description': "A comprehensive collection of 9 titles, the iBot series is designed to equip students with future-ready skills in AI, robotics, and programming. Covering the latest AI and robotics syllabus, the series also introduces core programming concepts in C, C++, HTML5, and Python, building a strong technical foundation for learners. For higher classes, students explore advanced topics such as cybersecurity, emerging technologies, wireless networking, and IoT, helping them stay aligned with the evolving digital world. At the primary level, the series focuses on strengthening logical thinking through algorithms, flowcharts, and hands-on coding using ScratchJr and Scratch 3.0. With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages.",
         'bullets': [
@@ -148,19 +149,20 @@ BOOKS_DATA = {
             "With a well-structured, progressive approach, the iBot series ensures a seamless learning journey to empower students at every stage to understand, apply, and excel in AI, robotics, and programming languages."
         ],
         'books': {
-            'class-1': {'title': 'IBOT Class 1', 'image': 'images/ibot1.jpg', 'desc': 'Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.', 'details': ['Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.', 'Build a strong foundation in this topic, ideal for real-world application and academic excellence.']},
-            'class-2': {'title': 'IBOT Class 2', 'image': 'images/ibot2.jpg', 'desc': 'Building on basics, exploring input/output devices, and intermediate creative projects.', 'details': ['Building on basics, exploring input/output devices, and intermediate creative projects.', 'Empower students with practical skills in this topic, designed to foster creativity and logical thinking.']},
-            'class-3': {'title': 'IBOT Class 3', 'image': 'images/ibot3.jpg', 'desc': 'Understanding OS environments, word processing, and an introduction to computational thinking.', 'details': ['Understanding OS environments, word processing, and an introduction to computational thinking.', 'Empower students with practical skills in this topic, perfect for building modern digital fluency.']},
-            'class-4': {'title': 'IBOT Class 4', 'image': 'images/ibot4.jpg', 'desc': 'Advanced word processing, safe internet browsing, and block-based programming exercises.', 'details': ['Advanced word processing, safe internet browsing, and block-based programming exercises.', 'Empower students with practical skills in this topic, equipping students with tools for future success.']},
-            'class-5': {'title': 'IBOT Class 5', 'image': 'images/ibot5.jpg', 'desc': 'Presentations, spreadsheets basics, and developing algorithms using visual coding tools.', 'details': ['Presentations, spreadsheets basics, and developing algorithms using visual coding tools.', 'Interactive, hands-on activities covering this topic, encouraging problem-solving and critical reasoning.']},
-            'class-6': {'title': 'IBOT Class 6', 'image': 'images/ibot6.jpg', 'desc': 'Deep dive into robotics principles, electronics basics, and intro to Python syntax.', 'details': ['Deep dive into robotics principles, electronics basics, and intro to Python syntax.', 'Step-by-step guidance on this topic, equipping students with tools for future success.']},
-            'class-7': {'title': 'IBOT Class 7', 'image': 'images/ibot7.jpg', 'desc': 'AI concepts, intermediate Python programming, and hardware integration projects.', 'details': ['AI concepts, intermediate Python programming, and hardware integration projects.', 'Comprehensive coverage of this topic, designed to foster creativity and logical thinking.']},
-            'class-8': {'title': 'IBOT Class 8', 'image': 'images/ibot8.jpg', 'desc': 'Advanced robotics, IoT fundamentals, and machine learning basics.', 'details': ['Advanced robotics, IoT fundamentals, and machine learning basics.', 'Engaging lessons tailored for this topic, encouraging problem-solving and critical reasoning.']},
-            'class-9': {'title': 'IBOT Class 9', 'image': 'images/ibot9.jpg', 'desc': 'Comprehensive IT matrix, app development, and specialized AI/ML problem solving.', 'details': ['Comprehensive IT matrix, app development, and specialized AI/ML problem solving.', 'Build a strong foundation in this topic, creating an enjoyable and engaging learning environment.']},
+            'class-1': {'title': 'i-Bot Class 1', 'image': 'images/ibot1.jpg', 'desc': 'Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.', 'details': ['Introduces young learners to smart machines, basic computer parts, and early coding concepts using ScratchJr.', 'Build a strong foundation in this topic, ideal for real-world application and academic excellence.']},
+            'class-2': {'title': 'i-Bot Class 2', 'image': 'images/ibot2.jpg', 'desc': 'Building on basics, exploring input/output devices, and intermediate creative projects.', 'details': ['Building on basics, exploring input/output devices, and intermediate creative projects.', 'Empower students with practical skills in this topic, designed to foster creativity and logical thinking.']},
+            'class-3': {'title': 'i-Bot Class 3', 'image': 'images/ibot3.jpg', 'desc': 'Understanding OS environments, word processing, and an introduction to computational thinking.', 'details': ['Understanding OS environments, word processing, and an introduction to computational thinking.', 'Empower students with practical skills in this topic, perfect for building modern digital fluency.']},
+            'class-4': {'title': 'i-Bot Class 4', 'image': 'images/ibot4.jpg', 'desc': 'Advanced word processing, safe internet browsing, and block-based programming exercises.', 'details': ['Advanced word processing, safe internet browsing, and block-based programming exercises.', 'Empower students with practical skills in this topic, equipping students with tools for future success.']},
+            'class-5': {'title': 'i-Bot Class 5', 'image': 'images/ibot5.jpg', 'desc': 'Presentations, spreadsheets basics, and developing algorithms using visual coding tools.', 'details': ['Presentations, spreadsheets basics, and developing algorithms using visual coding tools.', 'Interactive, hands-on activities covering this topic, encouraging problem-solving and critical reasoning.']},
+            'class-6': {'title': 'i-Bot Class 6', 'image': 'images/ibot6.jpg', 'desc': 'Deep dive into robotics principles, electronics basics, and intro to Python syntax.', 'details': ['Deep dive into robotics principles, electronics basics, and intro to Python syntax.', 'Step-by-step guidance on this topic, equipping students with tools for future success.']},
+            'class-7': {'title': 'i-Bot Class 7', 'image': 'images/ibot7.jpg', 'desc': 'AI concepts, intermediate Python programming, and hardware integration projects.', 'details': ['AI concepts, intermediate Python programming, and hardware integration projects.', 'Comprehensive coverage of this topic, designed to foster creativity and logical thinking.']},
+            'class-8': {'title': 'i-Bot Class 8', 'image': 'images/ibot8.jpg', 'desc': 'Advanced robotics, IoT fundamentals, and machine learning basics.', 'details': ['Advanced robotics, IoT fundamentals, and machine learning basics.', 'Engaging lessons tailored for this topic, encouraging problem-solving and critical reasoning.']},
+            'class-9': {'title': 'i-Bot Class 9', 'image': 'images/ibot9.jpg', 'desc': 'Comprehensive IT matrix, app development, and specialized AI/ML problem solving.', 'details': ['Comprehensive IT matrix, app development, and specialized AI/ML problem solving.', 'Build a strong foundation in this topic, creating an enjoyable and engaging learning environment.']},
         }
     },
     'ismart-series': {
         'title': 'I-SMART SERIES',
+        'logo': 'images/iSmart Logo.png',
         'tagline': 'Smart Learning for a Digital Generation',
         'description': 'The i-Smart Series is a thoughtfully designed collection of 9 course titles that introduces students to a modern, tech-driven, and academic curriculum.\n\nAt the primary level, learners build strong fundamentals through topics such as Windows 10, MS Paint, Logo Programming, and Microsoft Office tools (Word, PowerPoint, and Excel 2010).\n\nAs students progress to higher grades, the series expands into advanced concepts, including HTML, C++ programming, JavaScript, MySQL, and Python, equipping them with essential coding and digital skills.\n\nWhat sets the i-Smart Series apart is its learner-friendly approach, featuring "Hint" sections and interactive "Do You Know?" and "Do It Yourself (DIY)" activities designed to reinforce understanding through practical application.\n\nWith a structured and progressive learning path, the i-Smart Series empowers students to build confidence, think logically, and stay ahead in today’s digital world.',
         'bullets': [
@@ -184,6 +186,7 @@ BOOKS_DATA = {
     },
     'iwhizz-series': {
         'title': 'I-WHIZZ SERIES',
+        'logo': 'images/iWhizz Logo.png',
         'tagline': 'Accelerating Skills for a Tech-Driven World',
         'description': 'The i-Whizz Series features a collection of 9 courses, designed to build strong technical foundations across different grade levels.\n\nStudents begin with essential concepts such as computer fundamentals, Windows 7 OS, and the Office 2007 Suite, gaining a solid understanding of everyday digital tools.\n\nAs they progress, learners explore creative and technical skills through hands-on exposure to Photoshop, along with foundational programming in C and HTML.\n\nWith a structured, level-based approach, the i-Whizz Series helps students gradually develop practical knowledge, technical confidence, and the skills needed to thrive in a digital-first environment.',
         'bullets': [
@@ -206,6 +209,7 @@ BOOKS_DATA = {
     },
     'young-wizard-series': {
         'title': 'YOUNG WIZARD SERIES',
+        'logo': 'images/younglogo.jpg',
         'tagline': 'Where Young Minds Learn, Create, and Explore',
         'description': 'The Young Wizard Series is a vibrant collection of 5 course titles, specially designed for primary learners across Levels 1 to 5.\n\nWith its colorful, activity-based approach, the series makes learning fun and engaging while building strong digital foundations. Students are introduced to essential concepts such as the Windows 7 operating system, MS Word 2007, and Paint, along with basic graphical and animation skills.\n\nAs learners progress, they gain hands-on experience in working across platforms, exploring multimedia tools, internet browsing, and creative applications like SwishMax and Macromedia Flash.\n\nBlending creativity with technology, the Young Wizard Series offers a well-rounded digital-first learning experience, helping young minds develop confidence, curiosity, and essential computer skills from an early age.',
         'bullets': [
@@ -224,6 +228,7 @@ BOOKS_DATA = {
     },
     'little-wizard-series': {
         'title': 'LITTLE WIZARD SERIES',
+        'logo': 'images/little wizard series.png',
         'tagline': 'First Steps into the Digital World.',
         'description': 'The Little Wizard Series has been specially designed for early learners, featuring 2 course levels tailored for KG students.\n\nCreated to support teachers, students, and parents, the series delivers an interactive, fun, and engaging digital-first learning experience. With a focus on simple concepts and hands-on activities, it introduces young minds to the basics of technology in an enjoyable and accessible way.\n\nBlending learning with play, the Little Wizard Series offers a well-rounded foundation through practical exposure and engaging content, helping children take their first confident steps into the digital world.',
         'bullets': [
@@ -238,6 +243,7 @@ BOOKS_DATA = {
     },
     'app2016-series': {
         'title': 'APPLICATION SERIES 2016',
+        'logo': 'images/NEW APPLICATION SERIES.png',
         'tagline': 'From Basics to Brilliance in Office Tools. Learn. Apply. Excel.',
         'description': 'Designed to build practical digital skills, the Application Series 2016 offers an in-depth understanding of widely used application tools such as Microsoft Word, Excel, and PowerPoint 2016.\n\nEach application is explored individually through real-world illustrations and hands-on practice activities, making it easier for learners to grasp concepts and apply them confidently.\n\nThe series also provides strong conceptual coverage of MS Office tools, including Word, Excel, PowerPoint, and Access (2007 editions), ensuring a well-rounded foundation in productivity software.\n\nWith a structured and practical approach, this series helps learners develop both technical proficiency and real-world application skills essential for academic and professional success.',
         'bullets': [
@@ -254,7 +260,9 @@ BOOKS_DATA = {
     },
     'app2007-series': {
         'title': 'APPLICATION SERIES 2007',
-        'description': 'Comprehensive guide to the classic Office 2007 suite.',
+        'logo': 'images/NEW APPLICATION SERIES.png',
+        'tagline': 'Comprehensive guide to the classic Office 2007 suite.',
+        'description': 'The Application Series 2016 is designed to develop practical digital skills by offering a clear understanding of widely used tools like Microsoft Office, Word, Excel, PowerPoint, and Access.\n\nEach application is covered individually through real-world examples and hands-on exercises, helping learners grasp concepts easily and apply them with confidence. The series also builds a strong foundation in MS Office (including 2007 editions) with a structured, practical approach that supports both academic and professional success.',
         'books': {
             'office-2007': {'title': 'Office 2007', 'image': 'images/App4.jpg', 'desc': 'Foundations of Office 2007 applications.', 'details': ['Foundations of Office 2007 applications.', 'Master the essentials of this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
             'word-2007': {'title': 'Word 2007', 'image': 'images/App1.jpg', 'desc': 'Intermediate skills in Word and formatting.', 'details': ['Intermediate skills in Word formatting.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
@@ -265,6 +273,7 @@ BOOKS_DATA = {
     },
     'programming-series': {
         'title': 'PROGRAM SERIES',
+        'logo': 'images/Pro1 New.jpg',
         'tagline': 'Master the Code. Build the Future',
         'description': 'The Program Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.\n\nCovering key languages and tools such as HTML, Macromedia Flash, Microsoft Visual Basic, C, and C++, each book emphasizes practical exercises and real-world applications to help learners understand and apply concepts effectively.\n\nWith a clear, practice-driven approach, the series enables students to develop coding confidence and problem-solving skills essential for today’s digital landscape.',
         'bullets': [
@@ -281,6 +290,7 @@ BOOKS_DATA = {
     },
     'my-computer-series': {
         'title': 'MY COMPUTER SERIES',
+        'logo': 'images/MyComputer Series (Grade).jpg',
         'tagline': 'Building Digital Foundations from Day One',
         'description': 'The My Computer Series is a thoughtfully designed set of 5 course titles for primary learners, covering Grades 1 to 5.\n\nWith vibrant visuals and activity-based workbooks, this series makes early computer learning fun, interactive, and easy to understand. Students are introduced to essential digital concepts, including the Windows operating system (with versions like XP) and its everyday applications.\n\nLearners also gain hands-on experience with tools such as MS Paint and WordPad and basic web design skill sets, helping them build confidence in using computers from an early stage.\n\nOver a strong focus on foundational skills and practical learning, the My Computer Series sets the stage for a smooth and engaging digital learning journey.',
         'bullets': [
@@ -299,6 +309,7 @@ BOOKS_DATA = {
     },
     'right-click-series': {
         'title': 'RIGHT CLICK SERIES',
+        'logo': 'images/Right Click Series (ICT).png',
         'tagline': 'Click into The World of ICT',
         'description': 'The Right Click Series is designed to build strong foundations in Information and Communication Technology (ICT) for students from Grades 3 to 9.\n\nCovering the Windows operating system, essential application tools, and key programming concepts, the series introduces learners to basic programming, Visual fundamentals, and practical IT applications.\n\nWith a structured, curriculum-aligned approach, the Right Click Series helps students develop essential digital skills, logical thinking, and real-world computer proficiency, preparing them for today’s technology-driven environment.',
         'bullets': [
@@ -315,6 +326,7 @@ BOOKS_DATA = {
     },
     'cursive-writing-books': {
         'title': 'MY FIRST STROKE SERIES',
+        'logo': 'images/cursive writing.png',
         'tagline': 'Enriching Cursive Hands With Linguistic Differentiations. One Stroke at a Time.',
         'description': 'My First Stroke Series is a thoughtfully designed collection of 7 cursive writing books in English and Tamil, crafted for learners from LKG to Grade 5.\n\nWith a step-by-step approach, the series helps students develop clear, neat, and confident handwriting. It covers everything from lowercase and uppercase letters to word formation and sentence writing, inclusive of Tamil letters, in both short and long forms.\n\nThrough guided practice and structured exercises, the series builds strong writing habits—making learning cursive both effective and enjoyable for young learners.',
         'bullets': [
@@ -334,7 +346,9 @@ BOOKS_DATA = {
     },
     'tamil-writing-books': {
         'title': 'TAMIL COPY WRITING',
-        'description': 'A beautiful journey into Tamil calligraphy and structured writing practice.',
+        'logo': 'images/tamil-writing-cover.png',
+        'tagline': 'A beautiful journey into Tamil calligraphy and structured writing practice.',
+        'description': 'At the basic level, Tamil copywriting books are often designed for students and beginners to learn letter formation, improve handwriting, and develop sentence construction skills. These books provide structured exercises that help readers practice Tamil scripts, join letters into words, and gradually build fluency in writing.\n\nOverall, Tamil copywriting books serve as a bridge between language proficiency and creative communication, enabling individuals to write effectively in Tamil—whether for education, storytelling, or business-driven content.',
         'books': {
             'level-1': {'title': 'Tamil Writing Level 1', 'image': 'images/tamil1.jpg', 'desc': 'Basic Tamil characters and stroke techniques.', 'details': ['Basic Tamil characters and stroke techniques.', 'Master the essentials of this topic, creating an enjoyable and engaging learning environment.']},
             'level-2': {'title': 'Tamil Writing Level 2', 'image': 'images/tamil2.jpg', 'desc': 'Building words and understanding letter structures.', 'details': ['Building words and understanding letter structures.', 'Build a strong foundation in this topic, designed to foster creativity and logical thinking.']},

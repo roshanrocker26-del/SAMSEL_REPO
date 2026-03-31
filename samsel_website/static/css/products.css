@@ -16,24 +16,31 @@ body {
 
 /* ================= HERO SECTION ================= */
 .hero-section {
-  padding: 40px 20px 60px; /* Reduced since body now has 140px padding */
+  position: relative;
+  padding: 90px 20px 80px;
   text-align: center;
-  background: #ffffff;
+  color: #fff;
+  background: linear-gradient(150deg, #0d3b66 0%, #1565a8 60%, #1a7bbf 100%), url('../images/image10.png') center/cover fixed;
+  background-blend-mode: multiply;
+  border-radius: 0 0 32px 32px;
+  margin-bottom: 60px;
+  box-shadow: 0 8px 32px rgba(13, 59, 102, 0.18);
+  overflow: hidden;
 }
 
 .hero-tagline {
   font-size: 48px;
-  color: #1a365d; /* Dark blue as seen in screenshot */
+  color: #ffffff; /* Dark blue as seen in screenshot */
   font-weight: 800;
   margin-bottom: 20px;
 }
 
 .hero-subtitle {
-  font-size: 18px;
-  color: #64748b;
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.88);
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
 /* ================= PREMIUM BOOKSHELF & SHELF VISUAL ================= */
