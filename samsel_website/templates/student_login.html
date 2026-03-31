@@ -131,12 +131,46 @@
     </section>
 
     <footer class="main-footer">
-        <div class="footer-content" style="text-align: center; padding: 40px 20px;">
-            <h3 class="footer-logo" style="margin-bottom: 10px;">
+        <div class="footer-content">
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}#counter-section">Our Heritage</a></li>
+                        <li><a href="{% url 'home' %}#india-presence">Digital Presence</a></li>
+                        <li><a href="{% url 'home' %}#sl-pillars">Digital Vision</a></li>
+                        <li><a href="{% url 'home' %}#featured-series">Innovative Showcase</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="{% url 'request_demo_page' %}">Request Demo</a></li>
+                        <li><a href="{% url 'contact' %}">Executive Query</a></li>
+                        <li><a href="{% url 'our_story' %}">The Samsel Story</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Growth & Impact</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}#showcase-section">Educational Impact</a></li>
+                        <li><a href="{% url 'home' %}#trusted-schools">Premier Partners</a></li>
+                        <li><a href="{% url 'home' %}#boards-section">Academic Boards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ecosystem</h4>
+                    <ul>
+                        <li><a href="{% url 'school_login' %}">Institutional Access</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="footer-logo">
                 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
+                <span class="brand-secondary">PUBLICATIONS</span>
             </h3>
-            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
+            <p class="footer-copyright">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 

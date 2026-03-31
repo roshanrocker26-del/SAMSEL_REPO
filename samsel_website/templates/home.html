@@ -1245,8 +1245,7 @@
     </style>
 
 
-    <!-- OUR SERIES (Premium Redesigned Slider) -->
-    <section class="container reveal-up" style="margin-top: 6rem;">
+    <section id="featured-series" class="container reveal-up" style="margin-top: 6rem;">
         <h2 class="section-title" style="font-size: 3.5rem;">Our Featured Series</h2>
 
         <div class="series-slider-wrapper">
@@ -1553,7 +1552,7 @@
 
 
     <!-- DISTRIBUTION MAP -->
-    <section class="container reveal-up" style="padding: 6rem 20px;">
+    <section id="india-presence" class="container reveal-up" style="padding: 6rem 20px;">
         <h2 class="section-title" style="font-size: 3.5rem;">Our Regional Digital Presence</h2>
         <p
             style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto 4rem; font-size: 1.25rem;">
@@ -1781,7 +1780,7 @@
 
 
     <!-- TRUSTED SCHOOLS -->
-    <section style="margin: 8rem 0;">
+    <section id="trusted-schools" style="margin: 8rem 0;">
         <h3 class="section-title reveal-up" style="font-size: 3rem;">
             Trusted by Premier Institutions
         </h3>
@@ -1830,7 +1829,7 @@
     </section>
 
     <!-- EDUCATION BOARDS SLIDER -->
-    <section class="boards-slider-container">
+    <section id="boards-section" class="boards-slider-container">
         <div class="boards-track">
             <!-- Set 1 -->
             <div class="board-set">
@@ -1927,13 +1926,45 @@
 
     <footer class="main-footer">
         <div class="footer-content">
-            <p class="footer-text">Shaping Digital Minds since 2001.</p>
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}#counter-section">Our Heritage</a></li>
+                        <li><a href="{% url 'home' %}#india-presence">Digital Presence</a></li>
+                        <li><a href="{% url 'home' %}#sl-pillars">Digital Vision</a></li>
+                        <li><a href="{% url 'home' %}#featured-series">Innovative Showcase</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="{% url 'request_demo_page' %}">Request Demo</a></li>
+                        <li><a href="{% url 'contact' %}">Executive Query</a></li>
+                        <li><a href="{% url 'our_story' %}">The Samsel Story</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Growth & Impact</h4>
+                    <ul>
+                        <li><a href="{% url 'home' %}#showcase-section">Educational Impact</a></li>
+                        <li><a href="{% url 'home' %}#trusted-schools">Premier Partners</a></li>
+                        <li><a href="{% url 'home' %}#boards-section">Academic Boards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ecosystem</h4>
+                    <ul>
+                        <li><a href="{% url 'school_login' %}">Institutional Access</a></li>
+                    </ul>
+                </div>
+            </div>
+
             <h3 class="footer-logo">
                 <span class="brand-text">SAMSEL</span>
-                <span class="brand-secondary" style="color: black;">PUBLICATIONS</span>
+                <span class="brand-secondary">PUBLICATIONS</span>
             </h3>
-            <p class="footer-copyright" style="color: #666; font-size: 14px;">&copy; 2026 <span
-                    class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
+            <p class="footer-copyright">&copy; 2026 <span class="brand-text">SAMSEL</span> Publications. All Rights Reserved.</p>
         </div>
     </footer>
 
