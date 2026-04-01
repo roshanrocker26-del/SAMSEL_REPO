@@ -272,7 +272,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="{% url 'reviews_page' %}">Client Testimonials</a></li>
+
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
 
@@ -480,6 +480,11 @@
             box-shadow: 0 8px 30px rgba(255, 215, 0, 0.35);
         }
 
+        .hero-cta-row .btn-hero-primary {
+            font-size: 1.3rem;
+            padding: 22px 50px;
+        }
+
         .btn-hero-primary:hover {
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 16px 40px rgba(255, 215, 0, 0.5);
@@ -499,6 +504,11 @@
             border: 1.5px solid rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(8px);
             transition: all 0.3s ease;
+        }
+
+        .hero-cta-row .btn-hero-outline {
+            font-size: 1.3rem;
+            padding: 20px 48px;
         }
 
         .btn-hero-outline:hover {
@@ -872,7 +882,7 @@
     <section id="showcase-section" class="vp-section reveal-up delay-200">
         <div class="vp-header">
             <h2 class="vp-title" style="font-size: 3.5rem;">Value Proposition - Built for Modern Classrooms</h2>
-            <p class="vp-subtitle"><strong>Simple. Structured. Effective.</strong></p>
+            <p class="vp-subtitle" style="font-size: 2rem;"><strong>Simple. Structured. Effective.</strong></p>
         </div>
 
         <!-- Row 1: Image LEFT, Text RIGHT -->
@@ -1802,7 +1812,7 @@
                 <p>Bethel Matriculation Higher Secondary School</p>
             </div>
             <div class="board-card reveal-up delay-300">
-                <img src="{% static 'images/sch5.png' %}" alt="School 3">
+                <img src="{% static 'images/st_joseph_nobg.png' %}" alt="School 3">
                 <p>St. Joseph’s Matriculation Higher Secondary School</p>
             </div>
             <div class="board-card reveal-up delay-400">
@@ -1814,7 +1824,7 @@
                 <p>GFC Global School</p>
             </div>
             <div class="board-card reveal-up delay-200">
-                <img src="{% static 'images/sch6.png' %}" alt="School 6">
+                <img src="{% static 'images/Seetha-removebg-preview.png' %}" alt="School 6">
                 <p>Seetha Kingston House Matriculation Higher Secondary School</p>
             </div>
             <div class="board-card reveal-up delay-300">
@@ -1941,7 +1951,7 @@
                     <ul>
                         <li><a href="{% url 'request_demo_page' %}">Request Demo</a></li>
                         <li><a href="{% url 'contact' %}">Executive Query</a></li>
-                        <li><a href="{% url 'our_story' %}">The Samsel Story</a></li>
+                        <li><a href="{% url 'our_story' %}">The <span class="brand-text">SAMSEL</span> Story</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

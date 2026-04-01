@@ -88,14 +88,15 @@ p {
 
 /* Premium Empowering Headline Utilities */
 .premium-headline {
-    font-family: 'Playfair Display', serif !important;
-    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.8rem !important;
     font-weight: 800 !important;
     color: #111827;
-    line-height: 1.1 !important;
+    line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
     text-shadow: none;
-    letter-spacing: -1px !important;
+    letter-spacing: -0.02em !important;
+    font-variant-numeric: lining-nums;
 }
 
 .accent-word {
@@ -123,23 +124,24 @@ p {
    BOARDS SLIDER (Site-Wide)
 ========================================= */
 .boards-slider-container {
-    background: #f8fafc; /* More visible light grey */
-    padding: 0.5rem 0;
+    width: 100%;
+    background: #f8fafc;
+    padding: 2.25rem 0;
     position: relative;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    width: 100%;
+    display: flex;
 }
 
-/* Gradient fade masks */
+/* Gradient fade masks for a seamless loop */
 .boards-slider-container::before,
 .boards-slider-container::after {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 20%;
+    width: 15%;
     z-index: 2;
     pointer-events: none;
 }
@@ -157,7 +159,7 @@ p {
 .boards-track {
     display: flex;
     width: max-content;
-    animation: scrollBoards 35s linear infinite; /* Slower, more premium scroll */
+    animation: scrollBoards 25s linear infinite;
 }
 
 .boards-track:hover {
@@ -166,44 +168,44 @@ p {
 
 .board-set {
     display: flex;
-    gap: 1.5rem;
-    padding-right: 1.5rem;
+    gap: 8rem;
+    padding-right: 8rem;
     align-items: center;
 }
 
 .board-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0.25rem;
+    gap: 1.5rem;
     opacity: 0.8;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    cursor: pointer;
+    cursor: default;
 }
 
 .board-item:hover {
     opacity: 1;
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-4px) scale(1.05);
 }
 
 .board-item img {
-    height: 25px; /* Minimal size */
+    height: 52px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.08));
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
 }
 
 .board-item span {
-    font-size: 0.65rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #4b5563;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
 }
 
 @keyframes scrollBoards {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Half of the doubled track */
+    100% { transform: translateX(calc(-100% / 3)); }
 }
 
 /* =========================================
@@ -1880,6 +1882,16 @@ body {
     padding: 60px 20px 40px;
     border-top: 1px solid #eeeff2;
     color: #1a1c1e;
+    text-align: center; /* CENTERED AGAIN */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* CENTERED AGAIN */
+    gap: 0;
 }
 
 .footer-links-grid {
@@ -1887,10 +1899,8 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 60px;
     margin-bottom: 60px;
-    text-align: left;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
 }
 
 .footer-column h4 {
@@ -1900,29 +1910,33 @@ body {
     margin-bottom: 25px;
     text-transform: none;
     letter-spacing: -0.5px;
+    text-align: left;
 }
 
 .footer-column ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .footer-column ul li {
     margin-bottom: 16px;
+    text-align: left;
 }
 
 .footer-column ul li a {
     color: #535665;
     font-size: 1rem;
     font-weight: 500;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
     display: inline-block;
     text-decoration: none;
 }
 
 .footer-column ul li a:hover {
-    color: #000;
+    color: #e91e63;
+    transform: translateX(5px);
 }
 
 .footer-text {
@@ -1945,6 +1959,7 @@ body {
     color: #93959f !important;
     font-weight: 500;
     margin-top: 15px;
+    text-align: center;
 }
 
 @media (max-width: 992px) {
@@ -1957,7 +1972,7 @@ body {
 @media (max-width: 576px) {
     .footer-links-grid {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
     }
     
     .footer-column ul li a:hover {

@@ -583,7 +583,7 @@
         <a href="{% url 'products' %}" class="back-nav">
             <span>←</span> Back to Products
         </a>
-        <h1 class="premium-headline" style="color: var(--primary) !important; font-size: 2.5rem !important;" data-vt-name="series-title-{{ series_slug }}">{{ series.title }}</h1>
+        <h1 class="premium-headline" data-vt-name="series-title-{{ series_slug }}">{{ series.title }}</h1>
         
         {% if series.tagline %}
         <span class="series-tagline">{{ series.tagline }}</span>
@@ -591,9 +591,9 @@
 
         <div class="series-description">
             {% if series.bullets %}
-                <ul style="text-align: justify; list-style-position: outside; padding-left: 1.5rem; font-size: 1.1rem; color: #4b5563; line-height: 1.8; margin: 0 auto; max-width: 900px;">
+                <ul style="text-align: justify; list-style-type: none; padding-left: 0; font-size: 1.1rem; color: #4b5563; line-height: 1.8; margin: 0 auto; max-width: 900px;">
                     {% for bullet in series.bullets %}
-                        <li style="margin-bottom: 12px; display: list-item;">{{ bullet }}</li>
+                        <li style="margin-bottom: 12px;">{{ bullet }}</li>
                     {% endfor %}
                 </ul>
             {% else %}
@@ -728,7 +728,7 @@
                     <ul>
                         <li><a href="{% url 'request_demo_page' %}">Request Demo</a></li>
                         <li><a href="{% url 'contact' %}">Executive Query</a></li>
-                        <li><a href="{% url 'our_story' %}">The Samsel Story</a></li>
+                        <li><a href="{% url 'our_story' %}">The <span class="brand-text">SAMSEL</span> Story</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

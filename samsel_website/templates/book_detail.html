@@ -497,7 +497,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="{% url 'reviews_page' %}">Client Testimonials</a></li>
+
             <li><a href="{% url 'contact' %}">Contact Us</a></li>
 
             <li class="dropdown">
@@ -543,7 +543,7 @@
                     <img src="{% static 'images/younglogo.jpg' %}" alt="Young Wizard Logo" style="height: 45px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                 {% endif %}
             </div>
-            <h1 class="premium-headline" style="color: var(--primary) !important; font-size: 3.5rem !important;">{{ book.title }}</h1>
+            <h1 class="premium-headline">{{ book.title }}</h1>
             <div class="book-summary">
                 {% if book.details %}
                     <ul style="padding-left: 1.5rem; list-style-type: none;">
@@ -685,7 +685,7 @@
                     <ul>
                         <li><a href="{% url 'request_demo_page' %}">Request Demo</a></li>
                         <li><a href="{% url 'contact' %}">Executive Query</a></li>
-                        <li><a href="{% url 'our_story' %}">The Samsel Story</a></li>
+                        <li><a href="{% url 'our_story' %}">The <span class="brand-text">SAMSEL</span> Story</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
