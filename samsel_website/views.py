@@ -261,8 +261,8 @@ BOOKS_DATA = {
     'app2007-series': {
         'title': 'APPLICATION SERIES 2007',
         'logo': 'images/NEW APPLICATION SERIES.png',
-        'tagline': 'Comprehensive guide to the classic Office 2007 suite.',
-        'description': 'The Application Series 2016 is designed to develop practical digital skills by offering a clear understanding of widely used tools like Microsoft Office, Word, Excel, PowerPoint, and Access.\n\nEach application is covered individually through real-world examples and hands-on exercises, helping learners grasp concepts easily and apply them with confidence. The series also builds a strong foundation in MS Office (including 2007 editions) with a structured, practical approach that supports both academic and professional success.',
+        'tagline': 'Comprehensive Guide to the Classic Office 2007 Suite',
+        'description': 'The Application Series 2007 is designed to develop practical digital skills by offering a clear understanding of widely used tools like Microsoft Office, Word, Excel, PowerPoint, and Access.\n\nEach application is covered individually through real-world examples and hands-on exercises, helping learners grasp concepts easily and apply them with confidence. The series also builds a strong foundation in MS Office with a structured, practical approach that supports both academic and professional success.',
         'books': {
             'office-2007': {'title': 'Office 2007', 'image': 'images/App4.jpg', 'desc': 'Foundations of Office 2007 applications.', 'details': ['Foundations of Office 2007 applications.', 'Master the essentials of this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
             'word-2007': {'title': 'Word 2007', 'image': 'images/App1.jpg', 'desc': 'Intermediate skills in Word and formatting.', 'details': ['Intermediate skills in Word formatting.', 'Dive deep into this topic, ensuring students stay ahead in today\'s tech-driven landscape.']},
