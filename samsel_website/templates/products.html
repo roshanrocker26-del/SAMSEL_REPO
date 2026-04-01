@@ -294,17 +294,21 @@
 
     <!-- PRODUCTS HERO SECTION -->
     <section class="hero-section reveal-up">
-        <h1 class="premium-headline" style="margin-top:2rem; margin-bottom:30px; color: #0d3b66 !important;">
-            Our Premium Collections
+        <h1
+            style="font-family: 'Playfair Display', serif; font-size: clamp(4rem, 9vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem;">
+            <span class="accent-word no-underline">Our Premium Collections</span>
         </h1>
-        <p class="hero-subtitle" style="text-align: left;">
-            Our core collections include the i-Bot Series, Application Series 2016, i-Smart Series, i-Whizz Series,
-            Young Wizard Series, Program Series, My Computer Series, Right Click Series, Little Wizard Series, and My
-            First Stroke Series.<br>
+        <p class="about-hero-subtitle"
+            style="color: white; text-align: left; max-width: 800px; margin: 0 auto; font-size: 1.25rem; margin-bottom: 20px;">
+            Our core collections include the I-Bot series, Application series 2016, I-Smart series, I-Whizz series,
+            Young wizard series, Programming series, My computer series, Right click series, Little wizard series, and
+            My first stroke series.
+        </p>
+        <p class="about-hero-subtitle"
+            style="color: white; text-align: left; max-width: 800px; margin: 0 auto; font-size: 1.25rem;">
             Each series has been designed for students of different grades and a wide range of classes, with on-demand
             updates and a syllabus aligned with emerging trends in the diversified IT sector, aiming for superlative
             academic excellence.
-
         </p>
     </section>
 
@@ -314,7 +318,7 @@
         <section class="series-section reveal-up" id="ibot-series">
             <div class="series-container">
                 <a href="{% url 'series_detail' series_slug='ibot-series' %}" style="text-decoration: none;">
-                    <h1 class="series-title" style="view-transition-name: series-title-ibot-series;">IBOT SERIES</h1>
+                    <h1 class="series-title" style="view-transition-name: series-title-ibot-series;">I-BOT SERIES</h1>
                 </a>
                 <div class="premium-bookshelf">
                     <!-- Book 1 -->
@@ -458,7 +462,7 @@
         <section class="series-section reveal-up" id="ismart-series">
             <div class="series-container">
                 <a href="{% url 'series_detail' series_slug='ismart-series' %}" style="text-decoration: none;">
-                    <h1 class="series-title" style="view-transition-name: series-title-ismart-series;">ISMART SERIES
+                    <h1 class="series-title" style="view-transition-name: series-title-ismart-series;">I-SMART SERIES
                     </h1>
                 </a>
                 <div class="premium-bookshelf">
@@ -792,7 +796,11 @@
             <!-- ================= TAMIL WRITING BOOKS ================= -->
             <section class="series-section reveal-up" id="tamil-writing-books">
                 <div class="series-container">
-                    <h1 class="series-title">TAMIL WRITING BOOKS</h1>
+                    <a href="{% url 'series_detail' series_slug='tamil-writing-books' %}"
+                        style="text-decoration: none;">
+                        <h1 class="series-title" style="view-transition-name: series-title-tamil-writing-books;">TAMIL
+                            WRITING BOOKS</h1>
+                    </a>
                     <div class="premium-bookshelf">
                         <!-- Book 1 -->
                         <a href="{% url 'book_detail' series_slug='tamil-writing-books' book_slug='level-1' %}"
@@ -893,7 +901,11 @@
             <!-- ================= CURSIVE WRITING BOOKS ================= -->
             <section class="series-section reveal-up" id="cursive-writing-books">
                 <div class="series-container" style="position: relative;">
-                    <h1 class="series-title">CURSIVE WRITING BOOKS</h1>
+                    <a href="{% url 'series_detail' series_slug='cursive-writing-books' %}"
+                        style="text-decoration: none;">
+                        <h1 class="series-title" style="view-transition-name: series-title-cursive-writing-books;">
+                            CURSIVE WRITING BOOKS</h1>
+                    </a>
                     <!-- Decorative Icon 5 -->
                     <div class="decorative-icon absolute-right">
                         <img src="{% static 'images/icon1.png' %}" alt="Decoration">
@@ -1126,7 +1138,7 @@
                 <div class="series-container">
                     <a href="{% url 'series_detail' series_slug='programming-series' %}" style="text-decoration: none;">
                         <h1 class="series-title" style="view-transition-name: series-title-programming-series;">
-                            PROGRAM SERIES</h1>
+                            PROGRAMMING SERIES</h1>
                     </a>
                     <div class="premium-bookshelf">
                         <a href="{% url 'book_detail' series_slug='programming-series' book_slug='level-1' %}"

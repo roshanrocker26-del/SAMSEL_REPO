@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;800&display=swap');
 
 /* =========================================
    GLOBAL VARIABLES & RESET
@@ -106,6 +106,10 @@ p {
     -webkit-text-fill-color: transparent !important;
     display: inline-block !important;
     position: relative !important;
+}
+
+.accent-word.no-underline::after {
+    display: none !important;
 }
 
 .accent-word::after {
@@ -585,12 +589,13 @@ body {
 }
 
 .logo-tagline {
-    font-size: 11px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 14px;
     color: var(--text-muted);
     letter-spacing: 0.5px;
     margin-left: 2px;
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .logo a:hover {
