@@ -500,9 +500,10 @@ body {
     position: absolute;
     top: 0;
     left: 100%;
-    /* Position to the right */
     background: var(--primary);
     min-width: 180px;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     box-shadow: var(--shadow-md);
@@ -510,8 +511,10 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateX(10px);
-    transition: all var(--transition-normal);
+    transition: opacity var(--transition-normal), visibility var(--transition-normal), transform var(--transition-normal);
     z-index: 10000;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.3) transparent;
 }
 
 .dropdown-menu li:hover>.submenu {
@@ -540,6 +543,25 @@ body {
 
 .dropdown-menu.wide-dropdown > li:nth-child(odd) .side-arrow {
     transform: rotate(180deg);
+}
+
+/* All submenus open downward from top:0 — max-height + scroll handles overflow */
+.dropdown-menu.wide-dropdown > li .submenu {
+    top: 0;
+    bottom: auto;
+}
+
+/* Row 2 onwards (nth-child 3+): shift submenu up slightly to prevent bottom clipping
+   for series with 8–9 books (I-Whizz, I-Smart, I-Bot rows 2–5) */
+.dropdown-menu.wide-dropdown > li:nth-child(n+3) > .submenu {
+    top: -40px;
+}
+
+/* Last row only (English Cursive & Tamil Copy Writing): bigger upward shift
+   so all 7 items fit within the viewport — overrides the rule above */
+.dropdown-menu.wide-dropdown > li:nth-last-child(-n+2) > .submenu {
+    top: -140px;
+    bottom: auto;
 }
 
 /* MAIN HEADER */
