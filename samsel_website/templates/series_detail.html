@@ -38,11 +38,12 @@
         }
 
         .series-main-title {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 900;
             color: #111827;
-            margin-bottom: 24px;
-            line-height: 1;
+            margin: 0;
+            margin-left: var(--logo-margin, 0px);
+            line-height: 1.1;
             letter-spacing: -0.04em;
             text-transform: uppercase;
         }
@@ -585,11 +586,11 @@
         </a>
         <div class="series-title-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 24px; animation: fadeInDown 0.8s ease-out;">
             {% if series.logo %}
-            <div class="series-logo-container" style="flex-shrink: 0;">
-                <img src="{% static series.logo %}" alt="{{ series.title }} Logo" style="height: 50px; max-width: 140px; object-fit: contain; filter: drop-shadow(0 5px 12px rgba(0,0,0,0.05));">
+            <div class="series-logo-container" style="flex-shrink: 0; margin-top: 0; color: transparent; font-size: 0;">
+                <img src="{% static series.logo %}" alt="{{ series.title }} Logo" style="height: 60px; max-width: 200px; object-fit: contain; mix-blend-mode: multiply;">
             </div>
             {% endif %}
-            <h1 class="premium-headline" data-vt-name="series-title-{{ series_slug }}" style="margin-bottom: 0;">{{ series.title }}</h1>
+            <h1 class="series-main-title" data-vt-name="series-title-{{ series_slug }}" style="--logo-margin: {{ series.logo_margin|default:'0px' }};">{{ series.title }}</h1>
         </div>
         
         {% if series.tagline %}

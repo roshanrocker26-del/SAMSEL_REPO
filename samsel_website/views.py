@@ -272,12 +272,12 @@ BOOKS_DATA = {
         }
     },
     'programming-series': {
-        'title': 'PROGRAM SERIES',
-        'logo': 'images/Pro1 New.jpg',
+        'title': 'PROGRAMMING SERIES',
+        'logo': 'images/programming series logo.jpeg',
         'tagline': 'Master the Code. Build the Future',
-        'description': 'The Program Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.\n\nCovering key languages and tools such as HTML, Macromedia Flash, Microsoft Visual Basic, C, and C++, each book emphasizes practical exercises and real-world applications to help learners understand and apply concepts effectively.\n\nWith a clear, practice-driven approach, the series enables students to develop coding confidence and problem-solving skills essential for today’s digital landscape.',
+        'description': 'The Programming Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.\n\nCovering key languages and tools such as HTML, Macromedia Flash, Microsoft Visual Basic, C, and C++, each book emphasizes practical exercises and real-world applications to help learners understand and apply concepts effectively.\n\nWith a clear, practice-driven approach, the series enables students to develop coding confidence and problem-solving skills essential for today’s digital landscape.',
         'bullets': [
-            'The Program Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.',
+            'The Programming Series features a focused collection of single-color titles that’s designed to build strong programming fundamentals through hands-on learning.',
             'Covering key languages and tools such as HTML, Macromedia Flash, Microsoft Visual Basic, C, and C++, each book emphasizes practical exercises and real-world applications to help learners understand and apply concepts effectively.',
             'With a clear, practice-driven approach, the series enables students to develop coding confidence and problem-solving skills essential for today’s digital landscape.'
         ],
@@ -309,7 +309,8 @@ BOOKS_DATA = {
     },
     'right-click-series': {
         'title': 'RIGHT CLICK SERIES',
-        'logo': 'images/Right Click Series (ICT).png',
+        'logo': 'images/right click series.png',
+        'logo_margin': '0px',
         'tagline': 'Click into The World of ICT',
         'description': 'The Right Click Series is designed to build strong foundations in Information and Communication Technology (ICT) for students from Grades 3 to 9.\n\nCovering the Windows operating system, essential application tools, and key programming concepts, the series introduces learners to basic programming, Visual fundamentals, and practical IT applications.\n\nWith a structured, curriculum-aligned approach, the Right Click Series helps students develop essential digital skills, logical thinking, and real-world computer proficiency, preparing them for today’s technology-driven environment.',
         'bullets': [
@@ -346,7 +347,7 @@ BOOKS_DATA = {
     },
     'tamil-writing-books': {
         'title': 'TAMIL COPY WRITING',
-        'logo': 'images/tamil-writing-cover.png',
+        'logo': 'images/my first.jpeg',
         'tagline': 'A beautiful journey into Tamil calligraphy and structured writing practice.',
         'description': 'At the basic level, Tamil copywriting books are often designed for students and beginners to learn letter formation, improve handwriting, and develop sentence construction skills. These books provide structured exercises that help readers practice Tamil scripts, join letters into words, and gradually build fluency in writing.\n\nOverall, Tamil copywriting books serve as a bridge between language proficiency and creative communication, enabling individuals to write effectively in Tamil—whether for education, storytelling, or business-driven content.',
         'books': {
